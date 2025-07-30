@@ -1,4 +1,4 @@
-import Ent from '@/pages/ent/ent'
+import Ent from '@/pages/ent/Ent'
 import React from 'react'
 
 function page() {

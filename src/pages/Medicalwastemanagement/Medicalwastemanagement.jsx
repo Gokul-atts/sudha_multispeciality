@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import Banner from "@/assets/termsandconditions/banner.png";
+import Banner from "@/assets/termsandconditions/Banner.png";
 
 const Data = [
     { date: "01", clinical_waste_red: 138.0, infectious_waste_yellow: 161.3, sharp_waste_white: 0, bottle_waste_blue: 3.700, total_kgs: 322.9, vehicle_number: "9972" },

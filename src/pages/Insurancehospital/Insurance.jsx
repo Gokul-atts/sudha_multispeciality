@@ -17,14 +17,14 @@ import hospitalize from "@/assets/Insurance/hospital.webp";
 import Preauth from "@/assets/Insurance/admission.webp";
 import Discharge from "@/assets/Insurance/discharge.webp";
 
-import CMCHIS from "@/assets/Insurance/cmchis.jpg";
+import CMCHIS from "@/assets/Insurance/CMCHIS.jpg";
 
 import Check from "@/assets/Insurance/check.svg";
 import Contact from "@/assets/Insurance/bg-contact.webp";
 import Phone from "@/assets/Insurance/phone.svg";
 import Email from "@/assets/Insurance/email.svg";
 import Marquee from "react-fast-marquee";
-import "../Insurance-hospital/Insurance.css"
+import "./Insurance.css"
 
 const Companies = [Icici, Sbi, Bajaj, Niva, Tata, Hdfc];
 
