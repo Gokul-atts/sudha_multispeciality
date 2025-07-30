@@ -1,18 +1,26 @@
 "use client";
 
-
-import { cn } from "@/lib/utility";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+// Optional utility function to conditionally join class names
+function cn(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
+
 export default function NavLink({ handleMouseEnter, hovering, index, link }) {
   const pathname = usePathname();
+
+  // ✅ Safety: prevent crash if link is undefined or malformed
+  if (!link || typeof link !== "object" || !link.href || !link.label) {
+    return null;
+  }
 
   return (
     <div
       className="block group"
-      onMouseEnter={() => handleMouseEnter(index)}
+      onMouseEnter={() => handleMouseEnter && handleMouseEnter(index)}
     >
       <Link
         href={link.href}
@@ -23,7 +31,7 @@ export default function NavLink({ handleMouseEnter, hovering, index, link }) {
         )}
       >
         {link.label}
-        {link.subLinks && (
+        {Array.isArray(link.subLinks) && (
           <ChevronDown
             className={cn(
               "w-4 h-4 transition-all group-hover:text-accent",

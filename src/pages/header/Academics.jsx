@@ -3,34 +3,33 @@ import Link from "next/link";
 import React from "react";
 
 export default function Academics({ subLink, index, setHoveredSubLinkImage }) {
-  // Early return if subLink is not defined to avoid runtime errors
-  if (!subLink) return null;
-
+    if (!subLink) return null;
   return (
     <React.Fragment key={index}>
       {subLink?.header && (
         <div
           onMouseEnter={() => {
-            if (subLink?.hoverImage) {
-              setHoveredSubLinkImage(subLink?.hoverImage || subLink?.image);
+            if (subLink.hoverImage) {
+              setHoveredSubLinkImage(subLink.hoverImage || subLink.image);
             }
           }}
           onMouseLeave={() => {
             setHoveredSubLinkImage(null);
           }}
         >
-          {subLink?.href ? (
+          {console.log("subLink.href",subLink.href)}
+          {subLink.href ? (
             <Link href={subLink.href}>
               <div className="bg-white hover:bg-[#EEF8FF] transition duration-200 rounded-md p-3">
                 <div className="text-[#2B3990] font-bold pb-1">
                   {subLink?.header}
                 </div>
 
-                {subLink?.subMenu?.length > 0 && (
+                {subLink.subMenu?.length > 0 && (
                   <div className="space-y-1">
                     {subLink.subMenu.map((menuItem, idx) => (
                       <p key={idx} className="text-muted text-sm text-[#5E566A]">
-                        {menuItem?.dec}
+                        {menuItem.dec}
                       </p>
                     ))}
                   </div>
@@ -45,9 +44,9 @@ export default function Academics({ subLink, index, setHoveredSubLinkImage }) {
 
               {subLink?.subMenu?.length > 0 && (
                 <div className="space-y-1">
-                  {subLink.subMenu.map((menuItem, idx) => (
+                  {subLink?.subMenu.map((menuItem, idx) => (
                     <p key={idx} className="text-muted text-sm text-[#5E566A]">
-                      {menuItem?.dec}
+                      {menuItem.dec}
                     </p>
                   ))}
                 </div>
@@ -57,8 +56,8 @@ export default function Academics({ subLink, index, setHoveredSubLinkImage }) {
         </div>
       )}
 
-      {/* ✅ SubImages check */}
-      {subLink?.subImages?.length > 0 && (
+      {/* ✅ Conditionally render subImages if available */}
+      {subLink.subImages?.length > 0 && (
         <div className="grid gap-4 mt-4">
           {subLink.subImages.map((subImage, idx) => (
             <div
@@ -66,8 +65,8 @@ export default function Academics({ subLink, index, setHoveredSubLinkImage }) {
               className="relative w-[100px] h-[60px] rounded-lg overflow-hidden"
             >
               <Image
-                src={subLink?.image || ""}
-                alt={subLink?.image || "sub image"}
+                src={subLink.image}
+                alt={subLink.image}
                 fill
                 className="object-cover object-center group-hover:scale-105 group-hover:opacity-90 transition duration-300"
               />
