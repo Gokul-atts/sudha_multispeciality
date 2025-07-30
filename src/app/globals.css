@@ -1,0 +1,373 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+:root {
+  --background: #f0f7fd;
+}
+@layer components {
+  .input {
+    @apply w-full p-2 border border-[#F5F5F5]  rounded-md focus:outline-none focus:ring-2 focus:ring-[#2B3990] text-sm;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground: #F0F7FD;
+  }
+}
+
+
+
+
+body {
+  background: #F0F7FD;
+   font-family: "Plus Jakarta Sans", sans-serif;
+   font-weight: 500;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-weight: 900;
+  letter-spacing: 0.3px;
+}
+
+span{
+  letter-spacing: 0.3px;
+}
+
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: var(--swiper-pagination-bottom, 0px) !important;
+  top: var(--swiper-pagination-top, auto);
+  left: 0;
+  width: 13% !important;
+  padding: 10px;
+  border-radius: 0px 15px 0px 0px;
+  background-color: #f0f7fd;
+  z-index: 1 !important;
+}
+
+.swiper-pagination-bullets.swiper-pagination-horizontal::before {
+  content: "";
+  position: absolute;
+  top: -130px;
+  left: 0px;
+  /* width: 220px;
+  height: 174px; */
+  /* background-image: url("../assets/home/rec.png"); ✅ Correct public path in Next.js */
+  background-size: cover;
+  background-color: #f0f7fd;
+  background-position: center;
+  border-radius: 0 20px 20px 0;
+  z-index: 0; /* ✅ ABOVE pagination */
+}
+
+.service-card {
+  position: relative;
+  background-color: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  /* box-shadow: 0 2px 10px rgba(0,0,0,0.05); */
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  width: 119px;
+  height: 112px;
+  bottom: -1px;
+  right: -1px;
+  background-color: #f0f7fd;
+
+  /* mask cave corner shape */
+  -webkit-mask: url("../assets/home/download.png") no-repeat;
+  mask: url("../assets/home/download.png") no-repeat;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+
+  z-index: 1;
+}
+
+.ourteam {
+  /* background-image: url("../assets/home/bg-pattern.svg"); */
+  background-size: cover;
+  background:#2B3990;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+}
+
+
+
+
+
+
+.ourteamcard::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  bottom: 65px;
+  right: -1px;
+  border-radius: 50%;
+  background-color: white;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+
+  z-index: 2;
+}
+
+.pb-20{
+  padding-bottom: 7rem;
+}
+.mt-22{
+  margin-top: 4.5rem;
+}
+.ourteamcard_img {
+  position: relative;
+  /* background-color: white; */
+  border-radius: 20px;
+  /* padding: 1.5rem; */
+  /* box-shadow: 0 2px 10px rgba(0,0,0,0.05); */
+}
+
+.ourteamcard_img::before {
+content: "";
+    position: absolute;
+    width: 95px;
+    height: 91px;
+    bottom: 0px;
+    right: 10px;
+  background-color: #2B3990;
+  /* mask cave corner shape */
+  -webkit-mask: url("../assets/home/download.png") no-repeat;
+  mask: url("../assets/home/download.png") no-repeat;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+
+  z-index: 1;
+}
+
+.ourteamcard_img_orgain {
+  position: relative;
+  /* background-color: white; */
+  border-radius: 20px;
+  /* padding: 1.5rem; */
+  /* box-shadow: 0 2px 10px rgba(0,0,0,0.05); */
+}
+
+.ourteamcard_img_orgain::before {
+  content: "";
+  position: absolute;
+  width: 95px;
+  height: 91px;
+  bottom: 0px;
+  right: 10px;
+  background-color: #f0f7fd;
+  /* mask cave corner shape */
+  -webkit-mask: url("../assets/home/download.png") no-repeat;
+  mask: url("../assets/home/download.png") no-repeat;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+
+  z-index: 1;
+}
+
+
+
+
+.ourteamcard_img_one {
+  position: relative;
+  /* background-color: white; */
+  border-radius: 20px;
+  /* padding: 1.5rem; */
+  /* box-shadow: 0 2px 10px rgba(0,0,0,0.05); */
+}
+ 
+.ourteamcard_img_one::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 75px;
+  bottom: 10px;
+  margin-left: 42px;
+  /* right: 11px; */
+  background-color: #f0f7fd;
+  /* mask cave corner shape */
+  -webkit-mask: url("../assets/home/download.png") no-repeat;
+  mask: url("../assets/home/download.png") no-repeat;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+ 
+  z-index: 1;
+}
+ 
+@media only screen and (max-width: 768px) {
+  .ourteamcard_img_one::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 75px;
+    bottom: 10px;
+    /* right: 12px; */
+    background-color: #f0f7ff;
+    /* mask cave corner shape */
+    -webkit-mask: url("../assets/home/download.png") no-repeat;
+    mask: url("../assets/home/download.png") no-repeat;
+    mask-size: cover;
+    -webkit-mask-size: cover;
+ 
+    z-index: 1;
+  }
+}
+ 
+.bg-blue{
+  background-color: #EEF8FF;
+  color:#2B3990;
+}
+
+.text-primary-blue{
+  color:#2B3990;
+}
+
+
+.letter-space{
+  letter-spacing:0.3px;
+}
+
+.dropdown {
+  width: 100% !important;
+}
+
+
+
+
+.nursingimg {
+  position: relative;
+  /* background-color: white; */
+  border-radius: 20px;
+  /* padding: 1.5rem; */
+  /* box-shadow: 0 2px 10px rgba(0,0,0,0.05); */
+}
+
+.nursingimg::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 75px;
+  bottom: -1px;
+  right: -1px;
+  background-color:#f0f7fd;
+
+  /* mask cave corner shape */
+  -webkit-mask: url("../assets/home/download.png") no-repeat;
+  mask: url("../assets/home/download.png") no-repeat;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+
+  z-index: 1;
+}
+
+
+.doc {
+  position: relative;
+  background-color: white;
+  border-radius: 100px;
+  /* padding: 1.5rem; */
+  /* box-shadow: 0 2px 10px rgba(0,0,0,0.05); */
+}
+
+.doc::before {
+  content: "";
+  position: absolute;
+width: 146px;
+    height: 137px;
+  bottom: 0px;
+  right: -2px;
+  background-color: #f0f7fd;
+  /* mask cave corner shape */
+  -webkit-mask: url("../assets/home/download.png") no-repeat;
+  mask: url("../assets/home/download.png") no-repeat;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+
+  z-index: 1;
+}
+
+
+.award{
+ position: relative;
+  /* background-color: white; */
+  border-radius: 20px;
+}
+
+.award::before{
+   content: "";
+  position: absolute;
+    width: 138px;
+    height: 133px;
+  bottom: -1px;
+  right: -1px;
+  background-color:#f0f7fd;
+
+  /* mask cave corner shape */
+  -webkit-mask: url("../assets/home/download.png") no-repeat;
+  mask: url("../assets/home/download.png") no-repeat;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+
+  z-index: 1;
+}
+
+
+.swiper-pagination-bullet-active{
+  color:#2B3990!important;
+}
+
+.custom-h-380{
+  height:520px;
+}
+
+p{
+  color:#5E566A;
+letter-spacing:0.3px;
+font-weight: 600;
+line-height: 1.6;
+font-size: 15px;
+}
+
+/* .font-nunito{
+font-family: "Nunito", sans-serif!important;
+  letter-spacing: 0.3px;
+} */
+ input,
+input::-webkit-input-placeholder {
+    font-size: 14px;
+     font-family: "Plus Jakarta Sans", sans-serif;
+    color:#5E566A;
+}
+
+select ,textarea {
+  color: #5E566A; /* Sets the default color (placeholder color) */
+  font-size: 14px;
+   font-family: "Plus Jakarta Sans", sans-serif;
+}
+.bottom-33{
+  bottom:9rem!important;
+}
+
+.customposition{
+  position: relative;
+    bottom: -24px;
+    width: 225px;
+    height: 168px;
+    display: block;
+}
+
+.border-light{
+  border:1px solid #ffffff4d;
+}

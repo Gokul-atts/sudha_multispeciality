@@ -1,0 +1,10 @@
+/* Hide scrollbar while allowing horizontal scroll */
+.scroll-hide {
+  overflow-x: auto;
+  -ms-overflow-style: none; /* IE & Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scroll-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
