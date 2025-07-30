@@ -3,7 +3,7 @@ import React, { use } from "react";
 import Banner from "@/assets/about/hero.png";
 import { motion } from "framer-motion";
 import Doctordeatils from "@/components/Doctordeatils";
-import Personalinfo from "@/components/Personalinfo";
+import {Personalinfo} from "@/components/Personalinfo";
 import { doctorsData } from "@/constants/doctorDetails";
 
 export default function Doctordetail(props) {

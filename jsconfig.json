@@ -1,7 +1,16 @@
+// {
+//   "compilerOptions": {
+//     "paths": {
+//       "@/*": ["./src/*"]
+//     }
+//   }
+// }
+
 {
   "compilerOptions": {
+    "baseUrl": ".",                // ✅ Required for "paths" to work
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["src/*"]            // ✅ Maps "@/something" to "src/something"
     }
   }
 }
