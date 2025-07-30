@@ -33,17 +33,17 @@ import s24 from "../assets/home/medical/oncology.svg";
 export const links = [
   {
     label: "Home",
-    href: "/",
+    hrefs: "/",
   },
   {
     label: "About Us",
-    href: "/our-growth-story",
+    hrefs: "/our-growth-story",
     type: "aboutus",
     caption: "Women's Snowboarding",
     subLinks: [
       {
         header: "Our Growth Story",
-        href: "/our-growth-story",
+        hrefs: "/our-growth-story",
         image: Ourgrowth,
         hoverImage: Ourgrowth,
         subMenu: [
@@ -55,7 +55,7 @@ export const links = [
       },
       {
         header: "Board of Trustees",
-        href: "/board-of-trustees",
+        hrefs: "/board-of-trustees",
         image: Boarddirectors,
         hoverImage: Boarddirectors,
         subMenu: [
@@ -67,7 +67,7 @@ export const links = [
       },
       {
         header: "Awards & Honors",
-        href: "/awards-and-honors",
+        hrefs: "/awards-and-honors",
         image: Awards,
         hoverImage: Awards,
         subMenu: [
@@ -79,7 +79,7 @@ export const links = [
       },
       {
         header: "Infrastructure",
-        href: "/infrastructure",
+        hrefs: "/infrastructure",
         image: Infracstructure,
         hoverImage: Infracstructure,
         subMenu: [
@@ -91,7 +91,7 @@ export const links = [
       },
       {
         header: "Why Sudha?",
-        href: "/why-sudha",
+        hrefs: "/why-sudha",
          image: Whysudha,
         hoverImage: Whysudha,
         subMenu: [
@@ -103,7 +103,7 @@ export const links = [
       },
       {
         header: "News & Events",
-        href: "/news-and-events",
+        hrefs: "/news-and-events",
         
          image: Whysudha,
         hoverImage: Whysudha,
@@ -119,7 +119,7 @@ export const links = [
 
   {
     label: "Specialites",
-    href: "/centre-of-excellence",
+    hrefs: "/centre-of-excellence",
     type: "specialites",
     navImage: "/kids-snowboarding.jpg",
     caption: "Kids Snowboarding",
@@ -128,7 +128,7 @@ export const links = [
         header: "Centre of Excellence",
         image: s1,
         // hoverImage: AboutUs,
-        href: "/centre-of-excellence",
+        hrefs: "/centre-of-excellence",
         subMenu: [
           {
             label: "Our Growth Story",
@@ -140,7 +140,7 @@ export const links = [
         header: "Anaesthesiology",
         image: s2,
         // hoverImage: AboutUs,
-        href: "/anaesthesiology",
+        hrefs: "/anaesthesiology",
         subMenu: [
           {
             label: "Our Growth Story",
@@ -152,7 +152,7 @@ export const links = [
         header: "Cardiology",
         image: s3,
         // hoverImage: AboutUs,
-        href: "/cardiology",
+        hrefs: "/cardiology",
         subMenu: [
           {
             label: "Our Growth Story",
@@ -164,7 +164,7 @@ export const links = [
         header: "Cardiothoracic Surgery",
         image: s4,
         // hoverImage: AboutUs,
-        href: "/cardiothoracic-surgery",
+        hrefs: "/cardiothoracic-surgery",
         subMenu: [
           {
             label: "Our Growth Story",
@@ -176,7 +176,7 @@ export const links = [
         header: "Dentistry and Oral Surgery",
         image: s5,
         // hoverImage: AboutUs,
-        href: "/dentistry-and-oral-surgery",
+        hrefs: "/dentistry-and-oral-surgery",
         subMenu: [
           {
             label: "Our Growth Story",
@@ -188,7 +188,7 @@ export const links = [
         header: "Dermatology Aesthetics and Lasers",
         image: s6,
         // hoverImage: AboutUs,
-        href: "/dermatology-aesthetics-and-lasers",
+        hrefs: "/dermatology-aesthetics-and-lasers",
         subMenu: [
           {
             label: "Our Growth Story",
@@ -200,7 +200,7 @@ export const links = [
         header: "ENT",
         image: s7,
         // hoverImage: AboutUs,
-        href: "/ent",
+        hrefs: "/ent",
         subMenu: [
           {
             label: "Our Growth Story",
@@ -212,7 +212,7 @@ export const links = [
         header: "Emergency Care",
         image: s8,
         // hoverImage: AboutUs,
-        href: "/emergency-care",
+        hrefs: "/emergency-care",
         subMenu: [
           {
             label: "Our Growth Story",
@@ -224,7 +224,7 @@ export const links = [
         header: "Gastroenterology",
         image: s9,
         // hoverImage: AboutUs,
-        href: "/gastroenterology",
+        hrefs: "/gastroenterology",
         subMenu: [
           {
             label: "Our Growth Story",
@@ -236,7 +236,7 @@ export const links = [
         header: "Radiology",
         image: s10,
         // hoverImage: AboutUs,
-        href: "/radiology",
+        hrefs: "/radiology",
         subMenu: [
           {
             label: "Our Growth Story",
@@ -248,7 +248,7 @@ export const links = [
         header: "General Medicine",
         image: s11,
         // hoverImage: AboutUs,
-        href: "/general-medicine",
+        hrefs: "/general-medicine",
         subMenu: [
           {
             label: "Our Growth Story",
@@ -260,7 +260,7 @@ export const links = [
         header: "General Surgery",
         image: s12,
         // hoverImage: AboutUs,
-        href: "/general-surgery",
+        hrefs: "/general-surgery",
         subMenu: [
           {
             label: "Our Growth Story",
@@ -272,7 +272,7 @@ export const links = [
         header: "Intensive Care Unit",
         image: s13,
         // hoverImage: AboutUs,
-        href: "/intensive-care-unit",
+        hrefs: "/intensive-care-unit",
         subMenu: [
           {
             label: "Our Growth Story",
@@ -284,7 +284,7 @@ export const links = [
         header: "Urology",
         image: s14,
         // hoverImage: AboutUs,
-        href: "/urology",
+        hrefs: "/urology",
         subMenu: [
           {
             label: "Our Growth Story",
@@ -296,7 +296,7 @@ export const links = [
         header: "Orthopaedics",
         image: s15,
         // hoverImage: AboutUs,
-        href: "/orthopaedics",
+        hrefs: "/orthopaedics",
         subMenu: [
           {
             label: "Our Growth Story",
@@ -308,7 +308,7 @@ export const links = [
         header: "Nephrology",
         image: s16,
         // hoverImage: AboutUs,
-        href: "/nephrology",
+        hrefs: "/nephrology",
         subMenu: [
           {
             label: "Our Growth Story",
@@ -320,7 +320,7 @@ export const links = [
         header: "Neurology",
         image: s17,
         // hoverImage: AboutUs,
-        href: "/neurology",
+        hrefs: "/neurology",
         subMenu: [
           {
             label: "Our Growth Story",
@@ -332,7 +332,7 @@ export const links = [
         header: "Imaging & Diagnostic Services",
         image: s18,
         // hoverImage: AboutUs,
-        href: "/imaging-and-diagnostic-services",
+        hrefs: "/imaging-and-diagnostic-services",
         subMenu: [
           {
             label: "Our Growth Story",
@@ -344,7 +344,7 @@ export const links = [
         header: "Obstetrics & Gynaecology",
         image: s19,
         // hoverImage: AboutUs,
-        href: "/obstetrics-and-gynaecology",
+        hrefs: "/obstetrics-and-gynaecology",
         subMenu: [
           {
             label: "Our Growth Story",
@@ -356,7 +356,7 @@ export const links = [
         header: "Pulmonology",
         image: s20,
         // hoverImage: AboutUs,
-        href: "/pulmonology",
+        hrefs: "/pulmonology",
         subMenu: [
           {
             label: "Our Growth Story",
@@ -368,7 +368,7 @@ export const links = [
         header: "Paediatrics & Neonatology",
         image: s21,
         // hoverImage: AboutUs,
-        href: "/paediatrics-and-neonatology",
+        hrefs: "/paediatrics-and-neonatology",
         subMenu: [
           {
             label: "Our Growth Story",
@@ -380,7 +380,7 @@ export const links = [
         header: "Pain Medicine",
         image: s22,
         // hoverImage: AboutUs,
-        href: "/pain-medicine",
+        hrefs: "/pain-medicine",
         subMenu: [
           {
             label: "Our Growth Story",
@@ -392,7 +392,7 @@ export const links = [
         header: "Plastic Surgery",
         image: s23,
         // hoverImage: AboutUs,
-        href: "/plastic-surgery",
+        hrefs: "/plastic-surgery",
         subMenu: [
           {
             label: "Our Growth Story",
@@ -404,7 +404,7 @@ export const links = [
         header: "Oncology",
         image: s24,
         // hoverImage: AboutUs,
-        href: "https://sudhacancercentre.com/",
+        hrefs: "https://sudhacancercentre.com/",
         subMenu: [
           {
             label: "Our Growth Story",
@@ -421,14 +421,14 @@ export const links = [
 
   {
     label: "Facilities",
-    href: "/kids",
+    hrefs: "/kids",
     type:"facilities",
     navImage: "/kids-snowboarding.jpg",
     caption: "Kids Snowboarding",
     subLinks: [
       {
         header: "Insurance",
-        href: "/insurance",
+        hrefs: "/insurance",
         image: AboutUs,
         hoverImage: AboutUs,
         subMenu: [
@@ -440,7 +440,7 @@ export const links = [
       },
       {
         header: "Ambulance",
-        href: "/ambulance-services",
+        hrefs: "/ambulance-services",
         image: Two,
         hoverImage: Two,
         subMenu: [
@@ -452,7 +452,7 @@ export const links = [
       },
       {
         header: "Pharmarcy",
-        href: "/pharmacy-services",
+        hrefs: "/pharmacy-services",
         subMenu: [
           {
             label: "Pharmarcy",
@@ -462,7 +462,7 @@ export const links = [
       },
       {
         header: "Laboratory",
-        href: "/laboratory-services",
+        hrefs: "/laboratory-services",
         subMenu: [
           {
             label: "Laboratory",
@@ -473,7 +473,7 @@ export const links = [
      
       {
         header: "Health Package",
-        href: "/health-packages",
+        hrefs: "/health-packages",
         subMenu: [
           {
             label: "Blood Centre",
@@ -483,7 +483,7 @@ export const links = [
       },
        {
         header: "Organ Transplant",
-        href: "/renal-transplant",
+        hrefs: "/renal-transplant",
         subMenu: [
           {
             label: "Renal Transplant",
@@ -496,21 +496,21 @@ export const links = [
 
   {
     label: "Mother & Child Care",
-    href: "/mother-and-childcare",
+    hrefs: "/mother-and-childcare",
   },
 
 
 
   {
     label: "Academics",
-    href: "/kids",
+    hrefs: "/kids",
     type:"academics",
     navImage: "/kids-snowboarding.jpg",
     caption: "Kids Snowboarding",
     subLinks: [
       // {
       //   header: "Alied Health Science",
-      //   href: "/insurance",
+      //   hrefs: "/insurance",
       //   image: AboutUs,
       //   hoverImage: AboutUs,
       //   subMenu: [
@@ -522,7 +522,7 @@ export const links = [
       // },
       {
         header: "Fellow of National Board (FNB) ",
-        href: "/fellow-of-national-board",
+        hrefs: "/fellow-of-national-board",
         image: Two,
         hoverImage: Two,
         subMenu: [
@@ -534,7 +534,7 @@ export const links = [
       },
       {
         header: "Post MBBS Diploma Courses (DNB)",
-        href: "/pharmarcy",
+        hrefs: "/pharmarcy",
         subMenu: [
           {
             label: "Post MBBS Diploma Courses (DNB )",
@@ -548,14 +548,14 @@ export const links = [
 
   {
     label: "Resources",
-    href: "/kids",
+    hrefs: "/kids",
     type:"academics",
     navImage: "/kids-snowboarding.jpg",
     caption: "Kids Snowboarding",
     subLinks: [
       {
         header: "Alied Health Service",
-        href: "/insurance",
+        hrefs: "/insurance",
         image: AboutUs,
         hoverImage: AboutUs,
         subMenu: [
@@ -567,7 +567,7 @@ export const links = [
       },
       {
         header: "Our Blogs ",
-        href: "/fellow-of-national-board",
+        hrefs: "/fellow-of-national-board",
         image: Two,
         hoverImage: Two,
         subMenu: [
@@ -580,7 +580,7 @@ export const links = [
     
       {
         header: "Biomedical Report",
-        href: "/pharmarcy",
+        hrefs: "/pharmarcy",
         subMenu: [
           {
             label: "Post MBBS Diploma Courses (DNB )",
@@ -590,7 +590,7 @@ export const links = [
       },
         {
         header: "Contact Us",
-        href: "/contact-us",
+        hrefs: "/contact-us",
         subMenu: [
           {
             label: "Post MBBS Diploma Courses (DNB )",
@@ -600,7 +600,7 @@ export const links = [
       },
              {
         header: "Our Doctors",
-        href: "/",
+        hrefs: "/",
         subMenu: [
           {
             label: "Post MBBS Diploma Courses (DNB )",
@@ -615,28 +615,28 @@ export const links = [
 
   // {
   //   label: "Facilities",
-  //   href: "/resorts",
+  //   hrefs: "/resorts",
   //   subLinks: [
   //     {
   //       subImages: [
   //         {
   //           label: "Bear Mountain",
-  //           href: "/",
+  //           hrefs: "/",
   //           image: "/bear-mountain.jpg",
   //         },
   //         {
   //           label: "Lion's Peak",
-  //           href: "/",
+  //           hrefs: "/",
   //           image: "/lions-peak.jpg",
   //         },
   //         {
   //           label: "Copper Mountain",
-  //           href: "/",
+  //           hrefs: "/",
   //           image: "/copper-mountain.jpg",
   //         },
   //         {
   //           label: "Fallen Valley",
-  //           href: "/",
+  //           hrefs: "/",
   //           image: "/fallen-valley.jpg",
   //         },
   //       ],

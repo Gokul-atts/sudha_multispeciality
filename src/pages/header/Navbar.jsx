@@ -135,17 +135,17 @@ export default function Navbar() {
                 }
               }}
             >
-{Array.isArray(links) &&
-  links.map((link, index) => (
-    <NavLink
-      key={index}
-      handleMouseEnter={handleMouseEnter}
-      hovering={hovering}
-      index={index}
-      link={link}
-    />
-))}
-
+              {links
+                ?.filter((link) => link && link.hrefs && link.label)
+                .map((link, index) => (
+                  <NavLink
+                    key={index}
+                    handleMouseEnter={handleMouseEnter}
+                    hovering={hovering}
+                    index={index}
+                    link={link}
+                  />
+                ))}
 
               <div
                 ref={subRef}

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function SpecialSubLink({ subLink, setHoveredSubLinkImage }) {
   return (
-    <Link href={subLink.href}>
+    <Link href={subLink.hrefs}>
       <div
         className="hover:border-b-2  bg-white hover:bg-[#F0F7FD] text-black hover:text-[#2B3990] p-4 flex items-center gap-2 "
         //   onMouseEnter={() => {

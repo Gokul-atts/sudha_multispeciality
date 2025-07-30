@@ -69,10 +69,10 @@ export default function Navbar() {
                 onMouseEnter={() => handleMouseEnter(index)}
               >
                 <Link
-                  href={link.href}
+                  href={link.hrefs}
                   className={cn(
                     "text-muted flex items-center gap-x-0.5 group-hover:text-accent transition-all px-3 py-1 rounded-md hover:bg-secondary",
-                    pathname === link.href && "text-accent font-semibold bg-secondary",
+                    pathname === link.hrefs && "text-accent font-semibold bg-secondary",
                     hovering === index && "text-accent font-semibold bg-secondary"
                   )}
                 >
@@ -127,7 +127,7 @@ export default function Navbar() {
                           {subLink.subMenu?.map((menuItem) => (
                             <Link
                               key={menuItem.label}
-                              href={menuItem.href}
+                              href={menuItem.hrefs}
                               className="text-muted block text-sm hover:text-accent transition"
                             >
                               {menuItem.label}
@@ -139,7 +139,7 @@ export default function Navbar() {
                       {subLink.subImages?.map((subImage) => (
                         <div key={subImage.label}>
                           <Link
-                            href={subImage.href}
+                            href={subImage.hrefs}
                             className="relative block w-full h-[200px] rounded-md overflow-hidden group"
                           >
                             <Image

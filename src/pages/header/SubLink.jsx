@@ -16,9 +16,9 @@ export default function SubLink({ subLink, index, setHoveredSubLinkImage }) {
             setHoveredSubLinkImage(null);
           }}
         >
-          {console.log("subLink.href",subLink.href)}
-          {subLink.href ? (
-            <Link href={subLink.href}>
+          {console.log("subLink.href",subLink.hrefs)}
+          {subLink.hrefs ? (
+            <Link href={subLink.hrefs}>
               <div className="bg-white hover:bg-[#EEF8FF] transition duration-200 rounded-md p-3">
                 <div className="text-[#2B3990] font-bold pb-1">
                   {subLink.header}

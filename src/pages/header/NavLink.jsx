@@ -9,15 +9,15 @@ export default function NavLink({ handleMouseEnter, hovering, index, link }) {
   const pathname = usePathname();
 
   // ✅ Defensive check: if link is missing or invalid, don't render
-  if (!link || typeof link !== "object" || !link.href || !link.label) return null;
+  if (!link || typeof link !== "object" || !link.hrefs || !link.label) return null;
 
-  const isActive = pathname === link.href;
+  const isActive = pathname === link.hrefs;
   const isHovering = hovering === index;
 
   return (
     <div className="block group" onMouseEnter={() => handleMouseEnter(index)}>
       <Link
-        href={link.href}
+        href={link.hrefs}
         className={cn(
           "text-muted flex items-center gap-x-0.5 group-hover:text-accent transition-all px-3 py-1 rounded-md hover:bg-secondary",
           isActive && "text-accent font-semibold bg-secondary",
