@@ -28,8 +28,21 @@ export default function Navbar() {
   const subRef = useRef(null);
   const [hoveredSubLinkImage, setHoveredSubLinkImage] = useState(null);
 
-  const whiteTextRoutes = ["/cardiology", "/find-doctor", "/about", "/awards-and-honors", "/nursing-services", "/our-growth-story", "/doctor-detail", "/why-sudha", "/anaesthesiology", "/mother-and-childcare"];
-  const isWhitePage = whiteTextRoutes.some((route) => pathname.startsWith(route));
+  const whiteTextRoutes = [
+    "/cardiology",
+    "/find-doctor",
+    "/about",
+    "/awards-and-honors",
+    "/nursing-services",
+    "/our-growth-story",
+    "/doctor-detail",
+    "/why-sudha",
+    "/anaesthesiology",
+    "/mother-and-childcare",
+  ];
+  const isWhitePage = whiteTextRoutes.some((route) =>
+    pathname.startsWith(route)
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,9 +82,7 @@ export default function Navbar() {
       <div className=" text-sm text-black py-2 px-4 max-w-7xl mx-auto">
         <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center gap-y-2">
           {/* Left - Welcome Text */}
-          <p className="text-center md:text-left ">
-            UpComing Events
-          </p>
+          <p className="text-center md:text-left ">UpComing Events</p>
 
           {/* Right - Contact Numbers */}
           <div className="flex gap-4 items-center text-sm">
@@ -89,7 +100,8 @@ export default function Navbar() {
               <a
                 href="tel:+7670076006"
                 className="text-[#2B3990] font-semibold text-sm"
-              >+91 76-7007-6006
+              >
+                +91 76-7007-6006
               </a>
             </div>
           </div>
@@ -102,8 +114,8 @@ export default function Navbar() {
           isScrolled
             ? "w-full bg-white text-black"
             : isWhitePage
-              ? "max-w-7xl mx-auto bg-transparent text-black lg:text-white"
-              : "max-w-7xl mx-auto bg-transparent text-black"
+            ? "max-w-7xl mx-auto bg-transparent text-black lg:text-white"
+            : "max-w-7xl mx-auto bg-transparent text-black"
         )}
       >
         <div className="container flex h-14 max-w-screen-2xl items-center justify-between mx-auto">
@@ -123,15 +135,17 @@ export default function Navbar() {
                 }
               }}
             >
-              {links.map((link, index) => (
-                <NavLink
-                  key={link.label + index}
-                  link={link}
-                  index={index}
-                  hovering={hovering}
-                  handleMouseEnter={handleMouseEnter}
-                />
-              ))}
+{Array.isArray(links) &&
+  links.map((link, index) => (
+    <NavLink
+      key={index}
+      handleMouseEnter={handleMouseEnter}
+      hovering={hovering}
+      index={index}
+      link={link}
+    />
+))}
+
 
               <div
                 ref={subRef}
@@ -161,7 +175,11 @@ export default function Navbar() {
 
                         {/* Image preview only for aboutus */}
                         <div className="hidden lg:block w-[300px] shrink-0 rounded-2xl">
-                          <MenuImage image={hoveredSubLinkImage} width={300} height={200} />
+                          <MenuImage
+                            image={hoveredSubLinkImage}
+                            width={300}
+                            height={200}
+                          />
                         </div>
                       </div>
                     )}
@@ -182,7 +200,6 @@ export default function Navbar() {
                       </div>
                     )}
 
-
                     {/* For 'facilities' with image preview */}
                     {links[hovering]?.type === "facilities" && (
                       <div className="flex flex-col lg:flex-row gap-6 max-w-[1560px] mx-auto">
@@ -199,7 +216,11 @@ export default function Navbar() {
 
                         {/* Image preview only for aboutus */}
                         <div className="hidden lg:block w-[300px] shrink-0">
-                          <MenuImage image={hoveredSubLinkImage} width={300} height={200} />
+                          <MenuImage
+                            image={hoveredSubLinkImage}
+                            width={300}
+                            height={200}
+                          />
                         </div>
                       </div>
                     )}
@@ -220,7 +241,11 @@ export default function Navbar() {
 
                         {/* Image preview only for aboutus */}
                         <div className="hidden lg:block w-[500px] justify-center shrink-0">
-                          <MenuImage image={hoveredSubLinkImage} width={550} height={300} />
+                          <MenuImage
+                            image={hoveredSubLinkImage}
+                            width={550}
+                            height={300}
+                          />
                         </div>
                       </div>
                     )}
@@ -244,8 +269,8 @@ export default function Navbar() {
                     isScrolled
                       ? "bg-[#2B3990] text-white shadow-sm shadow-accent border-b border-accent"
                       : isWhitePage
-                        ? "bg-white text-[#2B3990] hover:bg-gray-100"
-                        : "bg-[#2B3990] text-white hover:bg-[#1f2f70]"
+                      ? "bg-white text-[#2B3990] hover:bg-gray-100"
+                      : "bg-[#2B3990] text-white hover:bg-[#1f2f70]"
                   )}
                 >
                   Consult Our Specialists
