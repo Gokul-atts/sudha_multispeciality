@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
-import Banner from "@/assets/termsandconditions/banner.png";
+import Banner from "@/assets/termsandconditions/Banner.png";
 
 const Termsandconditions = () => {
     return (

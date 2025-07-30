@@ -4,10 +4,11 @@ import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import MobileNav from "./MobileNav";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+
 import { links } from "@/constants/navLinks";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
+import { cn } from "@/lib/utility";
 
 
 export default function Navbar() {
