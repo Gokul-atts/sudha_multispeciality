@@ -1,12 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
-import Banner from "@/assets/Diplomacourse/Banner.png";
-import Doctors from "@/assets/Diplomacourse/Doctors.png";
-import Rectangle from "@/assets/Diplomacourse/Rectangle.png";
+import Banner from "@/assets/diplomacourse/Banner.png";
+import Doctors from "@/assets/diplomacourse/Doctors.png";
+import Rectangle from "@/assets/diplomacourse/Rectangle.png";
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from "lucide-react";
-import DocsGroup from "@/assets/Diplomacourse/DocsGroup.png";
+import DocsGroup from "@/assets/diplomacourse/DocsGroup.png";
 import cardone from "@/assets/home/cards/1.svg";
 import cardtwo from "@/assets/home/cards/2.svg";
 import cardthree from "@/assets/home/cards/3.svg";
@@ -15,10 +15,10 @@ import ServiceCard from "@/components/ServiceCard";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Bookappointment from "@/components/Bookappointment";
 import { AlertCircle } from "lucide-react";
-import Doc1 from "@/assets/Diplomacourse/Doc1.png"
-import Doc2 from "@/assets/Diplomacourse/Doc2.png"
-import Doc3 from "@/assets/Diplomacourse/Doc3.png"
-import Doc4 from "@/assets/Diplomacourse/Doc4.png"
+import Doc1 from "@/assets/diplomacourse/Doc1.png"
+import Doc2 from "@/assets/diplomacourse/Doc2.png"
+import Doc3 from "@/assets/diplomacourse/Doc3.png"
+import Doc4 from "@/assets/diplomacourse/Doc4.png"
 import DiplomaDoctor from "@/components/diplomaSlider";
 import DoctorSlider from "@/components/Slicksliderdoctor";
 import { doctorsData } from "@/constants/doctorDetails";
