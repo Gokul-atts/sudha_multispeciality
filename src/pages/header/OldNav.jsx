@@ -69,15 +69,15 @@ export default function Navbar() {
                 onMouseEnter={() => handleMouseEnter(index)}
               >
                 <Link
-                  href={link.hrefs}
+                  href={link?.hrefs}
                   className={cn(
                     "text-muted flex items-center gap-x-0.5 group-hover:text-accent transition-all px-3 py-1 rounded-md hover:bg-secondary",
-                    pathname === link.hrefs && "text-accent font-semibold bg-secondary",
+                    pathname === link?.hrefs && "text-accent font-semibold bg-secondary",
                     hovering === index && "text-accent font-semibold bg-secondary"
                   )}
                 >
-                  {link.label}
-                  {link.subLinks && (
+                  {link?.label}
+                  {link?.subLinks && (
                     <ChevronDown
                       className={cn(
                         "w-5 h-5 transition-all group-hover:text-accent",

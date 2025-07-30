@@ -61,12 +61,12 @@ export default function MobileNav() {
             {/* Navigation */}
             <nav className="flex flex-col gap-4 pt-6">
               {links.map((link, index) => (
-                <div key={link.label + index}>
+                <div key={link?.label + index}>
                   <Link
-                    href={link.hrefs}
+                    href={link?.hrefs}
                     className={cn(
                       "text-muted py-2 px-2 flex items-center justify-between rounded-md transition hover:text-accent hover:bg-secondary",
-                      pathname === link.hrefs &&
+                      pathname === link?.hrefs &&
                         "text-accent bg-secondary font-semibold",
                       openedMenu === index &&
                         "text-accent bg-secondary font-semibold"
@@ -105,10 +105,10 @@ export default function MobileNav() {
                           >
                             {subLink.header && (
                               <Link
-                                href={subLink.hrefs || "#"}
+                                href={subLink?.hrefs || "#"}
                                 className="block px-3 py-2 text-xs font-semibold text-primary hover:text-accent cursor-pointer transition"
                               >
-                                {subLink.header}
+                                {subLink?.header}
                               </Link>
                             )}
                           </div>

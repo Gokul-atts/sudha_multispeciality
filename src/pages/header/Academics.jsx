@@ -10,16 +10,16 @@ export default function Academics({ subLink, index, setHoveredSubLinkImage }) {
         <div
           onMouseEnter={() => {
             if (subLink.hoverImage) {
-              setHoveredSubLinkImage(subLink.hoverImage || subLink.image);
+              setHoveredSubLinkImage(subLink.hoverImage || subLink?.image);
             }
           }}
           onMouseLeave={() => {
             setHoveredSubLinkImage(null);
           }}
         >
-          {console.log("subLink.href",subLink.hrefs)}
+          {console.log("subLink.href",subLink?.hrefs)}
           {subLink.href ? (
-            <Link href={subLink.hrefs}>
+            <Link href={subLink?.hrefs}>
               <div className="bg-white hover:bg-[#EEF8FF] transition duration-200 rounded-md p-3">
                 <div className="text-[#2B3990] font-bold pb-1">
                   {subLink?.header}
@@ -27,9 +27,9 @@ export default function Academics({ subLink, index, setHoveredSubLinkImage }) {
 
                 {subLink.subMenu?.length > 0 && (
                   <div className="space-y-1">
-                    {subLink.subMenu.map((menuItem, idx) => (
+                    {subLink?.subMenu.map((menuItem, idx) => (
                       <p key={idx} className="text-muted text-sm text-[#5E566A]">
-                        {menuItem.dec}
+                        {menuItem?.dec}
                       </p>
                     ))}
                   </div>
@@ -46,7 +46,7 @@ export default function Academics({ subLink, index, setHoveredSubLinkImage }) {
                 <div className="space-y-1">
                   {subLink?.subMenu.map((menuItem, idx) => (
                     <p key={idx} className="text-muted text-sm text-[#5E566A]">
-                      {menuItem.dec}
+                      {menuItem?.dec}
                     </p>
                   ))}
                 </div>
@@ -65,8 +65,8 @@ export default function Academics({ subLink, index, setHoveredSubLinkImage }) {
               className="relative w-[100px] h-[60px] rounded-lg overflow-hidden"
             >
               <Image
-                src={subLink.image}
-                alt={subLink.image}
+                src={subLink?.image}
+                alt={subLink?.image}
                 fill
                 className="object-cover object-center group-hover:scale-105 group-hover:opacity-90 transition duration-300"
               />
