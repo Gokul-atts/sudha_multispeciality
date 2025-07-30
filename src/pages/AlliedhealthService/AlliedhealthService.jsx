@@ -3,13 +3,12 @@ import React from "react";
 import Banner from "@/assets/alliedhealthservice/Banner.png";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Link } from "lucide-react";
-import SidebarTabs from "@/pages/cardiology/SidebarTabs";
-import Alliedhealthsidebar from "@/components/Alliedhealthsidebar";
 import Marquee from "react-fast-marquee";
 import Slider from "react-slick";
 import Main from "@/assets/nursingservice/main.jpg";
 import Bookappointment from "@/components/Bookappointment";
 import Image from "next/image";
+import Alliedhealthsidebar from "@/components/AlliedhealthSidebar";
 
 
 const customerSlides = [Main, Main, Main];

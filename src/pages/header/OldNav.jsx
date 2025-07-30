@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import { links } from "@/constants/navLinks";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
-import ThemeSwitcher from "../ThemeSwitcher";
+
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -161,7 +161,7 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-x-4">
-          {/* <ThemeSwitcher /> */}
+ 
           <div className="aspect-square h-10 rounded-full overflow-hidden relative">
             <Image
               src="/witch.jpg"
