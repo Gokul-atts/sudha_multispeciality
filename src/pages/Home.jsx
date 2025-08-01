@@ -311,11 +311,11 @@ function Home() {
 
   return (
     <>
-      <section className="relative -mt-20 m-10">
+      <section className="relative -mt-20">
         <Swiper
           pagination={{ clickable: true }}
           modules={[Pagination]}
-          className="max-w-full mx-auto px-4 py-7 sm:px-6 lg:px-8 h-full "
+          className="max-w-7xl mx-auto px-4 py-7 sm:px-6 lg:px-8 h-full "
         >
           {/* Slide 1 */}
           <SwiperSlide>
@@ -349,10 +349,9 @@ function Home() {
                   <div className="mb-4">
                     <Image
                       src={banner}
-                      width={800}
-                      height={500}
+                    
                       alt="Sudha Hospital Building"
-                      className="w-full rounded-lg -ml-14"
+                      className="w-full rounded-lg "
                     />
                   </div>
                 </div>
@@ -394,10 +393,9 @@ function Home() {
                   <div className="mb-4">
                     <Image
                       src={banner}
-                      width={800}
-                      height={500}
+                 
                       alt="Sudha Hospital Building"
-                      className="w-full rounded-lg -ml-14"
+                      className="w-full rounded-lg "
                     />
                   </div>
                 </div>
@@ -441,10 +439,9 @@ function Home() {
                   <div className="mb-4">
                     <Image
                       src={banner}
-                      width={800}
-                      height={500}
+                     
                       alt="Sudha Hospital Building"
-                      className="w-full rounded-lg -ml-14"
+                      className="w-full rounded-lg "
                     />
                   </div>
                 </div>
