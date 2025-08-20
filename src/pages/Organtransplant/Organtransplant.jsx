@@ -2,11 +2,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Banner from "@/assets/renal/renal.png";
+import Banner from "@/assets/facilities/organ-transplant.webp";
+
 import Clinic from "@/assets/about/clinic.png";
 import Image from "next/image";
 import HandIcon from "@/assets/healthpackage/nephrology.svg";
-// Sample images – replace with your own
 import consult1 from "@/assets/about/img.png";
 import consult2 from "@/assets/about/img.png";
 import consult3 from "@/assets/about/img.png";
@@ -14,10 +14,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import "./Organtransplant.css";
-import Phone from "@/assets/Insurance/phone.svg";
-import Email from "@/assets/Insurance/email.svg";
-import Check from "@/assets/Insurance/check.svg";
-import Contact from "@/assets/Insurance/bg-contact.webp";
+import Phone from "@/assets/insurance/phone.svg";
+import Email from "@/assets/insurance/email.svg";
+import Check from "@/assets/insurance/check.svg";
+import Contact from "@/assets/insurance/bg-contact.webp";
 import Bookappointment from "@/components/Bookappointment";
 import SidebarTabs from "./SidebarTabs";
 import DoctorSlider from "@/components/Slicksliderdoctor";
@@ -25,9 +25,20 @@ import { doctorsData } from "@/constants/doctorDetails";
 import OurTeamSlider from "@/components/OurTeamSlider";
 import Sliderdoctor from "@/components/Sliderdoctor";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import kandaswamyImg from "@/assets/organtransplant/Doctorimages/kandaswamy.png";
-import shylaImg from "@/assets/organtransplant/Doctorimages/shyla.png";
+import kandaswamyImg from "@/assets/organtransplant/doctorimages/kandaswamy.png";
+import shylaImg from "@/assets/organtransplant/doctorimages/shyla.png";
+import DonorDataTable from '@/components/donordatatable';
+import { ArrowUpRight } from "lucide-react";
 
+import Breadcrumb from "@/components/Breadcrumb";
+
+const breadcrumbItems = [
+  { label: "Home", href: "/" },
+
+  { label: "Facilities", href: "" },
+
+  { label: "Organ Transplant", href: "/renal-transplant" },
+];
 
 
 const consultSlides = [consult1, consult2, consult3];
@@ -125,21 +136,23 @@ function Organtransplant() {
         >
           <div className="pl-8 md:pl-20">
             {/* Breadcrumb */}
-            <motion.p
+            <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="text-sm mb-3 tracking-wide text-white"
+              className=" mb-3  text-white"
             >
-              Home / Organ Transplant / Renal Transplant
-            </motion.p>
+
+              <Breadcrumb items={breadcrumbItems} />
+
+            </motion.div>
 
             {/* Title */}
             <motion.h1
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="tracking-wide text-[44px] font-bold mb-3"
+              className=" text-[44px]  mb-3"
             >
               Renal Transplant
             </motion.h1>
@@ -149,7 +162,7 @@ function Organtransplant() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-[16px]  max-w-xl mb-6 tracking-wide text-white"
+              className="mb-6 text-white"
             >
               Leading You to a Healthier Tomorrow.
             </motion.p>
@@ -162,9 +175,9 @@ function Organtransplant() {
             >
               <Link
                 href="#"
-                className="inline-flex  text-[16px] tracking-wide items-center px-7 py-3 bg-white text-[#2B3990] font-semibold rounded-full  hover:bg-gray-100 transition"
+                className="btn-white inline-flex  text-[16px] tracking-wide items-center px-7 py-3 bg-white text-[#2B3990] font-semibold rounded-full  hover:-translate-y-[3px] transition-transform duration-200"
               >
-                Book an Appointment
+                Book an Appointment <ArrowUpRight className="w-5 h-5" />
               </Link>
             </motion.div>
           </div>
@@ -197,7 +210,7 @@ function Organtransplant() {
       </section>
 
       <section className="px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto px-4 pt-16 pb-20">
+        <div className="max-w-7xl mx-auto px-4 pt-0 pb-2">
           <h1 className="text-center text-[30px] text-black mt-4">
             Our Transplant Co-Ordinators
           </h1>
@@ -252,6 +265,13 @@ function Organtransplant() {
         </div>
       </section>
 
+
+      <section>
+        <div>
+          <DonorDataTable />
+        </div>
+      </section>
+
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 p-6 py-16">
         {/* Left - Contact Info */}
         <div className="bg-[#F5FAFF] rounded-2xl p-6 space-y-6">
@@ -303,8 +323,8 @@ function Organtransplant() {
               Experience the great virtual care from anywhere and connect with
               medical professionals for expert guidance.
             </p>
-            <button className="bg-white text-[#2B3990] font-semibold text-sm pt-3 pb-3 pr-7 pl-7 rounded-full w-fit hover:bg-gray-100 transition">
-              Call for More Information
+            <button className="btn-white flex items-center gap-2 bg-white text-[#2B3990] font-semibold text-sm pt-3 pb-3 pr-7 pl-7 rounded-full w-fit hover:-translate-y-[3px] transition-transform duration-200">
+              Call for More Information <ArrowUpRight className="w-5 h-5" />
             </button>
           </div>
         </div>

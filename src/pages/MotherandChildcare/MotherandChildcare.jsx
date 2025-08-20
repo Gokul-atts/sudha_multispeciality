@@ -21,6 +21,14 @@ import Mother from "@/assets/motherandchildcare/mother.png";
 import Arrow from "@/assets/motherandchildcare/arrow.svg";
 import Background from "@/assets/motherandchildcare/bg.png";
 import One from "@/assets/motherandchildcare/one.png";
+import Two from "@/assets/motherandchildcare/paediatrics.webp";
+import Three from "@/assets/motherandchildcare/gynaecology.webp";
+import Four from "@/assets/motherandchildcare/healthpackage.webp";
+import Five from "@/assets/motherandchildcare/dietetics.webp";
+import Six from "@/assets/motherandchildcare/post-partumcare.webp";
+import Seven from "@/assets/motherandchildcare/paediatric-cardiology.webp";
+import Eight from "@/assets/motherandchildcare/painless-delivery.webp";
+
 import IconOne from "@/assets/motherandchildcare/iconh-one.svg";
 import IconTwo from "@/assets/motherandchildcare/white/2.svg";
 import IconThree from "@/assets/motherandchildcare/white/3.svg";
@@ -39,9 +47,9 @@ import IconHoverseven from "@/assets/motherandchildcare/hover/7.svg";
 import IconHovereight from "@/assets/motherandchildcare/hover/8.svg";
 import Couple from "@/assets/motherandchildcare/couple.png";
 import Whychoicebg from "@/assets/motherandchildcare/whychoicebg.png";
-import Whychoiceone from "@/assets/motherandchildcare/why1.png";
-import Whychoicetwo from "@/assets/motherandchildcare/why2.png";
-import Whychoicethree from "@/assets/motherandchildcare/why3.png";
+import Whychoiceone from "@/assets/motherandchildcare/why1.jpg";
+import Whychoicetwo from "@/assets/motherandchildcare/why2.jpg";
+import Whychoicethree from "@/assets/motherandchildcare/why3.jpg";
 import Whychoiceiconone from "@/assets/motherandchildcare/whyicon1.svg";
 import Whychoiceicontwo from "@/assets/motherandchildcare/whyicon2.svg";
 import Whychoiceiconthree from "@/assets/motherandchildcare/whyicon3.svg";
@@ -61,7 +69,17 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./motherandchildcare.css";
 import Motherandchild from "@/assets/motherandchildcare/img.png";
+import Breadcrumb from "@/components/Breadcrumb";
+import { Nunito } from 'next/font/google';
 
+
+const nunito = Nunito({ subsets: ['latin'], weight: ['400', '700', '900'] });
+
+
+const breadcrumbItems = [
+  { label: "Home", href: "/" },
+  { label: "Mother & Child Care", href: "/mother-and-childcare" },
+];
 const cards = [
   {
     icon: cardone,
@@ -134,48 +152,56 @@ const services = [
     image: One,
     icon: IconOne,
     hoverIcon: IconHoverOne,
+    link: "/lactation-and-maternal-health",
   },
   {
     title: "Paediatrics",
-    image: One,
+    image: Two,
     icon: IconHoverTwo,
     hoverIcon: IconTwo,
+    link: "/paediatrics",
   },
   {
     title: "Gynaecology",
-    image: One,
+    image: Three,
     icon: IconHoverThree,
     hoverIcon: IconThree,
+    link: "/obstetrics-and-gynaecology",
   },
   {
     title: "Health Package",
-    image: One,
+    image: Four,
     icon: IconHoverFour,
     hoverIcon: IconFour,
+    link: "/health-packages",
   },
   {
     title: "Dietetics",
-    image: One,
+    image: Five,
     icon: IconHoverFive,
     hoverIcon: IconFive,
+    link: "/dietetics",
   },
   {
     title: "Post-partum Care",
-    image: One,
+    image: Six,
     icon: IconHoversix,
     hoverIcon: Iconsix,
+    link: "/post-partum-care",
   },
   {
     title: "Paediatric Cardiology",
-    image: One,
+    image: Seven,
     icon: IconHoverseven,
     hoverIcon: Iconseven,
+    link: "/cardiology",
   },
   {
     title: "Painless Delivery",
-    image: One,
+    image: Eight,
     icon: IconHovereight,
     hoverIcon: Iconeight,
+    link: "/pain-less-delivery",
   },
 ];
 
@@ -295,6 +321,20 @@ const imageVariants = {
   visible: { opacity: 1, x: 0 },
 };
 
+const TickCircle = () => (
+  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-white-100">
+    <svg
+      className="w-6 h-4 text-[#2B3990]"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="3"
+      viewBox="0 0 24 24"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+    </svg>
+  </div>
+);
+
 function MotherandChildcare() {
   const sectionRef = useRef(null);
   const [hoverIndex, setHoverIndex] = useState(null);
@@ -351,7 +391,7 @@ function MotherandChildcare() {
     <div>
       <section
         ref={sectionRef}
-        className="relative -mt-20 lg:-mt-[80px] bg-[#2A3D90] overflow-hidden"
+        className={`${nunito.className} relative -mt-20 lg:-mt-[80px] bg-[#2A3D90] overflow-hidden`}
       >
         {/* Parallax Cloud Bottom */}
         <motion.div
@@ -370,25 +410,30 @@ function MotherandChildcare() {
             transition={{ duration: 0.7 }}
             className="flex flex-col justify-center text-center md:text-left"
           >
-            <p className="text-white mb-2 font-semibold  font-nunito">
-              Home / Mother & Child Care
-            </p>
-            <h1 className="text-[44px] mt-2  text-[#fff] font-extrabold    mb-4 font-nunito">
-              Caring for mothers 
-              and their little ones,
-             
-              the Sudha way.
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className=" mb-3 text-white"
+            >
+              <Breadcrumb items={breadcrumbItems} />
+            </motion.div>
+            <h1 className=" text-[44px] text-white font-extrabold">
+              Caring for mothers
+              and their little ones, the <br></br>
+              Sudha way.
             </h1>
-            <p className=" text-white font-nunito mb-6">
+            <p className="text-white font-nunito mb-6">
               Motherly Care for Mothers of Sudha
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center justify-center w-64  bg-white text-[#2C3790] px-6 py-3 rounded-full font-semibold text-sm transition mx-auto md:mx-0"
+              className=" btn-sidebar inline-flex items-center whitespace-nowrap justify-center w-64 bg-white text-[#2C3790] px-6 py-3 rounded-full font-semibold text-sm transition mx-auto md:mx-0"
             >
               Book an Appointment <ArrowUpRight className="ml-2" />
             </motion.button>
+
           </motion.div>
 
           {/* Right Image with Parallax Bubble */}
@@ -418,7 +463,7 @@ function MotherandChildcare() {
         </div>
       </section>
 
-      <section>
+      <section className={`${nunito.className} `}>
         <div className="max-w-7xl mx-auto  py-8 h-full">
           <motion.div
             variants={container}
@@ -440,7 +485,7 @@ function MotherandChildcare() {
         </div>
       </section>
 
-      <section className="bg-blue-50 py-12 px-4 sm:px-6 lg:px-16">
+      <section className={`${nunito.className} bg-blue-50 py-12 px-4 sm:px-6 lg:px-16`}>
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           {/* Left Section - Images and Experience */}
           <motion.div
@@ -479,21 +524,21 @@ function MotherandChildcare() {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <span className="bg-white text-[#2B3990] px-5  py-2 rounded-full text-sm font-semibold">
+            <span className=" bg-white text-[#2B3990] px-5  py-2 rounded-full text-sm font-semibold">
               About US
             </span>
 
-            <h2 className="text-[30px]   ">
+            <h2 className=" text-[30px] ">
               The Best Mother &amp; Child Care
               <br className="hidden sm:block" />
               Hospital in Erode!
             </h2>
 
-            <ul className="space-y-3 text-gray-700 text-base sm:text-lg">
+            <ul className={`${nunito.className} space-y-3 text-gray-700 text-base sm:text-lg`}>
               {features.map((feature, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <div className="text-primary-blue w-7 h-7 bg-white  flex justify-center items-center p-1 rounded-2xl">
-                    ✓
+                  <div className={`${nunito.className}text-primary-blue w-7 h-7 bg-white  flex justify-center items-center p-1 rounded-2xl`}>
+                    <TickCircle className="min-w-5 min-h-5" />
                   </div>
                   <p className="">{feature}</p>
                 </li>
@@ -509,7 +554,7 @@ function MotherandChildcare() {
               <div className="flex gap-4 items-center mt-3">
                 <a
                   href="#"
-                  className="text-primary-blue font-semibold inline-flex items-center gap-2 hover:underline"
+                  className=" text-primary-blue font-semibold inline-flex items-center gap-2 hover:underline"
                 >
                   24/7 For Emergencies
                 </a>
@@ -534,7 +579,7 @@ function MotherandChildcare() {
       </section>
 
       <section
-        className="max-w-7xl mx-auto py-16 rounded-3xl  bg-cover bg-no-repeat"
+        className={`${nunito.className} max-w-7xl mx-auto py-16 rounded-3xl  bg-cover bg-no-repeat`}
         style={{
           backgroundImage: `url(${Background.src})`,
         }}
@@ -550,71 +595,78 @@ function MotherandChildcare() {
         </div>
 
         {/* Grid Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              onMouseEnter={() => setHoverIndex(index)}
-              onMouseLeave={() => setHoverIndex(null)}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
-              className={`rounded-2xl p-8 text-left transition-all duration-500 relative h-80 flex items-end overflow-hidden cursor-pointer 
-             ${
-                hoverIndex === index && service.image
-                  ? "text-white"
-                  : "bg-white text-gray-800"
-              }`}
-              style={
-                hoverIndex === index && service.image
-                  ? {
+
+        <div className={`${nunito.className} grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-8`}>
+          {services.map((service, index) => {
+            const cardContent = (
+              <motion.div
+                key={index}
+                onMouseEnter={() => setHoverIndex(index)}
+                onMouseLeave={() => setHoverIndex(null)}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.15 }}
+                className={`rounded-2xl p-8 text-left transition-all duration-500 relative h-80 flex items-end overflow-hidden cursor-pointer 
+          ${hoverIndex === index && service.image ? "text-white" : "bg-white text-gray-800"}`}
+                style={
+                  hoverIndex === index && service.image
+                    ? {
                       backgroundImage: `url(${service.image.src})`,
                       backgroundSize: "cover",
                       backgroundPosition: "center",
                     }
-                  : {}
-              }
-            >
-              {/* Icon */}
-              {(service.icon || service.hoverIcon) && (
-                <div className="absolute top-4 left-4 z-10">
-                  <Image
-                    src={
-                      hoverIndex === index && service.hoverIcon
-                        ? service.hoverIcon
-                        : service.icon
-                    }
-                    alt={service.title}
-                    width={60}
-                    height={60}
-                    className="transition-all duration-300"
-                  />
-                </div>
-              )}
+                    : {}
+                }
+              >
+                {/* Icon */}
+                {(service.icon || service.hoverIcon) && (
+                  <div className="absolute top-4 left-4 z-10">
+                    <Image
+                      src={
+                        hoverIndex === index && service.hoverIcon
+                          ? service.hoverIcon
+                          : service.icon
+                      }
+                      alt={service.title}
+                      width={60}
+                      height={60}
+                      className="transition-all duration-300"
+                    />
+                  </div>
+                )}
 
-              {/* Title */}
-              <p
-                className={`absolute text-[16px] font-extrabold bottom-6 left-5 z-10  text-start ${
-                  hoverIndex === index && service.image
+                {/* Title */}
+                <p
+                  className={`absolute text-[16px] font-extrabold bottom-6 left-5 z-10 text-start ${hoverIndex === index && service.image
                     ? "text-white"
                     : "bg-white text-gray-800"
-                }`}
-              >
-                {service.title}
-              </p>
+                    }`}
+                >
+                  {service.title}
+                </p>
 
-              {/* Gradient Overlay */}
-              {hoverIndex === index && service.image && (
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2B3990]/90 to-transparent rounded-2xl"></div>
-              )}
-            </motion.div>
-          ))}
+                {/* Gradient Overlay */}
+                {hoverIndex === index && service.image && (
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#2B3990]/90 to-transparent rounded-2xl"></div>
+                )}
+              </motion.div>
+            );
+
+            return service.link ? (
+              <Link key={index} href={service.link} passHref>
+                {cardContent}
+              </Link>
+            ) : (
+              cardContent
+            );
+          })}
         </div>
+
 
         {/* CTA */}
         <motion.div
-          className="mt-10 text-center text-sm sm:text-base text-black"
+          className={`${nunito.className} mt-10 text-center text-sm sm:text-base text-black`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -630,7 +682,7 @@ function MotherandChildcare() {
         </motion.div>
       </section>
 
-      <section className="px-4 sm:px-6  bg-[#f3f7fc] mt-7">
+      <section className={`${nunito.className} px-4 sm:px-6  bg-[#f3f7fc] mt-7`}>
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
           {/* Left content with animation */}
           <motion.div
@@ -706,7 +758,7 @@ function MotherandChildcare() {
       </section>
 
       <section
-        className="max-w-7xl mx-auto rounded-3xl relative py-16 px-4 sm:px-6 lg:px-16 text-white"
+        className={`${nunito.className} max-w-7xl mx-auto rounded-3xl relative py-16 px-4 sm:px-6 lg:px-16 text-white`}
         style={{
           backgroundImage: `url(${Whychoicebg.src})`,
           backgroundColor: "#2B3990",
@@ -760,7 +812,7 @@ function MotherandChildcare() {
         </div>
       </section>
 
-      <section className="mt-16">
+      <section className={`${nunito.className} mt-16`}>
         <div
           className="max-w-7xl rounded-3xl mx-auto py-12 px-4 sm:px-6 lg:px-9 flex flex-col lg:flex-row items-center gap-10 bg-cover bg-no-repeat"
           style={{ backgroundImage: `url(${Background.src})` }}
@@ -826,7 +878,7 @@ function MotherandChildcare() {
                   viewport={{ once: true }}
                 >
                   <div className="text-primary-blue w-7 h-7 bg-white flex justify-center items-center p-1 rounded-2xl">
-                    ✓
+                    <TickCircle className="min-w-5 min-h-5" />
                   </div>
                   <p className="">{text}</p>
                 </motion.li>
@@ -858,7 +910,7 @@ function MotherandChildcare() {
       </section>
 
       <section
-        className="max-w-7xl mx-auto relative bg-cover bg-center bg-no-repeat rounded-3xl overflow-hidden mt-10"
+        className={`${nunito.className} max-w-7xl mx-auto relative bg-cover bg-center bg-no-repeat rounded-3xl overflow-hidden mt-10`}
         style={{
           backgroundImage: `url(${Contact_us.src})`,
         }}
@@ -960,8 +1012,9 @@ function MotherandChildcare() {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="flex gap-10 flex-wrap"
             >
-              <button className="mt-4 bg-white text-indigo-900 font-semibold w-[200px] h-[44px] px-6 py-2 rounded-full flex items-center gap-2 hover:bg-gray-100 transition">
-                Start Your Journey 
+              <button className="btn-sidebar mt-4 bg-white text-indigo-900 font-semibold w-[200px] h-[44px] px-6 py-2 rounded-full flex items-center justify-center gap-2 hover:bg-gray-100 transition whitespace-nowrap">
+                Start Your Journey
+                <ArrowUpRight />
               </button>
 
               <motion.div
@@ -982,7 +1035,7 @@ function MotherandChildcare() {
       </section>
 
       <motion.div
-        className="py-16 "
+        className={`${nunito.className} py-16 `}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -1017,7 +1070,7 @@ function MotherandChildcare() {
               ].map((item, index) => (
                 <li key={index} className="flex items-start gap-4">
                   <div className="text-primary-blue w-7 h-7 bg-white  flex justify-center items-center p-1 rounded-2xl">
-                    <TiTick className="text-xl" />
+                    <TickCircle className="min-w-5 min-h-5" />
                   </div>
                   <span>{item}</span>
                 </li>
@@ -1036,7 +1089,7 @@ function MotherandChildcare() {
         </div>
       </motion.div>
 
-      <div className="py-16 ">
+      <div className={`${nunito.className} py-16 `}>
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <motion.div
             className="relative"
@@ -1081,7 +1134,7 @@ function MotherandChildcare() {
               ].map((item, index) => (
                 <li key={index} className="flex items-start gap-4">
                   <div className="text-primary-blue w-7 h-7 bg-white shadow-sm flex justify-center items-center p-1 rounded-2xl">
-                    <TiTick className="text-xl" />
+                    <TickCircle className="min-w-5 min-h-5" />
                   </div>
                   <span>{item}</span>
                 </li>
@@ -1091,19 +1144,19 @@ function MotherandChildcare() {
         </div>
       </div>
 
-      <section>
+      <section className={`${nunito.className}`}>
         <div className="max-w-7xl mx-auto py-16 ">
           <div className="text-center">
-<div className="px-5   py-2 bg-white text-primary-blue inline-block font-semibold rounded-full ">
-            <p className="text-[#2A3D90]"> Sudha Care</p>
-            
+            <div className="px-5   py-2 bg-white text-primary-blue inline-block font-semibold rounded-full ">
+              <p className="text-[#2A3D90]"> Sudha Care</p>
+
+            </div>
+            <h2 className="text-[30px] text-center  font-bold text-[#2A3D90] mt-4 mb-6">
+              Dedicated to your fertility <br /> journey success
+            </h2>
           </div>
-          <h2 className="text-[30px] text-center  font-bold text-[#2A3D90] mt-4 mb-6">
-            Dedicated to your fertility <br/> journey success
-          </h2>
-          </div>
-          
-          
+
+
 
           <div className="relative mt-10">
             <Slider {...settings}>
@@ -1153,7 +1206,7 @@ function MotherandChildcare() {
         </div>
       </section>
 
-      <section>
+      <section className={`${nunito.className}`}>
         <div>
           <div className="max-w-3xl mx-auto py-16">
             <h2 className="text-center text-[30px] mb-6">
@@ -1188,9 +1241,9 @@ function MotherandChildcare() {
               <div className="text-center mt-6">
                 <button
                   onClick={handleViewMore}
-                  className="bg-[#2B3990] hover:bg-[#1f2c6e] text-white font-medium px-6 py-2 rounded-full transition"
+                  className="btn-diagonal bg-[#2B3990] hover:bg-[#1f2c6e] text-white font-medium px-6 py-2 rounded-full transition"
                 >
-                  View More →
+                  View More <ArrowUpRight className="w-5 h-5" />
                 </button>
               </div>
             )}
@@ -1198,7 +1251,7 @@ function MotherandChildcare() {
         </div>
       </section>
 
-      <section>
+      <section className={`${nunito.className}`}>
         <div
           className="max-w-7xl mx-auto py-0 px-4 rounded-3xl"
           style={{
@@ -1240,7 +1293,7 @@ function MotherandChildcare() {
             {/* Right Form Section */}
             <div className="w-full md:w-1/2 md:pl-10">
               <h2 className="text-[30px]   mb-2">
-                Book An Appointment 
+                Book An Appointment
                 <span className="text-[#2B3990]"> Today</span>
               </h2>
               <p className=" mb-6">
@@ -1337,9 +1390,9 @@ function MotherandChildcare() {
 
                 <button
                   type="submit"
-                  className="bg-[#2B3990] hover:bg-[#1d2971] text-white font-semibold text-sm rounded-full px-6 py-2 mt-2"
+                  className="btn-diagonal bg-[#2B3990] hover:bg-[#1d2971] text-white font-semibold text-sm rounded-full px-6 py-2 mt-2"
                 >
-                  Book an Appointment
+                  Book an Appointment <ArrowUpRight className="w-5 h-5" />
                 </button>
               </form>
             </div>

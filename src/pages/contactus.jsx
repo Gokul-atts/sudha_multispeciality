@@ -13,7 +13,13 @@ import hospitalOne from "@/assets/home/cards/c1.svg";
 import hospitalTwo from "@/assets/home/cards/c2.svg";
 import hospitalThree from "@/assets/home/cards/c3.svg";
 import hospitalFour from "@/assets/home/cards/c4.svg";
+import Breadcrumb from "@/components/Breadcrumb";
 
+
+const breadcrumbItems = [
+    { label: "Home", href: "/" },
+    { label: "Contact Us", href: "/contact-us" },
+  ];
 
 
 const hospitalscards = [
@@ -73,14 +79,14 @@ const Contactus = () => {
         >
           <div className="pl-8 md:pl-20">
 
-            <motion.p
+            <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="text-white text-sm mb-3"
+              className="text-white  mb-3"
             >
-              Home / Contact Us
-            </motion.p>
+              <Breadcrumb items={breadcrumbItems} />
+            </motion.div>
 
 
             <motion.h1

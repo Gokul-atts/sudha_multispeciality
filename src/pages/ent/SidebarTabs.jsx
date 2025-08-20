@@ -385,7 +385,7 @@ export default function SidebarTabs() {
 
 
 
-          <button className="inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px]">
+          <button className="btn-sidebar inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px] hover:-translate-y-[3px] transition-transform duration-200">
             Book an Appointment <ArrowUpRight className="w-5 h-5" />
           </button>
         </div>
@@ -426,7 +426,9 @@ export default function SidebarTabs() {
                   <span className="text-[#2B3990]"> Erode </span> at Sudha Multispeciality Hospital
                 </h2>
                 <p className="mb-4">
-                  Our ENT department offers expert diagnosis and treatment for a wide spectrum of ENT disorders in both adults and children. Our department is equipped with advanced diagnostic and surgical technologies for accurate evaluation and minimally invasive treatment. From common infections to complex skull-base surgeries, we ensure comprehensive ENT care under one roof.
+                  Our ENT department offers expert diagnosis and treatment for a wide spectrum of ENT disorders in both adults and children. Our department is equipped 
+                  with advanced diagnostic and surgical technologies for accurate evaluation and minimally invasive treatment. From common infections to complex 
+                  skull-base surgeries, we ensure comprehensive ENT care under one roof.
                 </p>
               </>
             )}

@@ -31,7 +31,7 @@ import experienced from "../assets/home/pharmacy.svg";
 import holistic from "../assets/home/quality.svg";
 import modern from "../assets/home/blood-bank.svg";
 import review from "../assets/home/review-patient.svg";
-
+import './Home.css';
 import banner from "../assets/home/home-banner.svg";
 import heartIcon from "../assets/home/medical/1.svg";
 import Expect from "../assets/home/expert-care.svg";
@@ -39,7 +39,10 @@ import FacilitySlider from "../components/FacilitySlider";
 import OurTeamSlider from "../components/OurTeamSlider";
 import InfiniteMovingReviews from "../components/InfiniteMovingReviews";
 import SpecialitySection from "@/components/SpecialitySection";
+import CentreOfExcellence from "@/components/centreofexcellence";
 import Bookappointment from "@/components/Bookappointment";
+import BannerSlider from "@/components/BannerSlider";
+import BookAppointmentModal from "@/components/bookappointmentmodal";
 
 const cards = [
   {
@@ -50,7 +53,7 @@ const cards = [
         Emergency Care
       </p>
     ),
-    link: "/op-centre",
+    link: "/contact-us",
   },
   {
     icon: cardtwo,
@@ -71,7 +74,7 @@ const cards = [
         Find a<span className="text-[#2b3990] font-extrabold "> Doctor</span>
       </p>
     ),
-    link: "/heart-care",
+    link: "/find-doctor",
   },
   {
     icon: cardthree,
@@ -82,7 +85,7 @@ const cards = [
         <span className="text-[#2b3990] font-extrabold"> Appointment </span>
       </p>
     ),
-    link: "/heart-care",
+    link: "/#book-appointment",
   },
 ];
 
@@ -159,19 +162,31 @@ const features = [
 
 const cardData = [
   {
-    title: <h3 className="text-[18px] font-bold text-black">In-House Pharmacy</h3>,
+    title: (
+      <h3 className="text-[18px] font-bold text-black">In-House Pharmacy</h3>
+    ),
     desc: "Round-the-clock pharmacy for immediate access to essential medications, ensuring support for your recovery. ",
     bg: "bg-[#F0E5FF]",
     icon: experienced, // replace with your image path
   },
   {
-    title: <h3 className="text-[18px] font-bold text-black">Safety & Quality Standards</h3>,
+
+    title: (
+      <h3 className="text-[18px] font-bold text-black">
+        Safety & Quality Standards
+      </h3>
+    ),
+
     desc: "Highest global safety and quality standards, ensuring excellence and building trust for your complete well-being. ",
     bg: "bg-[#DDEEFF]",
     icon: holistic, // replace with your image path
   },
   {
-    title: <h3 className="text-[18px] font-bold text-black">Blood Bank Facility</h3>,
+
+    title: (
+      <h3 className="text-[18px] font-bold text-black">Blood Bank Facility</h3>
+    ),
+
     desc: "Dedicated in-house blood bank, providing immediate access to life-saving support for every critical need.",
     bg: "bg-[#DFFFF3]",
     icon: modern, // replace with your image path
@@ -280,6 +295,7 @@ function Home() {
 
   const [currentPage, setCurrentPage] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(10);
+
   // Our Specialities start
   // Set items per page based on screen width
   useEffect(() => {
@@ -294,208 +310,20 @@ function Home() {
 
   const maxPage = Math.ceil(specialties.length / itemsPerPage) - 1;
 
-  const nextPage = () => {
-    if (currentPage < maxPage) setCurrentPage((prev) => prev + 1);
-  };
 
-  const prevPage = () => {
-    if (currentPage > 0) setCurrentPage((prev) => prev - 1);
-  };
-
-  const currentItems = specialties.slice(
-    currentPage * itemsPerPage,
-    (currentPage + 1) * itemsPerPage
-  );
 
   // Our Specialities end
 
   return (
     <>
-      <section className="relative -mt-20">
-        <Swiper
-          pagination={{ clickable: true }}
-          modules={[Pagination]}
-          className="max-w-7xl mx-auto px-4 py-7 sm:px-6 lg:px-8 h-full "
-        >
-          {/* Slide 1 */}
-          <SwiperSlide>
-            <div className="test-one relative">
-              <section className="bg-white rounded-[20px] flex flex-wrap items-center justify-center md:justify-start text-center md:text-left pt-20 pb-6 px-4 ">
-                <div className="w-full md:w-1/2 mb-8 md:mb-0 px-4 md:pl-16">
-                  <div className="flex items-center justify-center md:justify-start mb-4">
-                    <span className="bg-blue px-5  py-2 rounded-full text-sm font-semibold flex items-center gap-2">
-                      👍 Healthcare Excellence Made Affordable
-                    </span>
-                  </div>
-                  <h1 className="text-[44px] font-extrabold mb-4 leading-[1.4]">
-                    Care with Promise in <br />
-                    <span className="text-primary-blue"> Erode!</span>
-                  </h1>
-                  <p className=" text-black mb-6 max-w-lg mx-auto md:mx-0 ">
-                    Sudha Multispeciality Hospital, a healthcare icon delivering
-                    quality healthcare for 40+ years.
-                  </p>
-                  <div className="mb-8">
-                    <a
-                      href="#services"
-                      className="inline-flex items-center text-sm font-semibold  border-2 border-[#2A3D90] text-[#2A3D90] pt-3 pb-3 pr-7 pl-7 rounded-full transition "
-                    >
-                      Discover Our Service →
-                    </a>
-                  </div>
-                </div>
 
-                <div className="w-full md:w-1/2 px-4 py-5">
-                  <div className="mb-4">
-                    <Image
-                      src={banner}
-                    
-                      alt="Sudha Hospital Building"
-                      className="w-full rounded-lg "
-                    />
-                  </div>
-                </div>
-              </section>
-            </div>
-          </SwiperSlide>
 
-          {/* Slide 2 */}
-
-          <SwiperSlide>
-            <div className="test-one relative">
-              <section className="bg-white rounded-[20px] flex flex-wrap items-center justify-center md:justify-start text-center md:text-left pt-20 pb-6 px-4 ">
-                <div className="w-full md:w-1/2 mb-8 md:mb-0 px-4 md:pl-16">
-                  <div className="flex items-center justify-center md:justify-start mb-4">
-                    <span className="bg-blue px-5  py-2 rounded-full text-sm font-semibold flex items-center gap-2">
-                      👍 Sudha Fertility Centre
-                    </span>
-                  </div>
-                  <h1 className="text-[44px] font-extrabold mb-4 leading-[1.4]">
-                    Nurturing Parenthood for Over <br/>
-                    <span className="text-primary-blue"> 40 Years </span>
-                  </h1>
-                  <p className=" text-black mb-6 max-w-lg mx-auto md:mx-0 ">
-                    Sudha Fertility Centre has been a beacon of hope for lakhs
-                    of families, helping turn parenthood dreams into joyful
-                    realities.
-                  </p>
-                  <div className="mb-8">
-                    <a
-                      href="#services"
-                      className="inline-flex items-center text-sm font-semibold  border-2 border-[#2A3D90] text-[#2A3D90] pt-3 pb-3 pr-7 pl-7 rounded-full transition "
-                    >
-                      Discover Our Service →
-                    </a>
-                  </div>
-                </div>
-
-                <div className="w-full md:w-1/2 px-4 py-5">
-                  <div className="mb-4">
-                    <Image
-                      src={banner}
-                 
-                      alt="Sudha Hospital Building"
-                      className="w-full rounded-lg "
-                    />
-                  </div>
-                </div>
-              </section>
-            </div>
-          </SwiperSlide>
-
-          {/* Slide 3 */}
-
-          <SwiperSlide>
-            <div className="test-one relative">
-              <section className="bg-white rounded-[20px] flex flex-wrap items-center justify-center md:justify-start text-center md:text-left pt-20 pb-6 px-4 ">
-                <div className="w-full md:w-1/2 mb-8 md:mb-0 px-4 md:pl-16">
-                  <div className="flex items-center justify-center md:justify-start mb-4">
-                    <span className="bg-blue px-5  py-2 rounded-full text-sm font-semibold flex items-center gap-2">
-                      Sudha Mother and Child Care
-                    </span>
-                  </div>
-                  <h1 className="text-[44px] font-extrabold mb-4 leading-[1.4]">
-                    Motherly Care for Every
-                    <span className="text-primary-blue">
-                      {" "}
-                      Mother <span className="text-black">and</span> Child
-                    </span>
-                  </h1>
-                  <p className=" text-black mb-6 max-w-lg mx-auto md:mx-0 ">
-                    Because Every mother deserves care that comforts, every step
-                    of the way.
-                  </p>
-                  <div className="mb-8">
-                    <a
-                      href="#services"
-                      className="inline-flex items-center text-sm font-semibold  border-2 border-[#2A3D90] text-[#2A3D90] pt-3 pb-3 pr-7 pl-7 rounded-full transition "
-                    >
-                      Discover Our Service →
-                    </a>
-                  </div>
-                </div>
-
-                <div className="w-full md:w-1/2 px-4 py-5">
-                  <div className="mb-4">
-                    <Image
-                      src={banner}
-                     
-                      alt="Sudha Hospital Building"
-                      className="w-full rounded-lg "
-                    />
-                  </div>
-                </div>
-              </section>
-            </div>
-          </SwiperSlide>
-
-          {/* Slide 3 */}
-
-          <SwiperSlide>
-            <div className="test-one relative">
-              <section className="bg-white rounded-[20px] flex flex-wrap items-center justify-center md:justify-start text-center md:text-left pt-20 pb-6 px-4 ">
-                <div className="w-full md:w-1/2 mb-8 md:mb-0 px-4 md:pl-16">
-                  <div className="flex items-center justify-center md:justify-start mb-4">
-                    <span className="bg-blue px-5  py-2 rounded-full text-sm font-semibold flex items-center gap-2">
-                      Sudha Cancer Centre
-                    </span>
-                  </div>
-                  <h1 className="text-[44px] font-extrabold mb-4 leading-[1.4]">
-                    Standing with You <br /> Through Every
-                    <span className="text-primary-blue"> Battle</span>
-                  </h1>
-                  <p className=" text-black mb-6 max-w-lg mx-auto md:mx-0 ">
-                    The Only Comprehensive Cancer Care in Erode.
-                  </p>
-                  <div className="mb-8">
-                    <a
-                      href="#services"
-                      className="inline-flex items-center text-sm font-semibold  border-2 border-[#2A3D90] text-[#2A3D90] pt-3 pb-3 pr-7 pl-7 rounded-full transition "
-                    >
-                      Discover Our Service →
-                    </a>
-                  </div>
-                </div>
-
-                <div className="w-full md:w-1/2 px-4 py-5">
-                  <div className="mb-4">
-                    <Image
-                      src={banner}
-                      width={800}
-                      height={500}
-                      alt="Sudha Hospital Building"
-                      className="w-full rounded-lg -ml-14"
-                    />
-                  </div>
-                </div>
-              </section>
-            </div>
-          </SwiperSlide>
-        </Swiper>
+      <section className="relative -mt-20 m-10 z-index">
+        <BannerSlider />
       </section>
 
       <section>
-        <div className="max-w-7xl mx-auto  py-8 h-full">
+        <div className="max-w-7xl mx-auto py-8 h-full">
           <motion.div
             variants={container}
             initial="hidden"
@@ -505,11 +333,15 @@ function Home() {
           >
             {cards.map((card, idx) => (
               <motion.div key={idx} variants={item}>
-                <ServiceCard
-                  icon={card.icon}
-                  title={card.title}
-                  link={card.link}
-                />
+                <div className="cursor-pointer  duration-300">
+
+                  <ServiceCard
+                    icon={card.icon}
+                    title={card.title}
+                    link={card.link}
+                  />
+
+                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -551,62 +383,65 @@ function Home() {
           </motion.div>
 
           {/* Content Block */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-[30px] mb-4 leading-[1.4]">
-              Welcome to <span className="text-primary-blue">Sudha</span> —
-              Where we care for you from the heart like family.
-            </h2>
-            <p className="mb-4">
-              Sudha Hospital began its journey in 1985 in the turmeric city of
-              Tamil Nadu. From its beginnings, this hospital has played a
-              significant role and has become an integral part of the healthcare
-              evolution in the Kongu region.
-            </p>
-            <p className="mb-6">
-              Established in 1985, Sudha Hospital has become an integral part of
-              providing quality healthcare in the Kongu region since its
-              inception. With the dedication and commitment to provide advanced
-              international standard healthcare, we make sure every patient is
-              treated with compassion and care. Equipped with the best team of
-              doctors, nurses, technicians, and other staff, we offer
-              world-class treatments at an affordable price.
-            </p>
+          <section className="px-4 sm:px-6 lg:px-8 py-10">
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="max-w-4xl mx-auto"
+            >
+              <h2 className="text-[30px] mb-4 leading-[1.4]">
+                Welcome to <span className="text-primary-blue">Sudha</span> —
+                Where we care for you from the heart like family.
+              </h2>
 
-            <p className="mb-6">
-              This unwavering allegiance to healthcare has made us the trusted
-              choice and the best hospital in Erode.
-            </p>
+              <p className=" mb-4">
+                Sudha Hospital began its journey in 1985 in the turmeric city of
+                Tamil Nadu. From its beginnings, this hospital has played a
+                significant role and has become an integral part of the
+                healthcare evolution in the Kongu region.
+              </p>
 
-            {/* View More Button with Motion */}
-            <Link href="#">
-              <motion.div
-                whileHover={{ x: 4, y: -4 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="inline-flex items-center gap-2 px-7 text-[14px] letter-space py-3 bg-[#253990] font-semibold text-white rounded-full  transition duration-300"
-              >
-                Know More
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-5 h-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+              <p className=" mb-6">
+                Established in 1985, Sudha Hospital has become an integral part
+                of providing quality healthcare in the Kongu region since its
+                inception. With the dedication and commitment to provide
+                advanced international standard healthcare, we make sure every
+                patient is treated with compassion and care. Equipped with the
+                best team of doctors, nurses, technicians, and other staff, we
+                offer world-class treatments at an affordable price.
+              </p>
+
+              <p className=" mb-6">
+                This unwavering allegiance to healthcare has made us the trusted
+                choice and the best hospital in Erode.
+              </p>
+
+              <Link href="#">
+                <motion.div
+                  className="btn-diagonal inline-flex items-center gap-2 px-6 sm:px-7 py-3 text-sm sm:text-base bg-[#253990] font-semibold text-white rounded-full transition-transform duration-200 hover:-translate-y-[3px]"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 7L7 17M7 7h10v10"
-                  />
-                </svg>
-              </motion.div>
-            </Link>
-          </motion.div>
+                  Know More
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 7L7 17M7 7h10v10"
+                    />
+                  </svg>
+                </motion.div>
+              </Link>
+
+            </motion.div>
+          </section>
         </div>
 
         {/* Video Modal */}
@@ -646,14 +481,14 @@ function Home() {
         )}
       </section>
 
-      <section>
-        <div className="max-w-7xl mx-auto  py-8 h-full">
+      <section className="px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto py-12">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
           >
             {hospitalscards.map((card, idx) => (
               <motion.div key={idx} variants={cardVariants}>
@@ -673,14 +508,18 @@ function Home() {
         <SpecialitySection />
       </section>
 
-      <section className="max-w-7xl mx-auto h-full py-16">
+      <section className="py-16">
+        <CentreOfExcellence />
+      </section>
+
+      <section className="max-w-7xl mx-auto h-full py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center">
-          <h2 className="bg-white text-[#2B3990] px-5  py-2 rounded-full text-sm font-semibold">
+          <h2 className="bg-white text-[#2B3990] px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-semibold">
             Cutting-Edge Facilities
           </h2>
         </div>
 
-        <h2 className="text-center text-[30px] mt-5">
+        <h2 className="text-center text-[30px]  mt-4 sm:mt-6 ">
           Advanced Medical Devices and <br className="hidden sm:block" />
           International Technology
         </h2>
@@ -694,27 +533,40 @@ function Home() {
         <OurTeamSlider />
       </section>
 
-      <section className="max-w-7xl mx-auto px-8 py-16 bg-[#FFFFFF] mt-22 rounded-2xl">
-        <div className="flex flex-wrap">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-[#FFFFFF] mt-10 rounded-2xl">
+        <div className="flex flex-col md:flex-row gap-8">
           {/* Image Block */}
-          <div className="w-full md:w-1/2 mb-6 md:mb-0">
+          <div className="w-full md:w-1/2">
             <div className="rounded-2xl overflow-hidden relative">
               <Image
                 src={Expect}
                 alt="Pregnant Woman"
-                className="rounded-2xl  text-left  h-auto object-cover"
+                className="rounded-2xl w-full h-auto object-cover"
               />
+
               {/* Floating Info Badges */}
-              <div className="absolute bottom-10 right-6  z-20 bg-white shadow-lg rounded-2xl flex flex-col sm:flex-row gap-6 sm:gap-6 px-8 py-8 text-md font-semibold text-[#2B3990]">
-                <div className="flex items-center gap-4">
-                  <Image src={inter} alt="icon" width={40} height={40} />
-                  <span className="text-black font-bold">
+              <div className="absolute bottom-6 right-4 sm:bottom-8 sm:right-6 bg-white shadow-lg rounded-2xl flex flex-col sm:flex-row gap-4 sm:gap-6 px-6 py-6 text-sm sm:text-md font-semibold text-[#2B3990] max-w-[90%] sm:max-w-none">
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <Image
+                    src={inter}
+                    alt="icon"
+                    width={35}
+                    height={35}
+                    className="sm:w-[40px] sm:h-[40px]"
+                  />
+                  <span className="text-black font-bold leading-tight">
                     World Class <br /> Health Care
                   </span>
                 </div>
-                <div className="flex items-center gap-4">
-                  <Image src={patient} alt="icon" width={40} height={40} />
-                  <span className="text-black font-bold">
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <Image
+                    src={patient}
+                    alt="icon"
+                    width={35}
+                    height={35}
+                    className="sm:w-[40px] sm:h-[40px]"
+                  />
+                  <span className="text-black font-bold leading-tight">
                     100% Patient <br /> Satisfaction
                   </span>
                 </div>
@@ -731,18 +583,18 @@ function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-[#F0F7FD] p-8 rounded-2xl flex flex-col justify-between "
+                className="bg-[#F0F7FD] p-6 sm:p-8 rounded-2xl flex flex-col justify-between"
               >
                 <div>
                   <Image
                     src={feature.icon}
                     alt={feature.title}
-                    className="w-16 h-16 mb-2"
+                    className="w-12 h-12 sm:w-16 sm:h-16 mb-2"
                   />
                 </div>
                 <div className="mt-auto">
-                  <h3 className="custom-h3  text-black">{feature.title}</h3>
-                  <p className="text-[14px]  mt-2">{feature.desc}</p>
+                  <h3 className="custom-h3 text-black">{feature.title}</h3>
+                  <p className="text-[14px] mt-2">{feature.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -762,7 +614,7 @@ function Home() {
           </span>
         </Marquee>
 
-        <div className="max-w-7xl mx-auto  pb-16">
+        <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto  pb-16">
           <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {cardData.map((item, index) => (
               <motion.div
@@ -780,9 +632,7 @@ function Home() {
                   height={60}
                   className="mb-4"
                 />
-                <div >
-                  {item.title}
-                </div>
+                <div className="">{item.title}</div>
                 <p className="text-[#000000] mt-4">{item.desc}</p>
               </motion.div>
             ))}
@@ -802,7 +652,7 @@ function Home() {
                   Testimonials of Trust From <br /> Those We've Served.
                 </h3>
 
-                <button className="bg-[#2B3990] mt-4 text-[#fff] text-[15px] pt-3 pb-3 pr-7 pl-7 rounded-full transition flex gap-2">
+                <button className="btn-diagonal bg-[#2B3990] mt-4 text-[#fff] text-[15px] pt-3 pb-3 pr-7 pl-7 rounded-full trnasition flex gap-2 hover:-translate-y-[3px] transition-transform duration-200">
                   Book your Appointment <ArrowUpRight />
                 </button>
               </div>
@@ -819,7 +669,7 @@ function Home() {
         </div>
       </section>
 
-      <div className="py-16">
+      <div id="book-appointment" className="py-16">
         <Bookappointment />
       </div>
     </>

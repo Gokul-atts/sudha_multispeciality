@@ -39,11 +39,6 @@ import sathishkumar from "@/assets/home/doc/rajasekar.webp";
 
 
 
-
-
-
-
-
 export const doctorsData = [
   {
     id: 1,
@@ -104,11 +99,6 @@ export const doctorsData = [
       },
     ],
   },
-
-
-
-
-
   {
     id: 2,
     name: "Dr. P. Nithiyanandhan",
@@ -1113,11 +1103,6 @@ export const doctorsData = [
     ],
   },
 ];
-
-
-
-
-
 
 export const doctorsDatarenal = [
   {

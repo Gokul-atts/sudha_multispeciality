@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import Banner from "@/assets/about/hero.png";
+import Banner from "@/assets/about/why-choose-us.webp";
 import "./whysudha.css";
 import hospitalOne from "@/assets/home/cards/c1.svg";
 import hospitalTwo from "@/assets/home/cards/c2.svg";
@@ -16,6 +16,7 @@ import imgtwo from "@/assets/whysudha/2.svg";
 import imgthree from "@/assets/whysudha/3.svg";
 import imgfour from "@/assets/whysudha/4.svg";
 import imgfive from "@/assets/whysudha/5.svg";
+import { ArrowUpRight } from "lucide-react";
 
 import s1 from "@/assets/whysudha/s1.svg";
 import s2 from "@/assets/whysudha/s2.svg";
@@ -34,6 +35,18 @@ import consult2 from "@/assets/about/img.png";
 import consult3 from "@/assets/about/img.png";
 import Clinic from "@/assets/about/clinic.png";
 import Slider from "react-slick";
+import Breadcrumb from "@/components/Breadcrumb";
+
+
+const breadcrumbItems = [
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "" },
+  { label: "Why Sudha?", href: "/why-sudha" },
+];
+
+
+
+
 const consultSlides = [consult1, consult2, consult3];
 
 const facilities = [
@@ -199,14 +212,16 @@ function Whysudha() {
         >
           <div className="pl-8 md:pl-20">
             {/* Breadcrumb */}
-            <motion.p
+            <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="text-sm mb-4 text-white"
+              className=" mb-3 text-white"
             >
-              Home / About us / Why Sudha?
-            </motion.p>
+
+              <Breadcrumb items={breadcrumbItems} />
+
+            </motion.div>
 
             {/* Title */}
             <motion.h1
@@ -448,8 +463,8 @@ function Whysudha() {
               <p className=" mb-2 text-center">
                 Book in-person visits for personalized care and schedule the appointments with our experienced team.
               </p>
-              <button className="bg-[#2B3990] mt-2 text-[#fff] text-[15px] pt-3 pb-3 pr-7 pl-7 rounded-full transition flex gap-2">
-                Book an Appointment
+              <button className="btn-diagonal bg-[#2B3990] mt-2 text-[#fff] text-[15px] pt-3 pb-3 pr-7 pl-7 rounded-full transition flex gap-2 hover:-translate-y-[3px] transition-transform duration-200">
+                Book an Appointment <ArrowUpRight className="w-5 h-5" />
 
               </button>
             </div>

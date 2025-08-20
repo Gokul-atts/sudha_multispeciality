@@ -2,7 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Banner from "@/assets/about/hero.png";
+import Banner from "@/assets/specialites/generalsurgery/general-surgery.webp";
+
 import Clinic from "@/assets/about/clinic.png";
 import Image from "next/image";
 // Sample images – replace with your own
@@ -16,13 +17,14 @@ import "./generalsurgery.css";
 import Bookappointment from "@/components/Bookappointment";
 import SidebarTabs from "./SidebarTabs";
 import Breadcrumb from "@/components/Breadcrumb";
+import { ArrowUpRight } from "lucide-react";
 
 const consultSlides = [consult1, consult2, consult3];
 
 const breadcrumbItems = [
-    { label: "Home", href: "/" },
-    { label: "General Surgery", href: "/general-surgery" },
-  ];
+  { label: "Home", href: "/" },
+  { label: "General Surgery", href: "/general-surgery" },
+];
 
 function Generalsurgery() {
   const settings = {
@@ -41,13 +43,13 @@ function Generalsurgery() {
   };
   return (
     <div>
-      <section className="relative -mt-12 lg:-mt-24 m-10">
+      <section className="relative -mt-12 lg:-mt-28 m-10">
         {/* Background Gradient */}
         <div
-          className="max-w-full mx-auto px-4 py-36 relative z-10 text-white bg-center bg-no-repeat bg-cover lg:bg-contain banner"
+          className="max-w-full mx-auto px-4 py-36 relative z-10 text-white bg-center bg-no-repeat bg-cover lg:bg-contain banner min-h-400"
           style={{ backgroundImage: `url(${Banner.src})` }}
         >
-          <div className="pl-8 md:pl-20" >
+          <div className="pl-8 md:pl-20">
             {/* Breadcrumb */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -55,7 +57,7 @@ function Generalsurgery() {
               transition={{ duration: 0.4 }}
               className="text-sm mb-3"
             >
-              <Breadcrumb items={breadcrumbItems} />       
+              <Breadcrumb items={breadcrumbItems} />
             </motion.div>
 
             {/* Title */}
@@ -75,7 +77,7 @@ function Generalsurgery() {
               transition={{ duration: 0.6 }}
               className="mb-6 text-white"
             >
-              Trusted Surgical Team for Lifesaving Procedures        
+              Trusted Surgical Team for Lifesaving Procedures
             </motion.p>
 
             {/* Button */}
@@ -86,14 +88,14 @@ function Generalsurgery() {
             >
               <Link
                 href="#"
-                className="inline-flex  text-[16px] tracking-wide items-center px-7 py-3 bg-white text-[#2B3990] font-semibold rounded-full  transition"
+                className="btn-white inline-flex  text-[16px] tracking-wide items-center px-7 py-3 bg-white text-[#2B3990] font-semibold rounded-full  transition hover:-translate-y-[3px] transition-transform duration-200"
               >
-                Book an Appointment
+                Book an Appointment <ArrowUpRight className="w-5 h-5" />
               </Link>
             </motion.div>
           </div>
 
-          <div className="absolute bottom-[80px] hidden md:block right-4 sm:right-10 md:-right-[35px] z-30 text-[#2B3990]  p-4 rounded-xl  w-[220px]">
+          <div className="absolute bottom-[40px] hidden md:block right-4 sm:right-10 md:-right-[35px] z-30 text-[#2B3990]  p-4 rounded-xl  w-[220px]">
             <h3 className="text-[36px] font-bold">40+</h3>
             <p className="text-lg leading-snug text-black font-semibold">
               Years of Trusted <br />
@@ -110,7 +112,7 @@ function Generalsurgery() {
         </div>
       </section>
 
-    <section className="max-w-7xl mx-auto py-16 relative">
+      <section className="max-w-7xl mx-auto py-16 relative">
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
           {/* Left - Image with Overlay Card */}
           <div className="relative w-full lg:w-1/2 mx-auto rounded-2xl overflow-hidden">
@@ -129,17 +131,9 @@ function Generalsurgery() {
               <p className=" mb-4 text-center">
                 Get all your personalised healthcare services under one roof from experienced and trusted doctors.
               </p>
-              <button className="inline-flex items-center text-white bg-[#2B3990] hover:bg-[#1e2a70] px-7 py-3 rounded-full text-sm font-medium">
+              <button className="btn-diagonal inline-flex items-center text-white bg-[#2B3990] hover:bg-[#1e2a70] px-7 py-3 rounded-full text-sm font-medium hover:-translate-y-[3px] transition-transform duration-200">
                 Book an Appointment
-                <svg
-                  className="ml-2 w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
+                <ArrowUpRight className="w-5 h-5" />
               </button>
             </div>
           </div>

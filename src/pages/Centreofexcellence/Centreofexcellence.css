@@ -1,0 +1,371 @@
+styles/HealthcareServices.module.css
+
+/* Base Container */
+.healthcareContainer {
+  width: 100%;
+  padding: 0 16px;
+}
+
+/* Hospital Cards Section */
+.hospitalCardsWrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  height: 100%;
+}
+
+.hospitalCardsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* Excellence Section */
+.excellenceSection {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.excellenceBadgeWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.excellenceBadge {
+  background-color: white;
+  color: #2B3990;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.centerTitle {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  padding: 0.75rem 0 0 0;
+  margin: 0;
+  font-weight: 600;
+}
+
+.titleBreak {
+  display: none;
+}
+
+/* Healthcare Sections */
+.healthcareSection {
+  background-color: white;
+  border-radius: 1.5rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.imageWrapper {
+  width: 100%;
+}
+
+.healthcareImage {
+  border-radius: 1rem;
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+}
+
+.contentWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.healthcareTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.healthcareText {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
+  color: #4a5568;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.serviceItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.serviceText {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+/* Alternating Layout for Desktop */
+.pulmonology,
+.motherChild,
+.fertility {
+  flex-direction: column;
+}
+
+/* Tablet Styles */
+@media (min-width: 641px) {
+  .healthcareContainer {
+    padding: 0 24px;
+  }
+
+  .hospitalCardsWrapper {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .hospitalCardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .excellenceSection {
+    padding: 3rem 0;
+  }
+
+  .excellenceBadge {
+    font-size: 0.875rem;
+    padding: 0.5rem 1.25rem;
+  }
+
+  .centerTitle {
+    font-size: 1.75rem;
+    padding: 0 24px;
+  }
+
+  .titleBreak {
+    display: block;
+  }
+
+  .healthcareSection {
+    padding: 1.5rem;
+    margin: 1.5rem 24px;
+  }
+
+  .healthcareImage {
+    height: 280px;
+  }
+
+  .healthcareTitle {
+    font-size: 1.375rem;
+  }
+
+  .healthcareText {
+    font-size: 0.9375rem;
+  }
+
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .serviceText {
+    font-size: 0.8125rem;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 1025px) {
+  .healthcareContainer {
+    padding: 0 2rem;
+  }
+
+  .hospitalCardsWrapper {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .hospitalCardsGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .excellenceSection {
+    padding: 4rem 0;
+  }
+
+  .centerTitle {
+    font-size: 1.875rem;
+    padding: 0;
+  }
+
+  .healthcareSection {
+    padding: 2rem;
+    margin: 2rem auto;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  /* Default layout - image left, content right */
+  .cardiology,
+  .neurology,
+  .cancer {
+    flex-direction: row;
+  }
+
+  .cardiology .imageWrapper,
+  .neurology .imageWrapper,
+  .cancer .imageWrapper {
+    width: 33.333333%;
+    flex-shrink: 0;
+  }
+
+  .cardiology .contentWrapper,
+  .neurology .contentWrapper,
+  .cancer .contentWrapper {
+    width: 66.666667%;
+    margin-left: 1.25rem;
+  }
+
+  /* Reverse layout - content left, image right */
+  .pulmonology,
+  .motherChild,
+  .fertility {
+    flex-direction: row-reverse;
+  }
+
+  .pulmonology .imageWrapper,
+  .motherChild .imageWrapper,
+  .fertility .imageWrapper {
+    width: 33.333333%;
+    flex-shrink: 0;
+  }
+
+  .pulmonology .contentWrapper,
+  .motherChild .contentWrapper,
+  .fertility .contentWrapper {
+    width: 66.666667%;
+    margin-right: 1.25rem;
+    margin-left: 0;
+  }
+
+  .healthcareImage {
+    height: 380px;
+  }
+
+  .healthcareTitle {
+    font-size: 1.5rem;
+  }
+
+  .healthcareText {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .serviceText {
+    font-size: 0.875rem;
+  }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1280px) {
+  .healthcareContainer {
+    padding: 0;
+  }
+
+  .healthcareSection {
+    margin: 2rem auto;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 480px) {
+  .healthcareContainer {
+    padding: 0 12px;
+  }
+
+  .hospitalCardsWrapper {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .excellenceSection {
+    padding: 1.5rem 0;
+  }
+
+  .excellenceBadge {
+    font-size: 0.75rem;
+    padding: 0.375rem 1rem;
+  }
+
+  .centerTitle {
+    font-size: 1.25rem;
+    padding: 0 12px;
+  }
+
+  .healthcareSection {
+    padding: 0.75rem;
+    margin: 0.75rem 12px;
+    border-radius: 1rem;
+  }
+
+  .healthcareImage {
+    height: 180px;
+  }
+
+  .healthcareTitle {
+    font-size: 1.125rem;
+  }
+
+  .healthcareText {
+    font-size: 0.8125rem;
+  }
+
+  .serviceText {
+    font-size: 0.6875rem;
+  }
+}
+
+/* Utility Classes */
+.lastSection {
+  padding-bottom: 4rem;
+}
+
+/* Smooth Transitions */
+.healthcareSection,
+.healthcareImage,
+.serviceItem {
+  transition: all 0.3s ease-in-out;
+}
+
+.healthcareSection:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Focus States for Accessibility */
+.serviceItem:focus-within {
+  outline: 2px solid #2B3990;
+  outline-offset: 2px;
+  border-radius: 4px;
+}

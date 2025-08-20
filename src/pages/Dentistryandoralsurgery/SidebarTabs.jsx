@@ -333,7 +333,7 @@ export default function SidebarTabs() {
           
 
 
-          <button className="inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px]">
+          <button className="btn-sidebar inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px] hover:-translate-y-[3px] transition-transform duration-200">
             Book an Appointment <ArrowUpRight className="w-5 h-5" />
           </button>
         </div>
@@ -377,7 +377,10 @@ export default function SidebarTabs() {
                   <span className="text-[#2B3990]"> Erode</span> at Sudha Multispeciality Hospital
                 </h2>
                 <p className="text-gray-700">
-                  The Department of Dentistry and Oral Surgery at Sudha Multispeciality Hospital provides advanced dental care through modern technology and a team of skilled dental surgeons. From routine dental check-ups to complex oral surgeries, our services cover preventive, restorative, cosmetic, and surgical dental solutions. We ensure a painless and comfortable experience for patients of all ages with strict hygiene protocols and patient-focused care. Whether it's cosmetic enhancement, tooth restoration, or oral rehabilitation, we offer tailored treatment plans under one roof.
+                  The Department of Dentistry and Oral Surgery at Sudha Multispeciality Hospital provides advanced dental care through modern technology and 
+                  a team of skilled dental surgeons. From routine dental check-ups to complex oral surgeries, our services cover preventive, restorative, cosmetic, 
+                  and surgical dental solutions. We ensure a painless and comfortable experience for patients of all ages with strict hygiene protocols and patient-focused care. 
+                  Whether it's cosmetic enhancement, tooth restoration, or oral rehabilitation, we offer tailored treatment plans under one roof.
                 </p>
                 </div>
               </>

@@ -55,8 +55,8 @@
   /* mask cave corner shape */
   -webkit-mask: url("../../assets/home/download.png") no-repeat;
   mask: url("../../assets/home/download.png") no-repeat;
-  mask-size: cover;
   -webkit-mask-size: cover;
+  mask-size: cover;
 
   z-index: 1;
 }
@@ -81,8 +81,8 @@
   /* mask cave corner shape */
   -webkit-mask: url("../../assets/home/c1.svg") no-repeat;
   mask: url("../../assets/home/c1.svg") no-repeat;
-  mask-size: cover;
   -webkit-mask-size: cover;
+  mask-size: cover;
 
   z-index: 1;
 }
@@ -108,8 +108,8 @@
   /* mask cave corner shape */
   -webkit-mask: url("../../assets/home/c1.svg") no-repeat;
   mask: url("../../assets/home/c1.svg") no-repeat;
-  mask-size: cover;
   -webkit-mask-size: cover;
+  mask-size: cover;
 
   z-index: 1;
 }

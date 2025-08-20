@@ -6,7 +6,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { doctorsData } from "@/constants/doctorDetails";
 
-
 const PrevArrow = ({ onClick }) => (
   <button
     onClick={onClick}
@@ -57,6 +56,12 @@ export default function OurTeamSlider() {
           slidesToShow: 2,
         },
       },
+            {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
     ],
   };
 
@@ -70,14 +75,13 @@ export default function OurTeamSlider() {
         </div>
 
         <h1 className="text-center text-[30px] text-white mt-4">
-          Our Multi-Specialty Experts 
+          Our Multi-Specialty Experts
         </h1>
 
         <p className=" text-white mt-2 text-center">
-          Book your appointment with the best specialists for all of your health concerns. 
+          Book your appointment with the best specialists for all of your health
+          concerns.
         </p>
-
-       
 
         <div className="relative mt-10">
           <Slider {...settings}>
@@ -85,9 +89,11 @@ export default function OurTeamSlider() {
               <div
                 key={index}
                 className="w-[160px] sm:w-[160px] md:w-[180px] h-[400px]  
-             rounded-xl overflow-hidden text-center relative "
+             rounded-xl  text-center  "
               >
-                <div className="ourteamcard_img">
+
+                <div className="relative">
+                  <div className="ourteamcard_img">
                   <Image
                     src={doc.image}
                     alt={doc.name}
@@ -97,7 +103,7 @@ export default function OurTeamSlider() {
                 {/* Arrow Button */}
                 <Link
                   href={`/doctor-detail/${doc.id}`}
-                  className="absolute bottom-32  right-2 w-10 h-10 rounded-full bg-white flex items-center justify-center z-30 group "
+                  className="absolute bottom-2 right-2 w-10 h-10 rounded-full bg-white flex items-center justify-center z-30 group "
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -114,6 +120,7 @@ export default function OurTeamSlider() {
                     />
                   </svg>
                 </Link>
+                </div>
                 <h3 className="text-[14px] sm:text-[16px] mt-5 font-semibold text-white">
                   {doc.name}
                 </h3>
@@ -123,7 +130,6 @@ export default function OurTeamSlider() {
                 <p className="text-[12px] font-medium text-white mt-2">
                   {doc.qualification}
                 </p>
-                
               </div>
             ))}
           </Slider>

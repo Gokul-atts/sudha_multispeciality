@@ -3,7 +3,7 @@ import React from "react";
 import "./about.css";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Banner from "@/assets/home/about/why-sudha.webp";
+import Banner from "@/assets/about/our-growth-story.webp";
 import Link from "next/link";
 import one from "@/assets/aboutus/one.png";
 import HospitalCard from "@/components/Hospital";
@@ -14,6 +14,17 @@ import hospitalFour from "@/assets/home/cards/c4.svg";
 import TimelineSlider from "@/components/Timeline";
 import kandaswamy from "@/assets/aboutus/kandaswamy.png";
 import Marquee from "react-fast-marquee";
+import Breadcrumb from "@/components/Breadcrumb";
+
+
+const breadcrumbItems = [
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "" },
+     { label: "Our Growth Story", href: "/our-growth-story" },
+  ];
+
+
+
 const hospitalscards = [
   {
     number: <h3 className="text-[48px] text-[#2B3990]">40+</h3>,
@@ -70,14 +81,14 @@ function Aboutus() {
         >
           <div className="pl-8 md:pl-20">
             {/* Breadcrumb */}
-            <motion.p
+            <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="text-sm mb-4 text-white"
+              className="mb-3 text-white"
             >
-              Home / About us / Our Growth Story
-            </motion.p>
+              <Breadcrumb items={breadcrumbItems} />
+            </motion.div>
 
             {/* Title */}
             <motion.h1

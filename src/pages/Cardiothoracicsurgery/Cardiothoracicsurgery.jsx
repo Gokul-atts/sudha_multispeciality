@@ -16,6 +16,7 @@ import "./cardiothoracicsurgery.css";
 import Bookappointment from "@/components/Bookappointment";
 import SidebarTabs from "./SidebarTabs";
 import Breadcrumb from "@/components/Breadcrumb";
+import { ArrowUpRight } from "lucide-react";
 
 const consultSlides = [consult1, consult2, consult3];
 
@@ -41,10 +42,10 @@ function Cardiothoracicsurgery() {
   };
   return (
     <div>
-      <section className="relative -mt-12 lg:-mt-24 m-10">
+      <section className="relative -mt-12 lg:-mt-28 m-10">
         {/* Background Gradient */}
         <div
-          className="max-w-full mx-auto px-4 py-36 relative z-10 text-white bg-center bg-no-repeat bg-cover lg:bg-contain banner"
+          className="max-w-full mx-auto px-4 py-36 relative z-10 text-white bg-center bg-no-repeat bg-cover lg:bg-contain banner min-h-400"
           style={{ backgroundImage: `url(${Banner.src})` }}
         >
           <div className="pl-8 md:pl-20">
@@ -86,9 +87,9 @@ function Cardiothoracicsurgery() {
             >
               <Link
                 href="#"
-                className="inline-flex  text-[16px] tracking-wide items-center px-7 py-3 bg-white text-[#2B3990] font-semibold rounded-full  transition"
+                className="btn-white inline-flex  text-[16px] tracking-wide items-center px-7 py-3 bg-white text-[#2B3990] font-semibold rounded-full  transition hover:-translate-y-[3px] transition-transform duration-200"
               >
-                Book an Appointment
+                Book an Appointment <ArrowUpRight className="w-5 h-5" />
               </Link>
             </motion.div>
           </div>
@@ -110,7 +111,7 @@ function Cardiothoracicsurgery() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto py-16 relative">
+      <section className="max-w-7xl mx-auto py-8 sm:py-12 lg:py-16 relative">
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
           {/* Left - Image with Overlay Card */}
           <div className="relative w-full lg:w-1/2 mx-auto rounded-2xl overflow-hidden">
@@ -122,41 +123,33 @@ function Cardiothoracicsurgery() {
             />
 
             {/* Overlay Card at Bottom Center */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 bg-white/80 p-6 w-[90%] bottom-10 flex flex-col items-center justify-end rounded-2xl">
-              <h2 className="text-[20px] mb-2 text-center">
+            <div className="absolute left-1/2 transform -translate-x-1/2 bg-white/80 p-4 sm:p-6 w-[90%] bottom-6 sm:bottom-10 flex flex-col items-center justify-end rounded-2xl">
+              <h2 className="text-lg sm:text-xl md:text-2xl mb-2 text-center">
                 Your Health, Our Priority
               </h2>
-              <p className=" mb-4 text-center">
+              <p className="text-sm sm:text-base mb-4 text-center">
                 Get all your personalised healthcare services under one roof from experienced and trusted doctors.
               </p>
-              <button className="inline-flex items-center text-white bg-[#2B3990] hover:bg-[#1e2a70] px-7 py-3 rounded-full text-sm font-medium">
+              <button className="btn-diagonal inline-flex items-center gap-2 text-white bg-[#2B3990] hover:bg-[#1e2a70] px-5 sm:px-7 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-medium hover:-translate-y-[3px] transition-transform duration-200">
                 Book an Appointment
-                <svg
-                  className="ml-2 w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
+                <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
             </div>
           </div>
 
           {/* Right - Info Card and Paragraph */}
-          <div className="w-full lg:w-3/5 flex flex-col gap-6">
+          <div className="w-full lg:w-3/5 flex flex-col gap-4 sm:gap-6">
             {/* Gradient Box */}
-            <div className="bg-gradient-to-r from-[#2B3990] to-[#0D112A] p-8  rounded-2xl text-white">
-              <h4 className="text-[20px]  font-bold mb-2">
+            <div className="bg-gradient-to-r from-[#2B3990] to-[#0D112A] p-6 sm:p-8 rounded-2xl text-white">
+              <h4 className="text-lg sm:text-xl md:text-2xl font-bold mb-2">
                 World-Class Care for Everyone
               </h4>
-              <p className="mt-4  text-white">
+              <p className="mt-3 sm:mt-4 text-sm sm:text-base text-white">
                 We are dedicated to providing top-quality treatments and healthcare services, supported by advanced international technology and a team of highly experienced medical professionals.
               </p>
             </div>
 
-            {/* Description */}
+            {/* Description / Slider */}
             <div className="w-full max-w-4xl mx-auto">
               <Slider {...settings}>
                 {consultSlides.map((img, idx) => (
@@ -166,7 +159,7 @@ function Cardiothoracicsurgery() {
                         <Image
                           src={img}
                           alt={`Consult ${idx + 1}`}
-                          className="w-full h-[284px] object-cover"
+                          className="w-full h-[200px] sm:h-[250px] md:h-[284px] object-cover"
                         />
                       </div>
                     </div>

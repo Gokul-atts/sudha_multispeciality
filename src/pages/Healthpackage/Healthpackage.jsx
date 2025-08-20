@@ -1,10 +1,11 @@
 'use client';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Banner from "@/assets/healthpackage/Banner.png";
+import Banner from "@/assets/facilities/health-packages.webp";
+
 import HandIcon from "@/assets/healthpackage/nephrology.svg";
-import Doctors from "@/assets/healthpackage/Doctors.png";
-import Checking from "@/assets/healthpackage/Checking.png";
+import Doctors from "@/assets/healthpackage/doctors.webp";
+import Checking from "@/assets/healthpackage/checking.webp";
 import Slider from "react-slick";
 import Image from "next/image";
 import shyla from "@/assets/fellownationalboard/shyla.png";
@@ -15,7 +16,16 @@ import Bookappointment from "@/components/Bookappointment";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Check from "@/assets/Insurance/check.svg";
+import Check from "@/assets/insurance/check.svg";
+import Breadcrumb from "@/components/Breadcrumb";
+
+const breadcrumbItems = [
+    { label: "Home", href: "/" },
+
+    { label: "Facilities", href: "" },
+
+    { label: "Master Helath Packages", href: "/health-packages" },
+];
 
 
 
@@ -105,7 +115,7 @@ const Healthpackage = () => {
         ],
     };
 
-    const [openAccordion, setOpenAccordion] = useState(null);
+    const [openAccordion, setOpenAccordion] = useState(0);
 
     const toggleAccordion = (index) => {
         setOpenAccordion(openAccordion === index ? null : index);
@@ -115,130 +125,68 @@ const Healthpackage = () => {
 
     const healthPackages = [
         {
-            title: "Basic Health Checkup Package",
+            title: "Basic Health Checkup - Rs. 2000/-",
             testCount: "09",
             leftColumn: [
                 "CBC",
-                "Blood Sugar",
-                "Serum Creatinine",
-                "Total Cholesterol",
-                "ECG",
-                "Chest X-Ray",
-                "General Consultation",
+                "C-Xray ",
+                "S.Creatinine",
+                "S.Bilirubin",
+                "FBS",
+                "PPBS",
             ],
             rightColumn: [
-                "Dental Consultation",
-                "Diet Counselling"
+                "Echo Screening",
+                "TMT ",
+                "Total Cholestrol ",
+                "Diet Counselling",
+                "Doctor Opinion"
             ]
         },
         {
-            title: "Routine Health Checkup",
+            title: "Master Health Checkup - Rs. 3000/-",
             testCount: "10",
             leftColumn: [
                 "CBC",
-                "Blood Sugar",
-                "Serum Creatinine",
-                "Total Cholesterol",
-                "ECG",
-                "Chest X-Ray",
-                "General Consultation",
+                "C-Xray ",
+                "RFT",
+                "LFT",
+                "Lipid Profile",
+                "TSH",
+                "FBS ",
             ],
             rightColumn: [
-                "Dental Consultation",
-                "Diet Counselling",
-                "Echo Cardiogram (TMT)"
+                "PPBS",
+                "ECHO",
+                "TMT",
+                "Diet",
+                "PFT",
+                "Doctor Opinion"
             ]
         },
         {
-            title: "Complete Health Checkup",
+            title: "Comprehensive Health Checkup - Rs. 4000/-",
             testCount: "13",
             leftColumn: [
                 "CBC",
-                "Blood Sugar",
-                "Serum Creatinine",
-                "Total Cholesterol",
-                "ECG",
-                "Chest X-Ray",
-                "General Consultation",
+                "RFT",
+                "LFT",
+                "FBS",
+                "PPBS",
+                "TSH",
+                "Lipid Profile",
             ],
             rightColumn: [
-                "Dental Consultation",
-                "Diet Counselling",
-                "Echo Cardiogram (TMT)",
-                "Pulmonary Function Test",
-                "Periscope Test",
-                "Urine Routine"
+                "PFT",
+                "HbA1C",
+                "USG Abdomen",
+                "Chest X-ray",
+                "Eye Checkup",
+                "Diet COunseling",
+                "Dental Opinion & Specialist Opinion",
             ]
         },
-        {
-            title: "Executive Health Checkup",
-            testCount: "16",
-            leftColumn: [
-                "CBC",
-                "Blood Sugar",
-                "Serum Creatinine",
-                "Total Cholesterol",
-                "ECG",
-                "Chest X-Ray",
-                "General Consultation",
-            ],
-            rightColumn: [
-                "Dental Consultation",
-                "Diet Counselling",
-                "Echo Cardiogram (TMT)",
-                "Pulmonary Function Test",
-                "Periscope Test",
-                "Urine Routine",
-                "Physiotherapy"
-            ]
-        },
-        {
-            title: "Women Executive Health Checkup",
-            testCount: "17",
-            leftColumn: [
-                "CBC",
-                "Blood Sugar",
-                "Serum Creatinine",
-                "Total Cholesterol",
-                "ECG",
-                "Chest X-Ray",
-                "General Consultation",
-                "Dental Consultation",
-            ],
-            rightColumn: [
-                "Diet Counselling",
-                "Echo Cardiogram (TMT)",
-                "Pulmonary Function Test",
-                "Periscope Test",
-                "Urine Routine",
-                "Ultrasound Scan – Abdomen / Pap Smear Test",
-                "Mammogram"
-            ]
-        },
-        {
-            title: "Comprehensive Health Checkup",
-            testCount: "18",
-            leftColumn: [
-                "CBC",
-                "Blood Sugar",
-                "Serum Creatinine",
-                "Total Cholesterol",
-                "ECG",
-                "Chest X-Ray",
-                "General Consultation",
-                "Dental Consultation",
-            ],
-            rightColumn: [
-                "Diet Counselling",
-                "Echo Cardiogram (TMT)",
-                "Pulmonary Function Test",
-                "Periscope Test",
-                "Urine Routine",
-                "Physiotherapy",
-                "Foot Scan Test",
-                "Hba1c"
-            ]
-        }
+
     ];
 
     return (
@@ -250,14 +198,14 @@ const Healthpackage = () => {
                     style={{ backgroundImage: `url(${Banner.src})` }}
                 >
                     <div className="pl-8 md:pl-20">
-                        <motion.p
+                        <motion.div
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.4 }}
-                            className=" mb-4 text-white"
+                            className=" mb-3 text-white"
                         >
-                            Home / Master Health Checkup
-                        </motion.p>
+                            <Breadcrumb items={breadcrumbItems} />
+                        </motion.div>
 
                         <motion.h1
                             initial={{ opacity: 0, y: 10 }}
@@ -293,7 +241,10 @@ const Healthpackage = () => {
                             Executive Health Check–Up at Sudha Multispeciality Hospital
                         </h2>
                         <p className="">
-                            Sudha Hospital offers a range of preventive health checkup packages designed to support early detection, timely intervention, and overall wellness. From basic screenings to comprehensive evaluations, each package includes essential diagnostic tests, specialist consultations, and personalized counselling. These health checkups are tailored to meet the needs of individuals across all age groups and health conditions, ensuring a proactive approach to long-term well-being. With expert medical support and advanced diagnostic tools, Sudha Hospital helps you take charge of your health with confidence.
+                            Sudha Hospital offers a range of preventive health checkup packages designed to support early detection, timely intervention, and overall wellness.
+                            From basic screenings to comprehensive evaluations, each package includes essential diagnostic tests, specialist consultations, and personalized counselling.
+                            These health checkups are tailored to meet the needs of individuals across all age groups and health conditions, ensuring a proactive approach to
+                            long-term well-being. With expert medical support and advanced diagnostic tools, Sudha Hospital helps you take charge of your health with confidence.
                         </p>
                     </div>
 
@@ -302,7 +253,7 @@ const Healthpackage = () => {
                         <img
                             src={Doctors.src}
                             alt="Doctors"
-                            className="rounded-xl shadow-md w-full h-auto object-cover"
+                            className="rounded-3xl shadow-md w-full h-auto object-cover"
                         // style={{ height: '230px', width: '350px' }}
                         />
                     </div>
@@ -316,7 +267,7 @@ const Healthpackage = () => {
                         <img
                             src={Checking?.src}
                             alt="Checking"
-                            className="rounded-2xl object-cover max-h-[350px] w-full max-w-md md:max-w-full"
+                            className="rounded-3xl object-cover max-h-[350px] w-full max-w-md md:max-w-full"
                         />
 
                         <div className="mt-4 w-full max-w-md">
@@ -351,15 +302,17 @@ const Healthpackage = () => {
                     </div>
 
                     {/* Right Section (Accordion Content) */}
-                    <div className="w-full md:w-[70%]">
-                        <h1 className='text-left text-[30px] text-black mb-8'>Executive Health Checkup</h1>
+                    <div className="w-full px-4 sm:px-6 md:px-10 lg:w-[70%]">
+                        <h1 className='text-left text-[24px] sm:text-[28px] md:text-[30px] text-black mb-8'>
+                            Master Health Checkup Packages
+                        </h1>
                         <div className="flex flex-col gap-0">
                             {healthPackages.map((pkg, index) => (
                                 <div key={index} className="w-full border-b border-gray-200 last:border-b-0">
                                     {/* Accordion Header */}
                                     <button
                                         onClick={() => toggleAccordion(index)}
-                                        className="w-full py-4 px-0 text-left flex justify-between items-center bg-white hover:bg-gray-50 transition-colors duration-200"
+                                        className="w-full py-4 px-2 sm:px-4 text-left flex justify-between items-center bg-white hover:bg-gray-50 transition-colors duration-200"
                                     >
                                         <div className="flex items-center gap-4 pl-4">
                                             <h3 className=" text-[18px]  text-black">
@@ -392,8 +345,8 @@ const Healthpackage = () => {
                                                             No of Tests – {pkg.testCount}
                                                         </div>
 
-                                                        <div className="grid grid-cols-1 sm:grid-cols-2 px-6 py-5 gap-y-3 border-t">
-                                                            <div className="space-y-3 pr-6 border-r border-gray-200">
+                                                        <div className="grid grid-cols-1 sm:grid-cols-2 px-4 sm:px-6 py-5 gap-y-4 sm:gap-y-3 border-t">
+                                                            <div className="space-y-3 sm:pr-6 border-r border-gray-200">
                                                                 {pkg.leftColumn.map((text, i) => (
                                                                     <div key={i} className="flex items-center text-[14px] space-x-4 text-[#5E566A] font-semibold">
                                                                         <div className="w-6 h-6 rounded-full bg-[#F1F3F9] flex items-center justify-center">
@@ -414,7 +367,7 @@ const Healthpackage = () => {
                                                                 ))}
                                                             </div>
 
-                                                            <div className="space-y-3 pl-6">
+                                                            <div className="space-y-3 sm:pl-6 mt-4 sm:mt-0">
                                                                 {pkg.rightColumn.map((text, i) => (
                                                                     <div key={i} className="flex items-center text-[#5E566A] text-[14px] space-x-4 font-semibold">
                                                                         <div className="w-6 h-6 rounded-full bg-[#F1F3F9] flex items-center justify-center">
@@ -447,40 +400,63 @@ const Healthpackage = () => {
                 </div>
             </section>
 
-            <section className="px-4 sm:px-4 lg:px-5">
-                <div className="max-w-7xl  mx-auto px-4 ourteam pt-16 pb-20">
-                    <div className="flex justify-center ">
-                        <h2 className="bg-white text-[#2B3990] px-5  py-2 rounded-full text-sm font-semibold">
+            <div className="max-w-3xl ml-auto mr-36">
+                <section className="w-full sm:w-auto">
+                    <ul className="text-left mt-0 mb-7">
+                        {[
+                            "+ Rs. 1000/- Extra (Men - Serum PSA, Carotid Doppler)",
+                            "+ Rs. 1000/- Extra (Women - Mammogram, PAP Smear)",
+                        ].map((item, i) => (
+                            <li
+                                key={i}
+                                className="flex items-start font-semibold text-[#5E566A] mb-3"
+                            >
+                                <span className="text-blue-600 mr-2 leading-none">
+                                    <Image src={Check} alt="tick" width={24} height={24} />
+                                </span>
+                                {item}
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+            </div>
+
+            <section className="px-4 sm:px-6 lg:px-8">
+                <div className="max-w-7xl mx-auto px-4 ourteam pt-16 pb-20">
+                    <div className="flex justify-center">
+                        <h2 className="bg-white text-[#2B3990] px-5 py-2 rounded-full text-sm font-semibold">
                             Our Medical Team
                         </h2>
                     </div>
 
-                    <h2 className="text-center text-[30px] text-white mt-4">
+                    <h2 className="text-center text-[24px] sm:text-[28px] md:text-[30px] text-white mt-4">
                         Our Health Checkup Team
                     </h2>
+
                     <div className="relative mt-10">
                         <Slider {...settings}>
                             {doctorsData.map((doc, index) => (
                                 <div
                                     key={index}
-                                    className="w-[160px] sm:w-[160px] md:w-[180px] h-[400px]  
-             rounded-xl overflow-hidden text-center relative "
+                                    className="w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px] h-[380px] sm:h-[400px]  
+              rounded-xl overflow-hidden text-center relative mx-auto"
                                 >
                                     <div className="ourteamcard_img">
                                         <Image
                                             src={doc.image}
                                             alt={doc.name}
-                                            className="mx-auto rounded-xl mb-2 w-[90%] h-auto gap-4 "
+                                            className="mx-auto rounded-xl mb-2 w-[85%] sm:w-[90%] h-auto"
                                         />
                                     </div>
+
                                     {/* Arrow Button */}
                                     <Link
                                         href=""
-                                        className="absolute bottom-32  right-2 w-10 h-10 rounded-full bg-white flex items-center justify-center z-30 group "
+                                        className="absolute bottom-28 sm:bottom-32 right-2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center z-30 group"
                                     >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
-                                            className="w-5 h-5 text-black transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                                            className="w-4 h-4 sm:w-5 sm:h-5 text-black transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             stroke="currentColor"
@@ -493,22 +469,23 @@ const Healthpackage = () => {
                                             />
                                         </svg>
                                     </Link>
-                                    <h3 className="text-[14px] sm:text-[16px] mt-5 font-semibold text-white">
+
+                                    <h3 className="text-[13px] sm:text-[14px] md:text-[16px] mt-4 font-semibold text-white">
                                         {doc.name}
                                     </h3>
-                                    <p className="text-[12px] font-medium text-white mt-2">
+                                    <p className="text-[11px] sm:text-[12px] font-medium text-white mt-1">
                                         {doc.degrees}
                                     </p>
-                                    <p className="text-[12px] font-medium text-white mt-2">
+                                    <p className="text-[11px] sm:text-[12px] font-medium text-white mt-1">
                                         {doc.qualification}
                                     </p>
-
                                 </div>
                             ))}
                         </Slider>
                     </div>
                 </div>
             </section>
+
             <Bookappointment />
         </div>
     )

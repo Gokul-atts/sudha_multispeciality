@@ -2,19 +2,27 @@
 import React from 'react';
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Banner from "@/assets/Ourmanagement/banner.png";
+import Banner from "@/assets/about/board-of-directors.webp";
 import Contactusmain from '@/components/contactusmain';
 import Marquee from "react-fast-marquee";
 import Image from 'next/image';
-import Chairmen from "@/assets/Ourmanagement/Chairman.jpg";
+import Chairmen from "@/assets/ourmanagement/chairman.jpg";
 import HospitalCard from "@/components/Hospital";
 import Executiveteam from '@/components/Executiveteam';
 import "../Ourmanagement/Ourmanagement.css";
-import Sudha from "@/assets/Ourmanagement/Sudha.png"
+import Sudha from "@/assets/ourmanagement/Sudha.png"
 import hospitalOne from "@/assets/home/cards/c1.svg";
 import hospitalTwo from "@/assets/home/cards/c2.svg";
 import hospitalThree from "@/assets/home/cards/c3.svg";
 import hospitalFour from "@/assets/home/cards/c4.svg";
+import Breadcrumb from "@/components/Breadcrumb";
+
+
+const breadcrumbItems = [
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "" },
+     { label: "Board of Management", href: "/board-of-management" },
+  ];
 
 const hospitalscards = [
   {
@@ -72,14 +80,14 @@ const Ourmanagement = () => {
         >
           <div className="pl-8 md:pl-20">
             {/* Breadcrumb */}
-            <motion.p
+            <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
               className="text-sm mb-4 text-white"
             >
-              Home / About us / Our Growth Story
-            </motion.p>
+             <Breadcrumb items={breadcrumbItems} />
+            </motion.div>
 
             {/* Title */}
             <motion.h1

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import Award from "@/assets/contactus/award.png";
+import Award from "../assets/Contactus/award.png";
 
 const Awardlist = () => {
   const rightbar = [

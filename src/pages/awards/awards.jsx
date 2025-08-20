@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Banner from "@/assets/about/hero.png";
+import Banner from "@/assets/about/awards.webp";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Contactusmain from "@/components/contactusmain";
@@ -19,6 +19,14 @@ import hospitalTwo from "@/assets/home/cards/c2.svg";
 import hospitalThree from "@/assets/home/cards/c3.svg";
 import hospitalFour from "@/assets/home/cards/c4.svg";
 import HospitalCard from "@/components/Hospital";
+import Breadcrumb from "@/components/Breadcrumb";
+
+
+const breadcrumbItems = [
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "" },
+     { label: "Awards & Honors", href: "/awards-and-honors" },
+  ];
 
 const hospitalscards = [
   {
@@ -89,14 +97,17 @@ const Awards = () => {
           className=" relative top-3 max-w-full  mx-auto px-4 py-36 relative z-10 text-white bg-center bg-no-repeat bg-cover md:bg-contain"
           style={{ backgroundImage: `url(${Banner.src})` }}
         >
-          <motion.p
+
+          <div className="pl-8 md:pl-20">
+
+          <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="text-sm mb-4 text-white"
+            className="mb-3 text-white"
           >
-            Home / About Us / Awards & Honors
-          </motion.p>
+             <Breadcrumb items={breadcrumbItems} />
+          </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 10 }}
@@ -115,6 +126,7 @@ const Awards = () => {
           >
             The Symbol of Sudha Reputation – Our Awards and Honours
           </motion.p>
+          </div>
         </div>
       </section>
 
@@ -181,8 +193,8 @@ const Awards = () => {
               <p className=" mb-2 text-center">
                 Book in-person visits for personalized care and schedule the appointments with our experienced team.
               </p>
-              <button className="bg-[#2B3990] mt-2 text-[#fff] text-[15px] pt-3 pb-3 pr-7 pl-7 rounded-full transition flex gap-2">
-                Book an Appointment
+              <button className="btn-diagonal bg-[#2B3990] mt-2 text-[#fff] text-[15px] pt-3 pb-3 pr-7 pl-7 rounded-full transition flex gap-2 hover:-translate-y-[3px] transition-transform duration-200">
+                Book an Appointment <ArrowUpRight className="w-5 h-5" />
                
               </button>
             </div>

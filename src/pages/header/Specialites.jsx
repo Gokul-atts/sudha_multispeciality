@@ -7,7 +7,7 @@ export default function SpecialSubLink({ subLink, setHoveredSubLinkImage }={}) {
   return (
     <Link href={subLink?.hrefs}>
       <div
-        className="hover:border-b-2  bg-white hover:bg-[#F0F7FD] text-black hover:text-[#2B3990] p-4 flex items-center gap-2 "
+        className="hover:border-b-2 hover:rounded-t-md  hover:border-[#2B3990] bg-white hover:bg-[#EEF8FF] text-black hover:text-[#2B3990] p-4 flex items-center gap-2 "
         //   onMouseEnter={() => {
         //     if (subLink.image) setHoveredSubLinkImage(subLink.image);
         //   }}

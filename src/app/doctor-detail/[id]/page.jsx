@@ -3,8 +3,8 @@ import React, { use } from "react";
 import Banner from "@/assets/about/hero.png";
 import { motion } from "framer-motion";
 import Doctordeatils from "@/components/Doctordeatils";
+import Personalinfo from "@/components/Personalinfo";
 import { doctorsData } from "@/constants/doctorDetails";
-import Personalinfo from "@/components/personalinfo";
 
 export default function Doctordetail(props) {
   const params = use(props.params); // ✅ unwrap the async params

@@ -9,8 +9,16 @@ import BackgroundIMage from "../../assets/ourteam/ourteam.png";
 import { degrees, motion } from "framer-motion";
 import Link from "next/link";
 import "../Finddoctor/finddoc.css";
+import { ArrowUpRight } from "lucide-react";
 
 import { doctorsData } from "@/constants/doctorDetails";
+import Breadcrumb from "@/components/Breadcrumb";
+
+
+const breadcrumbItems = [
+    { label: "Home", href: "/" },
+    { label: "Find a Doctor", href: "/doctorlist" },
+  ];
 
 
 
@@ -69,14 +77,14 @@ export default function Finddoctor() {
         >
           <div>
             {/* Breadcrumb */}
-            <motion.p
+            <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
               className="text-sm mb-4"
             >
-              Home / Doctor
-            </motion.p>
+             <Breadcrumb items={breadcrumbItems} />
+            </motion.div>
 
             {/* Title */}
             <motion.h1
@@ -108,7 +116,7 @@ export default function Finddoctor() {
                 href="#"
                 className="inline-flex text-md items-center px-6 py-3 bg-white text-[#0C122A] font-semibold rounded-full shadow-md hover:bg-gray-100 transition"
               >
-                Book an Appointment ↗
+                Book an Appointment <ArrowUpRight className="ml-2 w-5 h-5" />
               </Link>
             </motion.div>
           </div>

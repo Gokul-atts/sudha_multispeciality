@@ -1,4 +1,4 @@
-import Insurance from '@/pages/Insurancehospital/Insurance'
+import Insurance from '@/pages/Insurance-hospital/Insurance'
 import React from 'react'
 
 function page() {

@@ -114,3 +114,209 @@
   z-index: 1;
 }
 }
+
+
+.btn-2 {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    overflow: hidden;
+    border: 2px solid #2A3D90;
+    color: #2A3D90;
+    border-radius: 9999px;
+    padding: 0.75rem 1.75rem;
+    transition: color 0.4s ease-in-out;
+    z-index: 0;
+    background-color: white;
+    gap: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-2::before,
+.btn-2::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    background-color: #2A3D90;
+    z-index: -1;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Top-right diagonal slide */
+.btn-2::before {
+    top: 0;
+    right: 0;
+    border-left: 0px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-top: 0px solid #2A3D90;
+    border-right: 0px solid #2A3D90;
+}
+
+/* Bottom-left diagonal slide */
+.btn-2::after {
+    bottom: 0;
+    left: 0;
+    border-right: 0px solid transparent;
+    border-top: 0px solid transparent;
+    border-bottom: 0px solid #2A3D90;
+    border-left: 0px solid #2A3D90;
+}
+
+.btn-2:hover {
+    color: white;
+}
+
+.btn-2:hover::before {
+    border-left: 200px solid transparent;
+    border-bottom: 100px solid transparent;
+    border-top: 0px solid #2A3D90;
+    border-right: 0px solid #2A3D90;
+}
+
+.btn-2:hover::after {
+    border-right: 200px solid transparent;
+    border-top: 100px solid transparent;
+    border-bottom: 0px solid #2A3D90;
+    border-left: 0px solid #2A3D90;
+}
+
+/* card buttons - primary color btns */
+.btn-diagonal {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: #2A3D90;
+    color: white;
+    border-radius: 9999px;
+    padding: 0.75rem 1.75rem;
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+    z-index: 0;
+    gap: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+}
+
+.btn-diagonal::before,
+.btn-diagonal::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    background-color: #173366;
+    z-index: -1;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Top-right diagonal slide */
+.btn-diagonal::before {
+    top: 0;
+    right: 0;
+    border-left: 0px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-top: 0px solid #173366;
+    border-right: 0px solid #173366;
+}
+
+/* Bottom-left diagonal slide */
+.btn-diagonal::after {
+    bottom: 0;
+    left: 0;
+    border-right: 0px solid transparent;
+    border-top: 0px solid transparent;
+    border-bottom: 0px solid #173366;
+    border-left: 0px solid #173366;
+}
+
+/* Hover state */
+.btn-diagonal:hover {
+    color: white;
+    background-color: #173366;
+}
+
+.btn-diagonal:hover::before {
+    border-left: 200px solid transparent;
+    border-bottom: 100px solid transparent;
+}
+
+.btn-diagonal:hover::after {
+    border-right: 200px solid transparent;
+    border-top: 100px solid transparent;
+}
+
+/* side bar -white buttons  */
+.btn-sidebar {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: white;
+    color: #2A3D90;
+    border-radius: 9999px;
+    padding: 0.75rem 1.75rem;
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+    z-index: 0;
+    gap: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+}
+
+.btn-sidebar::before,
+.btn-sidebar::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    background-color: #173366;
+    z-index: -1;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Top-right diagonal slide */
+.btn-sidebar::before {
+    top: 0;
+    right: 0;
+    border-left: 0px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-top: 0px solid #173366;
+    border-right: 0px solid #173366;
+}
+
+/* Bottom-left diagonal slide */
+.btn-sidebar::after {
+    bottom: 0;
+    left: 0;
+    border-right: 0px solid transparent;
+    border-top: 0px solid transparent;
+    border-bottom: 0px solid #173366;
+    border-left: 0px solid #173366;
+}
+
+/* Hover state */
+.btn-sidebar:hover {
+    color: white;
+    background-color: #173366;
+    box-shadow: 0 10px 20px 5px rgb(0 0 0 / 0.07);
+}
+
+.btn-sidebar:hover::before {
+    border-left: 200px solid transparent;
+    border-bottom: 100px solid transparent;
+}
+
+.btn-sidebar:hover::after {
+    border-right: 200px solid transparent;
+    border-top: 100px solid transparent;
+}
+
+

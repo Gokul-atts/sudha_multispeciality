@@ -1,9 +1,10 @@
 "use client";
 import Contactusmain from "@/components/contactusmain";
 import React, { useState } from "react";
-import Banner from "@/assets/about/hero.png";
+import Banner from "@/assets/about/gallery.webp";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 import hospitalOne from "@/assets/home/cards/c1.svg";
 import hospitalTwo from "@/assets/home/cards/c2.svg";
@@ -59,6 +60,19 @@ import consult2 from "@/assets/about/img.png";
 import consult3 from "@/assets/about/img.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Breadcrumb from "@/components/Breadcrumb";
+
+
+const breadcrumbItems = [
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "" },
+     { label: "Infrastructure", href: "/infrastructure" },
+  ];
+
+
+
+
+
 const hospitalscards = [
   {
     number: <h3 className="text-[48px] text-[#2B3990]">40+</h3>,
@@ -191,14 +205,14 @@ function Gallery() {
         >
           <div className="pl-8 md:pl-20">
             {/* Breadcrumb */}
-            <motion.p
+            <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="text-white mb-4"
+              className="text-white mb-3"
             >
-              Home / About Us/ Infrastructure
-            </motion.p>
+              <Breadcrumb items={breadcrumbItems} />
+            </motion.div>
 
             {/* Title */}
             <motion.h1
@@ -228,9 +242,9 @@ function Gallery() {
             >
               <Link
                 href="#"
-                className="inline-flex  items-center pt-3 pb-3 pr-7 pl-7 bg-white text-[#0C122A] rounded-full transition"
+                className="btn-white inline-flex  items-center pt-3 pb-3 pr-7 pl-7 bg-white text-[#2B3990] rounded-full transition hover:-translate-y-[3px] transition-transform duration-200"
               >
-                Book an Appointment
+                Book an Appointment <ArrowUpRight className="ml-2 w-5 h-5" />
               </Link>
             </motion.div>
           </div>
@@ -342,8 +356,8 @@ function Gallery() {
               <p className=" mb-2 text-center">
                 Book in-person visits for personalized care and schedule the appointments with our experienced team.
               </p>
-              <button className="bg-[#2B3990] mt-2 text-[#fff] text-[15px] pt-3 pb-3 pr-7 pl-7 rounded-full transition flex gap-2">
-                Book an Appointment
+              <button className="btn-diagonal bg-[#2B3990] mt-2 text-[#fff] text-[15px] pt-3 pb-3 pr-7 pl-7 rounded-full transition flex gap-2 hover:-translate-y-[3px] transition-transform duration-200">
+                Book an Appointment <ArrowUpRight className="w-5 h-5" />
 
               </button>
             </div>

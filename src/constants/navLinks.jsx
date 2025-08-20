@@ -5,7 +5,30 @@ import Awards from "../assets/home/header/awards.webp";
 import Infracstructure from "../assets/home/header/infracstructure.webp";
 import Whysudha from "../assets/home/header/why-sudha.webp";
 
-import Two from "../assets/home/header/two.png";
+import Insurance from "../assets/menu/facilities/menu-insurance.webp";
+import Ambulance from "../assets/menu/facilities/menu-ambulance.webp";
+import Pharmacy from "../assets/menu/facilities/menu-pharmacy.webp";
+import Laboratory from "../assets/menu/facilities/menu-lab.webp";
+import Health from "../assets/menu/facilities/menu-health-packages.webp";
+import Organ from "../assets/menu/facilities/organ-donation.webp";
+
+
+import National from "../assets/menu/academics/national-board.webp";
+import Diploma from "../assets/menu/academics/diploma-mbbs.webp";
+import Academics from "../assets/menu/academics/academics.webp";
+
+
+
+import Alied from "../assets/menu/resources/healthservice.webp";
+import Doctor from "../assets/menu/resources/doctors.webp";
+import Biomedical from "../assets/menu/resources/waste.webp";
+import Blogs from "../assets/menu/resources/blog.webp";
+import Contact from "../assets/menu/resources/contactus.webp";
+
+
+
+
+
 import s1 from "../assets/home/header/specialites/s1.svg";
 import s2 from "../assets/home/medical/anesthesia.svg";
 import s3 from "../assets/home/medical/cardiology.svg";
@@ -30,6 +53,8 @@ import s21 from "../assets/home/medical/pediatrics.svg";
 import s22 from "../assets/home/medical/pain-medicine.svg";
 import s23 from "../assets/home/medical/plastic-surgery.svg";
 import s24 from "../assets/home/medical/oncology.svg";
+import s25 from "../assets/home/medical/neonatology.svg";
+import s26 from "../assets/home/medical/laryngology.svg";
 export const links = [
   {
     label: "Home",
@@ -39,6 +64,7 @@ export const links = [
     label: "About Us",
     hrefs: "/our-growth-story",
     type: "aboutus",
+    imagestatic: Ourgrowth,
     caption: "Women's Snowboarding",
     subLinks: [
       {
@@ -54,8 +80,8 @@ export const links = [
         ],
       },
       {
-        header: "Board of Trustees",
-        hrefs: "/board-of-trustees",
+        header: "Board of Management",
+        hrefs: "/board-of-management",
         image: Boarddirectors,
         hoverImage: Boarddirectors,
         subMenu: [
@@ -92,7 +118,7 @@ export const links = [
       {
         header: "Why Sudha?",
         hrefs: "/why-sudha",
-         image: Whysudha,
+        image: Whysudha,
         hoverImage: Whysudha,
         subMenu: [
           {
@@ -104,8 +130,8 @@ export const links = [
       {
         header: "News & Events",
         hrefs: "/news-and-events",
-        
-         image: Whysudha,
+
+        image: Whysudha,
         hoverImage: Whysudha,
         subMenu: [
           {
@@ -365,10 +391,22 @@ export const links = [
         ],
       },
       {
-        header: "Paediatrics & Neonatology",
+        header: "Paediatrics",
         image: s21,
         // hoverImage: AboutUs,
-        hrefs: "/paediatrics-and-neonatology",
+        hrefs: "/paediatrics",
+        subMenu: [
+          {
+            label: "Our Growth Story",
+            dec: "Discover our mission, vision, and values.",
+          },
+        ],
+      },
+      {
+        header: "Neonatology",
+        image: s25,
+        // hoverImage: AboutUs,
+        hrefs: "/neonatology",
         subMenu: [
           {
             label: "Our Growth Story",
@@ -412,25 +450,35 @@ export const links = [
           },
         ],
       },
+      {
+        header: "Laryngology",
+        image: s26,
+        // hoverImage: AboutUs,
+        hrefs: "/laryngology",
+        subMenu: [
+          {
+            label: "Our Growth Story",
+            dec: "Discover our mission, vision, and values.",
+          },
+        ],
+      },
 
     ],
   },
 
-
-
-
   {
     label: "Facilities",
-    hrefs: "/kids",
-    type:"facilities",
-    navImage: "/kids-snowboarding.jpg",
-    caption: "Kids Snowboarding",
+    hrefs: "/insurance",
+    type: "facilities",
+    navImage: "",
+    caption: "Facilities",
+    imagestatic: Insurance,
     subLinks: [
       {
         header: "Insurance",
         hrefs: "/insurance",
-        image: AboutUs,
-        hoverImage: AboutUs,
+        image: Insurance,
+        hoverImage: Insurance,
         subMenu: [
           {
             label: "Our Growth Story",
@@ -441,8 +489,8 @@ export const links = [
       {
         header: "Ambulance",
         hrefs: "/ambulance-services",
-        image: Two,
-        hoverImage: Two,
+        image: Ambulance,
+        hoverImage: Ambulance,
         subMenu: [
           {
             label: "ambulance",
@@ -451,11 +499,13 @@ export const links = [
         ],
       },
       {
-        header: "Pharmarcy",
+        header: "Pharmacy",
         hrefs: "/pharmacy-services",
+        image: Pharmacy,
+        hoverImage: Pharmacy,
         subMenu: [
           {
-            label: "Pharmarcy",
+            label: "Pharmacy",
             dec: "Accessible in-house pharmacy for complete medical support.",
           },
         ],
@@ -463,6 +513,8 @@ export const links = [
       {
         header: "Laboratory",
         hrefs: "/laboratory-services",
+        image: Laboratory,
+        hoverImage: Laboratory,
         subMenu: [
           {
             label: "Laboratory",
@@ -470,10 +522,12 @@ export const links = [
           },
         ],
       },
-     
+
       {
         header: "Health Package",
         hrefs: "/health-packages",
+         image: Health,
+        hoverImage: Health,
         subMenu: [
           {
             label: "Blood Centre",
@@ -481,13 +535,15 @@ export const links = [
           },
         ],
       },
-       {
+      {
         header: "Organ Transplant",
         hrefs: "/renal-transplant",
+        image: Organ,
+        hoverImage: Organ,
         subMenu: [
           {
             label: "Renal Transplant",
-            dec: "Safe, timely blood services for critical care.",
+            dec: "Restoring lives through expert transplant care.",
           },
         ],
       },
@@ -503,28 +559,19 @@ export const links = [
 
   {
     label: "Academics",
-    hrefs: "/kids",
-    type:"academics",
-    navImage: "/kids-snowboarding.jpg",
+    hrefs: "/fellow-of-national-board",
+    type: "academics",
+    imagestatic: Academics,
+    navImage: "",
     caption: "Kids Snowboarding",
+   
     subLinks: [
-      // {
-      //   header: "Alied Health Science",
-      //   hrefs: "/insurance",
-      //   image: AboutUs,
-      //   hoverImage: AboutUs,
-      //   subMenu: [
-      //     {
-      //       label: "Our Growth Story",
-      //       dec: "Building skilled professionals for supportive healthcare services.",
-      //     },
-      //   ],
-      // },
+      
       {
         header: "Fellow of National Board (FNB) ",
         hrefs: "/fellow-of-national-board",
-        image: Two,
-        hoverImage: Two,
+        image: National,
+        hoverImage: National,
         subMenu: [
           {
             label: "Fellow of National Board (FNB) ",
@@ -534,7 +581,9 @@ export const links = [
       },
       {
         header: "Post MBBS Diploma Courses (DNB)",
-        hrefs: "/pharmarcy",
+        hrefs: "/fellow-of-national-board",
+        image: Diploma,
+        hoverImage: Diploma,
         subMenu: [
           {
             label: "Post MBBS Diploma Courses (DNB )",
@@ -548,99 +597,76 @@ export const links = [
 
   {
     label: "Resources",
-    hrefs: "/kids",
-    type:"academics",
-    navImage: "/kids-snowboarding.jpg",
-    caption: "Kids Snowboarding",
+    hrefs: "/allied-health-services",
+    type: "academics",
+    imagestatic: Alied,
+    navImage: "",
+    caption: "Resources",
     subLinks: [
       {
         header: "Alied Health Service",
-        hrefs: "/insurance",
-        image: AboutUs,
-        hoverImage: AboutUs,
+        hrefs: "/allied-health-services",
+        image: Alied,
+        hoverImage: Alied,
         subMenu: [
           {
-            label: "Our Growth Story",
+            label: "Alied Health Service",
             dec: "Essential clinical support improving treatment and recovery",
           },
         ],
       },
       {
-        header: "Our Blogs ",
-        hrefs: "/fellow-of-national-board",
-        image: Two,
-        hoverImage: Two,
+        header: "Find a Doctor",
+        hrefs: "/doctorlist",
+        image: Doctor,
+        hoverImage: Doctor,
         subMenu: [
           {
-            label: "Fellow of National Board (FNB) ",
-            dec: "Trusted hands delivering compassionate, expert patient care",
+            label: "Find a Doctor",
+            dec: "Trusted doctors for every health concern and need.",
           },
         ],
       },
-    
+     
+
       {
-        header: "Biomedical Report",
-        hrefs: "/pharmarcy",
+        header: "Bio-medical Report",
+        hrefs: "/bio-medical-report",
+        image: Biomedical,
+        hoverImage: Biomedical,
         subMenu: [
           {
-            label: "Post MBBS Diploma Courses (DNB )",
-            dec: "Detailed biomedical report ensuring hospital safety standards",
+            label: "Bio-medical Report",
+            dec: "Trusted health insights and tips from our experts",
           },
         ],
       },
-        {
+       {
+        header: "Blogs ",
+        hrefs: "/",
+        image: Blogs,
+        hoverImage: Blogs,
+        subMenu: [
+          {
+            label: "Blogs ",
+            dec: "Trusted health insights and tips from our experts.",
+          },
+        ],
+      },
+      {
         header: "Contact Us",
         hrefs: "/contact-us",
+        image: Contact,
+        hoverImage: Contact,
         subMenu: [
           {
-            label: "Post MBBS Diploma Courses (DNB )",
-            dec: "Advancing medical knowledge through focused clinical exploration",
+            label: "Contact Us",
+            dec: "Connect with us for expert care, always available",
           },
         ],
       },
-             {
-        header: "Our Doctors",
-        hrefs: "/",
-        subMenu: [
-          {
-            label: "Post MBBS Diploma Courses (DNB )",
-            dec: "Advancing medical knowledge through focused clinical exploration",
-          },
-        ],
-      },
+      
     ],
   },
 
-
-
-  // {
-  //   label: "Facilities",
-  //   hrefs: "/resorts",
-  //   subLinks: [
-  //     {
-  //       subImages: [
-  //         {
-  //           label: "Bear Mountain",
-  //           hrefs: "/",
-  //           image: "/bear-mountain.jpg",
-  //         },
-  //         {
-  //           label: "Lion's Peak",
-  //           hrefs: "/",
-  //           image: "/lions-peak.jpg",
-  //         },
-  //         {
-  //           label: "Copper Mountain",
-  //           hrefs: "/",
-  //           image: "/copper-mountain.jpg",
-  //         },
-  //         {
-  //           label: "Fallen Valley",
-  //           hrefs: "/",
-  //           image: "/fallen-valley.jpg",
-  //         },
-  //       ],
-  //     },
-  //   ],
-  // },
 ];

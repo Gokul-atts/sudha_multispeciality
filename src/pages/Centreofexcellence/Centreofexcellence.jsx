@@ -15,6 +15,7 @@ import Checklight from "@/assets/home/check-light.svg";
 import hospitalTwo from "@/assets/home/cards/c2.svg";
 import hospitalThree from "@/assets/home/cards/c3.svg";
 import hospitalFour from "@/assets/home/cards/c4.svg";
+import './Centreofexcellence.css';
 
 const hospitalscards = [
     {

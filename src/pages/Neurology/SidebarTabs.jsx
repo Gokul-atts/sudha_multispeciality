@@ -159,15 +159,15 @@ const accordionData = [
     content: (
       <div className="text-sm space-y-3">
         <p>
-          Specialised in rapid stroke diagnosis, clot removal, and vascular surgeries to restore blood flow and prevent disability. Our multidisciplinary approach ensures timely intervention during the golden hour for better outcomes. We also provide rehabilitation support for post-stroke recovery.
+          Specialised in rapid stroke diagnosis, clot removal, and vascular surgeries to restore blood flow and prevent disability. Our multidisciplinary approach ensures timely intervention during the golden hour for better outcomes. We also provide rehabilitation support for post-stroke recovery. 
         </p>
         <p className="mt-3 font-bold text-primary-blue">Key Procedures: </p>
 
         <div>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Interventional Neuroradiology for Subarachnoid Haemorrhage & AVM</li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Interventional Neuroradiology for Subarachnoid Haemorrhage & AVM </li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Carotid Angioplasty for Carotid Artery Stenosis </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Neurovascular Surgery including Aneurysm and AVM clipping</li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Neurovascular Surgery including Aneurysm and AVM clipping </li>
           </ul>
 
         </div>
@@ -179,25 +179,25 @@ const accordionData = [
       <>
         <div className="flex gap-3">
           {/* <Image src={one} alt="Neurology" /> */}
-          Movement Disorders & Parkinson’s Care
+          Movement Disorders & Parkinson’s Care 
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p>
-          We offer advanced treatments for Parkinson’s, tremors, and dystonia using non-invasive and surgical options. Treatment plans are tailored based on the stage of the disease and patient needs. Our care focuses on improving motor control and enhancing life quality.
+          We offer advanced treatments for Parkinson’s, tremors, and dystonia using non-invasive and surgical options. Treatment plans are tailored based on the stage of the disease and patient needs. Our care focuses on improving motor control and enhancing life quality. 
         </p>
         <p className="mt-3 font-bold text-primary-blue">Key Treatments: </p>
 
-        <div>
+        {/* <div>
           <ul className="space-y-4">
             <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Botox Injections for Movement Disorders, Cerebral Palsy & Post-Stroke Status</li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Deep Brain Stimulation (DBS) </li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Microelectrode Recording for DBS Targeting</li>
           </ul>
 
-        </div>
+        </div> */}
       </div>
     ),
   },
@@ -214,17 +214,17 @@ const accordionData = [
     content: (
       <div className="text-sm  space-y-3">
         <p>
-          Comprehensive epilepsy care for uncontrolled seizures including surgical options for drug-resistant cases. Our diagnostic tools allow for pinpointing seizure origin for effective management. We also support long-term lifestyle and medication guidance for patients.
+          Comprehensive epilepsy care for uncontrolled seizures including surgical options for drug-resistant cases. Our diagnostic tools allow for pinpointing seizure origin for effective management. We also support long-term lifestyle and medication guidance for patients. 
         </p>
-        <p className="mt-3 font-bold text-primary-blue">Specialized Services: </p>
-        <div>
+       
+        {/* <div>
           <ul className="space-y-4">
             <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Video EEG Monitoring</li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Epilepsy Surgeries</li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Intraoperative Monitoring for Seizure Focus Removal</li>
           </ul>
 
-        </div>
+        </div> */}
       </div>
     ),
   },
@@ -245,10 +245,10 @@ const accordionData = [
         <p className="mt-3 font-bold text-primary-blue">Advanced Surgeries: </p>
         <div>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Micro Neurosurgical Tumour Removal</li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Stereotactic surgery (Pinhole/Keyhole Brain Biopsy)</li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Skull Base Surgery</li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Cranial Nerve & Motor Cortex Monitoring</li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Micro Neurosurgical Tumour Removal </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Endoscopic Skull based works </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Surgery for vascular lesions </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} />Cranial Nerve & Motor Cortex Monitoring </li>
           </ul>
 
         </div>
@@ -273,12 +273,11 @@ const accordionData = [
         <div>
           <ul className="space-y-4">
             <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Surgery for Spinal Cord Tumours</li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Intraoperative Monitoring for Scoliosis Surgeries</li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Sphincter EMG for Urinary & Sexual Dysfunction</li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Intraoperative Monitoring for Complex Surgeries</li>
            
           </ul>
 
-          
+
         </div>
       </div>
     ),
@@ -304,9 +303,9 @@ const accordionData = [
             <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Evoked Potential Testing</li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Sleep Studies and Multiple Sleep Latency Tests</li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Motor Cortex & Sphincter Mapping</li>
-           
+
           </ul>
-          
+
         </div>
       </div>
     ),
@@ -416,7 +415,7 @@ export default function SidebarTabs() {
 
 
 
-          <button className="inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px]">
+          <button className="btn-sidebar inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px] hover:-translate-y-[3px] transition-transform duration-200">
             Book an Appointment <ArrowUpRight className="w-5 h-5" />
           </button>
         </div>

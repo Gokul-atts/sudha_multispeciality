@@ -163,9 +163,9 @@ const accordionData = [
 
         <div>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} /> Fever, cold, cough & flu </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} /> Fever, cold, cough, pneumonia & flu  </li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Allergies and infections </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Gastritis, acidity, and indigestion </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Gastritis, acidity, indigestion, and gastroenteritis  </li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Headaches and migraines </li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Body pain, weakness, and fatigue </li>
 
@@ -192,11 +192,12 @@ const accordionData = [
 
         <div>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} /> Diabetes Mellitus </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} /> Diabetes Mellitus  </li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Hypertension (High Blood Pressure) </li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Asthma and COPD </li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Thyroid disorders </li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Heart disease </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Cholesterol disorders  </li>
 
           </ul>
 
@@ -393,10 +394,10 @@ export default function SidebarTabs() {
             <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} /> Personalized care plans based on patient history and medical conditions.</li>
             <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />Offers comprehensive diagnosis and treatment for acute and chronic illnesses.</li>
           </ul>
-         
 
 
-          <button className="inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px]">
+
+          <button className="btn-sidebar inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px] hover:-translate-y-[3px] transition-transform duration-200">
             Book an Appointment <ArrowUpRight className="w-5 h-5" />
           </button>
         </div>
@@ -437,7 +438,10 @@ export default function SidebarTabs() {
                   <span className="text-[#2B3990]"> Erode</span> at Sudha Multispeciality Hospital
                 </h2>
                 <p className="mb-4">
-                  The Department of General Medicine offers round-the-clock, patient-centred care for a wide range of medical conditions. Equipped with modern diagnostic tools and a team of experienced physicians, our General Medicine unit serves as the first point of contact for all non-surgical health issues. We focus on early diagnosis, preventive care, and long-term disease management for both acute and chronic illnesses. Our physicians collaborate with various specialties within the hospital to ensure integrated and personalized treatment for every patient.
+                  The Department of General Medicine offers round-the-clock, patient-centred care for a wide range of medical conditions. Equipped with modern diagnostic
+                  tools and a team of experienced physicians, our General Medicine unit serves as the first point of contact for all non-surgical health issues. We focus on early
+                  diagnosis, preventive care, and long-term disease management for both acute and chronic illnesses. Our physicians collaborate with various specialties within
+                  the hospital to ensure integrated and personalized treatment for every patient.
                 </p>
               </>
             )}

@@ -63,7 +63,7 @@ const RegistrationForm = () => {
             ></textarea>
             </div>
           </form>
-           <button className="inline-flex items-center gap-2 bg-[#1F2B6C] mt-5  text-white font-semibold  pt-3 pb-3 pr-7 pl-7 rounded-full shadow text-sm">
+           <button className="btn-diagonal inline-flex items-center gap-2 bg-[#1F2B6C] mt-5  text-white font-semibold  pt-3 pb-3 pr-7 pl-7 rounded-full shadow text-sm">
            Book an Appointment <ArrowUpRight className="w-4 h-4" />
            </button>
     </div>

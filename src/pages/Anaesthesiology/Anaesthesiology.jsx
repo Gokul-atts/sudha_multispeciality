@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Banner from "@/assets/about/hero.png";
+import Banner from "@/assets/specialites/anaesthesia/anaesthesia.webp";
 import Clinic from "@/assets/about/clinic.png";
 import Image from "next/image";
 // Sample images – replace with your own
@@ -17,6 +17,7 @@ import "./Anaesthesiology.css";
 import Bookappointment from "@/components/Bookappointment";
 import SidebarTabs from "./SidebarTabs";
 import Breadcrumb from "@/components/Breadcrumb";
+import { ArrowUpRight } from "lucide-react";
 
 const consultSlides = [consult1, consult2, consult3];
 
@@ -42,10 +43,10 @@ function Anaesthesiology() {
   };
   return (
     <div>
-      <section className="relative -mt-12 lg:-mt-24 m-10">
+      <section className="relative -mt-12 lg:-mt-28 m-10">
         {/* Background Gradient */}
         <div
-          className="max-w-full mx-auto px-4 py-36 relative z-10 text-white bg-center bg-no-repeat bg-cover lg:bg-contain banner"
+          className="max-w-full mx-auto px-4 py-36 relative z-10 text-white bg-center bg-no-repeat bg-cover lg:bg-contain banner min-h-400"
           style={{ backgroundImage: `url(${Banner.src})` }}
         >
           <div className="pl-8 md:pl-20">
@@ -87,14 +88,14 @@ function Anaesthesiology() {
             >
               <Link
                 href="#"
-                className="inline-flex  text-[16px] tracking-wide items-center px-7 py-3 bg-white text-[#2B3990] font-semibold rounded-full  hover:bg-gray-100 transition"
+                className="btn-white inline-flex  text-[16px] tracking-wide items-center px-7 py-3 bg-white text-[#2B3990] font-semibold rounded-full  hover:-translate-y-[3px] transition-transform duration-200"
               >
-                Book an Appointment
+                Book an Appointment <ArrowUpRight className="w-5 h-5" />
               </Link>
             </motion.div>
           </div>
 
-          <div className="absolute bottom-[40px] hidden md:block right-4 sm:right-10 md:-right-[35px] z-30 text-[#2B3990] p-4 rounded-xl w-[220px]">
+          <div className="absolute bottom-[30px] hidden md:block right-4 sm:right-10 md:-right-[35px] z-30 text-[#2B3990] p-4 rounded-xl w-[220px] mt-8">
             <h3 className="text-[36px] font-bold tracking-wide">40+</h3>
             <p className="text-lg leading-[1.6] tracking-wide text-black font-semibold">
               Years of Trusted <br />
@@ -102,6 +103,7 @@ function Anaesthesiology() {
               Healthcare
             </p>
           </div>
+
 
         </div>
       </section>
@@ -112,7 +114,7 @@ function Anaesthesiology() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto py-16 relative">
+      <section className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 relative">
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
           {/* Left - Image with Overlay Card */}
           <div className="relative w-full lg:w-1/2 mx-auto rounded-2xl overflow-hidden">
@@ -124,24 +126,15 @@ function Anaesthesiology() {
             />
 
             {/* Overlay Card at Bottom Center */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 bg-white/80 p-6 w-[90%] bottom-10 flex flex-col items-center justify-end rounded-2xl">
-              <h3 className="text-[20px] mb-2 text-center">
+            <div className="absolute left-1/2 transform -translate-x-1/2 bg-white/80 p-4 sm:p-6 w-[90%] bottom-6 sm:bottom-10 flex flex-col items-center justify-end rounded-2xl">
+              <h3 className="text-[18px] sm:text-[20px] mb-2 text-center">
                 Your Health, Our Priority
               </h3>
-              <p className=" mb-4 text-center">
+              <p className="mb-4 text-center text-sm sm:text-base">
                 Get all your personalised healthcare services under one roof from experienced and trusted doctors.
               </p>
-              <button className="inline-flex items-center text-white bg-[#2B3990] hover:bg-[#1e2a70] px-7 py-3 rounded-full text-sm font-medium">
-                Book Your Appointment Today
-                <svg
-                  className="ml-2 w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
+              <button className="btn-diagonal inline-flex items-center text-white bg-[#2B3990] hover:bg-[#1e2a70] px-5 sm:px-7 py-2 sm:py-3 rounded-full text-sm font-medium hover:-translate-y-[3px] transition-transform duration-200">
+                Book Your Appointment Today <ArrowUpRight className="w-5 h-5" />
               </button>
             </div>
           </div>
@@ -149,17 +142,19 @@ function Anaesthesiology() {
           {/* Right - Info Card and Paragraph */}
           <div className="w-full lg:w-3/5 flex flex-col gap-6">
             {/* Gradient Box */}
-            <div className="bg-gradient-to-r from-[#2B3990] to-[#0D112A] p-8  rounded-2xl text-white">
-              <h4 className="text-[20px]  font-bold mb-2">
+            <div className="bg-gradient-to-r from-[#2B3990] to-[#0D112A] p-6 sm:p-8 rounded-2xl text-white">
+              <h4 className="text-[18px] sm:text-[20px] font-bold mb-2">
                 World-Class Care for Everyone
               </h4>
-              <p className=" mt-4  text-white">
-                We are dedicated to providing top-quality treatments and healthcare services,<br /> supported by advanced international technology and a team of highly experienced <br />medical professionals.
+              <p className="mt-4 text-sm sm:text-base text-white">
+                We are dedicated to providing top-quality treatments and healthcare services,<br className="hidden sm:block" />
+                supported by advanced international technology and a team of highly experienced <br className="hidden sm:block" />
+                medical professionals.
               </p>
             </div>
 
             {/* Description */}
-            <div className="w-full max-w-4xl mx-auto ">
+            <div className="w-full max-w-4xl mx-auto">
               <Slider {...settings}>
                 {consultSlides.map((img, idx) => (
                   <div key={idx}>
@@ -168,7 +163,7 @@ function Anaesthesiology() {
                         <Image
                           src={img}
                           alt={`Consult ${idx + 1}`}
-                          className="w-full h-[284px] object-cover"
+                          className="w-full h-[200px] sm:h-[284px] object-cover"
                         />
                       </div>
                     </div>
@@ -179,6 +174,7 @@ function Anaesthesiology() {
           </div>
         </div>
       </section>
+
 
       <section>
         <Bookappointment />

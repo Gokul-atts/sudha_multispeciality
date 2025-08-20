@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const ServiceCard = ({ icon, title, link = "#" }) => {
+const ServiceCard = ({ icon, title, link }) => {
   return (
+    <Link href={link} >
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -23,8 +24,7 @@ const ServiceCard = ({ icon, title, link = "#" }) => {
         </h3>
 
         {/* Arrow Button */}
-        <Link
-          href={link}
+        <div
           className="absolute bottom-1 right-2 w-12 h-12 rounded-full bg-white flex items-center justify-center z-30  group transition-all duration-300"
         >
           <svg
@@ -41,9 +41,10 @@ const ServiceCard = ({ icon, title, link = "#" }) => {
               d="M17 7L7 17M7 7h10v10"
             />
           </svg>
-        </Link>
+        </div>
       </div>
     </motion.div>
+    </Link>
   );
 };
 

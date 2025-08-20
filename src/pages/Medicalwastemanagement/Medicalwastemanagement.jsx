@@ -1,8 +1,14 @@
 'use client';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import Banner from "@/assets/termsandconditions/Banner.png";
+import Banner from "@/assets/bio-medical/bio-medical.webp";
+import Breadcrumb from "@/components/Breadcrumb";
 
+
+const breadcrumbItems = [
+    { label: "Home", href: "/" },
+    { label: "Bio Medical Waste Management", href: "/bio-medical-report" },
+];
 const Data = [
     { date: "01", clinical_waste_red: 138.0, infectious_waste_yellow: 161.3, sharp_waste_white: 0, bottle_waste_blue: 3.700, total_kgs: 322.9, vehicle_number: "9972" },
     { date: "02", clinical_waste_red: 138.0, infectious_waste_yellow: 161.3, sharp_waste_white: 5, bottle_waste_blue: 23.300, total_kgs: 397.7, vehicle_number: "9972" },
@@ -45,60 +51,67 @@ const Medicalwastemanagement = () => {
     return (
         <div className="text-black">
             {/* Banner Section */}
-            <section className="relative -mt-12 lg:-mt-20 mb-10">
+            <section className="relative -mt-20 lg:-mt-[100px] m-10">
                 <div
-                    className="relative max-w-7xl mx-auto px-4 py-36 z-10 text-white bg-[center_top_-40px] bg-no-repeat bg-cover lg:bg-contain rounded-[12px]"
+                    className="max-w-full mx-auto px-4 py-36 relative z-10 text-white bg-center bg-no-repeat bg-cover lg:bg-contain banner min-h-400"
                     style={{ backgroundImage: `url(${Banner.src})` }}
                 >
                     <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-                        <div>
-                            <motion.p
+                        <div className="pl-8 md:pl-20">
+                            <motion.div
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.4 }}
-                                className="text-sm mb-4"
+                                className=" mb-3 text-white"
                             >
-                                Home / Bio Medical Waste Management
-                            </motion.p>
+                                <Breadcrumb items={breadcrumbItems} />
+                            </motion.div>
 
                             <motion.h1
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6 }}
-                                className="text-3xl md:text-5xl font-bold mb-2"
+                                className="text-[44px] mb-2"
                             >
                                 Bio Medical Waste Management
                             </motion.h1>
 
-                            <p className="text-lg font-medium">
+                            <p className="mb-6 text-white">
                                 Biomedical Reports Maintained with Accuracy
                             </p>
                         </div>
 
                         {/* Corner Floating Card */}
-                        <div className="absolute bottom-16 right-2 sm:right-8 md:right-[-4px] z-30 hidden md:block">
-                            <div className="w-[220px] shadow-md overflow-hidden rounded-tl-xl rounded-tr-xl rounded-br-xl">
-                                <div className="h-[30%] bg-transparent" />
-                                <div className="bg-white p-4">
-                                    <h3 className="text-[36px] font-bold text-[#2B3990]">40+</h3>
-                                    <p className="text-lg leading-snug text-black font-semibold">
-                                        Years of Trusted <br />
-                                        Expertise in <br />
-                                        Healthcare
-                                    </p>
-                                </div>
-                            </div>
+                        <div className="absolute bottom-[40px] hidden md:block right-4 sm:right-10 md:-right-[35px] z-30 text-[#2B3990] p-4 rounded-xl w-[220px]">
+                            <h3 className="text-[36px] font-bold">40+</h3>
+                            <p className="text-lg leading-snug text-black font-semibold">
+                                Years of Trusted <br />
+                                Expertise in <br />
+                                Healthcare
+                            </p>
                         </div>
 
                         {/* Filter Card Inside Banner */}
-                        <div className="absolute left-4 md:left-8 bottom-[-50px] bg-white p-6 rounded-2xl shadow-xl z-20 w-[95%] md:w-[600px]">
-                            <h2 className="text-xl md:text-2xl font-bold mb-4 text-black">
+                        <div
+                            className="
+    absolute 
+    left-4 sm:left-10 md:left-8 lg:left-16 xl:left-24
+    bottom-[-30px] sm:bottom-[-40px] md:bottom-[-50px] 
+    bg-white 
+    p-4 sm:p-5 md:p-6 
+    rounded-2xl md:rounded-3xl  
+    z-20 
+    w-[95%] sm:w-[90%] md:w-[600px] lg:w-[700px] xl:w-[800px]
+  "
+                        >
+                            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 text-black">
                                 Bio Medical Waste Management Data
                             </h2>
-                            <div className="flex flex-col sm:flex-row gap-4">
+
+                            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                                 {/* Month Dropdown */}
                                 <select
-                                    className="border rounded-md p-2 w-full bg-white text-black"
+                                    className="border rounded-md p-2 sm:p-3 w-full bg-white text-black text-sm sm:text-base"
                                     value={month}
                                     onChange={(e) => setMonth(e.target.value)}
                                 >
@@ -119,7 +132,7 @@ const Medicalwastemanagement = () => {
 
                                 {/* Year Dropdown */}
                                 <select
-                                    className="border rounded-md p-2 w-full bg-white text-black"
+                                    className="border rounded-md p-2 sm:p-3 w-full bg-white text-black text-sm sm:text-base"
                                     value={year}
                                     onChange={(e) => setYear(e.target.value)}
                                 >
@@ -135,13 +148,14 @@ const Medicalwastemanagement = () => {
                                 </select>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </section>
 
             {/* Table Section */}
-            <section className="mt-24 mb-10 px-4">
-                <div className="overflow-x-auto max-w-7xl mx-auto rounded-xl shadow-lg border">
+            <section className="mt-24 mb-10 ">
+                <div className="overflow-x-auto max-w-7xl mx-auto rounded-3xl  ">
                     <table className="w-full text-sm text-left border-collapse">
                         <thead>
                             <tr className="bg-[#e6f4ff] text-black">

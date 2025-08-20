@@ -2,7 +2,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import Banner from "@/assets/ambulanceservice/banner.png";
+import Banner from "@/assets/facilities/ambulance-banner.webp";
 import "../Ambulanceservice/Ambulanceservice.css";
 import Slider from "react-slick";
 import Slide from "@/assets/ambulanceservice/slider.png";
@@ -10,9 +10,18 @@ import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Marquee from "react-fast-marquee";
-import Check from "@/assets/Insurance/check.svg";
-import Group from "@/assets/Insurance/emergency-hours.svg";
+import Check from "@/assets/insurance/check.svg";
+import Group from "@/assets/insurance/emergency-hours.svg";
+import Breadcrumb from "@/components/Breadcrumb";
 
+
+const breadcrumbItems = [
+  { label: "Home", href: "/" },
+
+  { label: "Facilities", href: "" },
+
+  { label: "Ambulance", href: "/ambulance-services" },
+];
 const Slides = [Slide, Slide, Slide];
 
 const Ambulanceservice = () => {
@@ -42,14 +51,14 @@ const Ambulanceservice = () => {
         >
           <div className="pl-8 md:pl-20">
             {/* Breadcrumb */}
-            <motion.p
+            <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="text-sm mb-4 text-white"
+              className="text-sm mb-3 text-white"
             >
-              Home / Facilities / Ambulance
-            </motion.p>
+              <Breadcrumb items={breadcrumbItems} />
+            </motion.div>
 
             {/* Title */}
             <motion.h1

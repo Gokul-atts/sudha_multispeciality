@@ -3,6 +3,8 @@ import Link from "next/link";
 import React from "react";
 
 export default function Academics({ subLink, index, setHoveredSubLinkImage }) {
+
+  
     if (!subLink) return null;
   return (
     <React.Fragment key={index}>
@@ -17,8 +19,8 @@ export default function Academics({ subLink, index, setHoveredSubLinkImage }) {
             setHoveredSubLinkImage(null);
           }}
         >
-          {console.log("subLink.href",subLink?.hrefs)}
-          {subLink.href ? (
+         
+          {subLink.hrefs ? (
             <Link href={subLink?.hrefs}>
               <div className="bg-white hover:bg-[#EEF8FF] transition duration-200 rounded-md p-3">
                 <div className="text-[#2B3990] font-bold pb-1">
@@ -28,7 +30,7 @@ export default function Academics({ subLink, index, setHoveredSubLinkImage }) {
                 {subLink.subMenu?.length > 0 && (
                   <div className="space-y-1">
                     {subLink?.subMenu.map((menuItem, idx) => (
-                      <p key={idx} className="text-muted text-sm text-[#5E566A]">
+                      <p key={idx} className=" text-sm text-[#5E566A]">
                         {menuItem?.dec}
                       </p>
                     ))}
@@ -45,7 +47,7 @@ export default function Academics({ subLink, index, setHoveredSubLinkImage }) {
               {subLink?.subMenu?.length > 0 && (
                 <div className="space-y-1">
                   {subLink?.subMenu.map((menuItem, idx) => (
-                    <p key={idx} className="text-muted text-sm text-[#5E566A]">
+                    <p key={idx} className=" text-sm text-[#5E566A]">
                       {menuItem?.dec}
                     </p>
                   ))}

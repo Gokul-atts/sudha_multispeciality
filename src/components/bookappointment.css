@@ -1,0 +1,65 @@
+.btn-diagonal {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: #2A3D90; /* ✅ Solid blue background */
+  color: white;              /* ✅ White text */
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+  z-index: 0;
+  gap: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+}
+
+.btn-diagonal::before,
+.btn-diagonal::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  background-color: #173366;
+  z-index: -1;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Top-right diagonal slide */
+.btn-diagonal::before {
+  top: 0;
+  right: 0;
+  border-left: 0px solid transparent;
+  border-bottom: 0px solid transparent;
+  border-top: 0px solid #173366;
+  border-right: 0px solid #173366;
+}
+
+/* Bottom-left diagonal slide */
+.btn-diagonal::after {
+  bottom: 0;
+  left: 0;
+  border-right: 0px solid transparent;
+  border-top: 0px solid transparent;
+  border-bottom: 0px solid #173366;
+  border-left: 0px solid #173366;
+}
+
+/* Hover state */
+.btn-diagonal:hover {
+  color: white;
+  background-color: #173366; /* ✅ Optional: make background change too */
+}
+
+.btn-diagonal:hover::before {
+  border-left: 200px solid transparent;
+  border-bottom: 100px solid transparent;
+}
+
+.btn-diagonal:hover::after {
+  border-right: 200px solid transparent;
+  border-top: 100px solid transparent;
+}

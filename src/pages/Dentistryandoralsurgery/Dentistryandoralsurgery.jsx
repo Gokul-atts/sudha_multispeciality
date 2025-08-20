@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Banner from "@/assets/about/hero.png";
+import Banner from "@/assets/specialites/dental/dentistry.webp";
 import Clinic from "@/assets/about/clinic.png";
 import Image from "next/image";
 // Sample images – replace with your own
@@ -16,6 +16,7 @@ import "./dentistryandoralsurgery.css";
 import Bookappointment from "@/components/Bookappointment";
 import SidebarTabs from "./SidebarTabs";
 import Breadcrumb from "@/components/Breadcrumb";
+import { ArrowUpRight } from "lucide-react";
 
 const consultSlides = [consult1, consult2, consult3];
 
@@ -41,10 +42,10 @@ function Dentistryandoralsurgery() {
   };
   return (
     <div>
-      <section className="relative -mt-12 lg:-mt-24 m-10">
+      <section className="relative -mt-12 lg:-mt-28 m-10">
         {/* Background Gradient */}
         <div
-          className="max-w-full mx-auto px-4 py-36 relative z-10 text-white bg-center bg-no-repeat bg-cover lg:bg-contain banner"
+          className="max-w-full mx-auto px-4 py-36 relative z-10 text-white bg-center bg-no-repeat bg-cover lg:bg-contain banner min-h-400"
           style={{ backgroundImage: `url(${Banner.src})` }}
         >
           <div className="pl-8 md:pl-20">
@@ -86,9 +87,9 @@ function Dentistryandoralsurgery() {
             >
               <Link
                 href="#"
-                className="inline-flex  text-[16px] tracking-wide items-center px-7 py-3 bg-white text-[#2B3990] font-semibold rounded-full  transition"
+                className="btn-white inline-flex  text-[16px] tracking-wide items-center px-7 py-3 bg-white text-[#2B3990] font-semibold rounded-full  transition hover:-translate-y-[3px] transition-transform duration-200"
               >
-                Book an Appointment
+                Book an Appointment <ArrowUpRight className="w-5 h-5" />
               </Link>
             </motion.div>
           </div>
@@ -130,17 +131,9 @@ function Dentistryandoralsurgery() {
                 Book in-person visits for personalized care and schedule the
                 appointments with our experienced team.
               </p>
-              <button className="inline-flex items-center text-white bg-[#2B3990] hover:bg-[#1e2a70] px-7 py-3 rounded-full text-sm font-medium">
+              <button className="btn-diagonal inline-flex items-center text-white bg-[#2B3990] hover:bg-[#1e2a70] px-7 py-3 rounded-full text-sm font-medium hover:-translate-y-[3px] transition-transform duration-200">
                 Book an Appointment
-                <svg
-                  className="ml-2 w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
+                <ArrowUpRight className="w-5 h-5" />
               </button>
             </div>
           </div>

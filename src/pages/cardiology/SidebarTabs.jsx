@@ -72,16 +72,16 @@ const accordionData = [
             Fractional Flow Reserve (FFR) / Instantaneous Wave-Free Ratio (iFR)
           </h4>
           <p>
-            These techniques are used in the cardiac catheterization laboratory to assess the pressure difference across narrowed coronary arteries. They help determine whether a particular narrowing requires stenting, avoiding unnecessary interventions. 
+            These techniques are used in the cardiac catheterization laboratory to assess the pressure difference across narrowed coronary arteries. They help determine whether a particular narrowing requires stenting, avoiding unnecessary interventions.
           </p>
         </div>
 
         <div className="">
           <h4 className="font-bold text-[16px] text-[#2B3990] mb-3">
-            Intravascular Ultrasound (IVUS) and Optical Coherence Tomography (OCT) 
+            Intravascular Ultrasound (IVUS) and Optical Coherence Tomography (OCT)
           </h4>
           <p>
-            These imaging technologies provide clear visualization of the inner walls of blood vessels, allowing accurate identification and assessment of atherosclerotic plaques. They play a crucial role in ensuring high-precision angioplasty. 
+            These imaging technologies provide clear visualization of the inner walls of blood vessels, allowing accurate identification and assessment of atherosclerotic plaques. They play a crucial role in ensuring high-precision angioplasty.
           </p>
         </div>
 
@@ -99,7 +99,7 @@ const accordionData = [
             EVAR – Endovascular Aneurysm Repair
           </h4>
           <p>
-            EVAR is a similar percutaneous procedure used to treat aneurysms or dissections in the lower portion of the aorta. It requires no large abdominal incisions and offers shorter procedure times and quicker recovery. 
+            EVAR is a similar percutaneous procedure used to treat aneurysms or dissections in the lower portion of the aorta. It requires no large abdominal incisions and offers shorter procedure times and quicker recovery.
           </p>
         </div>
 
@@ -108,22 +108,22 @@ const accordionData = [
             TAVI – Transcatheter Aortic Valve Implantation
           </h4>
           <p>
-            TAVI is a state-of-the-art procedure where a bioprosthetic valve is placed across the aortic valve using specialised equipment, eliminating the need for open-heart surgery. Patients usually recover well and are discharged within a few days.   
+            TAVI is a state-of-the-art procedure where a bioprosthetic valve is placed across the aortic valve using specialised equipment, eliminating the need for open-heart surgery. Patients usually recover well and are discharged within a few days.
           </p>
         </div>
 
 
         <div className="">
           <h4 className="font-bold text-[16px] text-[#2B3990] mb-3">
-            BMV – Balloon Mitral Valvotomy 
+            BMV – Balloon Mitral Valvotomy
           </h4>
           <p>
-            BMV is a safe and effective catheter-based procedure for treating severe mitral valve stenosis. Patients are selected based on clinical evaluation and echocardiographic findings. Given the prevalence of rheumatic fever in our country, which can lead to mitral stenosis, BMV offers significant benefits.Shape 
+            BMV is a safe and effective catheter-based procedure for treating severe mitral valve stenosis. Patients are selected based on clinical evaluation and echocardiographic findings. Given the prevalence of rheumatic fever in our country, which can lead to mitral stenosis, BMV offers significant benefits.Shape
           </p>
         </div>
 
 
-        
+
       </div>
     ),
   },
@@ -133,35 +133,16 @@ const accordionData = [
       <>
         <div className="flex gap-3">
           {/* <Image src={one} alt="Interventional Cardiology" />  */}
-          Electrophysiology 
+          Electrophysiology
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p className="mt-2">
-          Cardiac Electrophysiology is a subspecialty of cardiology focused on diagnosing and treating abnormal heart rhythms, whether too fast or too slow. Our Cardiac Electrophysiology centre is well-established and offers advanced treatments including electrophysiological studies with 3D mapping, radiofrequency ablation, pacemaker implantation, Implantable Cardioverter Defibrillator (ICD), and cardiac resynchronization therapy. These procedures are carried out by highly skilled electrophysiologists to help manage arrhythmias and improve symptoms of heart failure effectively. 
+          Cardiac Electrophysiology is a subspecialty of cardiology focused on diagnosing and treating abnormal heart rhythms, whether too fast or too slow. Our Cardiac Electrophysiology centre is well-established and offers advanced treatments including electrophysiological studies with 3D mapping, radiofrequency ablation, pacemaker implantation, Implantable Cardioverter Defibrillator (ICD), and cardiac resynchronization therapy. These procedures are carried out by highly skilled electrophysiologists to help manage arrhythmias and improve symptoms of heart failure effectively.
         </p>
-        
-      </div>
-    ),
-  },
 
- {
-    title: (
-      <>
-        <div className="flex gap-3">
-          {/* <Image src={one} alt="Interventional Cardiology" />  */}
-          Paediatric Cardiology 
-        </div>
-      </>
-    ),
-    content: (
-      <div className="text-sm  space-y-3">
-        <p className="mt-2">
-          Paediatric Cardiology is an emerging subspecialty of cardiology that focuses on diagnosing and managing a wide range of heart conditions in children, including birth defects, heart failure, and rhythm disturbances. As one of the leading Paediatric Cardiology Hospitals, we offer state-of-the-art cardiac care for children through both interventional procedures and non-interventional approaches.  
-        </p>
-        
       </div>
     ),
   },
@@ -171,16 +152,16 @@ const accordionData = [
       <>
         <div className="flex gap-3">
           {/* <Image src={one} alt="Interventional Cardiology" />  */}
-          Non-Invasive Cardiology 
+          Paediatric Cardiology
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p className="mt-2">
-          This branch of cardiology provides thorough and essential care through diagnostic services such as electrocardiogram, echocardiogram, treadmill test, Holter monitoring, ambulatory blood pressure monitoring, Dobutamine stress echocardiogram, transesophageal echocardiogram, tilt table testing, and more, all under the expert supervision of qualified cardiologists. 
+          Paediatric Cardiology is an emerging subspecialty of cardiology that focuses on diagnosing and managing a wide range of heart conditions in children, including birth defects, heart failure, and rhythm disturbances. As one of the leading Paediatric Cardiology Hospitals, we offer state-of-the-art cardiac care for children through both interventional procedures and non-interventional approaches.
         </p>
-        
+
       </div>
     ),
   },
@@ -190,21 +171,40 @@ const accordionData = [
       <>
         <div className="flex gap-3">
           {/* <Image src={one} alt="Interventional Cardiology" />  */}
-          Cardiac Rehabilitation 
+          Non-Invasive Cardiology
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p className="mt-2">
-          The primary aim of this unit is to support cardiac patients in regaining strength and independence before leaving the hospital. By encouraging movement and physical activity during their stay, patients are better prepared to manage daily routines confidently after discharge.  
+          This branch of cardiology provides thorough and essential care through diagnostic services such as electrocardiogram, echocardiogram, treadmill test, Holter monitoring, ambulatory blood pressure monitoring, Dobutamine stress echocardiogram, transesophageal echocardiogram, tilt table testing, and more, all under the expert supervision of qualified cardiologists.
         </p>
-        
+
       </div>
     ),
   },
 
-   {
+  {
+    title: (
+      <>
+        <div className="flex gap-3">
+          {/* <Image src={one} alt="Interventional Cardiology" />  */}
+          Cardiac Rehabilitation
+        </div>
+      </>
+    ),
+    content: (
+      <div className="text-sm  space-y-3">
+        <p className="mt-2">
+          The primary aim of this unit is to support cardiac patients in regaining strength and independence before leaving the hospital. By encouraging movement and physical activity during their stay, patients are better prepared to manage daily routines confidently after discharge.
+        </p>
+
+      </div>
+    ),
+  },
+
+  {
     title: (
       <>
         <div className="flex gap-3">
@@ -216,7 +216,7 @@ const accordionData = [
     content: (
       <div className="text-sm  space-y-3">
         <p className="mt-2">
-          Preventive Cardiology focuses on reducing the risk of heart disease before it develops and managing existing risk factors to prevent complications. At Sudha Multispeciality Hospital, we help patients identify and control issues such as high blood pressure, diabetes, high cholesterol, obesity, and a family history of heart problems.  
+          Preventive Cardiology focuses on reducing the risk of heart disease before it develops and managing existing risk factors to prevent complications. At Sudha Multispeciality Hospital, we help patients identify and control issues such as high blood pressure, diabetes, high cholesterol, obesity, and a family history of heart problems.
         </p>
 
         <p className="mt-2">
@@ -224,9 +224,9 @@ const accordionData = [
         </p>
 
         <p className="mt-2">
-          Whether you're at risk or recovering from a cardiac event, our preventive care services are designed to support long-term heart health and improve quality of life. Prevention is the first step toward a healthier heart. 
+          Whether you're at risk or recovering from a cardiac event, our preventive care services are designed to support long-term heart health and improve quality of life. Prevention is the first step toward a healthier heart.
         </p>
-        
+
       </div>
     ),
   },
@@ -451,7 +451,7 @@ export default function SidebarTabs() {
 
           <p className="text-center text-white mb-3 text-[14px] mt-3"> Your dedicated health partner for every medical requirement. </p>
 
-          <button className="inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px]">
+          <button className="btn-sidebar inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px] hover:-translate-y-[3px] transition-transform duration-200">
             Book Your Appointment  <ArrowUpRight className="w-5 h-5" />
           </button>
         </div>
@@ -494,11 +494,16 @@ export default function SidebarTabs() {
                     <span className="text-[#2B3990]">Erode</span> for The Best Heart Care
                   </h2>
                   <p className="mb-4">
-                    The cardiology department of Sudha Multispeciality Hospital is well-recognised for its trusted name in diagnosing and treating heart-related conditions. Beginning the journey as a hospital focusing on cardiology by Dr.D.Kandaswamy, the cardiology department has helped lakhs of patients recover from heart conditions. Backed by the best cardiology doctors and well-skilled surgeons, Sudha Multispeciality Hospitals remains the best multispeciality hospital and the leading cardiology hospital in Erode.
+                    The cardiology department of Sudha Multispeciality Hospital is well-recognised for its trusted name in diagnosing and treating heart-related conditions.
+                    Beginning the journey as a hospital focusing on cardiology by Dr.D.Kandaswamy, the cardiology department has helped lakhs of patients recover from heart
+                    conditions. Backed by the best cardiology doctors and well-skilled surgeons, Sudha Multispeciality Hospitals remains the best multispeciality hospital and
+                    the leading cardiology hospital in Erode.
                   </p>
 
                   <p className="mt-4 mb-4">
-                    We are one of the best cardiology hospitals in Tamil Nadu with the best cardiologists in Erode. We are driven by the motto to serve people with heartfelt care, offering the best healthcare solutions with the best doctors and international facilities. We are specialized in treating from pediatric heart conditions to coronary heart diseases and other heart-related conditions. Our dedication and excellence have made us a pioneer in cardiology healthcare services.
+                    We are one of the best cardiology hospitals in Tamil Nadu with the best cardiologists in Erode. We are driven by the motto to serve people with heartfelt care,
+                    offering the best healthcare solutions with the best doctors and international facilities. We are specialized in treating from pediatric heart conditions to coronary
+                    heart diseases and other heart-related conditions. Our dedication and excellence have made us a pioneer in cardiology healthcare services.
                   </p>
                 </div>
               </>

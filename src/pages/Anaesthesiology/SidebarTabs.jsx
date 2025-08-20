@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Frame from "@/assets/about/frame.png";
 import doctorImg from "@/assets/about/doctorImg.png";
-import aboutOverview from "@/assets/specialites/Anaesthesia/anaesthesiaoverview.webp";
+import aboutOverview from "@/assets/specialites/anaesthesia/anaesthesiaoverview.webp";
 import Accordion from "../../components/Accordion";
 import DoctorSlider from "../../components/Slicksliderdoctor";
 import Checklight from "@/assets/home/check-light.svg";
@@ -276,7 +276,7 @@ export default function SidebarTabs() {
   }, []);
 
   return (
-    <div className="flex flex-col-reverse md:flex-col lg:flex-row gap-8">
+    <div className="flex flex-col-reverse md:flex-col lg:flex-row gap-8 px-4 sm:px-6 md:px-8 lg:px-0">
       {/* Sidebar */}
       <aside className="w-full lg:w-1/3 lg:sticky top-24 h-fit space-y-6">
         {/* Tabs Box */}
@@ -343,9 +343,9 @@ export default function SidebarTabs() {
             <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />24/7 anaesthesia support across all specialities </li>
           </ul>
 
-         
 
-          <button className="inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px]">
+
+          <button className="btn-sidebar inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px] hover:-translate-y-[3px] transition-transform duration-200">
             Book an Appointment <ArrowUpRight className="w-5 h-5" />
           </button>
         </div>
@@ -377,51 +377,55 @@ export default function SidebarTabs() {
       {/* Content Sections */}
       <div className="flex-1 space-y-0">
         {serviceSections.map(({ id, label }) => (
-          <section key={id} id={id} className="scroll-mt-32 rounded-xl">
+          <section
+            key={id}
+            id={id}
+            className="scroll-mt-32 rounded-xl "
+          >
             {id === "overview" && (
               <>
                 <Image
                   src={aboutOverview}
                   alt="Anaesthesiology Overview"
-                  className="w-full h-[400px] rounded-2xl object-cover"
+                  className="w-full h-[250px] sm:h-[300px] md:h-[400px] rounded-2xl object-cover"
                 />
 
                 <div className="mt-6 space-y-4">
-                  <h2 className="text-[24px] ">
+                  <h2 className="text-[24px]">
                     Best Anaesthesiology Hospital in{" "}
-                    <span className="text-[#2B3990]">Erode</span> with Four
-                    Decades of Experience in Healing
+                    <span className="text-[#2B3990]">Erode</span> with Four Decades of
+                    Experience in Healing
                   </h2>
 
                   <p className="mb-4">
-                    At Sudha Multispeciality Hospital, our Department of
-                    Anaesthesia delivers round-the-clock perioperative care.
-                    This includes thorough pre-anaesthetic evaluation, expert
-                    intraoperative management, and attentive postoperative
-                    monitoring for a wide range of surgical specialities.
+                    At Sudha Multispeciality Hospital, our Department of Anaesthesia
+                    delivers round-the-clock perioperative care. This includes
+                    thorough pre-anaesthetic evaluation, expert intraoperative
+                    management, and attentive postoperative monitoring for a wide
+                    range of surgical specialities.
                   </p>
 
                   <p className="mb-4">
-                    Our anaesthesia team extends its expertise beyond the
-                    operating theatre, providing safe and efficient anaesthetic
-                    support for procedures such as interventional pulmonology,
-                    radiological interventions, obstetric pain relief, and
-                    assisted reproductive techniques.
+                    Our anaesthesia team extends its expertise beyond the operating
+                    theatre, providing safe and efficient anaesthetic support for
+                    procedures such as interventional pulmonology, radiological
+                    interventions, obstetric pain relief, and assisted reproductive
+                    techniques.
                   </p>
 
                   <p className="mb-4">
                     The department comprises state-of-the-art operating theatres
-                    catering to General Surgery, Paediatrics, Orthopaedics,
-                    Urology, Oncology, Obstetrics, and Neurosurgery. Each
-                    theatre is equipped with modern anaesthesia workstations,
-                    high-end haemodynamic monitoring systems, and ultrasound
-                    guidance for vascular access and regional nerve blocks.
+                    catering to General Surgery, Paediatrics, Orthopaedics, Urology,
+                    Oncology, Obstetrics, and Neurosurgery. Each theatre is equipped
+                    with modern anaesthesia workstations, high-end haemodynamic
+                    monitoring systems, and ultrasound guidance for vascular access
+                    and regional nerve blocks.
                   </p>
 
                   <p className="mb-4">
                     With an unwavering commitment to patient safety and surgical
-                    excellence, Sudha Multispeciality Hospital stands as the
-                    Best Anesthesiology Hospital in Erode.
+                    excellence, Sudha Multispeciality Hospital stands as the Best
+                    Anesthesiology Hospital in Erode.
                   </p>
                 </div>
               </>
@@ -431,69 +435,44 @@ export default function SidebarTabs() {
               <>
                 <h2 className="text-[24px] mt-5">Facilities</h2>
                 <ul>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> 16
-                    Pre-Anaesthesia Evaluation Clinic (PAC) for assessing
-                    patients before surgery and minimising perioperative risks.
-                  </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> Best
-                    Well-equipped Operating Theatres (OTs) with modern
-                    anaesthesia machines, ventilators, and scavenging systems.
-                  </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
-                    Post-Anaesthesia Care Unit (PACU) for close monitoring and
-                    recovery after anaesthesia.
-                  </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
-                    Central Gas Supply System with uninterrupted supply of
-                    oxygen, nitrous oxide, compressed air, and suction.
-                  </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>
-                    Advanced Anaesthesia Workstations
-                  </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>
-                    Ultrasound Machines for regional anaesthesia and vascular
-                    access.
-                  </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>
-                    Anaesthesia Services for Non-Operating Room Procedures
-                    (NORA) for radiology, gastroenterology, pulmonology, and
-                    other required specialities.
-                  </li>
+                  {[
+                    "Pre-Anaesthesia Evaluation Clinic (PAC) for assessing patients before surgery and minimising perioperative risks.",
+                    "Well-equipped Operating Theatres (OTs) with modern anaesthesia machines, ventilators, and scavenging systems.",
+                    "Post-Anaesthesia Care Unit (PACU) for close monitoring and recovery after anaesthesia.",
+                    "Central Gas Supply System with uninterrupted supply of oxygen, nitrous oxide, compressed air, and suction.",
+                    "Advanced Anaesthesia Workstations",
+                    "Ultrasound Machines for regional anaesthesia and vascular access.",
+                    "Anaesthesia Services for Non-Operating Room Procedures (NORA) for radiology, gastroenterology, pulmonology, and other required specialities.",
+                  ].map((facility, index) => (
+                    <li
+                      key={index}
+                      className="flex gap-2 items-start sm:items-center text-[#5E566A] text-[15px] font-semibold mt-3"
+                    >
+                      <div className="w-2 h-2 mt-1 sm:mt-0 rounded-lg bg-[#2B3990]"></div>
+                      {facility}
+                    </li>
+                  ))}
                 </ul>
               </>
             )}
 
             {id === "services" && (
-              <div className="space-y-2 ">
+              <div className="space-y-2">
                 <h2 className="text-[24px] mt-5">Services</h2>
-
                 <Accordion accordionData={accordionData} />
               </div>
             )}
 
             {id === "doctors" && (
               <>
-                <h2 className="text-[24px]  mt-5 pb-3">Doctors</h2>
-                <DoctorSlider specialty="Anaesthesia" counter={2} />
+                <h2 className="text-[24px] mt-5 pb-3">Doctors</h2>
+                <DoctorSlider />
               </>
             )}
-
-            {/* {id === "faqs" && (
-              <div className="mt-8">
-                <h2 className="text-[30px] mt-5 pb-3">FAQ</h2>
-                <Faq faq={faq} />
-              </div>
-            )} */}
           </section>
         ))}
       </div>
+
     </div>
   );
 }

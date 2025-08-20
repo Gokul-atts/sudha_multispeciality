@@ -166,11 +166,11 @@ const accordionData = [
         <div>
           <ul className="space-y-4">
             <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Polytrauma & fracture management</li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Pelvic and acetabular fracture repair </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Pelvic and acetabular fracture management </li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Hip, knee, shoulder, spine, and elbow fracture surgeries</li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Endoscopic and minimally invasive procedures </li>
           </ul>
-        
+
         </div>
       </div>
     ),
@@ -197,7 +197,7 @@ const accordionData = [
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Revision surgeries</li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Deformity correction and limb lengthening procedures </li>
           </ul>
-          
+
         </div>
       </div>
     ),
@@ -225,7 +225,7 @@ const accordionData = [
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Surgery for spine fractures and tumours</li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> ACDF, cervical corpectomy, and spinal fusion </li>
           </ul>
-          
+
         </div>
       </div>
     ),
@@ -252,8 +252,35 @@ const accordionData = [
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Rheumatology and arthritis management</li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Bone tumour evaluation and surgery </li>
           </ul>
-         
+
         </div>
+      </div>
+    ),
+  },
+  {
+    title: (
+      <>
+        <div className="flex gap-3">
+          {/* <Image src={one} alt="Orthopaedics" /> */}
+          Sports Injury Management
+        </div>
+      </>
+    ),
+    content: (
+      <div className="text-sm  space-y-3">
+        <p>
+          Personalised care for sports injuries, with thorough analysis and advanced treatment options. This includes arthroscopic reconstruction of injured ligaments in the shoulder and knee joints, along with other specialised interventions to restore mobility and performance. 
+        </p>
+
+        {/* <div>
+          <ul className="space-y-4">
+            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Paediatric orthopaedics and deformity correction</li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Geriatric orthopaedic care for ageing bones and joints </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Rheumatology and arthritis management</li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Bone tumour evaluation and surgery </li>
+          </ul>
+
+        </div> */}
       </div>
     ),
   },
@@ -361,7 +388,7 @@ export default function SidebarTabs() {
 
 
 
-          <button className="inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px]">
+          <button className="btn-sidebar inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px] hover:-translate-y-[3px] transition-transform duration-200">
             Book an Appointment <ArrowUpRight className="w-5 h-5" />
           </button>
         </div>

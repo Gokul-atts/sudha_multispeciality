@@ -358,7 +358,7 @@ export default function SidebarTabs() {
 
 
 
-          <button className="inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px]">
+          <button className="btn-white inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px] hover:-translate-y-[3px] transition-transform duration-200">
             Book an Appointment <ArrowUpRight className="w-5 h-5" />
           </button>
         </div>
@@ -399,7 +399,10 @@ export default function SidebarTabs() {
                   <span className="text-[#2B3990]"> Erode</span> at Sudha Multispeciality Hospital
                 </h2>
                 <p className="mb-4">
-                  Sudha Multispeciality Hospital provides comprehensive gastroenterology care for a wide range of digestive system conditions. Our team of skilled gastroenterologists, surgeons, and support staff are equipped with advanced diagnostic and therapeutic tools to manage diseases affecting the esophagus, stomach, intestines, liver, pancreas, and gallbladder. From endoscopic procedures to minimally invasive surgeries, we ensure precise and effective care for both acute and chronic gastrointestinal issues. Our dedicated approach emphasizes early detection, accurate diagnosis, and personalised treatment to improve quality of life for every patient.
+                  Sudha Multispeciality Hospital provides comprehensive gastroenterology care for a wide range of digestive system conditions. Our team of skilled 
+                  gastroenterologists, surgeons, and support staff are equipped with advanced diagnostic and therapeutic tools to manage diseases affecting the esophagus, 
+                  stomach, intestines, liver, pancreas, and gallbladder. From endoscopic procedures to minimally invasive surgeries, we ensure precise and effective care for both 
+                  acute and chronic gastrointestinal issues. Our dedicated approach emphasizes early detection, accurate diagnosis, and personalised treatment to improve quality of life for every patient.
                 </p>
               </>
             )}

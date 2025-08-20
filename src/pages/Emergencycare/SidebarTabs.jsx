@@ -188,16 +188,16 @@ const accordionData = [
     content: (
       <div className="text-sm space-y-3">
         <p>
-          Kidney-related emergencies like acute renal failure or dialysis access issues are managed with expertise. The department is well-equipped for timely fluid management and coordination with nephrologists.
+          Kidney-related emergencies like acute renal failure or dialysis access issues are managed with expertise.
         </p>
 
 
         <div>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} /> Emergency dialysis initiation</li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} /> Emergency dialysis initiation </li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Electrolyte imbalance management </li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Fluid overload or dehydration stabilization </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Renal trauma care </li>
+
           </ul>
 
         </div>
@@ -217,15 +217,18 @@ const accordionData = [
     content: (
       <div className="text-sm text-gray-700 space-y-3">
         <p>
-          Acute respiratory conditions such as severe asthma, COPD exacerbations, and pulmonary embolisms are managed with ventilator support and swift diagnosis.
+          Acute respiratory conditions such as severe asthma, COPD exacerbations, and pulmonary embolisms managed with ventilator support and swift diagnosis.
         </p>
 
         <div>
           <ul className="space-y-4">
             <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} /> Non-invasive and invasive ventilator support</li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Arterial blood gas analysis </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Arterial blood gas analysis  </li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Pulmonary Edema and embolism care </li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Asthma and COPD crisis management  </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Bronchoscopy   </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Traumatic Rib & Lung Injuries   </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Emergency ICD  </li>
           </ul>
 
         </div>
@@ -244,15 +247,15 @@ const accordionData = [
     content: (
       <div className="text-sm  space-y-3">
         <p>
-          Conditions like gastrointestinal bleeding, severe vomiting, or liver complications are treated promptly to prevent further complications.
+          Conditions like gastrointestinal bleeding, severe blood vomiting, abdominal distension or liver complications are treated promptly to prevent further complications. 
         </p>
 
         <div>
           <ul className="space-y-4">
             <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} /> GI bleeding stabilization</li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Management of severe dehydration </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Liver failure monitoring and referral </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Emergency endoscopic referral</li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Acute abdomen injuries  </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Acute liver failure monitoring  </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Emergency endoscopic procedure </li>
           </ul>
 
         </div>
@@ -271,7 +274,7 @@ const accordionData = [
     content: (
       <div className="text-sm space-y-3">
         <p>
-          Time-sensitive vascular conditions such as stroke, deep vein thrombosis, or arterial blockages are handled with coordinated care.
+          Time-sensitive vascular conditions such as stroke, deep vein thrombosis, or arterial blockages are handled with coordinated care. 
         </p>
 
         <div>
@@ -303,7 +306,7 @@ const accordionData = [
 
         <div>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} /> Emergency CT, X-ray, and ultrasound</li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} /> Emergency CT, X-ray, MRI and ultrasound</li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Bedside portable imaging </li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Radiologist-guided intervention coordination </li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> 24/7 imaging access</li>
@@ -325,14 +328,14 @@ const accordionData = [
     content: (
       <div className="text-sm  space-y-3">
         <p>
-          Trauma care, fractures, and dislocations are handled efficiently to reduce pain and restore mobility quickly.
+         Trauma care, fractures, and dislocations are handled efficiently to reduce pain and restore mobility quickly. 
         </p>
 
         <div>
           <ul className="space-y-4">
             <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} /> Fracture immobilization and splinting</li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Bedside portable imaging </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Trauma surgery coordination </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Joint dislocation reduction </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Trauma surgery coordination  </li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Post-accident evaluation and imaging </li>
           </ul>
 
@@ -352,7 +355,7 @@ const accordionData = [
     content: (
       <div className="text-sm text-gray-700 space-y-3">
         <p>
-          For any undifferentiated emergency, including high fever, seizures, snake bites, dog bites, infections, or collapse, our multidisciplinary team ensures timely and appropriate care.
+          For any undifferentiated emergency, including high fever, seizures, snake bites, dog bites, infections, or collapse, our multidisciplinary team ensures timely and appropriate care. 
         </p>
 
         <div>
@@ -471,7 +474,7 @@ export default function SidebarTabs() {
 
 
 
-          <button className="inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px]">
+          <button className="btn-sidebar inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px] hover:-translate-y-[3px] transition-transform duration-200">
             Book an Appointment <ArrowUpRight className="w-5 h-5" />
           </button>
         </div>
@@ -511,7 +514,10 @@ export default function SidebarTabs() {
                   Best Emergency Care in <span className="text-[#2B3990]"> Erode</span> at Sudha Multispeciality Hospital
                 </h2>
                 <p className="mb-4">
-                  The Advanced Emergency Complex at Sudha Multispeciality Hospital is designed to handle all medical emergencies with speed, expertise, and compassion. Equipped with advanced infrastructure, trained personnel, and round-the-clock availability, our emergency department ensures every critical moment is managed with precision. Whether it’s a trauma case, cardiac emergency, or acute illness, we are prepared to provide rapid assessment, accurate diagnosis, and immediate intervention to save lives and stabilise patients effectively.
+                  The Advanced Emergency Complex at Sudha Multispeciality Hospital is designed to handle all medical emergencies with speed, expertise, and compassion.
+                  Equipped with advanced infrastructure, trained personnel, and round-the-clock availability, our emergency department ensures every critical moment is
+                  managed with precision. Whether it’s a trauma case, cardiac emergency, or acute illness, we are prepared to provide rapid assessment, accurate diagnosis,
+                  and immediate intervention to save lives and stabilise patients effectively.
                 </p>
 
               </>

@@ -11,7 +11,7 @@ import DoctorSlider from "../../components/Slicksliderdoctor";
 import Faq from "../../components/Faq";
 import one from "@/assets/about/1.svg";
 import organtransplantone from "@/assets/organtransplant/one.png";
-import Check from "@/assets/Insurance/check.svg";
+import Check from "@/assets/insurance/check.svg";
 
 
 const serviceSections = [
@@ -289,14 +289,14 @@ export default function SidebarTabs() {
   return (
     <div className="flex flex-col-reverse md:flex-col lg:flex-row gap-8">
       {/* Sidebar */}
-      <aside className="w-full lg:w-1/3 lg:sticky top-24 h-fit space-y-6">
+      <aside className="w-full lg:w-1/4 lg:sticky top-24 h-fit space-y-6">
         {/* Tabs Box */}
-        <div className="bg-white rounded-xl p-4 sm:p-6">
-          <h3 className="text-[18px] text-center mb-4">
+        <div className="bg-white  rounded-2xl p-4 sm:p-6">
+          <h3 className="text-[16px]  text-center font-bold  mb-5">
             Advanced Renal Transplant Care
           </h3>
-          <ul className="space-y-3">
-            {serviceSections.map((item) => {
+          <ul className="space-y-4 ">
+            {serviceSections.map((item, index) => {
               const isActive = activeSection === item.id;
 
               return (
@@ -306,83 +306,91 @@ export default function SidebarTabs() {
                     onClick={() => setActiveSection(item.id)}
                     className="flex justify-between items-center group transition duration-300 ease-in-out"
                   >
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-4">
                       <span
-                        className={`w-2 h-2 rounded-full transition-colors duration-300 ${isActive ? 'bg-[#2A3D90]' : 'bg-gray-300'
+                        className={`w-2 h-2 rounded-full transition-colors duration-300 ${isActive ? 'bg-[#2b3990]' : 'bg-gray-300'
                           }`}
                       />
                       <span
-                        className={`text-sm sm:text-base tracking-wide font-medium transition-colors duration-300 ${isActive ? 'text-[#2A3D90]' : 'text-gray-700'
+                        className={`text-[15px]  font-bold transition-colors duration-300 ${isActive ? 'text-[#2b3990]' : 'text-black'
                           } group-hover:text-[#2A3D90]`}
                       >
                         {item.label}
                       </span>
+
                     </div>
 
                     {isActive ? (
-                      <div className="w-6 h-6 rounded-full bg-[#2A3D90] flex items-center justify-center transition-all duration-300 transform group-hover:scale-110">
-                        <ArrowUpRight className="w-3.5 h-3.5 text-white transition" />
+                      <div className="w-8 h-8 rounded-full bg-[#2A3D90] flex items-center justify-center transition-all duration-300 transform group-hover:scale-110">
+                        <ArrowUpRight className="w-4 h-4 text-white transition" />
                       </div>
                     ) : (
-                      <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-[#2A3D90] transition-all duration-300 transform group-hover:scale-110" />
+                      <ArrowUpRight className="w-4 h-4 text-black group-hover:text-[#2b3990] transition-all duration-300 transform group-hover:scale-110" />
                     )}
                   </a>
-                  <hr className="my-4 border-t border-gray-200" />
+
+                  {/* Horizontal line except after the last item */}
+                  {index !== serviceSections.length - 1 && (
+                    <hr className="my-3 border-t border-gray-100" />
+                  )}
                 </li>
               );
             })}
           </ul>
         </div>
 
+
+
         {/* Sudha Hospital Box */}
         <div
-          className="relative rounded-2xl overflow-hidden text-white text-center px-8 py-10"
+          className="relative rounded-2xl overflow-hidden text-white text-center px-6 py-10"
           style={{
             backgroundImage: `linear-gradient(to bottom right, rgba(42, 61, 144, 0.9), rgba(12, 18, 42, 0.9)), url(${Frame.src})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         >
-          <h3 className="text-[20px]   mb-2 ">
+          <h3 className="text-[20px] font-bold mb-2 ">
             Sudha Multispeciality Hospital
           </h3>
-          <p className="text-[14px] mb-2 text-[#fff]">
-            Experienced anaesthesiologists for all surgical specialties
-          </p>
-          <p className="text-[14px]  mb-2 text-[#fff]">
-            World-class equipment and advanced anaesthesia workstations
-          </p>
-          <p className="text-[14px] mb-2 text-[#fff]">
-            24/7 anaesthesia support across all specialities
-          </p>
+          <hr className="border-light" />
 
-          <button className="inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[16px]">
-            Book an Appointment <ArrowUpRight className="w-5 h-5" />
+          <p className="text-center text-white mb-3 text-[14px] mt-3"> Performed 1,00,000+ successful cardiology surgeries with the best heart surgeons, world-class medical equipment, and international facilities.</p>
+
+          <p className="text-center text-white mb-3 text-[14px] mt-3"> Your dedicated health partner for every medical requirement. </p>
+
+          <button className="btn-sidebar inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px] hover:-translate-y-[3px] transition-transform duration-200">
+            Book Your Appointment  <ArrowUpRight className="w-5 h-5" />
           </button>
         </div>
 
-        {/* Find a Doctor Box */}
-        <div
-          className="mt-2 rounded-2xl px-6 py-6 flex flex-col sm:flex-row items-center justify-between text-white"
-          style={{
-            background: "radial-gradient(circle, #9EB36A 0%, #333C22 100%)",
-          }}
-        >
-          <div className="text-left mb-4 sm:mb-0 sm:mr-4">
-            <h3 className="text-[26px] ">
-              Find a<br />
-              Doctor?
-            </h3>
-          </div>
+        {/* find a doctor */}
+        <div className="flex justify-center">
+          <div
+            className="mt-2 rounded-2xl px-6 py-6 flex flex-col sm:flex-row items-center justify-between text-white max-w-md w-full"
+            style={{
+              background: "radial-gradient(circle, #9EB36A 0%, #333C22 100%)",
+            }}
+          >
+            <div className="text-left mb-4 sm:mb-0 sm:mr-4">
+              <h3 className="text-[26px] font-bold">
+                Find a <br />
+                Doctor?
+              </h3>
+            </div>
 
-          <div className="w-24 sm:w-32 md:w-40">
-            <Image
-              src={doctorImg}
-              alt="Doctor"
-              className="rounded-lg w-full customposition h-auto object-cover"
-            />
+            <div className="w-24 sm:w-32 md:w-40">
+              <Image
+                src={doctorImg}
+                alt="Doctor"
+                className="rounded-lg w-full customposition h-auto object-cover"
+              />
+            </div>
           </div>
         </div>
+
+
+
       </aside>
 
       {/* Content Sections */}

@@ -163,10 +163,10 @@ const accordionData = [
 
         <div>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} /> Gallbladder removal </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Appendectomy </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Hernia repair </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> aparoscopic diagnostic procedures </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} /> Gallbladder removal (Laparoscopic cholecystectomy)  </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Appendectomy  </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Hernia repair (Laparoscopic hysterectomy)  </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Laparoscopic diagnostic procedures  </li>
           </ul>
 
         </div>
@@ -194,6 +194,8 @@ const accordionData = [
             <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Perforation repair </li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Liver abscess drainage </li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Bowel resection surgeries </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Laparoscopic hemicolectomy  </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Laparoscopic fundoplication </li>
           </ul>
 
         </div>
@@ -245,10 +247,11 @@ const accordionData = [
 
         <div>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} /> Breast lump removal</li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Thyroidectomy </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> GI tumour excision </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Biopsy and staging procedures </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} /> Breast lump removal (Modified Radical Mastectomy)</li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Thyroidectomy  </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> GI tumour excision  </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Biopsy and staging procedures  </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Soft tissue tumors removal   </li>
           </ul>
 
         </div>
@@ -358,7 +361,7 @@ export default function SidebarTabs() {
 
 
 
-          <button className="inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px]">
+          <button className="btn-sidebar inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px] hover:-translate-y-[3px] transition-transform duration-200">
             Book an Appointment <ArrowUpRight className="w-5 h-5" />
           </button>
         </div>
@@ -399,7 +402,10 @@ export default function SidebarTabs() {
                   <span className="text-[#2B3990]"> Erode</span>
                 </h2>
                 <p className="mb-4">
-                  The General Surgery Department at Sudha Multispeciality Hospital in Erode is equipped to manage a wide spectrum of surgical needs with advanced technology and a team of skilled surgeons. From routine procedures to complex operations, every patient receives personalised and evidence-based care. The department operates 24/7 with fully equipped operating rooms, modern tools like CUSA and Harmonic Scalpel, and dedicated ICU support to ensure optimal outcomes and faster recovery.
+                  The General Surgery Department at Sudha Multispeciality Hospital in Erode is equipped to manage a wide spectrum of surgical needs with advanced
+                  technology and a team of skilled surgeons. From routine procedures to complex operations, every patient receives personalised and evidence-based care.
+                  The department operates 24/7 with fully equipped operating rooms, modern tools like CUSA and Harmonic Scalpel, and dedicated ICU support to ensure
+                  optimal outcomes and faster recovery.
                 </p>
               </>
             )}

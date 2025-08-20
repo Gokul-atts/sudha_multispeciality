@@ -159,12 +159,12 @@ const accordionData = [
       <div className="text-sm  space-y-3">
         <div>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Brain CT to detect stroke, bleeding, tumours, and vascular issues</li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Neck CT to evaluate masses, lymph nodes, or soft tissue abnormalities </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Chest CT to assess lung conditions and enlarged lymph nodes</li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} />Abdominal & Pelvic CT for pain diagnosis or organ assessment</li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Brain CT to detect stroke, bleeding, tumours, and vascular issues </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Neck CT to evaluate masses, lymph nodes, or soft tissue abnormalities  </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Chest CT to assess lung pathologies, enlarged lymph nodes, and medical pathologies.</li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} />Abdominal & Pelvis CT for organ assessment, kidney stones, injection bowel obstruction and tumours.</li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} />Sinus CT to identify sinus blockages or infections</li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} />Spine CT to detect disc herniation, spinal stenosis, or fractures</li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} />Spine CT to detect disc herniation, spinal stenosis, or fractures </li>
           </ul>
 
         </div>
@@ -188,9 +188,10 @@ const accordionData = [
             <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> 3D & 4D ultrasounds for enhanced visual clarity </li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Safe imaging without ionizing radiation</li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} />Effective for pregnancy care and abdominal diagnostics</li>
-            
+            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} />Doppler (Soft tissue study) </li>
+
           </ul>
-          
+
         </div>
       </div>
     ),
@@ -216,7 +217,7 @@ const accordionData = [
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} />Gastro: Intestinal and abdominal diagnostics</li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} />Urology: Kidney and urinary tract studies</li><li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} />Neuro: Skull and spinal imaging</li>
           </ul>
-          
+
         </div>
       </div>
     ),
@@ -236,9 +237,9 @@ const accordionData = [
           <ul className="space-y-4">
             <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Non-invasive cardiac imaging to evaluate heart structure and function</li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} />Used to detect congenital defects, valve issues, or cardiac function</li>
-            
+
           </ul>
-          
+
         </div>
       </div>
     ),
@@ -347,7 +348,7 @@ export default function SidebarTabs() {
 
 
 
-          <button className="inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px]">
+          <button className="btn-sidebar inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px] hover:-translate-y-[3px] transition-transform duration-200">
             Book an Appointment <ArrowUpRight className="w-5 h-5" />
           </button>
         </div>
