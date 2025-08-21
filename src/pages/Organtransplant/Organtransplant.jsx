@@ -25,8 +25,8 @@ import { doctorsData } from "@/constants/doctorDetails";
 import OurTeamSlider from "@/components/OurTeamSlider";
 import Sliderdoctor from "@/components/Sliderdoctor";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import kandaswamyImg from "@/assets/organtransplant/doctorimages/kandaswamy.png";
-import shylaImg from "@/assets/organtransplant/doctorimages/shyla.png";
+import kandaswamyImg from "@/assets/organtransplant/Doctorimages/kandaswamy.png";
+import shylaImg from "@/assets/organtransplant/Doctorimages/shyla.png";
 import DonorDataTable from '@/components/donordatatable';
 import { ArrowUpRight } from "lucide-react";
 

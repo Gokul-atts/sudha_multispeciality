@@ -6,11 +6,11 @@ import Banner from "@/assets/about/board-of-directors.webp";
 import Contactusmain from '@/components/contactusmain';
 import Marquee from "react-fast-marquee";
 import Image from 'next/image';
-import Chairmen from "@/assets/ourmanagement/chairman.jpg";
+import Chairmen from "@/assets/Ourmanagement/chairman.jpg";
 import HospitalCard from "@/components/Hospital";
 import Executiveteam from '@/components/Executiveteam';
 import "../Ourmanagement/Ourmanagement.css";
-import Sudha from "@/assets/ourmanagement/Sudha.png"
+import Sudha from "@/assets/Ourmanagement/Sudha.png"
 import hospitalOne from "@/assets/home/cards/c1.svg";
 import hospitalTwo from "@/assets/home/cards/c2.svg";
 import hospitalThree from "@/assets/home/cards/c3.svg";
