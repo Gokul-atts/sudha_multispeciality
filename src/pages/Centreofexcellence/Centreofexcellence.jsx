@@ -241,7 +241,9 @@ const Centreofexcellence = () => {
                 <div className="w-full md:w-2/3 space-y-4 ml-5">
                     <h3 className="text-[24px]">Cardiology</h3>
                     <p className="mb-5">
-                        Our Cardiology department offers expert care for a wide range of heart conditions, guided by experienced cardiologists and supported by advanced technology. From emergency interventions to chronic disease management, we focus on personalized treatment, early detection, and long-term heart health. Patients receive comprehensive cardiac care through a team-based approach that ensures timely diagnosis and effective outcomes.
+                        Our Cardiology department offers expert care for a wide range of heart conditions, guided by experienced cardiologists and supported by advanced 
+                        technology. From emergency interventions to chronic disease management, we focus on personalized treatment, early detection, and long-term 
+                        heart health. Patients receive comprehensive cardiac care through a team-based approach that ensures timely diagnosis and effective outcomes.
                     </p>
 
                     {/* Services List */}
@@ -271,7 +273,9 @@ const Centreofexcellence = () => {
                 <div className="w-full md:w-2/3 space-y-4">
                     <h3 className="text-[24px] mb-0 ">Pulmonology</h3>
                     <p className="mb-5">
-                        The Pulmonology department provides specialized care for all respiratory conditions, blending expert consultation with advanced imaging and diagnostic tools. Our focus is on accurate identification of lung-related disorders, prompt medical management, and long-term respiratory health. Each treatment plan is tailored to help patients breathe easier, recover faster, and manage chronic lung issues with confidence and ongoing support.
+                        The Pulmonology department provides specialized care for all respiratory conditions, blending expert consultation with advanced imaging and 
+                        diagnostic tools. Our focus is on accurate identification of lung-related disorders, prompt medical management, and long-term respiratory health. 
+                        Each treatment plan is tailored to help patients breathe easier, recover faster, and manage chronic lung issues with confidence and ongoing support.
                     </p>
 
                     {/* Services List */}
@@ -301,7 +305,9 @@ const Centreofexcellence = () => {
                 <div className="w-full md:w-2/3 space-y-4">
                     <h2 className="text-[24px] mb-0">Neurology</h2>
                     <p className="mb-5">
-                        Our Neurology team delivers thorough evaluation and treatment for disorders affecting the brain, spinal cord, and nervous system. We combine state-of-the-art imaging with clinical expertise to diagnose complex neurological issues early and manage them effectively. From emergency neurological care to long-term rehabilitation, our patient-focused approach ensures the highest level of safety and support throughout.
+                        Our Neurology team delivers thorough evaluation and treatment for disorders affecting the brain, spinal cord, and nervous system. We combine 
+                        state-of-the-art imaging with clinical expertise to diagnose complex neurological issues early and manage them effectively. From emergency 
+                        neurological care to long-term rehabilitation, our patient-focused approach ensures the highest level of safety and support throughout.
                     </p>
 
                     {/* Services List */}
@@ -331,7 +337,9 @@ const Centreofexcellence = () => {
                 <div className="w-full md:w-2/3 space-y-4">
                     <h2 className="text-[24px] mb-0">Mother and Child Care </h2>
                     <p className="mb-5">
-                        Our Mother and Child Care unit ensures holistic health services for women and children, focusing on safety, comfort, and expert medical attention at every stage. From pregnancy to delivery, and from newborn care to pediatric support, our multidisciplinary team works together to offer comprehensive, compassionate care for both mothers and their little ones.
+                        Our Mother and Child Care unit ensures holistic health services for women and children, focusing on safety, comfort, and expert medical attention 
+                        at every stage. From pregnancy to delivery, and from newborn care to pediatric support, our multidisciplinary team works together to offer 
+                        comprehensive, compassionate care for both mothers and their little ones.
                     </p>
 
                     {/* Services List */}
@@ -361,7 +369,9 @@ const Centreofexcellence = () => {
                 <div className="w-full md:w-2/3 space-y-4">
                     <h2 className="text-[24px] mb-0">Cancer Centre</h2>
                     <p className="mb-5">
-                        Our Cancer Care team offers compassionate and comprehensive treatment tailored to each patient’s diagnosis and stage of illness. Combining advanced technology with multidisciplinary expertise, we focus on early detection, accurate diagnosis, and holistic care. We aim to provide not just treatment, but strength, support, and hope to every individual facing cancer.
+                        Our Cancer Care team offers compassionate and comprehensive treatment tailored to each patient’s diagnosis and stage of illness. 
+                        Combining advanced technology with multidisciplinary expertise, we focus on early detection, accurate diagnosis, and holistic care. 
+                        We aim to provide not just treatment, but strength, support, and hope to every individual facing cancer.
                     </p>
 
                     {/* Services List */}
@@ -391,7 +401,9 @@ const Centreofexcellence = () => {
                 <div className="w-full md:w-2/3 space-y-4">
                     <h2 className="text-[24px] mb-0">Fertility Care </h2>
                     <p className="mt-5">
-                        The Fertility Care division supports individuals and couples with personalized reproductive solutions grounded in empathy and clinical excellence. With a focus on emotional wellbeing and transparent guidance, we help patients understand their fertility health and choose the most effective path forward. Our goal is to make the journey to parenthood as smooth, safe, and successful as possible.
+                        The Fertility Care division supports individuals and couples with personalized reproductive solutions grounded in empathy and 
+                        clinical excellence. With a focus on emotional wellbeing and transparent guidance, we help patients understand their fertility health and 
+                        choose the most effective path forward. Our goal is to make the journey to parenthood as smooth, safe, and successful as possible.
                     </p>
 
                     {/* Services List */}

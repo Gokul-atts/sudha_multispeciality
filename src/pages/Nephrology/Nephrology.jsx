@@ -43,7 +43,7 @@ function Nephrology() {
   };
   return (
     <div>
-    <section className="relative -mt-12 lg:-mt-28 m-10">
+      <section className="relative -mt-12 lg:-mt-28 m-10">
         {/* Background Gradient */}
         <div
           className="max-w-full mx-auto px-4 py-36 relative z-10 text-white bg-center bg-no-repeat bg-cover lg:bg-contain banner min-h-400"
@@ -86,7 +86,7 @@ function Nephrology() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
             >
-               <Link
+              <Link
                 href="#"
                 className="btn-white inline-flex  text-[16px] tracking-wide items-center px-7 py-3 bg-white text-[#2B3990] font-semibold rounded-full  transition hover:-translate-y-[3px] transition-transform duration-200"
               >

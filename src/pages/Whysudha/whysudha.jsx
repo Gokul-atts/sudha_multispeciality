@@ -179,7 +179,7 @@ function Whysudha() {
       <div className="w-3 h-3 mx-1 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300"></div>
     ),
   };
-  // Animation variants
+
   const containerVariants = {
     hidden: {},
     show: {
@@ -197,7 +197,7 @@ function Whysudha() {
     },
   };
 
-  const [openIndex, setOpenIndex] = useState(0); // 0 = first one expanded
+  const [openIndex, setOpenIndex] = useState(0); 
 
   const toggleAccordion = (index) => {
     setOpenIndex((prev) => (prev === index ? null : index));

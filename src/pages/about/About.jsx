@@ -18,10 +18,10 @@ import Breadcrumb from "@/components/Breadcrumb";
 
 
 const breadcrumbItems = [
-    { label: "Home", href: "/" },
-    { label: "About Us", href: "" },
-     { label: "Our Growth Story", href: "/our-growth-story" },
-  ];
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "" },
+  { label: "Our Growth Story", href: "/our-growth-story" },
+];
 
 
 
@@ -53,6 +53,7 @@ const hospitalscards = [
     icon: hospitalFour,
   },
 ];
+
 function Aboutus() {
   // Animation variants
   const containerVariants = {
@@ -121,16 +122,22 @@ function Aboutus() {
           </div>
         </div>
       </section>
-
-
       <section>
-        <div className="max-w-7xl mx-auto pt-8 pb-16 h-full">
+        <div className="px-4 sm:px-6 md:px-8 lg:px-16 py-12 pb-16 ml-4 mr-4">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4"
+            className="
+        grid 
+        grid-cols-1        
+        sm:grid-cols-2     
+        md:grid-cols-2     
+        lg:grid-cols-3     
+        xl:grid-cols-4     
+        gap-4 sm:gap-6 lg:gap-8
+      "
           >
             {hospitalscards.map((card, idx) => (
               <motion.div key={idx} variants={cardVariants}>
@@ -145,6 +152,11 @@ function Aboutus() {
           </motion.div>
         </div>
       </section>
+
+
+
+
+
 
       <section className="px-4 md:px-8 lg:px-16 py-12  pb-16">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8">

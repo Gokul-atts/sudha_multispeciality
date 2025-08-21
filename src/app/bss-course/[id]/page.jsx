@@ -5,6 +5,8 @@ import { courses } from "@/constants/bssCourseDetails";
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import Banner from "@/assets/fellownationalboard/Banner.png";
+
 
 export default function CourseDetail() {
     const { id } = useParams();
@@ -21,7 +23,7 @@ export default function CourseDetail() {
                 <div
                     className="max-w-full mx-auto px-4 py-36 relative z-10 text-white bg-center bg-no-repeat bg-cover lg:bg-contain"
                     style={{
-                        backgroundImage: "url('/Banner.png')",
+                        backgroundImage: `url(${Banner.src})`,
                         minHeight: "400px"
                     }}
 

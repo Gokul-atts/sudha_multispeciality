@@ -7,7 +7,7 @@ import Personalinfo from "@/components/Personalinfo";
 import { doctorsData } from "@/constants/doctorDetails";
 
 export default function Doctordetail(props) {
-  const params = use(props.params); // ✅ unwrap the async params
+  const params = use(props.params); 
   const id = parseInt(params.id);
 
   const doctor = doctorsData.find((doc) => doc.id === id);

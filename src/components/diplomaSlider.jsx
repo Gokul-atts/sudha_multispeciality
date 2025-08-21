@@ -42,7 +42,7 @@ export default function Sliderdoctor() {
     speed: 500,
     autoplay: true,
     autoplaySpeed: 2000,
-    slidesToShow: 5, // default for desktop
+    slidesToShow: 5, 
     slidesToScroll: 1,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,

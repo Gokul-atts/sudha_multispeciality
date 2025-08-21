@@ -16,6 +16,7 @@ import Organ from "../assets/menu/facilities/organ-donation.webp";
 import National from "../assets/menu/academics/national-board.webp";
 import Diploma from "../assets/menu/academics/diploma-mbbs.webp";
 import Academics from "../assets/menu/academics/academics.webp";
+import Ethics from "../assets/menu/academics/academics.webp";
 
 
 
@@ -569,7 +570,7 @@ export const links = [
       
       {
         header: "Fellow of National Board (FNB) ",
-        hrefs: "/fellow-of-national-board",
+        hrefs: "/fellow-national-board",
         image: National,
         hoverImage: National,
         subMenu: [
@@ -581,7 +582,43 @@ export const links = [
       },
       {
         header: "Post MBBS Diploma Courses (DNB)",
-        hrefs: "/fellow-of-national-board",
+        hrefs: "/diploma-course",
+        image: Diploma,
+        hoverImage: Diploma,
+        subMenu: [
+          {
+            label: "Post MBBS Diploma Courses (DNB )",
+            dec: "Postgraduate diploma programs for future medical leaders.",
+          },
+        ],
+      },
+      {
+        header: " Ethics Committee",
+        hrefs: "/ethics-committee",
+        image: Ethics,
+        hoverImage: Ethics,
+        subMenu: [
+          {
+            label: "Ethics Committee",
+            dec: "Postgraduate diploma programs for future medical leaders.",
+          },
+        ],
+      },
+      {
+        header: "Vocational Degree Courses",
+        hrefs: "/vocational-degree",
+        image: Diploma,
+        hoverImage: Diploma,
+        subMenu: [
+          {
+            label: "Vocational Degree Courses",
+            dec: "Postgraduate diploma programs for future medical leaders.",
+          },
+        ],
+      },
+      {
+        header: "BSS Vocational Courses",
+        hrefs: "/bss-course",
         image: Diploma,
         hoverImage: Diploma,
         subMenu: [

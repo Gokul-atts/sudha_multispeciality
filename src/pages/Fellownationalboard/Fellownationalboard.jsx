@@ -70,67 +70,7 @@ const cards = [
     },
 ];
 
-// const hospitalscards = [
-//     {
-//         number: <h3 className="text-[48px] text-[#2B3990]">40+</h3>,
-//         title: <p className="text-md font-bold text-black">Years of Experience</p>,
-//         link: "/op-centre",
-//         icon: hospitalOne,
-//     },
-//     {
-//         number: <h3 className="text-[48px] text-[#2B3990]">300+</h3>,
-//         title: <p className="text-md font-bold text-black">Patient Beds</p>,
-//         link: "/maternity",
-//         icon: hospitalTwo,
-//     },
-//     {
-//         number: <h3 className="text-[48px] text-[#2B3990]">30+</h3>,
-//         title: <p className="text-md font-bold text-black">Departments</p>,
-//         link: "/heart-care",
-//         icon: hospitalThree,
-//     },
-//     {
-//         number: <h3 className="text-[48px] text-[#2B3990]">100+</h3>,
-//         title: <p className="text-md font-bold text-black">Doctor's</p>,
-//         link: "/heart-care",
-//         icon: hospitalFour,
-//     },
-// ];
 
-// Tab content
-
-// const fnbTabs = [
-//     {
-//         label: "FNB – Reproductive Medicine",
-//         content: {
-//             title: "FNB – Reproductive Medicine",
-//             description:
-//                 "Train under India’s top IVF experts in a program that blends advanced scientific knowledge with real-world ART (Assisted Reproductive Technology) exposure.",
-//             bullets: [
-//                 "Training in IUI, IVF, ICSI, donor programs, cryopreservation",
-//                 "Access to high–volume fertility cases",
-//                 "Dedicated embryology and andrology labs",
-//                 "Faculty with over 20+ years of experience",
-//                 "Research, audits, and case presentation training",
-//             ],
-//         },
-//     },
-//     {
-//         label: "FNB – Maternal & Fetal Medicine",
-//         content: {
-//             title: "FNB – Maternal & Fetal Medicine",
-//             description:
-//                 "Specialized training in managing high-risk pregnancies with hands-on experience, ultrasonography, fetal diagnosis and therapy, guided by senior obstetricians.",
-//             bullets: [
-//                 "Expertise in fetal monitoring, diagnostics, and interventions",
-//                 "Advanced training in prenatal ultrasonography",
-//                 "Exposure to high-risk maternity cases",
-//                 "Faculty with national recognition in fetal medicine",
-//                 "Strong academic and research exposure",
-//             ],
-//         },
-//     },
-// ];
 
 const containerVariants = {
     hidden: {},
@@ -176,63 +116,7 @@ const TickCircle = () => (
     </div>
 );
 
-// Tabbed Card Component
 
-// const FNBSection = () => {
-//     const [activeTab, setActiveTab] = useState(0);
-//     const tab = fnbTabs[activeTab];
-
-//     return (
-//         <section className="py-16 ">
-//             {/* Outer Blue Card */}
-//             <div className="bg-[#2B3990] rounded-3xl p-6 max-w-7xl mx-auto  pt-16 pb-16 ">
-//                 {/* Tabs */}
-//                 <div className="flex justify-center mb-6 flex-wrap gap-4">
-//                     {fnbTabs.map((t, idx) => (
-//                         <button
-//                             key={idx}
-//                             onClick={() => setActiveTab(idx)}
-//                             className={`px-6 py-4 rounded-full font-semibold transition text-sm  ${activeTab === idx
-//                                 ? "bg-white text-[#2B3990] "
-//                                 : "bg-transparent border border-white text-white"
-//                                 }`}
-//                         >
-//                             {t.label}
-//                         </button>
-//                     ))}
-//                 </div>
-
-//                 {/* Inner White Card */}
-//                 <div className="bg-white max-w-7xl mx-auto rounded-2xl p-6  flex flex-col md:flex-row gap-6 items-center">
-//                     {/* Left Content */}
-//                     <div className="md:w-2/3 space-y-4">
-//                         <h2 className="text-[22px]  text-[#2b3990]">{tab.content.title}</h2>
-//                         <p className="mb-3">{tab.content.description}</p>
-//                         <ul className="list-none space-y-4 mt-4">
-//                             {tab.content.bullets.map((point, i) => (
-//                                 <li key={i} className="flex items-start gap-2">
-//                                     <TickCircle />
-//                                     <span className="text-[15px] font-semibold ">{point}</span>
-//                                 </li>
-//                             ))}
-//                         </ul>
-//                     </div>
-
-//                     {/* Right Image */}
-//                     <div className="md:w-1/2 pt-12">
-//                         <img
-//                             src={Rectangle.src}
-//                             alt="Rectangle"
-//                             className="rounded-2xl object-cover w-full h-[400px]"
-//                         // style={{ maxHeight: "400px" }}
-//                         />
-//                     </div>
-//                 </div>
-//             </div>
-//         </section>
-
-//     );
-// };
 
 const handleScroll = (direction) => {
     const slider = document.getElementById("doctor-slider");
@@ -414,19 +298,17 @@ const Fellownationalboard = () => {
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-10 sm:py-14 lg:py-20">
                 <div className="flex flex-col md:flex-row items-center md:items-start gap-6 sm:gap-8 lg:gap-12">
                     {/* Left Content */}
-                    <div className="w-full md:w-1/2">
+                    <div className="flex-1">
                         <div className="inline-block mb-4 px-3 sm:px-4 py-1.5 sm:py-2 font-semibold bg-white text-[#2B3990] rounded-full text-xs sm:text-sm md:text-base">
                             Fellow of National Board (FNB)
                         </div>
                         <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[30px] font-bold mb-3 leading-snug text-center md:text-left">
                             Reproductive Medicine
                         </h2>
-
                         <p className="mb-4 text-sm sm:text-base lg:text-lg text-center md:text-left">
                             The Fellow of National Board (FNB) is a prestigious post-doctoral qualification awarded by the National Board of Examinations in Medical Sciences (NBEMS),
                             Government of India. It is offered in approved super-specialties and sub-specialties to promote advanced clinical expertise and academic excellence.
                         </p>
-
                         <p className="mb-3 text-sm sm:text-base text-center md:text-left">
                             Sudha Multispeciality Hospital, accredited by NBEMS, offers structured training for FNB trainees with expert faculty support and access to advanced
                             medical facilities. The FNB qualification is recognized by the Government of India, included in the First Schedule of the IMC Act, 1956, and considered
@@ -435,7 +317,7 @@ const Fellownationalboard = () => {
                     </div>
 
                     {/* Right Image */}
-                    <div className="w-full md:w-1/2">
+                    <div className="flex-1">
                         <img
                             src={Doctors.src}
                             alt="Doctors"
@@ -444,6 +326,7 @@ const Fellownationalboard = () => {
                     </div>
                 </div>
             </section>
+
 
             <section className="text-center px-4 sm:px-6 lg:px-10 py-10 sm:py-14 lg:py-20">
                 <div className="inline-block mb-4 px-4 sm:px-5 py-2 font-semibold bg-white text-[#2B3990] rounded-full text-sm sm:text-base">
@@ -457,60 +340,6 @@ const Fellownationalboard = () => {
                 </div>
             </section>
 
-
-            {/* Tabbed FNB Section */}
-            {/* <FNBSection /> */}
-
-            {/* <section className="text-center px-4 py-6 md:px-8 lg:px-16">
-                <div className="inline-block mb-4 px-5 py-2 font-semibold bg-white text-[#2B3990] rounded-full text-sm md:text-base">
-                    Who we are
-                </div>
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold pt-3 leading-snug">
-                    Sudha Hospital <br /> NBE Accredited Training Centre
-                </h2>
-            </section> */}
-
-            {/* <div className="flex flex-col md:flex-row gap-6 max-w-7xl mx-auto px-4 py-6 items-center md:items-start">
-                <div className="w-full md:w-1/2">
-                    <img
-                        src={DocsGroup?.src}
-                        alt="Docs"
-                        className="rounded-2xl object-contain w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px]"
-                    />
-                </div>
-
-                <div className="w-full md:w-1/2 text-center md:text-left">
-                    <p className="pb-3 text-sm md:text-base">
-                        Sudha Hospital stands tall with over 26 centres across South India,
-                        equipped with advanced technology, modern infrastructure, and
-                        experienced consultants.
-                    </p>
-                    <div className="space-y-4 mt-4">
-                        {[
-                            "NBE-accredited for both FNB Reproductive Medicine & FNB Maternal & Fetal Medicine (at selected branches)",
-                            "One of India’s largest IVF & high-risk maternity service providers",
-                            "Focus on both academic and clinical skill-building",
-                            "Exposure to real-time OPD, IPD, OT, and labor room scenarios",
-                        ].map((text, i) => (
-                            <p key={i} className="flex items-start text-[#5E566A] font-semibold text-sm md:text-base">
-                                <TickCircle className="min-w-5 min-h-5" />
-                                <span className="ml-3">{text}</span>
-                            </p>
-                        ))}
-                    </div>
-                </div>
-            </div> */}
-
-
-            {/* Get Trained by India’s Fertility Leaders */}
-            {/* <section className=" pt-16">
-                <div className="max-w-7xl  mx-auto  ">
-                    <h2 className="text-center text-[30px] text-Black mt-4">
-                        Get Trained by India’s Fertility Leaders
-                    </h2>
-                    <DiplomaDoctor />
-                </div>
-            </section> */}
             <section className="px-4 sm:px-6 lg:px-10 py-10 sm:py-14 lg:py-20">
                 <Bookappointment />
             </section>

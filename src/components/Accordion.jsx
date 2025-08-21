@@ -9,7 +9,7 @@ import Image from "next/image";
 
 
 export default function Accordion({accordionData}) {
-  const [openIndex, setOpenIndex] = useState(0); // default open first
+  const [openIndex, setOpenIndex] = useState(0); 
 
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -35,7 +35,7 @@ export default function Accordion({accordionData}) {
               </span>
               <div className="w-5 h-5 text-[#2b3990]">
                 {isOpen ? (
-                  // Minus icon
+               
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="w-5 h-5"
@@ -51,7 +51,7 @@ export default function Accordion({accordionData}) {
                     />
                   </svg>
                 ) : (
-                  // Plus icon
+             
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="w-5 h-5"

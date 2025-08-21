@@ -7,7 +7,6 @@
   margin: 0;
   list-style: none;
   text-align: center;
-  /* margin: auto; */
   right: -20px;
 }
 
@@ -24,10 +23,7 @@
 
 .doc {
   position: relative;
-  /* background-color: white; */
   border-radius: 20px;
-  /* padding: 1.5rem; */
-  /* box-shadow: 0 2px 10px rgba(0,0,0,0.05); */
 }
 
 .doc::before {
@@ -50,10 +46,7 @@
 
 .banner {
   position: relative;
-  /* background-color: white; */
   border-radius: 20px;
-  /* padding: 1.5rem; */
-  /* box-shadow: 0 2px 10px rgba(0,0,0,0.05); */
 }
 
 .banner::before {
@@ -65,7 +58,6 @@
   border-radius: 24px 0px 20px 0px;
   right: 0px;
   background-color: #fff;
-  /* mask cave corner shape */
   -webkit-mask: url("../../assets/home/c1.svg") no-repeat;
   mask: url("../../assets/home/c1.svg") no-repeat;
   mask-size: cover;
@@ -77,10 +69,7 @@
 @media only screen and (max-width: 800px) {
   .banner {
   position: relative;
-  /* background-color: white; */
   border-radius: 20px;
-  /* padding: 1.5rem; */
-  /* box-shadow: 0 2px 10px rgba(0,0,0,0.05); */
 }
 .banner::before {
   display: none;
@@ -92,7 +81,6 @@
   border-radius: 24px 0px 20px 0px;
   right: 0px;
   background-color: #fff;
-  /* mask cave corner shape */
   -webkit-mask: url("../../assets/home/c1.svg") no-repeat;
   mask: url("../../assets/home/c1.svg") no-repeat;
   mask-size: cover;

@@ -63,11 +63,6 @@ const cards = [
     },
 ];
 
-
-
-
-
-// Animation variants
 const container = {
     hidden: { opacity: 0 },
     show: {

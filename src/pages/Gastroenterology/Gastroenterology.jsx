@@ -6,7 +6,6 @@ import Banner from "@/assets/specialites/gastroenterology/gastro-banner.webp";
 
 import Clinic from "@/assets/about/clinic.png";
 import Image from "next/image";
-// Sample images – replace with your own
 import consult1 from "@/assets/about/img.png";
 import consult2 from "@/assets/about/img.png";
 import consult3 from "@/assets/about/img.png";
@@ -116,28 +115,60 @@ function Gastroenterology() {
       <section className="max-w-7xl mx-auto py-16 relative">
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
           {/* Left - Image with Overlay Card */}
-          <div className="relative w-full lg:w-1/2 mx-auto rounded-2xl overflow-hidden">
+          <div className="relative w-full lg:w-1/2 mx-auto rounded-2xl overflow-hidden px-4 xs:px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
             {/* Background Image */}
             <Image
               src={Clinic}
               alt="Clinic"
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover rounded-2xl"
             />
 
-            {/* Overlay Card at Bottom Center */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 bg-white/80 p-6 w-[90%] bottom-10 flex flex-col items-center justify-end rounded-2xl">
-              <h2 className="text-[20px] mb-2 text-center">
+            {/* Overlay Card */}
+            <div
+              className="
+      absolute left-1/2 transform -translate-x-1/2 bg-white/80
+      bottom-4 xs:bottom-6 sm:bottom-8 md:bottom-10
+      p-4 xs:p-5 sm:p-6 md:p-8 lg:p-10
+      w-[95%] xs:w-[90%] sm:w-[85%] md:w-[80%] lg:w-[70%]
+      flex flex-col items-center justify-end rounded-2xl
+    "
+            >
+              <h2
+                className="
+        text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl
+        mb-2 text-center font-semibold
+      "
+              >
                 Your Health, Our Priority
               </h2>
-              <p className=" mb-4 text-center">
+
+              <p
+                className="
+        mb-4 text-center
+        text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl
+      "
+              >
                 Get all your personalised healthcare services under one roof from experienced and trusted doctors.
               </p>
-              <button className="btn-sidebar inline-flex items-center text-white bg-[#2B3990] hover:bg-[#1e2a70] px-7 py-3 rounded-full text-sm font-medium hover:-translate-y-[3px] transition-transform duration-200">
+
+              <button
+                className="
+        inline-flex items-center justify-center
+        text-white bg-[#2B3990] hover:bg-[#1e2a70]
+        px-4 xs:px-5 sm:px-6 md:px-7 lg:px-8
+        py-2 xs:py-2 sm:py-3 md:py-3 lg:py-4
+        rounded-full
+        text-xs xs:text-sm sm:text-base md:text-lg
+        font-medium
+        hover:-translate-y-[3px] transition-transform duration-200
+      "
+              >
                 Book an Appointment
-               <ArrowUpRight className="w-5 h-5" />
+                <ArrowUpRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
               </button>
             </div>
           </div>
+
 
           {/* Right - Info Card and Paragraph */}
           <div className="w-full lg:w-3/5 flex flex-col gap-6">

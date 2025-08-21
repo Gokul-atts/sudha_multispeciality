@@ -5,7 +5,6 @@ import Link from "next/link";
 import Banner from "@/assets/about/hero.png";
 import Clinic from "@/assets/about/clinic.png";
 import Image from "next/image";
-// Sample images – replace with your own
 import consult1 from "@/assets/about/img.png";
 import consult2 from "@/assets/about/img.png";
 import consult3 from "@/assets/about/img.png";
