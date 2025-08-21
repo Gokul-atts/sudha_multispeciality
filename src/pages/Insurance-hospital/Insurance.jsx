@@ -18,7 +18,7 @@ import Preauth from "@/assets/Insurance/admission.webp";
 import Discharge from "@/assets/Insurance/discharge.webp";
 import { ArrowUpRight } from "lucide-react";
 
-import CMCHIS from "@/assets/Insurance/cmchis.jpg";
+import CMCHIS from "@/assets/Insurance/CMCHIS.jpg";
 
 import Check from "@/assets/Insurance/check.svg";
 import Contact from "@/assets/Insurance/bg-contact.webp";

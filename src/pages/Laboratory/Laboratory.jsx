@@ -10,7 +10,7 @@ import clsx from "clsx"; // optional, or use tailwind manually
 import { MdArrowOutward } from "react-icons/md";
 import CampusFacilitySlider from "@/components/FacilitySlider/CampusFacilitySlider";
 import ATM from "@/assets/whysudha/atm.png";
-import Check from "@/assets/insurance/check.svg";
+import Check from "@/assets/Insurance/check.svg";
 import Breadcrumb from "@/components/Breadcrumb";
 import { ArrowUpRight } from "lucide-react";
 

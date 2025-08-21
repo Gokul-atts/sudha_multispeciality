@@ -4,7 +4,7 @@ import Banner from "@/assets/alliedhealthservice/Banner.png";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import SidebarTabs from "@/pages/cardiology/SidebarTabs";
-import Alliedhealthsidebar from "@/components/Alliedhealthsidebar";
+
 import Marquee from "react-fast-marquee";
 import Slider from "react-slick";
 import Main from "@/assets/nursingservice/main.jpg";
@@ -17,6 +17,7 @@ import hospitalFour from "@/assets/home/cards/c4.svg";
 import HospitalCard from "@/components/Hospital";
 import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
+import Alliedhealthsidebar from "@/components/AlliedhealthSidebar";
 
 
 const breadcrumbItems = [
