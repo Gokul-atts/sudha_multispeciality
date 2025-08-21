@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Banner from "@/assets/specialites/anaesthesia/anaesthesia.webp";
+import Banner from "@/assets/specialites/Anaesthesia/anaesthesia.webp";
 import Clinic from "@/assets/about/clinic.png";
 import Image from "next/image";
 import consult1 from "@/assets/about/img.png";

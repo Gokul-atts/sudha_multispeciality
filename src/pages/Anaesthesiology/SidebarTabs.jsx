@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Frame from "@/assets/about/frame.png";
 import doctorImg from "@/assets/about/doctorImg.png";
-import aboutOverview from "@/assets/specialites/anaesthesia/anaesthesiaoverview.webp";
+import aboutOverview from "@/assets/specialites/Anaesthesia/anaesthesiaoverview.webp";
 import Accordion from "../../components/Accordion";
 import DoctorSlider from "../../components/Slicksliderdoctor";
 import Checklight from "@/assets/home/check-light.svg";
