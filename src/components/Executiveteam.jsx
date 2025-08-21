@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import React from 'react';
-import Doctor1 from "@/assets/ourmanagement/doctor1.png";
-import Doctor2 from "@/assets/ourmanagement/doctor2.png";
-import Doctor3 from "@/assets/ourmanagement/doctor3.png";
-import calenter from "@/assets/ourmanagement/calendar-2.png"
+import Doctor1 from "@/assets/Ourmanagement/doctor1.png";
+import Doctor2 from "@/assets/Ourmanagement/doctor2.png";
+import Doctor3 from "@/assets/Ourmanagement/doctor3.png";
+import calenter from "@/assets/Ourmanagement/calendar-2.png"
 import Link from 'next/link';
 
 const Executiveteam = () => {
