@@ -10,8 +10,8 @@ import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Marquee from "react-fast-marquee";
-import Check from "@/assets/insurance/check.svg";
-import Group from "@/assets/insurance/emergency-hours.svg";
+import Check from "@/assets/Insurance/check.svg";
+import Group from "@/assets/Insurance/emergency-hours.svg";
 import Breadcrumb from "@/components/Breadcrumb";
 
 

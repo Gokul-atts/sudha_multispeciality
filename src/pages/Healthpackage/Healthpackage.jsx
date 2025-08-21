@@ -16,7 +16,7 @@ import Bookappointment from "@/components/Bookappointment";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Check from "@/assets/insurance/check.svg";
+import Check from "@/assets/Insurance/check.svg";
 import Breadcrumb from "@/components/Breadcrumb";
 
 const breadcrumbItems = [
