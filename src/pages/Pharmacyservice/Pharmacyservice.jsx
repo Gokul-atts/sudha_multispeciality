@@ -8,7 +8,7 @@ import Sudha1 from "@/assets/PharmacyService/sudha-pharmacy.webp";
 import Image from "next/image";
 import "./pharmacy.css";
 import Medicine from "@/assets/PharmacyService/pharmacy-rack.webp";
-import Check from "@/assets/insurance/check.svg";
+import Check from "@/assets/Insurance/check.svg";
 import CampusFacilitySlider from "@/components/FacilitySlider/CampusFacilitySlider";
 import Slider1 from "@/assets/PharmacyService/slider1.png";
 import Slider2 from "@/assets/PharmacyService/pharmacy-rack.webp";

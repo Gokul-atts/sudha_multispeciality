@@ -28,7 +28,7 @@ import Lab15 from "@/assets/laboratory/gallery/lab-15.webp";
 import Lab16 from "@/assets/laboratory/gallery/lab-16.webp";
 import Lab17 from "@/assets/laboratory/gallery/lab-17.webp";
 
-import Check from "@/assets/insurance/check.svg";
+import Check from "@/assets/Insurance/check.svg";
 import Breadcrumb from "@/components/Breadcrumb";
 import { ArrowUpRight } from "lucide-react";
 
