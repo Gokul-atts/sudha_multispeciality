@@ -2,30 +2,13 @@
 
 import Slider from "react-slick";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
+import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { doctorsData } from "@/constants/doctorDetails";
 
-import docImg from "../assets/home/doc/shyla.jpg";
-
-const doctors = [
-  {
-    name: "Dr. U. Shyla",
-    title: "Preventive Cardiologist",
-    image: docImg,
-  },
-  {
-    name: "Dr. U. Shyla",
-    title: "DNB Cardiologist",
-    image: docImg,
-  },
-  {
-    name: "Dr. U. Shyla",
-    title: "Interventional Cardiologist",
-    image: docImg,
-  },
-];
-
+// Custom Next Arrow
 function NextArrow({ onClick }) {
   return (
     <button
@@ -37,6 +20,7 @@ function NextArrow({ onClick }) {
   );
 }
 
+// Custom Previous Arrow
 function PrevArrow({ onClick }) {
   return (
     <button
@@ -48,49 +32,82 @@ function PrevArrow({ onClick }) {
   );
 }
 
-export default function DoctorSlider() {
+// Doctor Slider Component
+export default function DoctorSlider({ specialty, counter, max }) {
+  const filteredDoctors = doctorsData.filter(
+    (doctor) => doctor.speciality === specialty
+  );
+
   const settings = {
-    dots: false,
-    infinite: true,
+    arrows: filteredDoctors.length > 3,
+    infinite: filteredDoctors.length > counter,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: Math.min(filteredDoctors.length, counter),
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
-        settings: { slidesToShow: 2 },
+        settings: {
+          slidesToShow: Math.min(filteredDoctors.length, 2),
+        },
       },
       {
         breakpoint: 768,
-        settings: { slidesToShow: 2 },
+        settings: {
+          slidesToShow: 1,
+        },
       },
     ],
   };
-
+const maxClass = {
+    2: "max-w-2xl",
+    3: "max-w-3xl",
+    4: "max-w-4xl",
+    5: "max-w-5xl",
+    6: "max-w-6xl",
+    7: "max-w-7xl",
+}
   return (
-    <div className="relative bg-[#f0f7ff] py-10 px-4 md:px-8 max-w-4xl mx-auto">
+    <div className={`relative bg-[#f0f7ff] ${maxClass[max]} `}>
       <Slider {...settings}>
-        {doctors.map((doc, index) => (
-          <div key={index} className="">
-            <div className=" rounded-2xl  text-center relative h-full flex gap-4 flex-col items-center justify-between">
-              <div className="ourteamcard_img_one w-[100%] ">
-                <Image
-                  src={doc.image}
-                  alt={doc.name}
-                  className="mx-auto rounded-lg  mb-2 w-[90%] "
-                />
+        {filteredDoctors.map((doc, index) => (
+          <div key={index} className="pr-3">
+            <div className="bg-white w-full h-[500px] max-w-[300px] rounded-2xl mx-auto md:ml-0 md:mr-auto text-start flex flex-col overflow-hidden">
+              
+              {/* Doctor Image */}
+              <Image
+                src={doc.image}
+                alt={doc.name}
+                width={300}
+                height={300}
+                className="w-[300px] h-[300px] object-cover rounded-t-2xl"
+              />
+
+              {/* Doctor Info */}
+              <div className="p-6 flex flex-col justify-between flex-1">
+                <div>
+                  <h3 className="text-md font-bold text-[#2B3990]">{doc.name}</h3>
+                  <p className="text-sm mt-2">{doc.degrees}</p>
+                  <p className="text-sm mt-2">{doc.qualification}</p>
+                </div>
+
+                {/* View Profile Button */}
+                <Link
+                  href="/contact-us"
+                  className="btn-diagonal-outline px-8 w-full mt-6 flex items-center justify-center gap-2"
+                >
+                  Book an Appointment <ArrowUpRight className="w-5 h-5" />
+                </Link>
+                {/* <Link
+                  href={`/doctor-detail/${doc.id}`}
+                  className="btn-diagonal-outline px-8 w-full mt-6 flex items-center justify-center gap-2"
+                >
+                  View Profile <ArrowUpRight className="w-5 h-5" />
+                </Link> */}
               </div>
-              <div>
-                <h3 className="text-[#2B3990] text-base font-semibold mt-4">
-                  {doc.name}
-                </h3>
-                <p className="text-sm text-black">{doc.title}</p>
-              </div>
-              <div className="absolute bottom-4 right-4">
-                {/* Calendar icon here if needed */}
-              </div>
+
             </div>
           </div>
         ))}

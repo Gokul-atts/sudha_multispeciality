@@ -14,16 +14,16 @@ const ethicsCommitteeMembers = [
 
 const EthicsCommitteeTable = ({ data = ethicsCommitteeMembers, title }) => {
   return (
-    <div className="grid grid-cols-12 gap-4">
+    <div className="grid grid-cols-12 gap-5">
       <div className="col-span-12 overflow-x-auto">
-        {title && <h2 className="text-xl font-bold mb-4">{title}</h2>}
+        {title && <h2 className="text-[14px] font-bold mb-4">{title}</h2>}
         <table className="w-full border border-gray-300 rounded-lg overflow-hidden">
           <thead>
-            <tr className="bg-blue-900 text-white">
-              <th className="px-5 py-2 text-left">S.no</th>
-              <th className="px-7 py-2 text-left">Name of Member</th>
-              <th className="px-7 py-2 text-left">Qualification</th>
-              <th className="px-7 py-2 text-left">
+            <tr className="bg-[#2B3990] text-white ">
+              <th className="px-5 py-3 text-left font-semibold letter-space text-[14px] ">S.no</th>
+              <th className="px-7 py-3 text-left font-semibold letter-space text-[14px]">Name of Member</th>
+              <th className="px-7 py-3 text-left font-semibold letter-space text-[14px]">Qualification</th>
+              <th className="px-7 py-3 text-left font-semibold letter-space text-[14px]">
                 Role/Designation in Ethics Committee
               </th>
             </tr>
@@ -32,12 +32,12 @@ const EthicsCommitteeTable = ({ data = ethicsCommitteeMembers, title }) => {
             {data.map((member, index) => (
               <tr
                 key={index}
-                className="border-b bg-white border-gray-300 hover:bg-gray-100"
+                className="border-b bg-white border-gray-200 hover:bg-gray-100 pb-4"
               >
-                <td className="px-5 py-2 text-left">{member.sNo}</td>
-                <td className="px-7 py-2 text-left">{member.name}</td>
-                <td className="px-7 py-2 text-left">{member.qualification}</td>
-                <td className="px-7 py-2 text-left">{member.role}</td>
+                <td className="px-5 py-3 text-left font-semibold letter-space text-[14px]">{member.sNo}</td>
+                <td className="px-7 py-3 text-left font-semibold letter-space text-[14px]">{member.name}</td>
+                <td className="px-7 py-3 text-left font-semibold letter-space text-[14px]">{member.qualification}</td>
+                <td className="px-7 py-3 text-left font-semibold letter-space text-[14px]">{member.role}</td>
               </tr>
             ))}
           </tbody>

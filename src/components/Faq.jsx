@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 
 
-export default function Faq({faq}) {
+export default function Faq({ faq }) {
   const [openIndex, setOpenIndex] = useState(0); // default open first
 
   const toggleAccordion = (index) => {
@@ -21,16 +21,17 @@ export default function Faq({faq}) {
         return (
           <div
             key={index}
-            className="mb-4 border rounded-lg overflow-hidden shadow bg-white"
+            className="mb-4 rounded-2xl overflow-hidden border-0 bg-white"
           >
             {/* Header */}
             <button
-              className="w-full flex justify-between items-center px-4 py-4 text-left bg-gray-50 hover:bg-gray-100 transition"
+              className={`w-full flex justify-between items-center px-4 py-4 text-left transition ${isOpen ? "border-b" : ""
+                }`}
               onClick={() => toggleAccordion(index)}
             >
-              <span className="text-sm md:text-base font-semibold text-[#2b3990]">
+              <h4 className="text-[16px] font-bold text-[#2b3990]">
                 {item.title}
-              </span>
+              </h4>
               <div className="w-5 h-5 text-[#2b3990]">
                 {isOpen ? (
                   // Minus icon
@@ -68,6 +69,7 @@ export default function Faq({faq}) {
               </div>
             </button>
 
+
             {/* Content with fade & smooth height */}
             <AnimatePresence initial={false}>
               {isOpen && (
@@ -81,7 +83,7 @@ export default function Faq({faq}) {
                     collapsed: { height: 0, opacity: 0 },
                   }}
                   transition={{ duration: 0.4, ease: "easeInOut" }}
-                  className="overflow-hidden"
+                  className="overflow-hidden  "
                 >
                   <motion.div
                     className="px-4 pb-5 pt-2"

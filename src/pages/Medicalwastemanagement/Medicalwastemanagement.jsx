@@ -53,11 +53,11 @@ const Medicalwastemanagement = () => {
             {/* Banner Section */}
             <section className="relative -mt-20 lg:-mt-[100px] m-10">
                 <div
-                    className="max-w-full mx-auto px-4 py-36 relative z-10 text-white bg-center bg-no-repeat bg-cover lg:bg-contain banner min-h-400"
+                    className="relative top-6 max-w-full mx-auto px-4 pt-36 pb-24 z-10 text-white bg-center bg-no-repeat bg-cover rounded-3xl overflow-hidden min-h-400"
                     style={{ backgroundImage: `url(${Banner.src})` }}
                 >
                     <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-                        <div className="pl-8 md:pl-20">
+                        <div className="max-w-7xl mx-auto">
                             <motion.div
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -71,7 +71,7 @@ const Medicalwastemanagement = () => {
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6 }}
-                                className="text-[44px] mb-2"
+                                className="text-[40px] mb-2"
                             >
                                 Bio Medical Waste Management
                             </motion.h1>
@@ -82,13 +82,18 @@ const Medicalwastemanagement = () => {
                         </div>
 
                         {/* Corner Floating Card */}
-                        <div className="absolute bottom-[40px] hidden md:block right-4 sm:right-10 md:-right-[35px] z-30 text-[#2B3990] p-4 rounded-xl w-[220px]">
-                            <h3 className="text-[36px] font-bold">40+</h3>
-                            <p className="text-lg leading-snug text-black font-semibold">
-                                Years of Trusted <br />
-                                Expertise in <br />
-                                Healthcare
-                            </p>
+                        <div className="absolute bottom-0 right-0  z-30 hidden md:block">
+                            <div className="w-[220px] overflow-hidden rounded-tl-3xl rounded-br-3xl">
+                                <div className="h-[30%] bg-transparent" />
+                                <div className="bg-white p-5">
+                                    <h3 className="text-[36px] font-extrabold text-[#2B3990]">40+</h3>
+                                    <p className="text-[16px] text-black font-bold">
+                                        Years of Trusted <br />
+                                        Expertise in <br />
+                                        Healthcare
+                                    </p>
+                                </div>
+                            </div>
                         </div>
 
                         {/* Filter Card Inside Banner */}

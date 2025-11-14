@@ -1,6 +1,6 @@
 "use client";
 import React from 'react'
-import Banner from "@/assets/about/hero.png";
+import Banner from "@/assets/about/contact-banner.png";
 import { motion } from "framer-motion";
 
 
@@ -18,6 +18,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 
 const breadcrumbItems = [
     { label: "Home", href: "/" },
+      { label: "Resources", href: "" },
     { label: "Contact Us", href: "/contact-us" },
   ];
 
@@ -28,25 +29,25 @@ const hospitalscards = [
     title: (
       <p className="text-md font-bold text-black">Years of Experience</p>
     ),
-    link: "/op-centre",
+    link: "/about-us/our-growth-story",
     icon: hospitalOne,
   },
   {
     number: <h3 className="text-[48px] text-[#2B3990]">300+</h3>,
     title: <p className="text-md font-bold text-black">Patient Beds</p>,
-    link: "/maternity",
+    link: "/facilities/health-package",
     icon: hospitalTwo,
   },
   {
-    number: <h3 className="text-[48px] text-[#2B3990]">24+</h3>,
+    number: <h3 className="text-[48px] text-[#2B3990]">30+</h3>,
     title: <p className="text-md font-bold text-black">Departments</p>,
-    link: "/heart-care",
+    link: "/specialities",
     icon: hospitalThree,
   },
   {
     number: <h3 className="text-[48px] text-[#2B3990]">100+</h3>,
-    title: <p className="text-md font-bold text-black">Doctor's</p>,
-    link: "/heart-care",
+    title: <p className="text-md font-bold text-black">Doctors</p>,
+    link: "/find-a-doctor",
     icon: hospitalFour,
   },
 ];
@@ -72,12 +73,12 @@ const Contactus = () => {
   return (
     <div className='mt-4'>
 
-      <section className="relative -mt-12 lg:-mt-24 m-10">
+      <section className="relative px-7 hero-section -mt-28 mb-hero-section">
         <div
-          className="max-w-full mx-auto px-4 py-36 relative z-10 text-white bg-center bg-no-repeat bg-cover md:bg-contain"
+          className="relative top-6 max-w-full mx-auto px-4 pt-36 pb-24 z-10 text-white bg-center bg-no-repeat bg-cover rounded-3xl overflow-hidden min-h-400"
           style={{ backgroundImage: `url(${Banner.src})` }}
         >
-          <div className="pl-8 md:pl-20">
+          <div className="max-w-7xl mx-auto">
 
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -93,7 +94,7 @@ const Contactus = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-[44px]  mb-3"
+              className="text-[40px]  mb-3"
             >
               Contact Us
 
@@ -106,7 +107,7 @@ const Contactus = () => {
               transition={{ duration: 0.6 }}
               className="text-white mb-6"
             >
-              Schedule An Appointment
+              Book Your Appointment in Just One Click
               {/* Expert Hands to Take Care Of You At Every Step */}.
             </motion.p>
 
@@ -120,6 +121,19 @@ const Contactus = () => {
                 Book an Appointment <ArrowUpRight className="w-4 h-4" />
               </button> */}
             </motion.div>
+          </div>
+          <div className="absolute bottom-0 right-0  z-30 hidden md:block">
+            <div className="w-[220px] overflow-hidden rounded-tl-3xl rounded-br-3xl">
+              <div className="h-[30%] bg-transparent" />
+              <div className="bg-white p-5">
+                <h3 className="text-[36px] font-extrabold text-[#2B3990]">40+</h3>
+                <p className="text-[16px] text-black font-bold">
+                  Years of Trusted <br />
+                  Expertise in <br />
+                  Healthcare
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

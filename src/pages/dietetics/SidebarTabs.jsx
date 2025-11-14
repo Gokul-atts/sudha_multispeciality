@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import Checklight from "@/assets/home/check-light.svg";
 import Frame from "@/assets/about/frame.png";
 import doctorImg from "@/assets/about/doctorImg.png";
+import Link from "next/link";
 
 import Accordion from "../../components/Accordion";
 import aboutOverview from "@/assets/alliedhealthservice/diet/diet-inner.webp";
@@ -19,9 +20,11 @@ const serviceSections = [
   { id: "overview", label: "Overview" },
   { id: "facilities", label: "Facilities" },
   { id: "services", label: "Services" },
-  { id: "doctors", label: "Doctors" },
+  // { id: "doctors", label: "Doctors" },
   { id: "faqs", label: "FAQs" },
 ];
+
+
 const accordionData = [
   {
     title: (
@@ -194,56 +197,13 @@ const faq = [
   {
     title: (
       <>
-        <div className="flex gap-3">What is cardiology? </div>
+        <div className="flex gap-3">What are the signs of poor nutrition? </div>
       </>
     ),
     content: (
-      <div className="text-sm text-gray-700 space-y-3">
-        <p>
-          A branch of medicine dealing with disorders of heart and blood
-          vessels. The work of our cardiologists for adults includes diagnosis
-          and treatment of adult congenital heart disease, heart failure,
-          coronary artery disease, valvular heart disease and arrhythmias. All
-          the necessary investigations like ECG, Echocardiogram, Treadmill test,
-          Holter monitoring, Ambulatory BP monitoring, tilt table testing,
-          cardiac CT, cardiac MRI, and nuclear heart scanning are available to
-          provide you with the best adult cardiology treatment at our
-          multispeciality hospital in Erode.
-        </p>
-        <h4 className="font-semibold">
-          Diagnostic Tests Available in our Cardiology Hospital:
-        </h4>
-        <h2 className="font-semibold text-[#2B3990]">ECG:</h2>
-        <p>
-          Cardiac problems such as heart attack, heart block, etc. can be
-          detected by measuring the electrical activity of the heart, which is
-          done by electrocardiogram (ECG).
-        </p>
-        <h2 className="font-semibold text-[#2B3990]">ECHOCARDIOGRAM:</h2>
-        <p>
-          The structure and function of the heart can be assessed by moving
-          images produced by sound waves. Various heart diseases can be
-          diagnosed by this readily available investigation.
-        </p>
-        <h2 className="font-semibold text-[#2B3990]">TREADMILL TEST:</h2>
-        <p>
-          Patients will walk on a treadmill at graded levels and their 12- lead
-          ECG will be monitored for heart rate, ST-T segment changes. The
-          presence or absence of changes will be interpreted accordingly to
-          detect heart problems like coronary artery disease, heart block,
-          etc..., that helps in determining the cardiology treatment that is to
-          proceed further accordingly.
-        </p>
-        <h2 className="font-semibold text-[#2B3990]">
-          STRESS ECHOCARDIOGRAPHY:
-        </h2>
-        <p>
-          Heart is exerted by exercise or medicines and its activity is
-          monitored by echocardiography. For those who are not able to walk to
-          perform treadmill test, this is a very useful test to rule out
-          coronary artery disease.
-        </p>
-      </div>
+      <p>
+        Signs of poor nutrition may include fatigue, weakness, hair loss, brittle nails, frequent illnesses, digestive issues, and delayed wound healing. The best dietitians in Erode at Sudha Multispeciality Hospital provide assessments and personalised plans to address nutritional deficiencies.
+      </p>
     ),
   },
   {
@@ -251,66 +211,66 @@ const faq = [
       <>
         <div className="flex gap-3">
 
-          What is the main cause of heart problems?
+          Which vitamin deficiencies are most harmful to health?
         </div>
       </>
     ),
-    content: <p>Details coming soon.</p>,
+    content: <p>Deficiencies in vitamins such as A, D, B12, and C can lead to vision problems, weakened immunity, anaemia, and bone disorders. At Sudha Multispeciality Hospital, recognised as the best dietetics hospital in Erode, these deficiencies are detected early and managed with expert guidance. </p>,
   },
   {
     title: (
       <>
         <div className="flex gap-3">
           {" "}
-          What is the main cause of heart problems?
+          What are the signs of good nutrition?
         </div>
       </>
     ),
-    content: <p>Details coming soon.</p>,
+    content: <p>Signs of good nutrition include healthy skin and hair, proper weight, strong immunity, high energy levels, and good mental focus. The best dietitians in Erode at Sudha Multispeciality Hospital design personalised diets to help achieve and maintain these health indicators.  </p>,
   },
   {
     title: (
       <>
         <div className="flex gap-3">
           {" "}
-          What is the main cause of heart problems?
+          What diseases are caused by poor dietary habits?
         </div>
       </>
     ),
-    content: <p>Details coming soon.</p>,
+    content: <p>Poor dietary habits can contribute to obesity, diabetes, heart disease, hypertension, digestive disorders, and nutrient deficiencies. Sudha Multispeciality Hospital, the best dietetics hospital in Erode, offers dietary counselling to prevent and manage these conditions effectively. </p>,
   },
   {
     title: (
       <>
         <div className="flex gap-3">
           {" "}
-          What is the main cause of heart problems?
+          What is a healthy diet for the human body?
         </div>
       </>
     ),
-    content: <p>Details coming soon.</p>,
+    content: <p>A healthy diet includes balanced portions of proteins, carbohydrates, healthy fats, vitamins, and minerals. Fresh fruits, vegetables, whole grains, lean proteins, and hydration are essential. Expert dietitians at Sudha Multispeciality Hospital provide customized meal plans for optimal health. </p>,
   },
   {
     title: (
       <>
         <div className="flex gap-3">
           {" "}
-          What is the main cause of heart problems?
+          How to start eating healthy?
         </div>
       </>
     ),
-    content: <p>Details coming soon.</p>,
+    content: <p>Starting a healthy diet involves gradual changes such as incorporating more whole foods, reducing processed foods, controlling portion sizes, and maintaining regular meal timings. Sudha Multispeciality Hospital, recognised as the best dietetics hospital in Erode, offers guidance and follow-up support for a sustainable healthy lifestyle. </p>,
   },
   {
     title: (
       <>
         <div className="flex gap-3">
           {" "}
-          What is the main cause of heart problems?
+          What foods should you avoid for good health?
         </div>
       </>
     ),
-    content: <p>Details coming soon.</p>,
+    content: <p>Highly processed foods, excessive sugar, trans fats, and deep-fried items should be limited. The best dietitians in Erode at Sudha Multispeciality Hospital provide practical advice on food choices to support long-term health and prevent lifestyle diseases. </p>,
   },
 ];
 
@@ -343,14 +303,14 @@ export default function SidebarTabs() {
   }, []);
 
   return (
-    <div className="flex flex-col-reverse md:flex-col lg:flex-row gap-8">
+    <div className="flex md:mt-0 mt-4 flex-col lg:flex-row gap-8">
 
       {/* Sidebar */}
-      <aside className="w-full lg:w-1/3 lg:sticky top-24 h-fit space-y-6">
+      <aside className="w-full lg:w-1/4 lg:sticky top-24 h-fit space-y-6">
         {/* Tabs Box */}
         <div className="bg-white  rounded-2xl p-4 sm:p-6">
           <h3 className="text-[16px]  text-center font-bold  mb-5">
-            Effective Dietetics Care 
+            Effective Dietetics Care
           </h3>
           <ul className="space-y-3">
             {serviceSections.map((item) => {
@@ -391,6 +351,150 @@ export default function SidebarTabs() {
           </ul>
         </div>
 
+
+        <div className="hidden md:block">
+          {/* Sudha Hospital Box */}
+          <div
+            className="relative rounded-2xl overflow-hidden text-white text-center px-6 py-10"
+            style={{
+              backgroundImage: `linear-gradient(to bottom right, rgba(42, 61, 144, 0.9), rgba(12, 18, 42, 0.9)), url(${Frame.src})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <h3 className="text-[20px] font-bold mb-2">
+              Sudha Multispeciality Hospital
+            </h3>
+            <ul className="space-y-4 text-start mt-4">
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />  Specialized maternal and paediatric nutrition guidance. </li>
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} /> Expert nutrition care for all age groups and conditions.   </li>
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />Condition-specific diets for diabetes, heart, kidney, and cancer care. </li>
+
+            </ul>
+
+            <button className="btn-white mt-5">
+              Book an Appointment <ArrowUpRight className="w-4 sm:w-5 h-4 sm:h-5" />
+            </button>
+          </div>
+
+          <Link href="/find-a-doctor" >
+
+            <div
+              className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
+              style={{
+                background: "radial-gradient(circle, #9EB36A 0%, #333C22 100%)",
+              }}
+            >
+              {/* Text Section */}
+              <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
+                <h3
+
+                  className="text-[24px] sm:text-xl  font-bold leading-snug"
+                >
+                  Find a <br className="hidden sm:block" /> Doctor?
+                </h3>
+              </div>
+
+              {/* Image Section */}
+              <div className="">
+                <Image
+                  src={doctorImg}
+                  alt="Doctor"
+                  className="rounded-lg w-full customposition  h-auto object-cover"
+                />
+              </div>
+            </div>
+          </Link>
+        </div>
+
+      </aside>
+
+      {/* Content Sections */}
+      <div className="flex-1 space-y-0">
+        {serviceSections.map(({ id, label }) => (
+          <section key={id} id={id} className="scroll-mt-32 rounded-xl">
+            {id === "overview" && (
+              <>
+                <Image src={aboutOverview} alt="aboutOverview" className="w-full h-[400px] rounded-2xl object-cover" />
+
+                <div className="mt-6 space-y-4">
+                  <h2 className="text-[24px]">
+                    Advanced Nutrition & Dietetics Support with the Best Dietitians in
+                    <span className="text-[#2B3990]"> Erode </span>
+
+                  </h2>
+                  <p className="mb-4">
+                    At Sudha Multispeciality Hospital, Erode, our Dietetics Department plays a vital role in promoting healing, managing chronic diseases, and enhancing overall well-being through personalized medical nutrition therapy. Our experienced dietitians work closely with patients across departments, offering tailored dietary guidance for outpatient care, inpatient recovery, and critical care cases.
+                  </p>
+
+                  <p className="mt-4 mb-4">
+                    As the best dietetics hospital in Erode, Sudha Multispeciality Hospital offers evidence-based diet plans tailored to individual needs, whether for managing diabetes, cardiovascular conditions, kidney disorders, cancer recovery, or nutritional care during pregnancy. The department ensures holistic dietary support for preventive health, disease management, and long-term wellness.
+                  </p>
+                </div>
+              </>
+            )}
+
+            {id === "facilities" && (
+              <>
+                <h3 className="text-[24px] mt-5">Facilities</h3>
+                <ul>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>Experienced, qualified team of dieticians trained in clinical and therapeutic nutrition
+                  </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> Personalized dietary counselling for OPD, IPD, and ICU patients
+                  </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
+                    Nutrition support tailored for Master Health Checkup cases
+                  </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
+                    Regular nutrition reassessment for critical care patients
+                  </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
+                    Integration with other departments like General Medicine, Oncology, Cardiology, Nephrology, and Obstetrics
+                  </li>
+
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
+                    Use of medical history, biochemical data, and lifestyle factors in planning diets
+                  </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
+                    Specialized diet charts for children, adults, pregnant women, and the elderly
+                  </li>
+                </ul>
+              </>
+            )}
+
+            {id === "services" && (
+              <div className="space-y-2">
+                <h2 className="text-[24px] mt-5">Services</h2>
+
+                <Accordion accordionData={accordionData} />
+              </div>
+            )}
+
+            {/* {id === "doctors" && (
+              <>
+                <h2 className="text-[24px]  mt-5 pb-3">Doctors</h2>
+                <DoctorSlider />
+              </>
+            )} */}
+
+            {id === "faqs" && (
+              <div className="mt-8">
+                <h2 className="text-[24px]  mt-5 pb-3">Frequently Asked Questions</h2>
+                <Faq faq={faq} />
+              </div>
+            )}
+          </section>
+        ))}
+      </div>
+
+      <div className="block md:hidden">
         {/* Sudha Hospital Box */}
         <div
           className="relative rounded-2xl overflow-hidden text-white text-center px-6 py-10"
@@ -410,118 +514,39 @@ export default function SidebarTabs() {
 
           </ul>
 
-          <button className="btn-sidebar inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px]">
-            Book Your Appointment  <ArrowUpRight className="w-5 h-5" />
+          <button className="btn-white mt-5">
+            Book an Appointment <ArrowUpRight className="w-4 sm:w-5 h-4 sm:h-5" />
           </button>
         </div>
 
-        {/* Find a Doctor Box */}
-        <div
-          className="mt-2 rounded-2xl px-6 py-6 flex flex-col sm:flex-row items-center justify-between text-white"
-          style={{
-            background: "radial-gradient(circle, #9EB36A 0%, #333C22 100%)",
-          }}
-        >
-          <div className="text-left mb-4 sm:mb-0 sm:mr-4">
-            <h3 className="text-[26px]  font-bold">
-              Find a <br />
-              Doctor?
-            </h3>
+        <Link href="/find-a-doctor" >
+
+          <div
+            className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
+            style={{
+              background: "radial-gradient(circle, #9EB36A 0%, #333C22 100%)",
+            }}
+          >
+            {/* Text Section */}
+            <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
+              <h3
+
+                className="text-[24px] sm:text-xl  font-bold leading-snug"
+              >
+                Find a <br className="hidden sm:block" /> Doctor?
+              </h3>
+            </div>
+
+            {/* Image Section */}
+            <div className="">
+              <Image
+                src={doctorImg}
+                alt="Doctor"
+                className="rounded-lg w-full customposition  h-auto object-cover"
+              />
+            </div>
           </div>
-
-          <div className="w-24 sm:w-32 md:w-40">
-            <Image
-              src={doctorImg}
-              alt="Doctor"
-              className="rounded-lg w-full customposition h-auto object-cover"
-            />
-          </div>
-        </div>
-      </aside>
-
-      {/* Content Sections */}
-      <div className="flex-1 space-y-0">
-        {serviceSections.map(({ id, label }) => (
-          <section key={id} id={id} className="scroll-mt-32 rounded-xl">
-            {id === "overview" && (
-              <>
-                <Image src={aboutOverview} alt="aboutOverview" className="w-full h-[400px] rounded-2xl object-cover" />
-
-                <div className="mt-6 space-y-4">
-                  <h2 className="text-[24px]">
-                    Advanced Nutrition & Dietetics Support in
-                    <span className="text-[#2B3990]"> Erode </span> 
-                    at Sudha Multispeciality Hospital
-                  </h2>
-                  <p className="mb-4">
-                    At Sudha Multispeciality Hospital, Erode, our Dietetics Department plays a vital role in promoting healing, managing chronic diseases, and enhancing overall well-being through personalized medical nutrition therapy. Our experienced dietitians work closely with patients across departments, offering tailored dietary guidance for outpatient care, inpatient recovery, and critical care cases.
-                  </p>
-
-                  <p className="mt-4 mb-4">
-                    Whether it's for managing diabetes, cardiovascular conditions, kidney disorders, cancer recovery, or nutritional needs during pregnancy, we provide evidence-based diet plans to suit every individual. The department ensures holistic dietary care for preventive health, disease management, and long-term wellness.
-                  </p>
-                </div>
-              </>
-            )}
-
-            {id === "facilities" && (
-              <>
-                <h3 className="text-[24px] mt-5">Facilities</h3>
-                <ul>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>Experienced, qualified team of dieticians trained in clinical and therapeutic nutrition
-                  </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> Personalized dietary counselling for OPD, IPD, and ICU patients
-                  </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
-                    Nutrition support tailored for Master Health Checkup cases
-                  </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
-                    Regular nutrition reassessment for critical care patients
-                  </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
-                    Integration with other departments like General Medicine, Oncology, Cardiology, Nephrology, and Obstetrics
-                  </li>
-
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
-                    Use of medical history, biochemical data, and lifestyle factors in planning diets
-                  </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
-                    Specialized diet charts for children, adults, pregnant women, and the elderly
-                  </li>
-                </ul>
-              </>
-            )}
-
-            {id === "services" && (
-              <div className="space-y-2">
-                <h2 className="text-[24px] mt-5">Services</h2>
-
-                <Accordion accordionData={accordionData} />
-              </div>
-            )}
-
-            {id === "doctors" && (
-              <>
-                <h2 className="text-[24px]  mt-5 pb-3">Doctors</h2>
-                <DoctorSlider />
-              </>
-            )}
-
-            {/* {id === "faqs" && (
-              <div className="mt-8">
-                <h2 className="text-[30px] font-semibold mt-5 pb-3">FAQ</h2>
-                <Faq faq={faq} />
-              </div>
-            )} */}
-          </section>
-        ))}
+        </Link>
       </div>
     </div>
   );

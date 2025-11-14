@@ -1,6 +1,6 @@
 'use client';
 
-import Banner from "@/assets/fellownationalboard/Banner.png";
+import Banner from "@/assets/fellownationalboard/banner.png";
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from "lucide-react";
 import cardone from "@/assets/home/cards/1.svg";
@@ -23,8 +23,8 @@ const cards = [
         icon: cardone,
         title: (
             <p className="text-md font-extrabold text-black">
-                <span className="text-[#2b3990] font-extrabold">Sudha </span>Integrated <br />
-                out patient centre
+                <span className="text-[#2b3990] font-extrabold">24/7</span> <br />
+                Emergency Care
             </p>
         ),
         link: "/contact-us",
@@ -37,7 +37,7 @@ const cards = [
                 Check Up
             </p>
         ),
-        link: "/maternity",
+        link: "/facilities/health-package",
     },
     {
         icon: cardfour,
@@ -48,7 +48,7 @@ const cards = [
                 Find a<span className="text-[#2b3990] font-extrabold "> Doctor</span>
             </p>
         ),
-        link: "/find-doctor",
+        link: "/find-a-doctor",
     },
     {
         icon: cardthree,

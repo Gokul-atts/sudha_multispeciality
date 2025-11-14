@@ -47,7 +47,7 @@ const Awardlist = () => {
           >
             {/* Content Section */}
             <div className="flex flex-col justify-between h-full pb-12">
-              <h3 className=" text-[20px] mb-5">
+              <h3 className=" text-[18px] mb-5">
                 {item.head}
               </h3>
               <p className=" ">{item.label}</p>

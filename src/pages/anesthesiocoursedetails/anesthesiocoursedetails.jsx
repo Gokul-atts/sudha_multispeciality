@@ -1,10 +1,75 @@
 'use client';
 import React from 'react';
-import Banner from "@/assets/fellownationalboard/Banner.png";
+import Banner from "@/assets/fellownationalboard/banner.png";
 import Anaesthesia from '@/assets/fellownationalboard/anaesthesia.png';
 import Radiology from '@/assets/fellownationalboard/radiology.png';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Breadcrumb from "@/components/Breadcrumb";
+import HospitalCard from "@/components/Hospital";
+import hospitalOne from "@/assets/home/cards/c1.svg";
+import hospitalTwo from "@/assets/home/cards/c2.svg";
+import hospitalThree from "@/assets/home/cards/c3.svg";
+import hospitalFour from "@/assets/home/cards/c4.svg";
+
+
+
+const hospitalscards = [
+    {
+        number: <h3 className="text-[48px] text-[#2B3990]">40+</h3>,
+        title: (
+            <p className="text-md font-bold text-black">Years of Experience</p>
+        ),
+        link: "/about-us/our-growth-story",
+        icon: hospitalOne,
+    },
+    {
+        number: <h3 className="text-[48px] text-[#2B3990]">300+</h3>,
+        title: <p className="text-md font-bold text-black">Patient Beds</p>,
+        link: "/facilities/health-package",
+        icon: hospitalTwo,
+    },
+    {
+        number: <h3 className="text-[48px] text-[#2B3990]">30+</h3>,
+        title: <p className="text-md font-bold text-black">Departments</p>,
+        link: "/specialities",
+        icon: hospitalThree,
+    },
+    {
+        number: <h3 className="text-[48px] text-[#2B3990]">100+</h3>,
+        title: <p className="text-md font-bold text-black">Doctors</p>,
+        link: "/find-a-doctor",
+        icon: hospitalFour,
+    },
+];
+
+
+
+const containerVariants = {
+    hidden: {},
+    show: {
+        transition: {
+            staggerChildren: 0.2,
+        },
+    },
+};
+const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    show: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.5, ease: "easeOut" },
+    },
+};
+const breadcrumbItems = [
+    { label: "Home", href: "/" },
+
+    { label: "Academics", href: "" },
+
+    { label: "Post MBBS Diploma Courses (DNB)", href: "/academics/post-mbbs-diploma-courses" },
+
+    { label: "DNB - Anesthesiology", href: "'/academics/post-mbbs-diploma-courses/dnb-anaesthesiology" },
+];
 
 const TickCircle = () => (
     <div className="flex items-center justify-center w-6 h-6 rounded-full bg-white">
@@ -58,29 +123,37 @@ const AnesthesioCourseDetails = () => {
     return (
         <div>
             {/* Banner Section */}
-            <section className="relative -mt-12 lg:-mt-24 m-10">
+            <section className="relative px-7 hero-section -mt-28 mb-hero-section">
                 <div
-                    className="max-w-full mx-auto px-4 py-36 relative z-10 text-white bg-center bg-no-repeat bg-cover lg:bg-contain banner min-h-400"
+                    className="relative top-6 max-w-full mx-auto px-4 pt-36 pb-24 z-10 text-white bg-center bg-no-repeat bg-cover rounded-3xl overflow-hidden min-h-400"
                     style={{ backgroundImage: `url(${Banner.src})` }}
                 >
-                    <div className="pl-8 md:pl-20">
-                        <motion.p
+                    <div className="max-w-7xl mx-auto">
+                        <motion.div
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.4 }}
                             className="text-sm mb-2 text-white"
                         >
-                            Home / Academic /  DNB
-                        </motion.p>
+                            <Breadcrumb items={breadcrumbItems} />
+                        </motion.div>
 
                         <motion.h1
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
-                            className="text-[44px]  mb-2"
+                            className="text-[40px]  mb-3"
                         >
-                            Diplomate of National Board (DNB)
+                            DNB – Anesthesiology
                         </motion.h1>
+                        <motion.p
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            className="mb-6 text-white"
+                        >
+                            Advanced Skills for Critical Care
+                        </motion.p>
 
                         <motion.div className='mt-12'
                             initial={{ opacity: 0, y: 10 }}
@@ -97,16 +170,15 @@ const AnesthesioCourseDetails = () => {
 
                     </div>
 
-                    <div className="absolute bottom-0 right-4 sm:right-10 md:right-[-40px] z-30 hidden md:block mr-10">
-                        <div className="w-[220px] overflow-hidden rounded-tl-xl  rounded-br-xl">
+                    <div className="absolute bottom-0 right-0  z-30 hidden md:block">
+                        <div className="w-[220px] overflow-hidden rounded-tl-3xl rounded-br-3xl">
                             <div className="h-[30%] bg-transparent" />
-                            <div className="bg-white p-4 ">
-                                <h3 className="text-[36px] font-bold text-[#2B3990]">40+</h3>
-                                <p className="text-lg leading-snug text-black font-semibold">
-                                    Years of Trusted <br />
-                                    Expertise in <br />
-                                    Healthcare
+                            <div className="bg-white p-5">
+                                <p className="text-[16px] text-black font-bold mb-2">
+                                    Empowering Future <br /> Healthcare
+                                    Professionals  <br />
                                 </p>
+                                <h3 className="text-[20px] font-extrabold text-[#2B3990]">Since 1985</h3>
                             </div>
                         </div>
                     </div>
@@ -114,109 +186,114 @@ const AnesthesioCourseDetails = () => {
                 </div>
             </section>
 
-            <div className="bg-[#f3f9ff] min-h-screen flex justify-center">
-                <div className="rounded-2xl max-w-7xl w-full grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 p-4 sm:p-6 lg:p-8">
 
-                    {/* Left Side */}
-                    <div className="space-y-4 md:col-span-7">
-                        <h2 className="text-xl sm:text-2xl lg:text-[30px] font-bold text-[#2d2d8f]">Course Details</h2>
 
-                        {/* Anesthesiology */}
-                        <h3 className="text-lg sm:text-xl lg:text-[22px] font-bold">DNB – Anesthesiology</h3>
-                        <p className=" leading-relaxed text-sm sm:text-base">
-                            Our institute is recognised by the National board of examinations and 5 seats have been allotted from 2018 onwards. Work is equally balanced with 
-                            academics. Regular teaching programmes keep our post graduates updated with the latest guidelines and working protocol. Lectures, seminars, symposium, 
-                            mockdrills, case presentation and mock examination have helped us achieve 100% results. Our postgraduates participate in State and National level 
-                            conferences and presents papers and have won awards.
-                        </p>
-                        <p>
-                            All our post graduates take active participation in teaching Anaesthesia technician trainees and in imparting Basic Life Support classes for nursing and 
-                            paramedical personnel in our institute.
-                        </p>
-                        <p>
-                            The department of Anaesthesiology at Sri Ramakrishna Hospital provides comprehensive perioperative care to patients , pain management for both 
-                            minimally invasive and complex surgeries.
-                        </p>
-
-                        <h4 className="text-lg sm:text-xl lg:text-[22px] font-bold">We Work As A Team</h4>
-                        <ul className="pl-1 space-y-2 text-gray-700 text-sm sm:text-base">
-                            <li className="flex items-center gap-2"><TickCircle /> General surgery</li>
-                            <li className="flex items-center gap-2"><TickCircle /> Orthopedics</li>
-                            <li className="flex items-center gap-2"><TickCircle /> Obstetric anaesthesia and Anaesthesia for Gynaecological procedures</li>
-                            <li className="flex items-center gap-2"><TickCircle /> Otorhinolaryngology</li>
-                            <li className="flex items-center gap-2"><TickCircle /> Oro maxillofacial surgery</li>
-                            <li className="flex items-center gap-2"><TickCircle /> Paediatric anaesthesia including neonates</li>
-                        </ul>
-
-                        {/* Radiology */}
-                        <h3 className="text-lg sm:text-xl lg:text-[22px] font-bold">DNB – Radio Diagnosis</h3>
-                        <p className="leading-relaxed text-sm sm:text-base">
-                            Our institute is recognised by the National board of examinations and 5 seats have been allotted from 2018 onwards. Work is equally balanced with 
-                            academics. Regular teaching programmes keep our post graduates updated with the latest guidelines and working protocol. Lectures, seminars, symposium, 
-                            mockdrills, case presentation and mock examination have helped us achieve 100% results. Our postgraduates participate in State and National level 
-                            conferences and presents papers and have won awards.
-                        </p>
-                         <p>
-                            All our post graduates take active participation in teaching Anaesthesia technician trainees and in imparting Basic Life Support classes for nursing and 
-                            paramedical personnel in our institute.
-                        </p>
-                        <p>
-                            The department of Anaesthesiology at Sri Ramakrishna Hospital provides comprehensive perioperative care to patients , pain management for both 
-                            minimally invasive and complex surgeries.
-                        </p>
-
-                        <h4 className="text-lg sm:text-xl lg:text-[22px] font-bold">We Work As A Team</h4>
-                        <ul className="pl-1 space-y-2 text-gray-700 text-sm sm:text-base">
-                            <li className="flex items-center gap-2"><TickCircle /> General surgery</li>
-                            <li className="flex items-center gap-2"><TickCircle /> Orthopedics</li>
-                            <li className="flex items-center gap-2"><TickCircle /> Obstetric anaesthesia and Anaesthesia for Gynaecological procedures</li>
-                            <li className="flex items-center gap-2"><TickCircle /> Otorhinolaryngology</li>
-                            <li className="flex items-center gap-2"><TickCircle /> Oro maxillofacial surgery</li>
-                            <li className="flex items-center gap-2"><TickCircle /> Paediatric anaesthesia including neonates</li>
-                        </ul>
-                    </div>
-
-                    {/* Right Side Form */}
-                    <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-2xl self-start sticky top-8 md:col-span-5">
-                        <h2 className="text-xl sm:text-2xl lg:text-[30px] font-bold">Enroll Now!</h2>
-                        <p className="text-gray-500 text-xs sm:text-sm mt-1">Personal Details</p>
-
-                        <form className="mt-4 space-y-4">
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label className="block text-xs sm:text-sm font-medium">Full Name <span className="text-red-500">*</span></label>
-                                    <input type="text" placeholder="Enter full name" className="border rounded-lg p-2 w-full text-sm sm:text-base" />
-                                </div>
-                                <div>
-                                    <label className="block text-xs sm:text-sm font-medium">Mobile No <span className="text-red-500">*</span></label>
-                                    <input type="text" placeholder="Enter Mobile No" className="border rounded-lg p-2 w-full text-sm sm:text-base" />
-                                </div>
-                            </div>
-
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label className="block text-xs sm:text-sm font-medium">Email <span className="text-red-500">*</span></label>
-                                    <input type="email" placeholder="Enter your Email Id" className="border rounded-lg p-2 w-full text-sm sm:text-base" />
-                                </div>
-                                <div>
-                                    <label className="block text-xs sm:text-sm font-medium">Qualification <span className="text-red-500">*</span></label>
-                                    <input type="text" placeholder="Enter your Qualification" className="border rounded-lg p-2 w-full text-sm sm:text-base" />
-                                </div>
-                            </div>
-
-                            <div>
-                                <label className="block text-xs sm:text-sm font-medium">Message</label>
-                                <textarea placeholder="Leave your Message..." className="border rounded-lg p-2 w-full h-24 sm:h-28 text-sm sm:text-base" />
-                            </div>
-
-                            <button type="submit" className="bg-[#2d2d8f] text-white px-4 sm:px-6 py-2 rounded-full hover:bg-[#1f1f6f] transition text-sm sm:text-base">
-                                Submit
-                            </button>
-                        </form>
-                    </div>
-
+             <section>
+                <div className=" max-w-7xl mx-auto  mt-20 h-full">
+                    <motion.div
+                        variants={containerVariants}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true, amount: 0.2 }}
+                        className="
+                    grid 
+                    grid-cols-1        
+                    sm:grid-cols-2     
+                    md:grid-cols-2     
+                    lg:grid-cols-3     
+                    xl:grid-cols-4     
+                    gap-4 sm:gap-6 lg:gap-8
+                  "
+                    >
+                        {hospitalscards.map((card, idx) => (
+                            <motion.div key={idx} variants={cardVariants}>
+                                <HospitalCard
+                                    number={card.number}
+                                    icon={card.icon}
+                                    title={card.title}
+                                    link={card.link}
+                                />
+                            </motion.div>
+                        ))}
+                    </motion.div>
                 </div>
-            </div>
+            </section>
+            <section className="max-w-7xl mx-auto py-16 ">
+                <div className="bg-[#f3f9ff] min-h-screen flex justify-center">
+                    <div className="rounded-2xl max-w-7xl w-full grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 p-4 sm:p-6 lg:p-8">
+
+                        {/* Left Side */}
+                        <div className="space-y-3 md:col-span-7">
+                            <h2 className="text-[24px]  ">Course Details</h2>
+
+                            {/* Anesthesiology */}
+
+                            <p className=" ">
+                                Sudha Multispeciality Hospital offers a 2-year DNB Post MBBS Diploma course in Anaesthesiology, accredited by the National Board of Examinations in Medical Sciences (NBEMS) since 2021. With two seats available annually, this course is designed to train skilled anaesthesiologists equipped with advanced knowledge and practical expertise in perioperative care, pain management, and critical care medicine.
+                            </p>
+                            <h4 className="text-[22px] ">Our Anaesthesiology Department</h4>
+                            <p>
+                                Our Well-established Anaesthesiology department is staffed by experienced consultants and equipped with modern operation theatres, intensive care units, and pain management facilities. Trainees receive hands-on exposure to a wide variety of cases, including general surgery, orthopaedics, obstetrics, and emergency care, ensuring comprehensive clinical learning in a supportive environment.
+                            </p>
+
+
+                            <h4 className="text-[22px] ">Why Choose Our Program? </h4>
+                            <ul className="pl-1 space-y-2 text-gray-700 text-sm sm:text-base">
+                                <li className="flex items-start  gap-2 text-[14px] font-semibold"><TickCircle /> NBEMS accredited since 2021 </li>
+                                <li className="flex items-start  gap-2 text-[14px] font-semibold"><TickCircle /> Limited seats (2 per year) ensuring personalised training </li>
+                                <li className="flex items-start  gap-2 text-[14px] font-semibold"><TickCircle /> Extensive clinical exposure and multidisciplinary case management 
+ </li>
+                                <li className="flex items-start  gap-2 text-[14px] font-semibold"><TickCircle /> Dedicated faculty mentorship and academic support </li>
+                                <li className="flex items-start  gap-2 text-[14px] font-semibold"><TickCircle /> Access to state-of-the-art infrastructure and technology</li>
+
+                            </ul>
+
+
+                        </div>
+
+                        {/* Right Side Form */}
+                        <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-2xl self-start sticky top-8 md:col-span-5">
+                            <h2 className="text-[24px] mb-2 ">Enroll Now!</h2>
+                            <p className="">Please fill your details </p>
+
+                            <form className="mt-4 space-y-4">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label className="block text-xs sm:text-sm font-medium">Full Name <span className="text-red-500">*</span></label>
+                                        <input type="text" placeholder="Enter full name" className="border rounded-lg p-2 w-full text-sm sm:text-base" />
+                                    </div>
+                                    <div>
+                                        <label className="block text-xs sm:text-sm font-medium">Mobile No <span className="text-red-500">*</span></label>
+                                        <input type="text" placeholder="Enter Mobile No" className="border rounded-lg p-2 w-full text-sm sm:text-base" />
+                                    </div>
+                                </div>
+
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label className="block text-xs sm:text-sm font-medium">Email <span className="text-red-500">*</span></label>
+                                        <input type="email" placeholder="Enter your Email Id" className="border rounded-lg p-2 w-full text-sm sm:text-base" />
+                                    </div>
+                                    <div>
+                                        <label className="block text-xs sm:text-sm font-medium">Speciality  <span className="text-red-500">*</span></label>
+                                        <input type="text" placeholder="Enter your Qualification" className="border rounded-lg p-2 w-full text-sm sm:text-base" />
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label className="block text-xs sm:text-sm font-medium">Message</label>
+                                    <textarea placeholder="Leave your Message..." className="border rounded-lg p-2 w-full h-24 sm:h-28 text-sm sm:text-base" />
+                                </div>
+
+                                <button type="submit" className="btn-diagonal">
+                                    Submit
+                                </button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
         </div>
     );
 };

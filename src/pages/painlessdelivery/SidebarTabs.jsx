@@ -6,9 +6,11 @@ import { useEffect, useState } from "react";
 import Checklight from "@/assets/home/check-light.svg";
 import Frame from "@/assets/about/frame.png";
 import doctorImg from "@/assets/about/doctorImg.png";
+import Link from "next/link";
+import BookAppointmentModal from "@/components/bookappointmentmodal";
 
 import Accordion from "../../components/Accordion";
-import aboutOverview from "@/assets/alliedhealthservice/diet/diet-inner.webp";
+import aboutOverview from "@/assets/motherandchildcare/painless/painless-inner.webp";
 import DoctorSlider from "../../components/Slicksliderdoctor";
 import Faq from "../../components/Faq";
 import one from "@/assets/about/1.svg";
@@ -18,9 +20,9 @@ import one from "@/assets/about/1.svg";
 const serviceSections = [
   { id: "overview", label: "Overview" },
   { id: "facilities", label: "Facilities" },
-//   { id: "services", label: "Services" },
-  { id: "doctors", label: "Doctors" },
-  { id: "faqs", label: "FAQs" },
+  //   { id: "services", label: "Services" },
+  // { id: "doctors", label: "Doctors" },
+  // { id: "faqs", label: "FAQs" },
 ];
 const accordionData = [
   {
@@ -316,6 +318,10 @@ const faq = [
 
 export default function SidebarTabs() {
   const [activeSection, setActiveSection] = useState('');
+  const [openModal, setOpenModal] = useState(false);
+
+  console.log("openModal", openModal);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -343,14 +349,14 @@ export default function SidebarTabs() {
   }, []);
 
   return (
-    <div className="flex flex-col-reverse md:flex-col lg:flex-row gap-8">
+    <div className="flex md:mt-0 mt-4 flex-col lg:flex-row gap-8">
 
       {/* Sidebar */}
-      <aside className="w-full lg:w-1/3 lg:sticky top-24 h-fit space-y-6">
+      <aside className="w-full lg:w-1/4 lg:sticky top-24 h-fit space-y-6">
         {/* Tabs Box */}
         <div className="bg-white  rounded-2xl p-4 sm:p-6">
           <h3 className="text-[16px]  text-center font-bold  mb-5">
-            Post-Partum Care 
+            Painless Delivery Services
           </h3>
           <ul className="space-y-3">
             {serviceSections.map((item) => {
@@ -391,6 +397,139 @@ export default function SidebarTabs() {
           </ul>
         </div>
 
+        <div className="hidden md:block">
+          {/* Sudha Hospital Box */}
+          <div
+            className="relative rounded-2xl overflow-hidden text-white text-center px-6 py-10"
+            style={{
+              backgroundImage: `linear-gradient(to bottom right, rgba(42, 61, 144, 0.9), rgba(12, 18, 42, 0.9)), url(${Frame.src})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <h3 className="text-[20px] font-bold mb-2">
+              Sudha Multispeciality Hospital
+            </h3>
+            <ul className="space-y-4 text-start mt-4">
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />  Specialized maternal and paediatric nutrition guidance. </li>
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} /> Expert nutrition care for all age groups and conditions.   </li>
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />Condition-specific diets for diabetes, heart, kidney, and cancer care. </li>
+
+            </ul>
+
+            <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => setOpenModal(true)}>
+              Book an Appointment <ArrowUpRight className="w-5 h-5" />
+            </button>
+            <BookAppointmentModal
+              open={openModal}
+              onClose={() => setOpenModal(false)}
+            />
+          </div>
+
+          <Link href="/find-a-doctor" >
+
+            <div
+              className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
+              style={{
+                background: "radial-gradient(circle, #9EB36A 0%, #333C22 100%)",
+              }}
+            >
+              {/* Text Section */}
+              <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
+                <h3
+
+                  className="text-[24px] sm:text-xl  font-bold leading-snug"
+                >
+                  Find a <br className="hidden sm:block" /> Doctor?
+                </h3>
+              </div>
+
+              {/* Image Section */}
+              <div className="">
+                <Image
+                  src={doctorImg}
+                  alt="Doctor"
+                  className="rounded-lg w-full customposition  h-auto object-cover"
+                />
+              </div>
+            </div>
+          </Link>
+        </div>
+
+      </aside>
+
+      {/* Content Sections */}
+      <div className="flex-1 space-y-0">
+        {serviceSections.map(({ id, label }) => (
+          <section key={id} id={id} className="scroll-mt-32 rounded-xl">
+            {id === "overview" && (
+              <>
+                <Image src={aboutOverview} alt="aboutOverview" className="w-full h-[380px] rounded-2xl object-cover" />
+
+                <div className="mt-6 space-y-4">
+                  {/* <h2 className="text-[24px]">
+                    Advanced Nutrition & Dietetics Support in
+                    <span className="text-[#2B3990]"> Erode </span> 
+                    at Sudha Multispeciality Hospital
+                  </h2> */}
+                  <p className="mb-4">
+                    At Sudha Multispeciality Hospital, Erode, we specialise in painless delivery techniques to ensure a comfortable and safe childbirth experience. Our experienced obstetricians employ advanced pain relief methods and modern options to effectively reduce labour pain while safeguarding the health of both mother and baby. We prioritise personalised care, addressing each woman’s unique needs and preferences. Our compassionate team supports mothers emotionally and physically, creating a calm and reassuring environment. We are dedicated to helping women embrace childbirth confidently, making the process as smooth and empowering as possible.
+                  </p>
+                  {/* <p className="mt-4 mb-4">
+                    Whether it's for managing diabetes, cardiovascular conditions, kidney disorders, cancer recovery, or nutritional needs during pregnancy, we provide evidence-based diet plans to suit every individual. The department ensures holistic dietary care for preventive health, disease management, and long-term wellness.
+                  </p> */}
+                </div>
+              </>
+            )}
+
+            {id === "facilities" && (
+              <div className="space-y-2">
+                <h3 className="text-[24px] mt-5">Facilities</h3>
+                <ul>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>Dedicated labour rooms with facilities for continuous monitoring and pain relief
+                  </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>Emergency obstetric care with immediate availability of surgical interventions
+                  </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
+                    Skilled obstetric and nursing teams trained in painless delivery techniques
+                  </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
+                    Neonatal intensive care unit (NICU) for specialised newborn care if required
+                  </li>
+                </ul>
+              </div>
+            )}
+
+            {/* {id === "services" && (
+              <div className="space-y-2">
+                <h2 className="text-[24px] mt-5">Services</h2>
+
+                <Accordion accordionData={accordionData} />
+              </div>
+            )} */}
+
+            {/* {id === "doctors" && (
+              <>
+                <h2 className="text-[24px]  mt-5 pb-3">Doctors</h2>
+                <DoctorSlider />
+              </>
+            )} */}
+
+            {/* {id === "faqs" && (
+              <div className="mt-8">
+                <h2 className="text-[30px] font-semibold mt-5 pb-3">FAQ</h2>
+                <Faq faq={faq} />
+              </div>
+            )} */}
+          </section>
+        ))}
+      </div>
+
+      <div className="block md:hidden">
         {/* Sudha Hospital Box */}
         <div
           className="relative rounded-2xl overflow-hidden text-white text-center px-6 py-10"
@@ -410,108 +549,43 @@ export default function SidebarTabs() {
 
           </ul>
 
-          <button className="btn-sidebar inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px]">
-            Book Your Appointment  <ArrowUpRight className="w-5 h-5" />
+          <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => setOpenModal(true)}>
+            Book an Appointment <ArrowUpRight className="w-5 h-5" />
           </button>
+          <BookAppointmentModal
+            open={openModal}
+            onClose={() => setOpenModal(false)}
+          />
         </div>
 
-        {/* Find a Doctor Box */}
-        <div
-          className="mt-2 rounded-2xl px-6 py-6 flex flex-col sm:flex-row items-center justify-between text-white"
-          style={{
-            background: "radial-gradient(circle, #9EB36A 0%, #333C22 100%)",
-          }}
-        >
-          <div className="text-left mb-4 sm:mb-0 sm:mr-4">
-            <h3 className="text-[26px]  font-bold">
-              Find a <br />
-              Doctor?
-            </h3>
+        <Link href="/find-a-doctor" >
+
+          <div
+            className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
+            style={{
+              background: "radial-gradient(circle, #9EB36A 0%, #333C22 100%)",
+            }}
+          >
+            {/* Text Section */}
+            <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
+              <h3
+
+                className="text-[24px] sm:text-xl  font-bold leading-snug"
+              >
+                Find a <br className="hidden sm:block" /> Doctor?
+              </h3>
+            </div>
+
+            {/* Image Section */}
+            <div className="">
+              <Image
+                src={doctorImg}
+                alt="Doctor"
+                className="rounded-lg w-full customposition  h-auto object-cover"
+              />
+            </div>
           </div>
-
-          <div className="w-24 sm:w-32 md:w-40">
-            <Image
-              src={doctorImg}
-              alt="Doctor"
-              className="rounded-lg w-full customposition h-auto object-cover"
-            />
-          </div>
-        </div>
-      </aside>
-
-      {/* Content Sections */}
-      <div className="flex-1 space-y-0">
-        {serviceSections.map(({ id, label }) => (
-          <section key={id} id={id} className="scroll-mt-32 rounded-xl">
-            {id === "overview" && (
-              <>
-                <Image src={aboutOverview} alt="aboutOverview" className="w-full h-[400px] rounded-2xl object-cover" />
-
-                <div className="mt-6 space-y-4">
-                  {/* <h2 className="text-[24px]">
-                    Advanced Nutrition & Dietetics Support in
-                    <span className="text-[#2B3990]"> Erode </span> 
-                    at Sudha Multispeciality Hospital
-                  </h2> */}
-                  <p className="mb-4">
-                    At Sudha Multispeciality Hospital, Erode, we specialise in painless delivery techniques to ensure a comfortable and safe childbirth experience. 
-                    Our experienced obstetricians employ advanced pain relief methods and modern options to effectively reduce labour pain while safeguarding 
-                    the health of both mother and baby. We prioritise personalised care, addressing each woman’s unique needs and preferences. Our compassionate team 
-                    supports mothers emotionally and physically, creating a calm and reassuring environment. We are dedicated to helping women embrace childbirth confidently, 
-                    making the process as smooth and empowering as possible.    
-                  </p>
-                  {/* <p className="mt-4 mb-4">
-                    Whether it's for managing diabetes, cardiovascular conditions, kidney disorders, cancer recovery, or nutritional needs during pregnancy, we provide evidence-based diet plans to suit every individual. The department ensures holistic dietary care for preventive health, disease management, and long-term wellness.
-                  </p> */}
-                </div>
-              </>
-            )}
-
-            {id === "facilities" && (
-              <>
-                <h3 className="text-[24px] mt-5">Facilities</h3>
-                <ul>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>Dedicated labour rooms with facilities for continuous monitoring and pain relief 
-                  </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>Emergency obstetric care with immediate availability of surgical interventions 
-                  </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
-                   Skilled obstetric and nursing teams trained in painless delivery techniques 
-                  </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
-                    Neonatal intensive care unit (NICU) for specialised newborn care if required 
-                  </li>
-                </ul>
-              </>
-            )}
-
-            {/* {id === "services" && (
-              <div className="space-y-2">
-                <h2 className="text-[24px] mt-5">Services</h2>
-
-                <Accordion accordionData={accordionData} />
-              </div>
-            )} */}
-
-            {id === "doctors" && (
-              <>
-                <h2 className="text-[24px]  mt-5 pb-3">Doctors</h2>
-                <DoctorSlider />
-              </>
-            )}
-
-            {/* {id === "faqs" && (
-              <div className="mt-8">
-                <h2 className="text-[30px] font-semibold mt-5 pb-3">FAQ</h2>
-                <Faq faq={faq} />
-              </div>
-            )} */}
-          </section>
-        ))}
+        </Link>
       </div>
     </div>
   );

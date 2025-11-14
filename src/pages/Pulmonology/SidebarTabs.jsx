@@ -7,11 +7,15 @@ import { useEffect, useState } from "react";
 import Checklight from "@/assets/home/check-light.svg";
 import Frame from "@/assets/about/frame.png";
 import doctorImg from "@/assets/about/doctorImg.png";
-import aboutOverview from "@/assets/specialites/pulmonology/pulmonology.webp";
+import aboutOverview from "@/assets/specialites/pulmonology/pulmonology-overview.webp";
 import Accordion from "../../components/Accordion";
 import DoctorSlider from "../../components/Slicksliderdoctor";
 import Faq from "../../components/Faq";
 import one from "@/assets/about/1.svg";
+import Link from "next/link";
+import BookAppointmentModal from "@/components/bookappointmentmodal";
+
+
 const serviceSections = [
   { id: "overview", label: "Overview" },
   { id: "facilities", label: "Facilities" },
@@ -24,56 +28,13 @@ const faq = [
   {
     title: (
       <>
-        <div className="flex gap-3">What is cardiology? </div>
+        <div className="flex gap-3">Who is the best lung specialist in Erode? </div>
       </>
     ),
     content: (
-      <div className="text-sm text-gray-700 space-y-3">
-        <p>
-          A branch of medicine dealing with disorders of heart and blood
-          vessels. The work of our cardiologists for adults includes diagnosis
-          and treatment of adult congenital heart disease, heart failure,
-          coronary artery disease, valvular heart disease and arrhythmias. All
-          the necessary investigations like ECG, Echocardiogram, Treadmill test,
-          Holter monitoring, Ambulatory BP monitoring, tilt table testing,
-          cardiac CT, cardiac MRI, and nuclear heart scanning are available to
-          provide you with the best adult cardiology treatment at our
-          multispeciality hospital in Erode.
-        </p>
-        <h4 className="font-semibold">
-          Diagnostic Tests Available in our Cardiology Hospital:
-        </h4>
-        <h2 className="font-semibold text-[#2B3990]">ECG:</h2>
-        <p>
-          Cardiac problems such as heart attack, heart block, etc. can be
-          detected by measuring the electrical activity of the heart, which is
-          done by electrocardiogram (ECG).
-        </p>
-        <h2 className="font-semibold text-[#2B3990]">ECHOCARDIOGRAM:</h2>
-        <p>
-          The structure and function of the heart can be assessed by moving
-          images produced by sound waves. Various heart diseases can be
-          diagnosed by this readily available investigation.
-        </p>
-        <h2 className="font-semibold text-[#2B3990]">TREADMILL TEST:</h2>
-        <p>
-          Patients will walk on a treadmill at graded levels and their 12- lead
-          ECG will be monitored for heart rate, ST-T segment changes. The
-          presence or absence of changes will be interpreted accordingly to
-          detect heart problems like coronary artery disease, heart block,
-          etc..., that helps in determining the cardiology treatment that is to
-          proceed further accordingly.
-        </p>
-        <h2 className="font-semibold text-[#2B3990]">
-          STRESS ECHOCARDIOGRAPHY:
-        </h2>
-        <p>
-          Heart is exerted by exercise or medicines and its activity is
-          monitored by echocardiography. For those who are not able to walk to
-          perform treadmill test, this is a very useful test to rule out
-          coronary artery disease.
-        </p>
-      </div>
+      <p>
+        Sudha Multispeciality Hospital is recognized for its expert team of pulmonologists, with some of the best lung specialists in Erode providing advanced care for a wide range of respiratory conditions. The hospital is considered a leading pulmonology hospital in Erode.
+      </p>
     ),
   },
   {
@@ -81,66 +42,66 @@ const faq = [
       <>
         <div className="flex gap-3">
 
-          What is the main cause of heart problems?
+          How are lung diseases treated?
         </div>
       </>
     ),
-    content: <p>Details coming soon.</p>,
+    content: <p>Lung diseases are treated using a combination of medications, respiratory therapy, lifestyle interventions, and, in some cases, surgical procedures. Sudha Multispeciality Hospital, the best hospital for lung treatment in Erode, offers comprehensive treatment plans led by the best pulmonologists in Erode. </p>,
   },
   {
     title: (
       <>
         <div className="flex gap-3">
           {" "}
-          What is the main cause of heart problems?
+          How can lung health be improved?
         </div>
       </>
     ),
-    content: <p>Details coming soon.</p>,
+    content: <p>Lung health can be improved by avoiding smoking, maintaining good air quality, regular exercise, and timely medical checkups. Sudha Multispeciality Hospital provides guidance from the best lung specialists in Erode to help strengthen respiratory health and prevent complications. </p>,
   },
   {
     title: (
       <>
         <div className="flex gap-3">
           {" "}
-          What is the main cause of heart problems?
+          What are the early warning signs of lung disease?
         </div>
       </>
     ),
-    content: <p>Details coming soon.</p>,
+    content: <p>Early signs of lung disease may include persistent cough, shortness of breath, wheezing, chest discomfort, and recurrent respiratory infections. Sudha Multispeciality Hospital, a leading pulmonology hospital in Erode, provides early diagnosis and treatment to prevent progression. </p>,
   },
   {
     title: (
       <>
         <div className="flex gap-3">
           {" "}
-          What is the main cause of heart problems?
+          Is lung disease curable?
         </div>
       </>
     ),
-    content: <p>Details coming soon.</p>,
+    content: <p>Some lung conditions can be effectively treated or managed, while chronic conditions require long-term care. Sudha Multispeciality Hospital, the best hospital for lung treatment in Erode, offers advanced therapies to control symptoms and improve quality of life. </p>,
   },
   {
     title: (
       <>
         <div className="flex gap-3">
           {" "}
-          What is the main cause of heart problems?
+          What are the symptoms of lung disease in women?
         </div>
       </>
     ),
-    content: <p>Details coming soon.</p>,
+    content: <p>In women, lung disease may present as chronic cough, breathlessness, fatigue, chest tightness, or recurrent infections. Sudha Multispeciality Hospital, equipped with the best pulmonologists in Erode, provides comprehensive care tailored to women’s respiratory health.</p>,
   },
   {
     title: (
       <>
         <div className="flex gap-3">
           {" "}
-          What is the main cause of heart problems?
+          Which hospital in Erode provides advanced treatment for lung disease?
         </div>
       </>
     ),
-    content: <p>Details coming soon.</p>,
+    content: <p>Sudha Multispeciality Hospital, recognized as a leading pulmonology hospital in Erode, provides advanced treatment for lung diseases. Equipped with the best pulmonologists in Erode, the hospital offers comprehensive care and personalized treatment plans for all respiratory conditions.</p>,
   },
 ];
 
@@ -169,7 +130,7 @@ const accordionData = [
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Interstitial Lung Disease</li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} />Pulmonary arterial hypertension </li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} />Lung cancer </li>
-             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} />Occupational lung disease</li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} />Occupational lung disease</li>
           </ul>
         </div>
       </div>
@@ -223,7 +184,7 @@ const accordionData = [
             <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Obstructive Sleep Apnoea</li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Snoring and sleep-related breathing issues  </li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Polysomnography and CPAP/BiPAP support  </li>
-            
+
           </ul>
 
         </div>
@@ -266,6 +227,10 @@ const accordionData = [
 
 export default function SidebarTabs() {
   const [activeSection, setActiveSection] = useState('');
+  const [openModal, setOpenModal] = useState(false);
+
+  console.log("openModal", openModal);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -293,10 +258,10 @@ export default function SidebarTabs() {
   }, []);
 
   return (
-    <div className="flex flex-col-reverse md:flex-col lg:flex-row gap-8">
+    <div className="flex md:mt-0 mt-4 flex-col lg:flex-row gap-8">
 
       {/* Sidebar */}
-      <aside className="w-full lg:w-1/3 lg:sticky top-24 h-fit space-y-6">
+      <aside className="w-full lg:w-1/4 lg:sticky top-24 h-fit space-y-6">
         {/* Tabs Box */}
         <div className="bg-white  rounded-2xl p-4 sm:p-6">
           <h3 className="text-[16px]  text-center font-bold  mb-5">
@@ -341,6 +306,141 @@ export default function SidebarTabs() {
           </ul>
         </div>
 
+
+        <div className="hidden md:block">
+          {/* Sudha Hospital Box */}
+          <div
+            className="relative rounded-2xl overflow-hidden text-white text-center px-6 py-10"
+            style={{
+              backgroundImage: `linear-gradient(to bottom right, rgba(42, 61, 144, 0.9), rgba(12, 18, 42, 0.9)), url(${Frame.src})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <h3 className="text-[20px] font-bold mb-2">
+              Sudha Multispeciality Hospital
+            </h3>
+            <hr className="border-light" />
+            <ul className="space-y-4 text-start mt-4">
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} /> 24x7 emergency and ICU support for critical lung conditions</li>
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} /> Multidisciplinary team of experienced pulmonologists and trained respiratory therapists</li>
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />World-class respiratory diagnostic and treatment facilities</li>
+
+            </ul>
+
+
+
+            <button className="btn-white mt-5">
+              Book an Appointment <ArrowUpRight className="w-4 sm:w-5 h-4 sm:h-5" />
+            </button>
+          </div>
+
+          {/* Find a Doctor Box */}
+          <Link href="/find-a-doctor" >
+
+            <div
+              className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
+              style={{
+                background: "radial-gradient(circle, #9EB36A 0%, #333C22 100%)",
+              }}
+            >
+              {/* Text Section */}
+              <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
+                <h3
+
+                  className="text-[24px] sm:text-xl  font-bold leading-snug"
+                >
+                  Find a <br className="hidden sm:block" /> Doctor?
+                </h3>
+              </div>
+
+              {/* Image Section */}
+              <div className="">
+                <Image
+                  src={doctorImg}
+                  alt="Doctor"
+                  className="rounded-lg w-full customposition  h-auto object-cover"
+                />
+              </div>
+            </div>
+          </Link>
+        </div>
+
+      </aside>
+
+      {/* Content Sections */}
+      <div className="flex-1 space-y-0">
+        {serviceSections.map(({ id, label }) => (
+          <section key={id} id={id} className="scroll-mt-32 rounded-xl">
+            {id === "overview" && (
+              <>
+                <Image src={aboutOverview} alt="aboutOverview" className="w-full h-[380px] rounded-2xl object-cover" />
+                <h2 className="text-[24px] mb-2 mt-4">
+                  Best Pulmonary and Respiratory Care at the Best Pulmonology Hospital in <span className="text-[#2B3990]"> Erode</span>
+                </h2>
+                <p className="mb-3">
+                  Sudha Multispeciality Hospital is recognized as the best hospital for lung treatment in Erode, offering expert care for a wide range of respiratory and pulmonary conditions. With the expertise of the best pulmonologists in Erode and highly skilled lung specialists, the department combines advanced diagnostic tools with round-the-clock intensive care to ensure accurate diagnosis and effective treatment.
+                </p>
+
+                <p className="mb-3">
+                  From asthma, COPD, and sleep disorders to lung infections and cancer, comprehensive and evidence-based care is delivered through a multidisciplinary approach, ensuring better outcomes and improved quality of life for patients.
+                </p>
+
+              </>
+            )}
+
+
+
+            {id === "facilities" && (
+              <div className="space-y-2 ">
+                <h2 className="text-[24px] mt-5 mb-3">Facilities</h2>
+                <ul>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> 24x7 Intensive Medical Care Units with specially trained pulmonology nurses and doctors  </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> State-of-the-art Operation Theatres equipped for thoracic and emergency respiratory procedures  </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> Advanced Radiology & Hi-Tech Laboratory Support for diagnostic accuracy  </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> On-site Physiotherapy Services to support pulmonary rehabilitation  </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> Emergency & Trauma Care Services available 24/7  </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> Dedicated General & Special Wards with continuous specialist monitoring  </li>
+
+                </ul>
+              </div>
+            )}
+
+
+
+            {id === "services" && (
+              <div className="space-y-2 ">
+                <h2 className="text-[24px]  mt-5">Services</h2>
+
+                <Accordion accordionData={accordionData} />
+              </div>
+            )}
+
+            {id === "doctors" && (
+              <div className="space-y-2 ">
+                <h2 className="text-[24px] mt-5">Doctors</h2>
+                <DoctorSlider specialty="Pulmonology" max={2} counter={1} />
+              </div>
+            )}
+
+            {id === "faqs" && (
+              <div className="space-y-2 ">
+                <h2 className="text-[24px]  mt-5">Frequently Asked Questions</h2>
+                <Faq faq={faq} />
+              </div>
+            )}
+          </section>
+        ))}
+      </div>
+
+
+      <div className="block md:hidden">
         {/* Sudha Hospital Box */}
         <div
           className="relative rounded-2xl overflow-hidden text-white text-center px-6 py-10"
@@ -363,100 +463,44 @@ export default function SidebarTabs() {
 
 
 
-          <button className="btn-sidebar inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px] hover:-translate-y-[3px] transition-transform duration-200">
+         <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => setOpenModal(true)}>
             Book an Appointment <ArrowUpRight className="w-5 h-5" />
           </button>
+          <BookAppointmentModal
+            open={openModal}
+            onClose={() => setOpenModal(false)}
+          />
         </div>
 
         {/* Find a Doctor Box */}
-        <div
-          className="mt-2 rounded-2xl px-6 py-6 flex flex-col sm:flex-row items-center justify-between text-white"
-          style={{
-            background: "radial-gradient(circle, #9EB36A 0%, #333C22 100%)",
-          }}
-        >
-          <div className="text-left mb-4 sm:mb-0 sm:mr-4">
-            <h3 className="text-[26px]  font-bold">
-              Find a<br />
-              Doctor?
-            </h3>
+        <Link href="/find-a-doctor" >
+
+          <div
+            className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
+            style={{
+              background: "radial-gradient(circle, #9EB36A 0%, #333C22 100%)",
+            }}
+          >
+            {/* Text Section */}
+            <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
+              <h3
+
+                className="text-[24px] sm:text-xl  font-bold leading-snug"
+              >
+                Find a <br className="hidden sm:block" /> Doctor?
+              </h3>
+            </div>
+
+            {/* Image Section */}
+            <div className="">
+              <Image
+                src={doctorImg}
+                alt="Doctor"
+                className="rounded-lg w-full customposition  h-auto object-cover"
+              />
+            </div>
           </div>
-
-          <div className="w-24 sm:w-32 md:w-40">
-            <Image
-              src={doctorImg}
-              alt="Doctor"
-              className="rounded-lg w-full customposition h-auto object-cover"
-            />
-          </div>
-        </div>
-      </aside>
-
-      {/* Content Sections */}
-      <div className="flex-1 space-y-0">
-        {serviceSections.map(({ id, label }) => (
-          <section key={id} id={id} className="scroll-mt-32 rounded-xl">
-            {id === "overview" && (
-              <>
-                <Image src={aboutOverview} alt="aboutOverview" className="w-full h-[400px] rounded-2xl object-cover" />
-                <h2 className="text-[24px] mb-4 mt-4">
-                  Best Pulmonary and Respiratory Care in <span className="text-[#2B3990]"> Erode</span>  at Sudha Multispeciality Hospital
-                </h2>
-                <p className="mb-3">
-                  The Pulmonology Department at Sudha Multispeciality Hospital offers expert care for a wide range of respiratory and lung-related conditions. Backed by a team of experienced pulmonologists, state-of-the-art diagnostic tools, and round-the-clock intensive care support, we ensure early detection, accurate diagnosis, and comprehensive treatment for both acute and chronic pulmonary diseases. From asthma and COPD to sleep disorders and lung cancer, our department provides evidence-based care with a multidisciplinary approach.
-                </p>
-
-              </>
-            )}
-
-
-
-            {id === "facilities" && (
-              <>
-                <h2 className="text-[24px] mt-5 mb-3">Facilities</h2>
-                <ul>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> 24x7 Intensive Medical Care Units with specially trained pulmonology nurses and doctors </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> State-of-the-art Operation Theatres equipped for thoracic and emergency respiratory procedures </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> Advanced Radiology & Hi-Tech Laboratory Support for diagnostic accuracy </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> On-site Physiotherapy Services to support pulmonary rehabilitation </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> Emergency & Trauma Care Services available 24/7 </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> Dedicated General & Special Wards with continuous specialist monitoring </li>
-
-                </ul>
-              </>
-            )}
-
-
-
-            {id === "services" && (
-              <div className="space-y-2 ">
-                <h2 className="text-[24px]  mt-5 pb-3">Services</h2>
-
-                <Accordion accordionData={accordionData} />
-              </div>
-            )}
-
-            {id === "doctors" && (
-              <>
-                <h2 className="text-[24px]  mt-5 pb-3">Doctors</h2>
-                <DoctorSlider />
-              </>
-            )}
-
-            {/* {id === "faqs" && (
-              <div className="mt-8">
-                <h2 className="text-[24px]  mt-5 pb-3">FAQ</h2>
-                <Faq faq={faq} />
-              </div>
-            )} */}
-          </section>
-        ))}
+        </Link>
       </div>
     </div>
   );

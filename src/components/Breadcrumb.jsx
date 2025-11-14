@@ -5,7 +5,7 @@ import Link from "next/link";
 const Breadcrumb = ({ items }) => {
   return (
     <div
-      className="w-full overflow-x-auto whitespace-nowrap"
+      className="w-full"
       aria-label="Breadcrumb"
     >
       <ol className="flex items-center text-sm text-gray-600 space-x-1 md:space-x-2">
@@ -17,12 +17,12 @@ const Breadcrumb = ({ items }) => {
             {item.href ? (
               <Link
                 href={item.href}
-                className="hover:underline text-white text-[14px] font-medium truncate max-w-[120px] md:max-w-none"
+                className="hover:underline text-white text-[14px]  font-medium truncate max-w-[120px] md:max-w-none"
               >
                 {item.label}
               </Link>
             ) : (
-              <span className="text-white text-[14px] truncate max-w-[120px] md:max-w-none">
+              <span className="text-white text-[14px] truncate max-w-[120px]  md:max-w-none">
                 {item.label}
               </span>
             )}

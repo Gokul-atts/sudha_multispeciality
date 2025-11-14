@@ -1,11 +1,13 @@
 "use client";
 
 import { links } from "@/constants/navLinks";
+import Image from "next/image";
 import { cn } from "@/lib/utility";
 import { ChevronDown, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import darkLogo from "../../assets/home/logo.svg";
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function MobileNav() {
@@ -39,19 +41,19 @@ export default function MobileNav() {
             exit={{ x: "-100%" }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
             className={cn(
-              "fixed top-0 left-0 z-50 h-full w-full min-h-screen bg-background border-r border-accent px-6 pt-12 flex flex-col overflow-y-auto lg:hidden"
+              "fixed top-0 left-0 z-50 h-full w-full min-h-screen bg-white text-black border-r border-gray-200 px-6 pt-12 flex flex-col overflow-y-auto lg:hidden"
             )}
           >
             {/* Header */}
             <div className="flex items-center justify-between mb-4">
               <Link
                 href="/"
-                className="text-3xl font-bold text-muted hover:text-accent transition"
+                className="flex items-center gap-x-3 font-bold text-2xl sm:text-3xl transition hover:text-[#2b3990]"
               >
-                Logo
+                <Image src={darkLogo} alt="Logo" className="h-10 w-auto" />
               </Link>
               <button
-                className="hover:text-accent transition"
+                className="hover:text-[#2b3990] transition"
                 onClick={() => setMenuOpen(false)}
               >
                 <X className="w-6 h-6" />
@@ -65,11 +67,11 @@ export default function MobileNav() {
                   <Link
                     href={link?.hrefs}
                     className={cn(
-                      "text-muted py-2 px-2 flex items-center justify-between rounded-md transition hover:text-accent hover:bg-secondary",
+                      "py-4 px-4 flex items-center justify-between text-[14px] rounded-xl transition hover:text-[#2b3990] hover:bg-[#EEF8FF]",
                       pathname === link?.hrefs &&
-                        "text-accent bg-secondary font-semibold",
+                      "text-[#2b3990] bg-[#EEF8FF] font-semibold",
                       openedMenu === index &&
-                        "text-accent bg-secondary font-semibold"
+                      "text-[#2b3990] bg-[#EEF8FF] font-semibold"
                     )}
                   >
                     <button
@@ -101,12 +103,12 @@ export default function MobileNav() {
                         {link.subLinks?.map((subLink, idx) => (
                           <div
                             key={idx}
-                            className="mt-2 rounded-md overflow-hidden hover:bg-secondary transition"
+                            className="mt-2 rounded-xl overflow-hidden hover:bg-[#EEF8FF] transition"
                           >
                             {subLink.header && (
                               <Link
                                 href={subLink?.hrefs || "#"}
-                                className="block px-3 py-2 text-xs font-semibold text-primary hover:text-accent cursor-pointer transition"
+                                className="block px-4 py-4 text-sm font-medium text-black hover:text-[#2b3990] cursor-pointer transition"
                               >
                                 {subLink?.header}
                               </Link>
@@ -122,6 +124,7 @@ export default function MobileNav() {
           </motion.div>
         )}
       </AnimatePresence>
+
     </>
   );
 }

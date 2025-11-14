@@ -2,10 +2,13 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function SpecialSubLink({ subLink, setHoveredSubLinkImage }={}) {
+export default function SpecialSubLink({ subLink,onCloseDropdown , setHoveredSubLinkImage }={}) {
    if (!subLink) return null;
+     const handleClick = () => {
+    if (onCloseDropdown) onCloseDropdown(); // close dropdown after click
+  }
   return (
-    <Link href={subLink?.hrefs}>
+    <Link href={subLink?.hrefs} onClick={handleClick}>
       <div
         className="hover:border-b-2 hover:rounded-t-md  hover:border-[#2B3990] bg-white hover:bg-[#EEF8FF] text-black hover:text-[#2B3990] p-4 flex items-center gap-2 "
         //   onMouseEnter={() => {

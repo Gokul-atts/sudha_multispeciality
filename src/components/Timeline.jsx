@@ -121,7 +121,7 @@ export default function TimelineSlider() {
     <section>
       <div className="max-w-7xl mx-auto  relative">
         {/* Timeline horizontal line */}
-        <div className="absolute top-1/2 left-0 w-full h-0.5 bg-white/30 z-0" />
+        <div className="absolute top-[49%] left-0 w-full h-0.5 bg-white/30 z-0" />
 
         <Slider {...settings}>
           {timelineData.map((item, index) => {
@@ -153,7 +153,7 @@ export default function TimelineSlider() {
                     {/* No bottom line — just text */}
                     <div className="mt-6 bg-white/10 backdrop-blur-md mx-auto  text-center p-4 rounded-xl max-w-sm z-10">
                       <h3 className="text-xl font-bold">{item.year}</h3>
-                      <p className="font-semibold">{item.title}</p>
+                      <p className="font-semibold text-white">{item.title}</p>
                       <p className="text-sm text-white/80 mt-2">{item.desc}</p>
                     </div>
                   </>
@@ -162,7 +162,7 @@ export default function TimelineSlider() {
                     {/* TEXT on top */}
                     <div className="mb-6 bg-white/10 backdrop-blur-md mx-auto text-center p-4 rounded-xl max-w-sm z-10">
                       <h3 className="text-xl font-bold">{item.year}</h3>
-                      <p className="font-semibold">{item.title}</p>
+                      <p className="font-semibold text-white">{item.title}</p>
                       <p className="text-sm text-white/80 mt-2">{item.desc}</p>
                     </div>
 

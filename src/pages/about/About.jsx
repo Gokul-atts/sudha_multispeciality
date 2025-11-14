@@ -5,14 +5,14 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Banner from "@/assets/about/our-growth-story.webp";
 import Link from "next/link";
-import one from "@/assets/aboutus/one.png";
+import one from "@/assets/aboutus/why-about-sudha.webp";
 import HospitalCard from "@/components/Hospital";
 import hospitalOne from "@/assets/home/cards/c1.svg";
 import hospitalTwo from "@/assets/home/cards/c2.svg";
 import hospitalThree from "@/assets/home/cards/c3.svg";
 import hospitalFour from "@/assets/home/cards/c4.svg";
 import TimelineSlider from "@/components/Timeline";
-import kandaswamy from "@/assets/aboutus/kandaswamy.png";
+import kandaswamy from "@/assets/aboutus/kandhasami.webp";
 import Marquee from "react-fast-marquee";
 import Breadcrumb from "@/components/Breadcrumb";
 
@@ -20,7 +20,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 const breadcrumbItems = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "" },
-  { label: "Our Growth Story", href: "/our-growth-story" },
+  { label: "Our Growth Story", href: "/about-us/our-growth-story" },
 ];
 
 
@@ -31,25 +31,25 @@ const hospitalscards = [
     title: (
       <p className="text-md font-bold text-black">Years of Experience</p>
     ),
-    link: "/op-centre",
+    link: "/about-us/our-growth-story",
     icon: hospitalOne,
   },
   {
     number: <h3 className="text-[48px] text-[#2B3990]">300+</h3>,
     title: <p className="text-md font-bold text-black">Patient Beds</p>,
-    link: "/maternity",
+    link: "/facilities/health-package",
     icon: hospitalTwo,
   },
   {
-    number: <h3 className="text-[48px] text-[#2B3990]">24+</h3>,
+    number: <h3 className="text-[48px] text-[#2B3990]">30+</h3>,
     title: <p className="text-md font-bold text-black">Departments</p>,
-    link: "/heart-care",
+    link: "/specialities",
     icon: hospitalThree,
   },
   {
     number: <h3 className="text-[48px] text-[#2B3990]">100+</h3>,
-    title: <p className="text-md font-bold text-black">Doctor's</p>,
-    link: "/heart-care",
+    title: <p className="text-md font-bold text-black">Doctors</p>,
+    link: "/find-a-doctor",
     icon: hospitalFour,
   },
 ];
@@ -74,13 +74,13 @@ function Aboutus() {
   };
   return (
     <div>
-      <section className="relative -mt-12 lg:-mt-24 m-10 pt-4">
+      <section className="relative px-7 hero-section -mt-28 mb-hero-section">
         {/* Background Gradient */}
         <div
-          className="max-w-full mx-auto px-4 py-36 relative z-10 text-white bg-center bg-no-repeat bg-cover  banner"
+          className="relative top-6 max-w-full mx-auto px-4 pt-36 pb-24 z-10 text-white bg-center bg-no-repeat bg-cover rounded-3xl overflow-hidden min-h-400"
           style={{ backgroundImage: `url(${Banner.src})` }}
         >
-          <div className="pl-8 md:pl-20">
+          <div className="max-w-7xl mx-auto">
             {/* Breadcrumb */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -96,7 +96,7 @@ function Aboutus() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-[44px] font-bold mb-3"
+              className="text-[40px]  mb-3"
             >
               Our Growth Story
             </motion.h1>
@@ -112,18 +112,22 @@ function Aboutus() {
             </motion.p>
           </div>
 
-          <div className="absolute bottom-[10px] hidden md:block right-4 sm:right-10 md:-right-[35px] z-30 text-[#2B3990] p-4 pt-5 rounded-xl w-[220px] ">
-            <h3 className="text-[36px] font-bold mt-1 mb-1">40+</h3>
-            <p className="text-lg leading-snug text-black font-semibold">
-              Years of Trusted <br />
-              Expertise in <br />
-              Healthcare
-            </p>
+          <div className="absolute bottom-0 right-0  z-30 hidden md:block">
+            <div className="w-[220px] overflow-hidden rounded-tl-3xl rounded-br-3xl">
+              <div className="h-[30%] bg-transparent" />
+              <div className="bg-white p-5">
+                <p className="text-[16px] text-black font-bold mb-2">
+                  Excellence in healthcare,  <br />
+                  always by your side
+                </p>
+                <h3 className="text-[20px] font-extrabold text-[#2B3990]">Since 1985</h3>
+              </div>
+            </div>
           </div>
         </div>
       </section>
       <section>
-        <div className="px-4 sm:px-6 md:px-8 lg:px-16 py-12 pb-16 ml-4 mr-4">
+        <div className=" max-w-7xl mx-auto  my-20 h-full">
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -168,8 +172,8 @@ function Aboutus() {
             viewport={{ once: true }}
             className="flex-1"
           >
-            <span className="bg-white text-[#2B3990] px-5 mb-5 py-2 rounded-full text-sm font-semibold">
-              Our Story
+            <span className="bg-white text-[#2B3990] px-6 py-2 rounded-full text-md font-bold">
+              Our Growth Story
             </span>
             <h2 className="text-[30px] mb-4 mt-5">
               Sudha Multispeciality Hospital
@@ -190,7 +194,7 @@ function Aboutus() {
             <Image
               src={one}
               alt="Sudha Hospital Overview"
-              className="rounded-xl w-full object-cover"
+              className="rounded-3xl w-full object-cover"
               priority
             />
           </motion.div>
@@ -199,7 +203,7 @@ function Aboutus() {
 
 
 
-      <section className="relative bg-gradient-to-b from-[#2B3990] to-[#0D112A]  py-16 text-white overflow-hidden">
+      {/* <section className="relative bg-gradient-to-b from-[#2B3990] to-[#0D112A] px-4 py-16 text-white overflow-hidden">
         <div className="max-w-7xl mx-auto  py-16  h-full">
           <div className=" max-w-4xl text-start">
             <h2 className="text-[30px] text-white">
@@ -214,7 +218,7 @@ function Aboutus() {
             <TimelineSlider />
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="mt-24">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-white text-gray-800 py-16 px-4 sm:px-6 lg:px-12 rounded-3xl">
@@ -224,14 +228,14 @@ function Aboutus() {
             <Image
               src={kandaswamy} // Replace with your image path
               alt="Founder"
-              className="w-[50%] h-auto object-cover"
+              className="w-full h-[auto] top-0 rounded-3xl object-cover"
             />
             {/* </div> */}
 
             {/* Overlay Card */}
-            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 md:left-auto md:right-0 md:-translate-x-[20%] bg-[#EEF8FF] rounded-2xl  p-6 w-56 text-center">
+            <div className="absolute bottom-0  md:left-auto md:right-0  bg-[#ffffff] rounded-tl-3xl rounded-br-3xl  p-6 w-100 ">
               <h4 className="font-semibold text-sm ">Founder</h4>
-              <h3 className="font-bold text-[#2B3990] text-lg mt-1">
+              <h3 className=" text-[#2B3990] text-[18px] mt-1">
                 Dr. D. Kandasamy
               </h3>
               <p className="text-xs text-[#5E566A] mt-1">
@@ -246,11 +250,12 @@ function Aboutus() {
               About Our Founder
             </h2>
             <p className="mb-4">
-              <span className="text-[#2B3990] ">
+              <span className="text-[#2B3990] font-bold">
                 Dr. D. Kandaswamy, the visionary behind the legacy of Sudha Multispeciality Hospital.
               </span>
             </p>
-            <p className="">With the incredible experience of 50+ years our founder has envisioned to start a hospital identifying the critical need in his native land. Dr. D. Kandaswamy MD, DTCD Preventive Cardiologist wanted to provide quality healthcare for heart in Erode which resulted in establishment of Sudha Hospitals in 1985. He is widely respected for his foresight in preventive healthcare and early diagnosis. Under his leadership, the hospital has grown into a centre of excellence across specialties. He has received multiple recognitions for his lifelong service to the medical field. His commitment to ethical, patient-first care remains the foundation of our values. To this day, he remains actively involved in shaping the future of the institution. </p>
+            <p className="">With the incredible experience of 50+ years our founder has envisioned to start a hospital identifying the critical need in his native land.   </p>
+            <p className="mt-2">Dr. D. Kandaswamy MD, DTCD Preventive Cardiologist wanted to provide quality healthcare for heart in Erode which resulted in establishment of Sudha Hospitals in 1985. He is widely respected for his foresight in preventive healthcare and early diagnosis. Under his leadership, the hospital has grown into a centre of excellence across specialties. He has received multiple recognitions for his lifelong service to the medical field. His commitment to ethical, patient-first care remains the foundation of our values. To this day, he remains actively involved in shaping the future of the institution.</p>
           </div>
         </div>
       </section>
@@ -266,33 +271,27 @@ function Aboutus() {
             Trusted Healthcare Partners
           </span>
         </Marquee>
-        <div className="max-w-7xl mx-auto  py-8  h-full">
+        <div className="max-w-7xl mx-auto  px-4 sm:px-6 md:px-8 lg:px-0 py-8  h-full">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Vision */}
-            <div className="bg-[#CBE1FB] rounded-2xl p-8  text-left">
-              <h3 className="text-[20px] mb-3">
-                Our Vision
-              </h3>
+            <div className="bg-[#CBE1FB] rounded-2xl p-8 text-left">
+              <h3 className="text-[20px] mb-3">Our Vision</h3>
               <p className="text-black text-[14px]">
                 Become a trusted healthcare leader by providing compassionate, advanced, and accessible care, empowering healthier communities through excellence and innovation.
               </p>
             </div>
 
             {/* Mission */}
-            <div className="bg-[#D5F2E3] rounded-2xl p-8  text-left">
-              <h3 className="text-[20px] mb-3">
-                Our Mission
-              </h3>
+            <div className="bg-[#D5F2E3] rounded-2xl p-8 text-left">
+              <h3 className="text-[20px] mb-3">Our Mission</h3>
               <p className="text-black text-[14px]">
                 To make quality healthcare accessible by blending innovation, medical excellence, and compassion while ensuring value-driven treatment for all.
               </p>
             </div>
 
             {/* Values */}
-            <div className="bg-[#DAD3F9] rounded-2xl p-8  text-left">
-              <h3 className="text-[20px] mb-3">
-                Our Values
-              </h3>
+            <div className="bg-[#DAD3F9] rounded-2xl p-8 text-left">
+              <h3 className="text-[20px] mb-3">Our Values</h3>
               <p className="text-black text-[14px]">
                 We believe in ethical care, compassion, medical excellence, respect, innovation, teamwork, and putting every patient’s needs at the heart.
               </p>

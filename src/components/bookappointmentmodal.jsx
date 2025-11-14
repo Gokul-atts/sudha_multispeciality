@@ -1,207 +1,377 @@
 "use client";
-import React, { useRef } from "react";
-import Link from "next/link";
+import React, { useRef, useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
-import { X } from "lucide-react";
-import AppointmentImage from "@/assets/bookappointmentmodal/appointment.png";
-import { ArrowUpRight } from "lucide-react";
+import { X, ArrowUpRight } from "lucide-react";
+import AppointmentImage from "@/assets/bookappointmentmodal/consultation-form.webp";
+import toast, { Toaster } from "react-hot-toast";
 
 const BookAppointmentModal = ({ open, onClose }) => {
   const modalRef = useRef(null);
+  const [isMounted, setIsMounted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  if (!open) return null; //  Don't render if not open
+  // ensure we're on client before touching document / createPortal
+  useEffect(() => {
+    setIsMounted(true);
+    return () => setIsMounted(false);
+  }, []);
 
-  const handleBackdropClick = (e) => {
-    if (modalRef.current && !modalRef.current.contains(e.target)) {
-      onClose(); // close when clicking outside
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (!isMounted) return;
+    const origOverflow =
+      typeof document !== "undefined" ? document.body.style.overflow : "";
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = origOverflow || "";
+    }
+    return () => {
+      if (typeof document !== "undefined")
+        document.body.style.overflow = origOverflow || "";
+    };
+  }, [open, isMounted]);
+
+  // Close on ESC
+  useEffect(() => {
+    if (!isMounted || !open) return;
+    const handleKey = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", handleKey);
+    return () => document.removeEventListener("keydown", handleKey);
+  }, [open, isMounted, onClose]);
+
+  // Form state
+  const [formData, setFormData] = useState({
+    date: "",
+    name: "",
+    mobile: "",
+    email: "",
+    department: "",
+    doctor: "",
+    remarks: "",
+  });
+  const [errors, setErrors] = useState({});
+
+  // Doctor List
+  const doctorsList = {
+    Anaesthesiology: [
+      "Dr.Kumaravel Pandiyan",
+      "Dr.P.Nithiyanandhan",
+      "Dr.V.Amutha",
+      "Dr.Balaji Mani",
+      "Dr.Aarthi Sasivarnan",
+      "Dr.V.Sountharajan",
+    ],
+    BariatricMetabolic: ["Dr.S.Balamurugan"],
+    Cardiology: ["Dr.N.Rajasekar", "Dr.D.Kandaswamy", "Dr.K.Sudhakar"],
+    CardiothoracicSurgery: ["Dr.Minnathulla"],
+    Dentistry: ["Dr.A.Aafia Parveen", "Dr.Sharath Ashokan"],
+    Dermatology: ["Dr.M.Chakravarthi"],
+    DMO: [
+      "Dr.C.Senthur Raj",
+      "Dr.K.E.Sakthi Saravanan",
+      "Dr.K.V.Lakshmanan",
+      "Dr.V.Kamall",
+      "Dr.A.Krishna kumar",
+      "Dr.D.Thriuvenkata Lakshmanan",
+    ],
+    ENT: ["Dr.M.P.Kavin Kumar"],
+    FetalMedicine: ["Dr.Sathiya Lakshmi"],
+    GeneralMedicine: [
+      "Dr.K.Sudhakar",
+      "Dr.S.N.Ganesha Moorthy",
+      "Dr.G.Sathish Kumar",
+    ],
+    Gynecology: [
+      "Dr.P.Vanitha",
+      "Dr.Deepika",
+      "Dr.S.Pradeepa",
+      "Dr.S.Dhanabagyam",
+    ],
+    Nephrology: ["Dr.V.Nagendran"],
+    Neurology: ["Dr.G.Vikram Raj", "Dr.S.Mohan"],
+    NuclearMedicine: ["Dr.Prathap"],
+    Oncology: ["Dr.J.Sugeshwaran"],
+    Orthopedic: ["Dr.K.Attiyanan", "Dr.T.Janarthanan"],
+    Pediatrics: ["Dr.S.Rangesh", "Dr.N.Gowrishankar"],
+    Pathology: ["Dr.R.Renuga"],
+    PlasticSurgery: ["Dr.Gnanasekaran"],
+    Psychiatry: ["Dr.S.Anand"],
+    Pulmonology: ["Dr.P.Duraikannan"],
+    Radiology: ["Dr.Subhashree Ramasamy", "Dr.M.Thirunavukarasu"],
+    Urology: ["Dr.M.Gopinath"],
+  };
+
+  // Validation
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.date) newErrors.date = "Preferred date is required";
+    if (!formData.name) newErrors.name = "Name is required";
+    if (!formData.mobile) {
+      newErrors.mobile = "Mobile number is required";
+    } else if (!/^[0-9]{10}$/.test(formData.mobile)) {
+      newErrors.mobile = "Enter a valid 10-digit mobile number";
+    }
+    if (!formData.email) {
+      newErrors.email = "Email is required";
+    } else if (
+      !/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(formData.email)
+    ) {
+      newErrors.email = "Enter a valid email address";
+    }
+    if (!formData.department) newErrors.department = "Department is required";
+    if (!formData.doctor) newErrors.doctor = "Doctor is required";
+    if (!formData.remarks) newErrors.remarks = "Remarks are required";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  // Submit Handler
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!validate()) return;
+    setLoading(true);
+    try {
+      const form = new FormData();
+      Object.entries(formData).forEach(([k, v]) => form.append(k, v));
+      const res = await fetch(
+        "https://script.google.com/macros/s/AKfycbyfAqPmwT117o8qJ2U_hEaSfh9cBlB6CjHbxtGUq7EnVQM9HzfNCen_d0JWq1Et5rVB/exec",
+        { method: "POST", body: form }
+      );
+      const result = await res.json();
+
+      if (result.result === "success") {
+        toast.success("Appointment booked successfully!");
+        setFormData({
+          date: "",
+          name: "",
+          mobile: "",
+          email: "",
+          department: "",
+          doctor: "",
+          remarks: "",
+        });
+        setTimeout(() => onClose(), 2000); // Auto close after success
+      } else {
+        toast.error("Something went wrong!");
+        console.error("API error response:", result);
+      }
+    } catch (err) {
+      toast.error("Error connecting to server!");
+      console.error("Submit error:", err);
+    } finally {
+      setLoading(false);
     }
   };
 
-  return (
+  // Render
+  if (!isMounted || !open) return null;
+
+  return createPortal(
     <div
-      className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center"
-      onClick={handleBackdropClick}
+      role="dialog"
+      aria-modal="true"
+      className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9999] flex items-center justify-center px-2 sm:px-4"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
     >
       <div
         ref={modalRef}
-        className="relative bg-[#EEF6FF] rounded-2xl shadow-lg max-w-6xl w-full mx-4 overflow-hidden grid md:grid-cols-2"
+        className="relative bg-[#EEF6FF] rounded-3xl shadow-lg w-full max-w-lg sm:max-w-2xl md:max-w-6xl mx-auto z-[10000] overflow-hidden grid md:grid-cols-2 max-h-[90vh] overflow-y-auto"
       >
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-50 p-2 rounded-full hover:bg-gray-100 transition"
+          className="absolute top-3 right-3 z-50 p-2 rounded-full hover:bg-gray-100 transition"
           aria-label="Close"
         >
           <X className="w-6 h-6 text-gray-800" />
         </button>
 
-        {/* Left Side Image */}
-        <div className="relative hidden md:block">
+        {/* Left Image */}
+        <div className="relative hidden md:block h-full">
           <Image
             src={AppointmentImage}
             alt="Appointment"
             fill
             className="object-cover"
+            sizes="(min-width: 768px) 50vw, 100vw"
           />
         </div>
 
-        {/* Right Side Form */}
-        <div className="p-6 sm:p-8 md:p-12 relative bg-white">
-          <h2 className="text-[24px] md:text-[30px] font-semibold mb-8 text-center md:text-left relative z-10">
+        {/* Form */}
+        <div className="p-6 sm:p-8 md:p-12 bg-white relative">
+          <h2 className="text-[22px] font-extrabold mb-6 md:mt-0 mt-4 sm:mb-8 text-center md:text-left">
             Book an Appointment for Comprehensive Medical Care
           </h2>
 
-          <form className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5 relative z-10">
-            {/* Preferred Date */}
+          <form
+            onSubmit={handleSubmit}
+            className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6"
+          >
+            <Toaster />
+
+            {/* Date */}
             <div className="flex flex-col">
-              <label className="text-sm font-medium mb-1">
-                Preferred Date <span className="text-red-500">*</span>
+              <label className="text-sm font-semibold mb-1">
+                Preferred Date *
               </label>
               <input
                 type="date"
-                className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                value={formData.date}
+                onChange={(e) =>
+                  setFormData({ ...formData, date: e.target.value })
+                }
+                className="border border-gray-200 rounded-lg px-4 py-2 h-11 text-sm"
               />
+              {errors.date && (
+                <p className="text-red-500 text-xs">{errors.date}</p>
+              )}
             </div>
 
             {/* Name */}
             <div className="flex flex-col">
-              <label className="text-sm font-medium mb-1">
-                Name <span className="text-red-500">*</span>
-              </label>
+              <label className="text-sm font-semibold mb-1">Name *</label>
               <input
                 type="text"
                 placeholder="Enter full name"
-                className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                value={formData.name}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
+                className="border border-gray-200 rounded-lg px-4 h-11 py-2 text-sm"
               />
+              {errors.name && (
+                <p className="text-red-500 text-xs">{errors.name}</p>
+              )}
             </div>
 
             {/* Mobile */}
             <div className="flex flex-col">
-              <label className="text-sm font-medium mb-1">
-                Mobile Number <span className="text-red-500">*</span>
-              </label>
+              <label className="text-sm font-semibold mb-1">Mobile *</label>
               <input
-                type="tel"
-                placeholder="Enter your mobile number"
-                className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                type="number"
+                pattern="[0-9]{10}"
+                placeholder="Enter mobile number"
+                value={formData.mobile}
+                onChange={(e) =>
+                  setFormData({ ...formData, mobile: e.target.value })
+                }
+                className="border border-gray-200 rounded-lg px-4 h-11 py-2 text-sm"
               />
+              {errors.mobile && (
+                <p className="text-red-500 text-xs">{errors.mobile}</p>
+              )}
             </div>
 
             {/* Email */}
             <div className="flex flex-col">
-              <label className="text-sm font-medium mb-1">
-                E-mail <span className="text-red-500">*</span>
-              </label>
+              <label className="text-sm font-semibold mb-1">Email *</label>
               <input
                 type="email"
-                placeholder="Enter your email"
-                className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter email"
+                value={formData.email}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
+                className="border border-gray-200 rounded-lg px-4 h-11 py-2 text-sm"
               />
+              {errors.email && (
+                <p className="text-red-500 text-xs">{errors.email}</p>
+              )}
             </div>
 
             {/* Department */}
-            <div className="flex flex-col relative">
-              <label className="text-sm font-medium mb-1">
-                Department <span className="text-red-500">*</span>
+            <div className="flex flex-col">
+              <label className="text-sm font-semibold mb-1">
+                Department *
               </label>
-              <div className="relative">
-                <select
-                  className="appearance-none border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
-                >
-                  <option>Select a department</option>
-                  <option>Anaethesiology</option>
-                  <option>Cardiology</option>
-                  <option>Cardiothoracic Surgery</option>
-                  <option>Densitry and Oral Surgery</option>
-                  <option>Dermatology Aesthetics and Lasers</option>
-                  <option>ENT</option>
-                  <option>Emergency Care</option>
-                  <option>Gastroenterology</option>
-                  <option>Radiology</option>
-                  <option>General Medicine</option>
-                  <option>General Surgery</option>
-                  <option>Intensive Care Unit</option>
-                  <option>Urology</option>
-                  <option>Orthopaedics</option>
-                  <option>Nephrology</option>
-                  <option>Neurology</option>
-                  <option>Imaging and Diagnostic Services</option>
-                  <option>obstetrics & Gynaecology</option>
-                  <option>Pulmonology</option>
-                  <option>Paediatrics</option>
-                  <option>Neonatology</option>
-                  <option>Pain Medicine</option>
-                  <option>Plastic Surgery</option>
-                  <option>Oncology</option>
-                  <option>Laryngology</option>
-                </select>
-                {/* Custom dropdown icon */}
-                <svg
-                  className="w-5 h-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-              </div>
+              <select
+                value={formData.department}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    department: e.target.value,
+                    doctor: "",
+                  })
+                }
+                className="border border-gray-200 rounded-lg px-4 h-11 text-sm"
+              >
+                <option value="">Select a department</option>
+                {Object.keys(doctorsList).map((dept) => (
+                  <option key={dept} value={dept}>
+                    {dept}
+                  </option>
+                ))}
+              </select>
+              {errors.department && (
+                <p className="text-red-500 text-xs">{errors.department}</p>
+              )}
             </div>
-
 
             {/* Doctor */}
-            <div className="flex flex-col relative">
-              <label className="text-sm font-medium mb-1">
-                Doctor <span className="text-red-500">*</span>
-              </label>
-              <div className="relative">
-                <select className="appearance-none border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 w-full">
-                  <option>Select a doctor</option>
-                  <option>Dr. Smith</option>
-                  <option>Dr. John</option>
-                </select>
-                <svg
-                  className="w-5 h-5 text-gray-500 absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-              </div>
+            <div className="flex flex-col">
+              <label className="text-sm font-semibold mb-1">Doctor *</label>
+              <select
+                value={formData.doctor}
+                onChange={(e) =>
+                  setFormData({ ...formData, doctor: e.target.value })
+                }
+                disabled={!formData.department}
+                className="border border-gray-200 rounded-lg px-4 h-11 text-sm"
+              >
+                <option value="">Select a doctor</option>
+                {formData.department &&
+                  doctorsList[formData.department]?.map((doc) => (
+                    <option key={doc} value={doc}>
+                      {doc}
+                    </option>
+                  ))}
+              </select>
+              {errors.doctor && (
+                <p className="text-red-500 text-xs">{errors.doctor}</p>
+              )}
             </div>
-
 
             {/* Remarks */}
             <div className="md:col-span-2 flex flex-col">
-              <label className="text-sm font-medium mb-1">
-                Remarks <span className="text-red-500">*</span>
-              </label>
+              <label className="text-sm font-semibold mb-1">Remarks *</label>
               <textarea
                 rows="3"
-                placeholder="Enter your remarks…"
-                className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-              ></textarea>
+                placeholder="Enter remarks"
+                value={formData.remarks}
+                onChange={(e) =>
+                  setFormData({ ...formData, remarks: e.target.value })
+                }
+                className="border border-gray-200 rounded-lg px-4 py-2 text-sm"
+              />
+              {errors.remarks && (
+                <p className="text-red-500 text-xs">{errors.remarks}</p>
+              )}
             </div>
 
             {/* Submit */}
-            <div className="md:col-span-1 mt-2">
-              <Link href="/">
-                <button
-                  type="submit"
-                  className="w-full bg-[#2B3990] hover:bg-[#1f2e6e] text-white text-sm font-semibold py-3 rounded-full transition flex items-center justify-center gap-2"
-                >
-                  Book an Appointment
-                  <ArrowUpRight className="w-5 h-5" />
-                </button>
-              </Link>
+            <div className="md:col-span-2 mt-2">
+              <button
+                type="submit"
+                disabled={loading}
+                className={`btn-diagonal flex items-center gap-2 ${
+                  loading ? "opacity-50 cursor-not-allowed" : ""
+                }`}
+              >
+                {loading ? "Booking..." : "Book an Appointment"}
+                <ArrowUpRight className="w-5 h-5" />
+              </button>
             </div>
-
           </form>
         </div>
       </div>
-    </div>
+    </div>,
+    typeof document !== "undefined" ? document.body : null
   );
 };
 

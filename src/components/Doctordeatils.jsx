@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from "next/image";
-import clinic from "../assets/Doctordetails/id1.jpg";
-import Doclogo from "../assets/Doctordetails/Doclogo.png";
+import clinic from "@/assets/doctordetails/profile.jpg";
+import Doclogo from "@/assets/doctordetails/doclogo.png";
 import { motion } from "framer-motion";
 
 const Doctordeatils = ({ doctor }) => {
@@ -11,7 +11,7 @@ const Doctordeatils = ({ doctor }) => {
 
   return (
 <div
-  className="rounded-xl overflow-hidden"
+  className="rounded-3xl overflow-hidden"
   style={{
     background: 'linear-gradient(180deg, #2B3990 0%, #0D112A 100%)',
   }}
@@ -20,7 +20,7 @@ const Doctordeatils = ({ doctor }) => {
   <Image
     alt="Doctor"
     src={doctor.image || clinic}
-    className="w-full h-[300px] sm:h-[350px] md:h-[400px] object-cover rounded-t-xl"
+    className="w-full h-[280px] sm:h-[280px]  object-cover rounded-t-3xl"
   />
 
   {/* Logo Over Image (only on sm and up) */}
@@ -38,8 +38,8 @@ const Doctordeatils = ({ doctor }) => {
       transition={{ duration: 0.7 }}
       viewport={{ once: true }}
     >
-      <p className="text-sm sm:text-base text-white">{doctor.specialist}</p>
-      <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-white mt-1">{doctor.name}</h1>
+      <p className="text-white">{doctor.specialist}</p>
+      <h2 className="text-[20px]  text-white mt-1">{doctor.name}</h2>
       <hr className="mt-4 border-t border-white opacity-30" />
     </motion.div>
 
@@ -51,8 +51,8 @@ const Doctordeatils = ({ doctor }) => {
       transition={{ duration: 0.7 }}
       viewport={{ once: true }}
     >
-      <p className="text-sm text-white">New OP Days</p>
-      <h2 className="text-lg font-semibold text-white mt-1">{doctor.newopdays}</h2>
+      <p className=" text-white">New OP Days</p>
+      <h2 className="text-[20px] text-white mt-1">{doctor.newopdays}</h2>
       <hr className="mt-4 border-t border-white opacity-30" />
     </motion.div>
 
@@ -65,7 +65,7 @@ const Doctordeatils = ({ doctor }) => {
       viewport={{ once: true }}
     >
       <p className="text-sm text-white">Review OP Days</p>
-      <h2 className="text-lg font-semibold text-white mt-1">{doctor.reviewopdays}</h2>
+      <h2 className="text-[20px]  text-white mt-1">{doctor.reviewopdays}</h2>
       <hr className="mt-4 border-t border-white opacity-30" />
     </motion.div>
 
@@ -77,8 +77,8 @@ const Doctordeatils = ({ doctor }) => {
       transition={{ duration: 0.7 }}
       viewport={{ once: true }}
     >
-      <p className="text-sm text-white">Clinical Experience</p>
-      <h2 className="text-lg font-semibold text-white mt-1">{doctor.experience} Years</h2>
+      <p className=" text-white">Clinical Experience</p>
+      <h2 className="text-[20px] text-white mt-1">{doctor.experience} Years</h2>
     </motion.div>
   </div>
 </div>

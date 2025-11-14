@@ -1,49 +1,194 @@
 "use client";
 import React from "react";
+import Banner from "@/assets/organtransplant/organ-transplant.webp";
 import { motion } from "framer-motion";
-import Link from "next/link";
-import Banner from "@/assets/facilities/organ-transplant.webp";
-
-import Clinic from "@/assets/about/clinic.png";
-import Image from "next/image";
-import HandIcon from "@/assets/healthpackage/nephrology.svg";
-import consult1 from "@/assets/about/img.png";
-import consult2 from "@/assets/about/img.png";
-import consult3 from "@/assets/about/img.png";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
-import "./Organtransplant.css";
-import Phone from "@/assets/Insurance/phone.svg";
-import Email from "@/assets/Insurance/email.svg";
-import Check from "@/assets/Insurance/check.svg";
-import Contact from "@/assets/Insurance/bg-contact.webp";
-import Bookappointment from "@/components/Bookappointment";
-import SidebarTabs from "./SidebarTabs";
-import DoctorSlider from "@/components/Slicksliderdoctor";
-import { doctorsData } from "@/constants/doctorDetails";
-import OurTeamSlider from "@/components/OurTeamSlider";
-import Sliderdoctor from "@/components/Sliderdoctor";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import kandaswamyImg from "@/assets/organtransplant/Doctorimages/kandaswamy.png";
-import shylaImg from "@/assets/organtransplant/Doctorimages/shyla.png";
-import DonorDataTable from '@/components/donordatatable';
 import { ArrowUpRight } from "lucide-react";
-
+import Accordion from "../../components/Accordion";
+import Marquee from "react-fast-marquee";
+import Slider from "react-slick";
+import Main from "@/assets/nursingservice/main.jpg";
+import Bookappointment from "@/components/Bookappointment";
+import Image from "next/image";
+import hospitalOne from "@/assets/home/cards/c1.svg";
+import hospitalTwo from "@/assets/home/cards/c2.svg";
+import hospitalThree from "@/assets/home/cards/c3.svg";
+import hospitalFour from "@/assets/home/cards/c4.svg";
+import HospitalCard from "@/components/Hospital";
 import Breadcrumb from "@/components/Breadcrumb";
+import Link from "next/link";
+import OrganTransplantSidebar from "@/components/OrganTransplantSidebar";
+
+const accordionData = [
+  {
+    title: (
+      <>
+        <div className="flex gap-3">
+          {/* <Image src={one} alt="Cardiothoracic Surgery" />  */}
+          What is the most common organ transplant?
+        </div>
+      </>
+    ),
+    content: (
+      <div className="text-sm  space-y-3">
+        <p>
+          Kidney transplant is the most commonly performed organ transplant worldwide. Sudha Multispeciality Hospital, recognised as the best hospital in Erode for organ transplant, provides advanced renal transplant care with expert surgical teams.
+        </p>
+
+
+      </div>
+    ),
+  },
+  {
+    title: (
+      <>
+        <div className="flex gap-3">
+          {/* <Image src={one} alt="Interventional Cardiology" /> */}
+          What is the procedure for a liver transplant?
+        </div>
+      </>
+    ),
+    content: (
+      <div className="text-sm text-gray-700 space-y-3">
+        <p>
+          A liver transplant involves removing a diseased liver and replacing it with a healthy liver from a donor. Pre-surgical evaluation, donor matching, and post-operative care are critical for success. Sudha Multispeciality Hospital is recognised as the best hospital for liver transplant in Erode, offering comprehensive care throughout the process.
+        </p>
+
+
+      </div>
+    ),
+  },
+  {
+    title: (
+      <>
+        <div className="flex gap-3">
+          {/* <Image src={one} alt="Interventional Cardiology" /> */}
+          Which hospital in India is best for liver transplant?
+        </div>
+      </>
+    ),
+    content: (
+      <div className="text-sm text-gray-700 space-y-3">
+        <p>
+          There are many hospitals in India offer advanced liver transplant services. Sudha Multispeciality Hospital is considered the best hospital for organ transplant in Erode, providing specialised liver transplant services with experienced surgeons.
+        </p>
+
+
+      </div>
+    ),
+  },
+  {
+    title: (
+      <>
+        <div className="flex gap-3">
+          {/* <Image src={one} alt="Interventional Cardiology" /> */}
+          What is the ideal age for a liver transplant?
+        </div>
+      </>
+    ),
+    content: (
+      <div className="text-sm  space-y-3">
+        <p>
+          Liver transplants are typically performed in adults and children when liver function is severely compromised. The suitability depends on overall health rather than age alone. Sudha Multispeciality Hospital, the best hospital for liver transplant in Erode, conducts thorough assessments to determine eligibility.
+        </p>
+
+      </div>
+    ),
+  },
+  {
+    title: (
+      <>
+        <div className="flex gap-3">
+          {/* <Image src={one} alt="Interventional Cardiology" /> */}
+          Can a person live with one kidney?
+        </div>
+      </>
+    ),
+    content: (
+      <div className="text-sm  space-y-3">
+        <p>
+          It is possible to live a healthy life with one kidney. Donors and patients are carefully evaluated and monitored by specialists at Sudha Multispeciality Hospital, the best hospital for renal transplants in Erode, to ensure safe outcomes.
+        </p>
+
+      </div>
+    ),
+  },
+
+  {
+    title: (
+      <>
+        <div className="flex gap-3">
+          {/* <Image src={one} alt="Interventional Cardiology" /> */}
+          What's the recovery time after donating a kidney?
+        </div>
+      </>
+    ),
+    content: (
+      <div className="text-sm  space-y-3">
+        <p>
+          Recovery after kidney donation usually takes 4 to 6 weeks, depending on individual health and adherence to post-operative care. Sudha Multispeciality Hospital, recognised as the best hospital for organ transplant in Erode, provides complete guidance and monitoring for a safe recovery.
+        </p>
+
+      </div>
+    ),
+  },
+
+];
 
 const breadcrumbItems = [
   { label: "Home", href: "/" },
-
   { label: "Facilities", href: "" },
+  { label: "Organ Transplant", href: "/organ-transplant" },
+];
 
-  { label: "Organ Transplant", href: "/renal-transplant" },
+const hospitalscards = [
+  {
+    number: <h3 className="text-[44px] text-[#2B3990]">40+</h3>,
+    title: (
+      <p className="text-md font-bold text-black">Years of Experience</p>
+    ),
+    link: "/about-us/our-growth-story",
+    icon: hospitalOne,
+  },
+  {
+    number: <h3 className="text-[44px] text-[#2B3990]">300+</h3>,
+    title: <p className="text-md font-bold text-black">Patient Beds</p>,
+    link: "/facilities/health-package",
+    icon: hospitalTwo,
+  },
+  {
+    number: <h3 className="text-[44px] text-[#2B3990]">30+</h3>,
+    title: <p className="text-md font-bold text-black">Departments</p>,
+    link: "/specialities",
+    icon: hospitalThree,
+  },
+  {
+    number: <h3 className="text-[44px] text-[#2B3990]">100+</h3>,
+    title: <p className="text-md font-bold text-black">Doctors</p>,
+    link: "/find-a-doctor",
+    icon: hospitalFour,
+  },
 ];
 
 
-const consultSlides = [consult1, consult2, consult3];
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+};
+const customerSlides = [Main, Main, Main];
 
-function Organtransplant() {
+const OrganTransplant = () => {
   const settings = {
     dots: true,
     infinite: true,
@@ -52,119 +197,51 @@ function Organtransplant() {
     slidesToShow: 1,
     slidesToScroll: 1,
     appendDots: (dots) => (
-      <div className="flex justify-center mt-4">{dots}</div>
+      <div>
+        <div className="flex justify-end -mt-[60px] ">{dots}</div>
+      </div>
     ),
     customPaging: (i) => (
-      <div className="w-3 h-3 mx-1 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300"></div>
+      <div className="w-3 h-3 mx-1 rounded-full bg-white hover:bg-[#2b3990] transition-all duration-300"></div>
     ),
   };
-
-  const doctorsData = [
-    {
-      id: 1,
-      name: "Dr.C.Senthur Raj",
-      qualification: "MBBS",
-      designation: "Senior Medical Resident",
-      image: kandaswamyImg,
-    },
-    {
-      id: 2,
-      name: "Mrs.G.Chitra",
-      qualification: "Dialysis Tech",
-      designation: "Professional Transplant Coordinator",
-      image: shylaImg,
-    },
-  ];
-
-  const PrevArrow = ({ onClick }) => (
-    <button
-      onClick={onClick}
-      className="absolute z-10 right-24 lg:right-[90px] bottom-[-40px] 
-      md:bottom-[-50px] text-[#2B3990] 
-      border border-[#2B3990] hover:bg-[#2B3990] hover:text-white 
-      p-2 rounded-full"
-    >
-      <ChevronLeft className="w-4 h-4" />
-    </button>
-  );
-
-  const NextArrow = ({ onClick }) => (
-    <button
-      onClick={onClick}
-      className="absolute z-10 right-14 lg:right-[40px] 
-      bottom-[-40px] md:bottom-[-50px] 
-      border border-white bg-[#2B3990] hover:bg-[#1f2e6e] 
-      text-white p-2 rounded-full"
-    >
-      <ChevronRight className="w-4 h-4" />
-    </button>
-  );
-
-  const setting = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
-    responsive: [
-      {
-        breakpoint: 1024,
-        setting: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 640,
-        setting: {
-          slidesToShow: 2,
-        },
-      },
-    ],
-  };
-
   return (
     <div>
-      <section className="relative -mt-12 lg:-mt-28 m-10">
-        {/* Background Gradient */}
+      <section className="relative px-7 hero-section -mt-28 mb-hero-section">
         <div
-          className="max-w-full mx-auto px-4 py-36 relative z-10 text-white bg-center bg-no-repeat bg-cover lg:bg-contain banner"
+          className="relative top-6 max-w-full mx-auto px-4 pt-36 pb-24 z-10 text-white bg-center bg-no-repeat bg-cover rounded-3xl overflow-hidden min-h-400"
           style={{ backgroundImage: `url(${Banner.src})` }}
         >
-          <div className="pl-8 md:pl-20">
+
+          <div className="max-w-7xl mx-auto">
             {/* Breadcrumb */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className=" mb-3  text-white"
+              className="text-sm mb-2"
             >
-
               <Breadcrumb items={breadcrumbItems} />
-
             </motion.div>
 
-            {/* Title */}
+            {/* Heading */}
             <motion.h1
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className=" text-[44px]  mb-3"
+              className="text-[40px]  mb-3"
             >
-              Renal Transplant
+              Organ Transplant
             </motion.h1>
 
-            {/* Subtitle */}
+            {/* Subtext */}
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="mb-6 text-white"
+              className="text-white mb-4"
             >
-              Leading You to a Healthier Tomorrow.
+              Advanced Organ Transplant Care at Sudha Multispeciality Hospital.
             </motion.p>
 
             {/* Button */}
@@ -174,167 +251,83 @@ function Organtransplant() {
               transition={{ duration: 0.7 }}
             >
               <Link
-                href="#"
-                className="btn-white inline-flex  text-[16px] tracking-wide items-center px-7 py-3 bg-white text-[#2B3990] font-semibold rounded-full  hover:-translate-y-[3px] transition-transform duration-200"
+                href="#contactus"
+                className="btn-white"
               >
                 Book an Appointment <ArrowUpRight className="w-5 h-5" />
               </Link>
             </motion.div>
           </div>
 
-          <div className="absolute bottom-[40px] hidden md:block right-4 sm:right-10 md:-right-[35px] z-30 text-[#2B3990] p-4 rounded-xl w-[220px]">
-            <div
-              className="w-12 h-12 mb-2 bg-contain bg-no-repeat"
-              style={{ backgroundImage: `url(${HandIcon.src})` }}
-            ></div>
-            <p className="  text-black font-bold">
-              Government <br />
-              Approved <br />
-              Licence
-            </p>
+
+          <div className="absolute bottom-0 right-0  z-30 hidden md:block">
+            <div className="w-[220px] overflow-hidden rounded-tl-3xl rounded-br-3xl">
+              <div className="h-[30%] bg-transparent" />
+              <div className="bg-white p-5">
+                <p className="text-[16px] text-black font-bold mb-2">
+                  Quality healthcare   <br />
+                  backed by superior <br /> facilities
+                </p>
+                <h3 className="text-[20px] font-extrabold text-[#2B3990]">Since 1985</h3>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <section>
-        <div className="max-w-7xl mx-auto  py-8 relative">
-          <SidebarTabs />
+        <div className="max-w-7xl mx-auto md:pt-16 py-16">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4"
+          >
+            {hospitalscards.map((card, idx) => (
+              <motion.div key={idx} variants={cardVariants}>
+                <HospitalCard
+                  number={card.number}
+                  icon={card.icon}
+                  title={card.title}
+                  link={card.link}
+                />
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
-      <section className="mt-5">
-        <div className="max-w-7xl mx-auto px-4 py-8 relative">
-
-          <Sliderdoctor />
-        </div>
-      </section>
-
-      <section className="px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto px-4 pt-0 pb-2">
-          <h1 className="text-center text-[30px] text-black mt-4">
-            Our Transplant Co-Ordinators
-          </h1>
-
-          <div className="relative mt-10">
-            <Slider {...setting}>
-              {doctorsData.slice(0, 2).map((doc, index) => (
-                <div
-                  key={index}
-                  className="w-[160px] sm:w-[160px] md:w-[180px] h-[400px] rounded-xl overflow-hidden text-center relative"
-                >
-                  <Image
-                    src={doc.image}
-                    alt={doc.name}
-                    width={100}
-                    height={120}
-                    className="mx-auto rounded-lg mb-2 w-[80%] h-auto"
-                  />
-                  <Link
-                    href={`/doctor-detail/${doc.id}`}
-                    className="absolute bottom-33 right-2 w-10 h-10 rounded-full bg-white flex items-center justify-center z-30 group"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-5 h-5 text-black transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 7L7 17M7 7h10v10"
-                      />
-                    </svg>
-                  </Link>
-
-                  <h3 className="text-[16px] sm:text-[16px] mt-5 font-bold text-[#2B3990]">
-                    {doc.name}
-                  </h3>
-                  <p className="text-[12px] font-bold font-black mt-1">
-                    {doc.qualification}
-                  </p>
-                  <p className="text-[12px] font-bold font-black mt-1">
-                    {doc.designation}
-                  </p>
-                </div>
-              ))}
-            </Slider>
-          </div>
-        </div>
-      </section>
-
-
-      <section>
-        <div>
-          <DonorDataTable />
-        </div>
-      </section>
-
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 p-6 py-16">
-        {/* Left - Contact Info */}
-        <div className="bg-[#F5FAFF] rounded-2xl p-6 space-y-6">
-          {/* Private Insurance Section */}
-          <div>
-            <h3 className="text-[#2B3990] text-[18px] mb-2">
-              Contact Dialysis Department
-            </h3>
-            <p className="mb-2">Connect with our dialysis department for expert support</p>
-            <p className=" mt-2 mb-2">(Mon - Sat) 8:30 am - 10:00 pm</p>
-            <p className=" mb-3">(Sun) 9:00 am - 5:00 pm</p>
-
-            <div className="flex items-center gap-2 text-[14px] font-bold mt-6 text-[#2B3990]">
-              <Image src={Phone} alt="Phone" width={32} height={32} />
-              <span>0424 - 2454545</span>
-              <span>, +91-81221-64545</span>
-            </div>
-            <div className="flex items-center gap-2 text-[14px] font-bold  text-[#2B3990] mt-2">
-              <Image src={Email} alt="Email" width={32} height={32} />
-              <span>care@sudhahospital.com</span>
-            </div>
-          </div>
-
-          <hr className="border-gray-200" />
-
-          <div>
-            <h3 className="text-[#2B3990] text-[18px]">For Hosptial</h3>
-            <p className="mt-2 mb-2">(Mon - Sat) 8:30 am - 6:00 pm</p>
-            <div className="flex items-center gap-2 text-[14px] font-bold  text-[#2B3990] mt-4">
-              <Image src={Phone} alt="Phone" width={32} height={32} />
-              <span>+91 76700 76006</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="relative rounded-2xl overflow-hidden h-80 md:h-96">
-          <Image
-            src={Contact}
-            alt="Virtual Doctor"
-            layout="fill"
-            objectFit="cover" // Ensures image covers the whole area
-            className="rounded-2xl"
-          />
-          <div className="absolute inset-0 bg-opacity-80 rounded-2xl flex flex-col justify-end p-6 text-white">
-            <h3 className="text-[24px] font-semibold mb-2">
-              Virtual Care from Every Where
-            </h3>
-            <p className="text-white text-sm mb-4">
-              Experience the great virtual care from anywhere and connect with
-              medical professionals for expert guidance.
-            </p>
-            <button className="btn-white flex items-center gap-2 bg-white text-[#2B3990] font-semibold text-sm pt-3 pb-3 pr-7 pl-7 rounded-full w-fit hover:-translate-y-[3px] transition-transform duration-200">
-              Call for More Information <ArrowUpRight className="w-5 h-5" />
-            </button>
-          </div>
-        </div>
+      <div>
+        <Marquee
+          speed={50}
+          gradient={false}
+          pauseOnHover={true}
+          className="mt-5">
+          <span className="mx-4 text-[#D5DAE5] font-extrabold text-[76px]">
+            Experienced Professionals + Preventive Care
+          </span>
+        </Marquee>
       </div>
 
-      <section>
+      <div className="max-w-7xl mx-auto  md:py-16 py-8 md:px-0 px-4">
+        <OrganTransplantSidebar />
+      </div>
+
+      <section className="max-w-3xl mx-auto py-16 md:py-16 py-8  md:px-0 px-4" >
+        <div>
+          <h2 className="text-center text-[30px] mb-8">
+            Frequently Asked Questions
+          </h2>
+          <Accordion accordionData={accordionData} />
+        </div>
+      </section>
+
+      <section id="contactus">
         <Bookappointment />
       </section>
     </div>
   );
-}
+};
 
-export default Organtransplant;
+export default OrganTransplant;

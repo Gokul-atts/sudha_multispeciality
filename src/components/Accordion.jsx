@@ -8,8 +8,8 @@ import Image from "next/image";
 
 
 
-export default function Accordion({accordionData}) {
-  const [openIndex, setOpenIndex] = useState(0); 
+export default function Accordion({ accordionData }) {
+  const [openIndex, setOpenIndex] = useState(0);
 
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -27,7 +27,8 @@ export default function Accordion({accordionData}) {
           >
             {/* Header */}
             <button
-              className="w-full flex justify-between items-center px-4 py-4 text-left border-b  transition"
+              className={`w-full flex justify-between items-center px-4 py-4 text-left transition ${isOpen ? "border-b" : ""
+                }`}
               onClick={() => toggleAccordion(index)}
             >
               <span className="text-[16px] text-primary-blue font-bold">
@@ -35,7 +36,7 @@ export default function Accordion({accordionData}) {
               </span>
               <div className="w-5 h-5 text-[#2b3990]">
                 {isOpen ? (
-               
+                  // Minus icon
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="w-5 h-5"
@@ -51,7 +52,7 @@ export default function Accordion({accordionData}) {
                     />
                   </svg>
                 ) : (
-             
+                  // Plus icon
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="w-5 h-5"
@@ -69,6 +70,7 @@ export default function Accordion({accordionData}) {
                 )}
               </div>
             </button>
+
 
             {/* Content with fade & smooth height */}
             <AnimatePresence initial={false}>

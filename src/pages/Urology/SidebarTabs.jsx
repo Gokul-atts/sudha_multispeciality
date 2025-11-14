@@ -5,12 +5,15 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Frame from "@/assets/about/frame.png";
 import doctorImg from "@/assets/about/doctorImg.png";
-import aboutOverview from "@/assets/specialites/urology/urologist.webp";
+import aboutOverview from "@/assets/specialites/urology/urology-overview.webp";
 import Accordion from "../../components/Accordion";
 import DoctorSlider from "../../components/Slicksliderdoctor";
 import Checklight from "@/assets/home/check-light.svg";
 import Faq from "../../components/Faq";
 import one from "@/assets/about/1.svg";
+import Link from "next/link";
+import BookAppointmentModal from "@/components/bookappointmentmodal";
+
 const serviceSections = [
   { id: "overview", label: "Overview" },
   { id: "facilities", label: "Facilities" },
@@ -23,56 +26,13 @@ const faq = [
   {
     title: (
       <>
-        <div className="flex gap-3">What is cardiology? </div>
+        <div className="flex gap-3">Which hospital in Erode is best for urology problems? </div>
       </>
     ),
     content: (
-      <div className="text-sm text-gray-700 space-y-3">
-        <p>
-          A branch of medicine dealing with disorders of heart and blood
-          vessels. The work of our cardiologists for adults includes diagnosis
-          and treatment of adult congenital heart disease, heart failure,
-          coronary artery disease, valvular heart disease and arrhythmias. All
-          the necessary investigations like ECG, Echocardiogram, Treadmill test,
-          Holter monitoring, Ambulatory BP monitoring, tilt table testing,
-          cardiac CT, cardiac MRI, and nuclear heart scanning are available to
-          provide you with the best adult cardiology treatment at our
-          multispeciality hospital in Erode.
-        </p>
-        <h4 className="font-semibold">
-          Diagnostic Tests Available in our Cardiology Hospital:
-        </h4>
-        <h2 className="font-semibold text-[#2B3990]">ECG:</h2>
-        <p>
-          Cardiac problems such as heart attack, heart block, etc. can be
-          detected by measuring the electrical activity of the heart, which is
-          done by electrocardiogram (ECG).
-        </p>
-        <h2 className="font-semibold text-[#2B3990]">ECHOCARDIOGRAM:</h2>
-        <p>
-          The structure and function of the heart can be assessed by moving
-          images produced by sound waves. Various heart diseases can be
-          diagnosed by this readily available investigation.
-        </p>
-        <h2 className="font-semibold text-[#2B3990]">TREADMILL TEST:</h2>
-        <p>
-          Patients will walk on a treadmill at graded levels and their 12- lead
-          ECG will be monitored for heart rate, ST-T segment changes. The
-          presence or absence of changes will be interpreted accordingly to
-          detect heart problems like coronary artery disease, heart block,
-          etc..., that helps in determining the cardiology treatment that is to
-          proceed further accordingly.
-        </p>
-        <h2 className="font-semibold text-[#2B3990]">
-          STRESS ECHOCARDIOGRAPHY:
-        </h2>
-        <p>
-          Heart is exerted by exercise or medicines and its activity is
-          monitored by echocardiography. For those who are not able to walk to
-          perform treadmill test, this is a very useful test to rule out
-          coronary artery disease.
-        </p>
-      </div>
+      <p>
+        Sudha Multispeciality Hospital is regarded as the best urology hospital in Erode, offering expert consultations, advanced diagnostic facilities, and comprehensive treatment for all urology and kidney-related conditions.
+      </p>
     ),
   },
   {
@@ -80,66 +40,66 @@ const faq = [
       <>
         <div className="flex gap-3">
 
-          What is the main cause of heart problems?
+          What are the most common urology problems?
         </div>
       </>
     ),
-    content: <p>Details coming soon.</p>,
+    content: <p>Common urology problems include kidney stones, urinary tract infections, enlarged prostate, bladder issues, and urethral strictures. At Sudha Multispeciality Hospital, the best hospital for kidney-related treatment in Erode, specialised care is provided for both common and complex cases by the best urologists.</p>,
   },
   {
     title: (
       <>
         <div className="flex gap-3">
           {" "}
-          What is the main cause of heart problems?
+          What is the most common procedure performed in urology?
         </div>
       </>
     ),
-    content: <p>Details coming soon.</p>,
+    content: <p>One of the most common urology procedures is kidney stone removal, which may involve minimally invasive techniques such as ureteroscopy or laser treatment. Sudha Multispeciality Hospital in Erode offers advanced surgical and non-surgical options under expert urologists. </p>,
   },
   {
     title: (
       <>
         <div className="flex gap-3">
           {" "}
-          What is the main cause of heart problems?
+          How long does a urology procedure usually take?
         </div>
       </>
     ),
-    content: <p>Details coming soon.</p>,
+    content: <p>The duration of a urology procedure depends on the type of treatment. Minor procedures may take 30 to 60 minutes, while more complex surgeries may require several hours. Sudha Multispeciality Hospital ensures precision and safety with advanced facilities.</p>,
   },
   {
     title: (
       <>
         <div className="flex gap-3">
           {" "}
-          What is the main cause of heart problems?
+          How long does it take for the urethra to heal after treatment?
         </div>
       </>
     ),
-    content: <p>Details coming soon.</p>,
+    content: <p>Urethral healing after treatment typically takes a few weeks, depending on the type of procedure and overall health condition. At Sudha Multispeciality Hospital in Erode, patients receive continuous monitoring and guidance for faster recovery. </p>,
   },
   {
     title: (
       <>
         <div className="flex gap-3">
           {" "}
-          What is the main cause of heart problems?
+          Is urethroplasty considered a minor or major surgery?
         </div>
       </>
     ),
-    content: <p>Details coming soon.</p>,
+    content: <p>Urethroplasty is considered a major surgery, as it involves reconstructing or repairing the urethra. The procedure is performed by experienced specialists at Sudha Multispeciality Hospital, the best urology hospital in Erode, ensuring safe outcomes and effective recovery. </p>,
   },
   {
     title: (
       <>
         <div className="flex gap-3">
           {" "}
-          What is the main cause of heart problems?
+          What is the first stage of urethroplasty?
         </div>
       </>
     ),
-    content: <p>Details coming soon.</p>,
+    content: <p>The first stage of urethroplasty involves assessing the damaged portion of the urethra and preparing the tissue for reconstruction. At Sudha Multispeciality Hospital in Erode, expert urologists carry out the procedure with advanced techniques for optimal results. </p>,
   },
 ];
 
@@ -164,9 +124,9 @@ const accordionData = [
         <div>
           <ul className="space-y-4">
             <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Lithotripsy (ESWL) for non-invasive stone removal</li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Ureteroscopy (URS) for small ureteric stones </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> PCNL for large or complex kidney stones</li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} />  C-Arm guided imaging for precision </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Ureteroscopy (URS) for small ureteric stones  </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> PCNL for large or complex kidney stones </li>
+           
           </ul>
 
         </div>
@@ -192,7 +152,7 @@ const accordionData = [
           <ul className="space-y-4">
             <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Microscopic Varicocele Repair</li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} />Micro-TESE for sperm retrieval</li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Micro-TESE for sperm retrieval</li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Male infertility evaluation and counselling </li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Collaboration with fertility specialists </li>
           </ul>
 
@@ -262,6 +222,10 @@ const accordionData = [
 
 export default function SidebarTabs() {
   const [activeSection, setActiveSection] = useState('');
+  const [openModal, setOpenModal] = useState(false);
+
+  console.log("openModal", openModal);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -289,10 +253,10 @@ export default function SidebarTabs() {
   }, []);
 
   return (
-    <div className="flex flex-col-reverse md:flex-col lg:flex-row gap-8">
+    <div className="flex md:mt-0 mt-4 flex-col lg:flex-row gap-8">
 
       {/* Sidebar */}
-      <aside className="w-full lg:w-1/3 lg:sticky top-24 h-fit space-y-6">
+      <aside className="w-full lg:w-1/4 lg:sticky top-24 h-fit space-y-6">
         {/* Tabs Box */}
         <div className="bg-white  rounded-2xl p-4 sm:p-6">
           <h3 className="text-[16px]  text-center font-bold  mb-5">
@@ -337,6 +301,151 @@ export default function SidebarTabs() {
           </ul>
         </div>
 
+
+        <div className="hidden md:block">
+          {/* Sudha Hospital Box */}
+          <div
+            className="relative rounded-2xl overflow-hidden text-white text-center px-6 py-10"
+            style={{
+              backgroundImage: `linear-gradient(to bottom right, rgba(42, 61, 144, 0.9), rgba(12, 18, 42, 0.9)), url(${Frame.src})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <h3 className="text-[20px] font-bold mb-2">
+              Sudha Multispeciality Hospital
+            </h3>
+            <hr className="border-light" />
+            <ul className="space-y-4 text-start mt-4">
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} /> 24/7 emergency care for all urological conditions</li>
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} /> Complete urological care for all age groups</li>
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />Expert urology team with patient-centred approach</li>
+
+            </ul>
+
+
+
+            <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => setOpenModal(true)}>
+              Book an Appointment <ArrowUpRight className="w-5 h-5" />
+            </button>
+            <BookAppointmentModal
+              open={openModal}
+              onClose={() => setOpenModal(false)}
+            />
+          </div>
+
+          <Link href="/find-a-doctor" >
+
+            <div
+              className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
+              style={{
+                background: "radial-gradient(circle, #9EB36A 0%, #333C22 100%)",
+              }}
+            >
+              {/* Text Section */}
+              <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
+                <h3
+
+                  className="text-[24px] sm:text-xl  font-bold leading-snug"
+                >
+                  Find a <br className="hidden sm:block" /> Doctor?
+                </h3>
+              </div>
+
+              {/* Image Section */}
+              <div className="">
+                <Image
+                  src={doctorImg}
+                  alt="Doctor"
+                  className="rounded-lg w-full customposition  h-auto object-cover"
+                />
+              </div>
+            </div>
+          </Link>
+        </div>
+
+      </aside>
+
+      {/* Content Sections */}
+      <div className="flex-1 space-y-0">
+        {serviceSections.map(({ id, label }) => (
+          <section key={id} id={id} className="scroll-mt-32 rounded-xl">
+            {id === "overview" && (
+              <>
+                <Image src={aboutOverview} alt="aboutOverview" className="w-full h-[400px] rounded-2xl object-cover " />
+                <h2 className="text-[24px] mb-2 mt-4">
+                  Advanced Urology Treatments at the Best Urology Hospital in  <span className="text-[#2B3990]"> Erode </span>
+                </h2>
+                <p className="mb-4">
+                  At Sudha Multispeciality Hospital, we offer comprehensive and compassionate care for all types of urological conditions affecting men, women, and children. As one of the best hospitals for kidney-related treatments in Erode, our department is equipped with state-of-the-art technology and led by experienced urologists committed to delivering precise diagnosis and minimally invasive treatments. Whether it's kidney stones, prostate issues, or advanced urological cancers, our patient-centric approach ensures high success rates and faster recovery.
+                </p>
+                <p className="mb-4">
+                  We specialise in both routine and complex urological procedures, including renal stone management, prostate surgery, incontinence treatment, and fertility-related microsurgeries. With advanced tools like Lithotripsy and Micro-TESE, we bring together innovation and care for your complete urinary health.
+                </p>
+              </>
+            )}
+
+
+
+            {id === "facilities" && (
+              <div className="space-y-2 ">
+                <h2 className="text-[24px] mt-5 mb-3">Facilities</h2>
+                <ul>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>24x7 Emergency Urological Services :
+                    Immediate care for urinary obstructions, trauma, and renal colic emergencies.
+                  </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>Specialised Wards & Skilled Staff :
+                    General and private wards staffed with trained duty doctors and urology-trained nurses.
+                  </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
+                    C-Arm Fluoroscopy Unit :
+                    Real-time imaging support for accurate surgical procedures.
+                  </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
+                    Advanced Lithotripsy Equipment :
+                    Non-invasive stone-breaking technology for kidney and ureteric stones.
+                  </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
+                    Microsurgical Fertility Equipment :
+                    Tools for high-precision procedures like Micro-TESE and Varicocele repair.
+                  </li>
+                </ul>
+              </div>
+            )}
+
+
+
+            {id === "services" && (
+              <div className="space-y-2 ">
+                <h2 className="text-[24px] mt-5 ">Services</h2>
+
+                <Accordion accordionData={accordionData} />
+              </div>
+            )}
+
+            {id === "doctors" && (
+              <div className="space-y-2 ">
+                <h2 className="text-[24px] mt-5 ">Doctors</h2>
+                <DoctorSlider specialty="Urologist" max={2} counter={2} />
+              </div>
+            )}
+
+            {id === "faqs" && (
+              <div className="space-y-2 ">
+                <h2 className="text-[24px]  mt-5 ">Frequently Asked Questions</h2>
+                <Faq faq={faq} />
+              </div>
+            )}
+          </section>
+        ))}
+      </div>
+
+      <div className="block md:hidden">
         {/* Sudha Hospital Box */}
         <div
           className="relative rounded-2xl overflow-hidden text-white text-center px-6 py-10"
@@ -359,108 +468,41 @@ export default function SidebarTabs() {
 
 
 
-          <button className="btn-sidebar inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px] hover:-translate-y-[3px] transition-transform duration-200">
-            Book an Appointment <ArrowUpRight className="w-5 h-5" />
+          <button className="btn-white mt-5">
+            Book an Appointment <ArrowUpRight className="w-4 sm:w-5 h-4 sm:h-5" />
           </button>
         </div>
 
-        {/* Find a Doctor Box */}
-        <div
-          className="mt-2 rounded-2xl px-6 py-6 flex flex-col sm:flex-row items-center justify-between text-white"
-          style={{
-            background: "radial-gradient(circle, #9EB36A 0%, #333C22 100%)",
-          }}
-        >
-          <div className="text-left mb-4 sm:mb-0 sm:mr-4">
-            <h3 className="text-[26px]  font-bold">
-              Find a<br />
-              Doctor?
-            </h3>
+        <Link href="/find-a-doctor" >
+
+          <div
+            className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
+            style={{
+              background: "radial-gradient(circle, #9EB36A 0%, #333C22 100%)",
+            }}
+          >
+            {/* Text Section */}
+            <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
+              <h3
+
+                className="text-[24px] sm:text-xl  font-bold leading-snug"
+              >
+                Find a <br className="hidden sm:block" /> Doctor?
+              </h3>
+            </div>
+
+            {/* Image Section */}
+            <div className="">
+              <Image
+                src={doctorImg}
+                alt="Doctor"
+                className="rounded-lg w-full customposition  h-auto object-cover"
+              />
+            </div>
           </div>
-
-          <div className="w-24 sm:w-32 md:w-40">
-            <Image
-              src={doctorImg}
-              alt="Doctor"
-              className="rounded-lg w-full customposition h-auto object-cover"
-            />
-          </div>
-        </div>
-      </aside>
-
-      {/* Content Sections */}
-      <div className="flex-1 space-y-0">
-        {serviceSections.map(({ id, label }) => (
-          <section key={id} id={id} className="scroll-mt-32 rounded-xl">
-            {id === "overview" && (
-              <>
-                <Image src={aboutOverview} alt="aboutOverview" className="w-full h-[400px] rounded-2xl object-cover " />
-                <h2 className="text-[24px] mb-4 mt-4">
-                  Advanced Urology Treatments at <span className="text-[#2B3990]"> Sudha </span>  Multispeciality Hospital
-                </h2>
-                <p className="mb-4">
-                  At Sudha Multispeciality Hospital, we offer comprehensive and compassionate care for all types of urological conditions affecting men, women, and children. As one of the best hospitals for urology treatments, our department is equipped with state-of-the-art technology and led by experienced urologists committed to delivering precise diagnosis and minimally invasive treatments. Whether it's kidney stones, prostate issues, or advanced urological cancers, our patient-centric approach ensures high success rates and faster recovery.
-                </p>
-                <p className="mb-4">
-                  We specialise in both routine and complex urological procedures, including renal stone management, prostate surgery, incontinence treatment, and fertility-related microsurgeries. With advanced tools like Lithotripsy and Micro-TESE, we bring together innovation and care for your complete urinary health.
-                </p>
-              </>
-            )}
-
-
-
-            {id === "facilities" && (
-              <>
-                <h2 className="text-[24px] mt-5 mb-3">Facilities</h2>
-                <ul>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>24x7 Emergency Urological Services: Immediate care for urinary obstructions, trauma, and renal colic emergencies.
-                  </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>Specialised Wards & Skilled Staff: General and private wards staffed with trained duty doctors and urology-trained nurses.
-                  </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
-                    C-Arm Fluoroscopy Unit: Real-time imaging support for accurate surgical procedures.
-                  </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
-                    Advanced Lithotripsy Equipment: Non-invasive stone-breaking technology for kidney and ureteric stones.
-                  </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
-                    Microsurgical Fertility Equipment: Tools for high-precision procedures like Micro-TESE and Varicocele repair.
-                  </li>
-                </ul>
-              </>
-            )}
-
-
-
-            {id === "services" && (
-              <div className="space-y-2 ">
-                <h2 className="text-[24px] mt-5 mb-3">Services</h2>
-
-                <Accordion accordionData={accordionData} />
-              </div>
-            )}
-
-            {id === "doctors" && (
-              <>
-                <h2 className="text-[24px]  mt-5 pb-3">Doctors</h2>
-                <DoctorSlider />
-              </>
-            )}
-
-            {/* {id === "faqs" && (
-              <div className="mt-8">
-                <h2 className="text-[24px]  mt-5 pb-3">FAQ</h2>
-                <Faq faq={faq} />
-              </div>
-            )} */}
-          </section>
-        ))}
+        </Link>
       </div>
+
     </div>
   );
 }

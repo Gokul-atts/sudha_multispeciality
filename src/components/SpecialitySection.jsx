@@ -1,10 +1,13 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Link from "next/link";
+
+// ---- icons import (same as yours) ---- //
 import cardiology from "../assets/home/medical/cardiology.svg";
 import neurology from "../assets/home/medical/neurology.svg";
 import cardiologysurgery from "../assets/home/medical/cardiothoracic-surgery.svg";
@@ -28,221 +31,81 @@ import Pediatrics from "../assets/home/medical/pediatrics.svg";
 import Pain from "../assets/home/medical/pain-medicine.svg";
 import Plastic from "../assets/home/medical/plastic-surgery.svg";
 import Laryngology from "../assets/home/medical/laryngology.svg";
+import Fertility from "@/assets/home/medical/fertility.svg";
+import Mother from "@/assets/home/medical/mother-child.svg";
+import Oncology from "@/assets/home/medical/oncology.svg";
 
-
-import { MdEmergency } from "react-icons/md";
-
+// ---- data ---- //
 const specialties = [
-  {
-    title: "Cardiology",
-    icon: cardiology,
-    href: "/cardiology",
-  },
-  {
-    title: "Cardiothoracic Surgery",
-    icon: cardiologysurgery,
-    href: "/cardiothoracic-surgery",
-  },
-  {
-    title: "Anaesthesiology",
-    icon: anesthesiology,
-    href: "/anaesthesiology",
-  },
-  {
-    title: "Dentistry & Oral Surgery",
-    icon: dentistry,
-    href: "/dentistry-and-oral-surgery",
-  },
-  {
-    title: "Dermatology ",
-    icon: dermatology,
-    href: "/dermatology-aesthetics-and-lasers",
-  },
-  {
-    title: "ENT",
-    icon: ent,
-    href: "/ent",
-  },
-  {
-    title: "Emergency Care",
-    icon: EmergencyCare,
-    href: "/emergency-care",
-  },
-  {
-    title: "Gastroenterology",
-    icon: Gastroenterology,
-    href: "/gastroenterology",
-  },
-  {
-    title: "Radiology",
-    icon: Radiology,
-    href: "/radiology",
-  },
-  {
-    title: "General Medicine",
-    icon: Generalmedicine,
-    href: "/general-medicine",
-  },
-  {
-    title: "General Surgery",
-    icon: GeneralSurgery,
-    href: "/general-surgery",
-  },
-  {
-    title: "Intensive Care Unit",
-    icon: Intensive,
-    href: "/intensive-care-unit",
-  },
-  {
-    title: "Urology",
-    icon: Urology,
-    href: "/urology",
-  },
-  {
-    title: "Orthopedics",
-    icon: Orthopedics,
-    href: "/orthopaedics",
-  },
-  {
-    title: "Nephrology",
-    icon: Nephrology,
-    href: "/nephrology",
-  },
-  {
-    title: "Neurology",
-    icon: neurology,
-    href: "/neurology",
-  },
-  {
-    title: "Obstetrics & Gynaecology",
-    icon: Obstetrics,
-    href: "/obstetrics-and-gynaecology",
-  },
-  {
-    title: "Imaging & Diagnostic Services",
-    icon: Diagnostic,
-    href: "/imaging-and-diagnostic-services",
-  },
-  {
-    title: "Pulmonology",
-    icon: Pulmonology,
-    href: "/pulmonology",
-  },
-  {
-    title: "Pediatrics & Neonatology",
-    icon: Pediatrics,
-    href: "/paediatrics-and-neonatology",
-  },
-  {
-    title: "Pain Medicine",
-    icon: Pain,
-    href: "/pain-medicine",
-  },
-  {
-    title: "Plastic Surgery",
-    icon: Plastic,
-    href: "/plastic-surgery",
-  },
-  {
-    title: "Laryngology",
-    icon: Laryngology,
-    href: "/laryngology",
-  },
+  { title: "Cardiology", icon: cardiology, href: "/specialities/cardiology" },
+  { title: "Cardiothoracic Surgery", icon: cardiologysurgery, href: "/specialities/cardiothoracic-surgery" },
+  { title: "Anaesthesiology", icon: anesthesiology, href: "/specialities/anaesthesiology" },
+  { title: "Dentistry & Oral Surgery", icon: dentistry, href: "/specialities/dentistry-and-oral-surgery" },
+  { title: "Dermatology", icon: dermatology, href: "/specialities/dermatology" },
+  { title: "ENT", icon: ent, href: "/specialities/ent" },
+  { title: "Emergency Care", icon: EmergencyCare, href: "/specialities/emergency-care" },
+  { title: "Gastroenterology", icon: Gastroenterology, href: "/specialities/gastroenterology" },
+  { title: "Radiology", icon: Radiology, href: "/specialities/radiology" },
+  { title: "General Medicine", icon: Generalmedicine, href: "/specialities/general-medicine" },
+  { title: "General Surgery", icon: GeneralSurgery, href: "/specialities/general-surgery" },
+  { title: "Intensive Care Unit", icon: Intensive, href: "/specialities/intensive-care-unit" },
+  { title: "Urology", icon: Urology, href: "/specialities/urology" },
+  { title: "Orthopedics", icon: Orthopedics, href: "/specialities/orthopaedics" },
+  { title: "Oncology", icon: Oncology, href: "https://sudhacancercentre.com/" },
+
+  { title: "Nephrology", icon: Nephrology, href: "/specialities/nephrology" },
+  { title: "Neurology", icon: neurology, href: "/specialities/neurology" },
+  { title: "Obstetrics & Gynaecology", icon: Obstetrics, href: "/specialities/obstetrics-and-gynaecology" },
+  { title: "Imaging & Diagnostic Services", icon: Diagnostic, href: "/specialities/imaging-and-diagnostic-services" },
+  { title: "Pulmonology", icon: Pulmonology, href: "/specialities/pulmonology" },
+  { title: "Pediatrics & Neonatology", icon: Pediatrics, href: "/specialities/paediatrics-and-neonatology" },
+  { title: "Pain Medicine", icon: Pain, href: "/specialities/pain-medicine" },
+  { title: "Plastic Surgery", icon: Plastic, href: "/specialities/plastic-surgery" },
+  { title: "Laryngology", icon: Laryngology, href: "/specialities/laryngology" },
+  { title: "Fertility Centre", icon: Fertility, href: "https://sudhafertilitycentre.com/" },
+  { title: "Mother & Child Care", icon: Mother, href: "/mother-and-child-care" },
 ];
 
-const PrevArrow = ({ onClick }) => (
-  <button
-    onClick={onClick}
-    className="
-      absolute z-10
-      lg:right-[150px] -md:right-[120px] right-[120px] 
-      translate-x-[60px] 
-      lg:bottom-[-60px] md:bottom-[-80px] bottom-[-60px] 
-      border border-[#2B3990] text-[#2B3990] 
-      hover:bg-[#2B3990] hover:text-white 
-      p-2 rounded-full
-    "
-  >
-    <ChevronLeft className="w-4 h-4" />
-  </button>
-);
-
-const NextArrow = ({ onClick }) => (
-  <button
-    onClick={onClick}
-    className="
-      absolute z-10
-      lg:right-[-20px] -md:right-[60px] -right-[60px] 
-      -translate-x-[60px] 
-      lg:bottom-[-60px] md:bottom-[-80px] bottom-[-60px] 
-      bg-[#2B3990] hover:bg-[#1f2e6e] 
-      text-white p-2 rounded-full
-    "
-  >
-    <ChevronRight className="w-4 h-4" />
-  </button>
-);
-
+// ---- Component ---- //
 export default function SpecialitySection() {
+  const sliderRef = useRef(null);
+
   const settings = {
     dots: false,
     infinite: false,
-    speed: 500,
-    arrows: true,
+    speed: 600,
+    cssEase: "ease-in-out",
+    arrows: false, // disable default arrows
     rows: 2,
     slidesPerRow: 5,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
     responsive: [
-      {
-        breakpoint: 1280, // laptops
-        settings: {
-          slidesPerRow: 4,
-          rows: 2,
-        },
-      },
-      {
-        breakpoint: 1024, // tablets
-        settings: {
-          slidesPerRow: 3,
-          rows: 2,
-        },
-      },
-      {
-        breakpoint: 768, // mobiles
-        settings: {
-          slidesPerRow: 2,
-          rows: 2,
-        },
-      },
-      {
-        breakpoint: 480, // small phones
-        settings: {
-          slidesPerRow: 1,
-          rows: 2,
-        },
-      },
+      { breakpoint: 1280, settings: { slidesPerRow: 4, rows: 2 } },
+      { breakpoint: 1024, settings: { slidesPerRow: 3, rows: 2 } },
+      { breakpoint: 768, settings: { slidesPerRow: 2, rows: 2 } },
+      { breakpoint: 480, settings: { slidesPerRow: 1, rows: 2 } },
     ],
   };
 
   return (
-    <section className=" px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl bg-white rounded-2xl mx-auto pt-16 pb-20">
+    <section className="px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl bg-white rounded-3xl mx-auto pt-16 pb-24 relative">
+        {/* Header */}
         <div className="flex justify-center">
-          <h5 className="bg-blue px-5  py-2 rounded-full text-sm font-semibold flex items-center gap-2">
+          <h5 className="bg-blue px-6 py-2 rounded-full text-md font-bold flex items-center gap-2">
             Our Specialities
           </h5>
         </div>
-
-        <h2 className="text-center text-[30px]  mt-4">
+        <h2 className="text-center text-[30px] mt-4">
           Premium Healthcare Services for Every <br /> Health Requirement
         </h2>
+
+        {/* Slider */}
         <div className="relative mt-10 px-6">
-          <Slider {...settings}>
+          <Slider ref={sliderRef} {...settings}>
             {specialties.map((item, index) => (
               <div key={index} className="px-2 py-3">
                 <Link href={item.href || "#"} passHref>
-                  <div className="cursor-pointer h-[180px] sm:h-[200px] bg-[#F0F7FD] rounded-2xl flex flex-col items-center justify-center text-center px-2 hover:shadow-md transition-shadow">
+                  <div className="cursor-pointer h-[180px] sm:h-[200px] bg-[#F0F7FD] rounded-2xl flex flex-col items-center justify-center text-center px-2 hover:shadow-lg transition-all">
                     <Image
                       src={item.icon}
                       alt={`${item.title} icon`}
@@ -250,7 +113,7 @@ export default function SpecialitySection() {
                       height={50}
                       className="w-[40px] sm:w-[50px] h-auto"
                     />
-                    <p className="mt-4 text-[15px] font-bold text-[#2B3990] ">
+                    <p className="mt-4 text-[15px] font-bold text-[#2B3990]">
                       {item.title}
                     </p>
                   </div>
@@ -258,12 +121,23 @@ export default function SpecialitySection() {
               </div>
             ))}
           </Slider>
-        </div>
 
-        {/* <p className="md:text-start text-center  mt-6 text-sm text-[#2B3990] font-semibold">
-          We Have 14+ More Care Services Including Emergency Department.{" "}
-          <span className="underline cursor-pointer">View All</span>
-        </p> */}
+          {/* Custom arrows at bottom-right */}
+          <div className="absolute right-6 -bottom-12 flex gap-3">
+            <button
+              onClick={() => sliderRef.current?.slickPrev()}
+              className="border border-[#2B3990] text-[#2B3990] hover:bg-[#2B3990] hover:text-white p-2 rounded-full transition"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button
+              onClick={() => sliderRef.current?.slickNext()}
+              className="bg-[#2B3990] hover:bg-[#1f2e6e] text-white p-2 rounded-full "
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   );

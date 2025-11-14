@@ -2,17 +2,16 @@
 
 import Slider from "react-slick";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { doctorsDatarenal } from "@/constants/doctorDetails";
-
 
 const PrevArrow = ({ onClick }) => (
   <button
     onClick={onClick}
     className="absolute z-10 
                right-24 lg:right-[90px]
-               bottom-[-40px] md:bottom-[-50px] text-[#2B3990]
+               -bottom-12 md:-bottom-14 text-[#2B3990]
                border border-[#2B3990]
                hover:bg-[#2B3990] hover:text-white 
                p-2 rounded-full"
@@ -26,7 +25,7 @@ const NextArrow = ({ onClick }) => (
     onClick={onClick}
     className="absolute z-10 
                right-14 lg:right-[40px]
-               bottom-[-40px] md:bottom-[-50px]
+               -bottom-12 md:-bottom-14
                border border-white bg-[#2B3990] 
                hover:bg-[#1f2e6e] text-white 
                p-2 rounded-full"
@@ -42,93 +41,76 @@ export default function Sliderdoctor() {
     speed: 500,
     autoplay: true,
     autoplaySpeed: 2000,
-    slidesToShow: 5, // default for desktop
+    slidesToShow: 4, // desktop default
     slidesToScroll: 1,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
     responsive: [
       {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-        },
+        breakpoint: 1280, // lg screens
+        settings: { slidesToShow: 3 },
       },
       {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 2,
-        },
+        breakpoint: 1024, // tablets
+        settings: { slidesToShow: 2 },
+      },
+      {
+        breakpoint: 768, // small tablets & landscape phones
+        settings: { slidesToShow: 1 },
       },
     ],
   };
 
   return (
-    <section className="px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto px-4 pt-16 pb-20">
-        <div className="flex justify-center ">
-          <h2 className="bg-white text-[#2B3990] px-5  py-2 rounded-full text-sm font-semibold">
-            Our Medical Team
-          </h2>
-        </div>
+    <section className="max-w-7xl mx-auto pt-16 pb-20 px-4 md:px-6 lg:px-8">
+     
+      <div className="flex justify-center">
+        <h6 className="bg-white text-[#2B3990] px-5 py-2 rounded-full text-sm font-semibold">
+          Our Medical Team
+        </h6>
+      </div>
 
-        <h1 className="text-center text-[30px] text-black mt-4">
-         Our Transplant Team
-        </h1>
+      <h2 className="text-center text-[30px] text-black mt-4 ">
+        Our Transplant Team
+      </h2>
 
-        <div className="relative mt-10">
-          <Slider {...settings}>
-            {doctorsDatarenal.map((doc, index) => (
-              <div
-                key={index}
-                className="w-[160px] sm:w-[160px] md:w-[180px] h-[400px]  
-             rounded-xl overflow-hidden text-center relative "
-              >
-                <div className="ourteamcard_img_orgain">
-                  <Image
-                    src={doc.image}
-                    alt={doc.name}
-                    className="mx-auto rounded-xl mb-2 w-[90%] h-auto gap-4 "
-                  />
-                </div>
-                {/* Arrow Button */}
-                <Link
-                  href={`/doctor-detail/${doc.id}`}
-                  className="absolute bottom-33  right-2 w-10 h-10 rounded-full bg-white flex items-center justify-center z-30 group "
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-5 h-5 text-black transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+      
+      <div className="relative mt-10">
+        <Slider {...settings}>
+          {doctorsDatarenal.map((doc, index) => (
+            <div key={index} className="px-2">
+              <div className="bg-white h-[450px] max-w-[300px] mx-auto rounded-2xl text-start flex flex-col overflow-hidden ">
+                {/* Doctor Image */}
+                <Image
+                  src={doc.image}
+                  alt={doc.name}
+                  width={300}
+                  height={300}
+                  className="w-full h-[280px] object-cover rounded-t-2xl"
+                />
+
+                {/* Doctor Content */}
+                <div className="p-4 flex flex-col justify-between flex-1">
+                  <div>
+                    <h3 className="text-md font-bold text-[#2B3990]">
+                      {doc.name}
+                    </h3>
+                    <p className="text-[12px] mt-1">{doc.degrees}</p>
+                    <p className="text-[12px] mt-1">{doc.qualification}</p>
+                  </div>
+
+                  {/* CTA */}
+                  {/* <Link
+                    href={`/doctor-detail/${doc.id}`}
+                    className="btn-diagonal-outline px-6 sm:px-8 w-full mt-6 flex items-center justify-center gap-2 text-sm sm:text-base"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 7L7 17M7 7h10v10"
-                    />
-                  </svg>
-                </Link>
-                <h3 className="text-[16px] sm:text-[16px] mt-5 font-bold text-[#2B3990]">
-                  {doc.name}
-                </h3>
-                <p className="text-[12px] font-semibold text-text-[#2B3990] mt-2">
-                  {doc.degrees}
-                </p>
-                <p className="text-[12px] font-semibold text-text-[#2B3990] mt-2">
-                  {doc.qualification}
-                </p>
-        
-                
+                    View Profile <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </Link> */}
+                </div>
               </div>
-            ))}
-          </Slider>
-        </div>
-
-
-
-
+            </div>
+          ))}
+        </Slider>
       </div>
     </section>
   );

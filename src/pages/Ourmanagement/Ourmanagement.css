@@ -17,8 +17,8 @@
   background-color:#ffffff;
 
   /* mask cave corner shape */
-  -webkit-mask: url("../../assets/Ourmanagement/download.png") no-repeat; 
-  mask: url("../../assets/Ourmanagement/download.png") no-repeat; 
+  -webkit-mask: url("../../assets/ourmanagement/download.png") no-repeat; 
+  mask: url("../../assets/ourmanagement/download.png") no-repeat; 
   mask-size: cover;
   -webkit-mask-size: cover;
 

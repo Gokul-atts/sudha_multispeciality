@@ -1,14 +1,124 @@
-import React from "react";
+import React, { useState } from "react";
 import clinicImage from "../assets/home/appointment.webp";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import './bookappointment.css';
+import "./bookappointment.css";
+import toast, { Toaster } from "react-hot-toast";
 
 function Bookappointment() {
+  const [formData, setFormData] = useState({
+    date: "",
+    name: "",
+    mobile: "",
+    email: "",
+    department: "",
+    doctor: "",
+    remarks: "",
+  });
+
+  const [errors, setErrors] = useState({});
+
+  // Department → Doctors mapping
+  const doctorsList = {
+
+    Anaesthesiology: ["Dr.Kumaravel Pandiyan","Dr.P.Nithiyanandhan","Dr.V.Amutha","Dr.Balaji Mani","Dr.Aarthi Sasivarnan","Dr.V.Sountharajan"],
+    BariatricMetabolic: ["Dr.S.Balamurugan"],
+    Cardiology: ["Dr.N.Rajasekar","Dr.D.Kandaswamy","Dr.K.Sudhakar"],
+    CardiothoracicSurgery: ["Dr.Minnathulla"],
+    Dentistry: ["Dr.A.Aafia Parveen","Dr.Sharath Ashokan"],
+    Dermatology: ["Dr.M.Chakravarthi"],
+    DMO: ["Dr.C.Senthur Raj","Dr.K.E.Sakthi Saravanan","Dr.K.V.Lakshmanan","Dr.V.Kamall","Dr.A.Krishna kumar","Dr.D.Thriuvenkata Lakshmanan"],
+    ENT: ["Dr.M.P.Kavin Kumar"],
+    FetalMedicine: ["Dr.Sathiya Lakshmi"],
+    GeneralMedicine: ["Dr.K.Sudhakar","Dr.S.N.Ganesha Moorthy","Dr.G.Sathish Kumar"],
+    Gynecology: ["Dr.P.Vanitha","Dr.Deepika","Dr.S.Pradeepa","Dr.S.Dhanabagyam"],
+    Nephrology: ["Dr.V.Nagendran"],
+    Neurology: ["Dr.G.Vikram Raj","Dr.S.Mohan"],
+    NuclearMedicine: ["Dr.Prathap"],
+    Oncology: ["Dr.J.Sugeshwaran"],
+    Orthopedic : ["Dr.K.Attiyanan","Dr.T.Janarthanan"],
+    Pediatrics: ["Dr.S.Rangesh","Dr.N.Gowrishankar"],
+    Pathology: ["Dr.R.Renuga"],
+    PlasticSurgery: ["Dr.Gnanasekaran"],
+    Psychiatry: ["Dr.S.Anand"],
+    Pulmonology: ["Dr.P.Duraikannan"],
+    Radiology: ["Dr.Subhashree Ramasamy","Dr.M.Thirunavukarasu"],
+    Urology: ["Dr.M.Gopinath"],
+  };
+
+  const validate = () => {
+    let newErrors = {};
+
+    if (!formData.date) newErrors.date = "Preferred date is required";
+    if (!formData.name) newErrors.name = "Name is required";
+
+    if (!formData.mobile) {
+      newErrors.mobile = "Mobile number is required";
+    } else if (!/^[0-9]{10}$/.test(formData.mobile)) {
+      newErrors.mobile = "Enter a valid 10-digit mobile number";
+    }
+
+    if (!formData.email) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Enter a valid email";
+    }
+
+    if (!formData.department) newErrors.department = "Department is required";
+    if (!formData.doctor) newErrors.doctor = "Doctor is required";
+    if (!formData.remarks) newErrors.remarks = "Remarks are required";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!validate()) return;
+
+    try {
+      const form = new FormData();
+      form.append("date", formData.date);
+      form.append("name", formData.name);
+      form.append("mobile", formData.mobile);
+      form.append("email", formData.email);
+      form.append("department", formData.department);
+      form.append("doctor", formData.doctor);
+      form.append("remarks", formData.remarks);
+
+      const res = await fetch(
+        "https://script.google.com/macros/s/AKfycbyfAqPmwT117o8qJ2U_hEaSfh9cBlB6CjHbxtGUq7EnVQM9HzfNCen_d0JWq1Et5rVB/exec",
+        {
+          method: "POST",
+          body: form,
+        }
+      );
+
+      const result = await res.json();
+
+      if (result.result === "success") {
+        toast.success("Appointment booked successfully!");
+        setFormData({
+          date: "",
+          name: "",
+          mobile: "",
+          email: "",
+          department: "",
+          doctor: "",
+          remarks: "",
+        });
+      } else {
+        toast.error("Something went wrong!");
+      }
+    } catch (error) {
+      toast.error("Error connecting to server!");
+    }
+  };
+
   return (
     <div>
-      <section className="relative bg-[#EEF6FF] py-16  overflow-hidden">
+      <section className="relative bg-[#EEF6FF] mb-m overflow-hidden">
         <div className="max-w-7xl mx-auto  h-full">
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="w-full lg:w-1/2">
@@ -22,7 +132,7 @@ function Bookappointment() {
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
-                className="relative max-w-4xl mx-auto bg-white pl-8 pt-8 pb-8 pr-8 lg:-mr-20 sm:mr-0 rounded-2xl"
+                className="relative max-w-4xl mx-auto bg-white pl-8 pt-8 pb-8 pr-8 lg:-mr-20 sm:mr-0 rounded-3xl"
               >
                 {/* Rotated P.FORM text */}
                 {/* <div className="absolute hidden md:block right-[-9.5rem] top-1/2 -translate-y-1/2 -rotate-90 text-gray-300 font-extrabold text-[85px] tracking-widest select-none">
@@ -30,152 +140,165 @@ function Bookappointment() {
                 </div> */}
 
                 {/* Form */}
-                <form className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                  {/* Preferred Date */}
+                <form
+                  onSubmit={handleSubmit}
+                  className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6"
+                >
+                  <Toaster />
+
+                  {/* Date */}
                   <div className="flex flex-col">
-                    <label className="text-sm font-medium mb-1">
-                      Preferred Date <span className="text-red-500">*</span>
+                    <label className="text-sm font-semibold mb-1">
+                      Preferred Date *
                     </label>
                     <input
                       type="date"
-                      className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      value={formData.date}
+                      onChange={(e) =>
+                        setFormData({ ...formData, date: e.target.value })
+                      }
+                      className="border border-gray-200 rounded-lg px-4 py-2 h-11 text-sm"
                     />
+                    {errors.date && (
+                      <p className="text-red-500 text-xs">{errors.date}</p>
+                    )}
                   </div>
 
                   {/* Name */}
                   <div className="flex flex-col">
-                    <label className="text-sm font-medium mb-1">
-                      Name <span className="text-red-500">*</span>
-                    </label>
+                    <label className="text-sm font-semibold mb-1">Name *</label>
                     <input
                       type="text"
                       placeholder="Enter full name"
-                      className="border border-gray-300 rounded-lg px-4 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      value={formData.name}
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
+                      className="border border-gray-200 rounded-lg px-4 h-11 py-2 text-sm"
                     />
+                    {errors.name && (
+                      <p className="text-red-500 text-xs">{errors.name}</p>
+                    )}
                   </div>
 
-                  {/* Mobile Number */}
+                  {/* Mobile */}
                   <div className="flex flex-col">
-                    <label className="text-sm font-medium mb-1">
-                      Mobile Number <span className="text-red-500">*</span>
+                    <label className="text-sm font-semibold mb-1">
+                      Mobile *
                     </label>
                     <input
-                      type="tel"
-                      placeholder="Enter your mobile number"
-                      className="border border-gray-300 rounded-lg px-4 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      type="number"
+                      placeholder="Enter mobile number"
+                      value={formData.mobile}
+                      onChange={(e) =>
+                        setFormData({ ...formData, mobile: e.target.value })
+                      }
+                      className="border border-gray-200 rounded-lg px-4 h-11 py-2 text-sm"
                     />
+                    {errors.mobile && (
+                      <p className="text-red-500 text-xs">{errors.mobile}</p>
+                    )}
                   </div>
 
-                  {/* E-mail */}
+                  {/* Email */}
                   <div className="flex flex-col">
-                    <label className="text-sm font-medium mb-1">
-                      E-mail <span className="text-red-500">*</span>
+                    <label className="text-sm font-semibold mb-1">
+                      Email *
                     </label>
                     <input
                       type="email"
-                      placeholder="Enter your email"
-                      className="border border-gray-300 rounded-lg px-4 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      placeholder="Enter email"
+                      value={formData.email}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
+                      className="border border-gray-200 rounded-lg px-4 h-11 py-2 text-sm"
                     />
+                    {errors.email && (
+                      <p className="text-red-500 text-xs">{errors.email}</p>
+                    )}
                   </div>
 
                   {/* Department */}
-                  <div className="flex flex-col relative">
-                    <label className="text-sm font-medium mb-1">
-                      Department <span className="text-red-500">*</span>
+                  <div className="flex flex-col">
+                    <label className="text-sm font-semibold mb-1">
+                      Department *
                     </label>
-
                     <select
-                      className="border border-gray-300 rounded-lg px-4 pr-10 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none"
+                      value={formData.department}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          department: e.target.value,
+                          doctor: "",
+                        })
+                      }
+                      className="border border-gray-200 rounded-lg px-4 h-11 text-sm"
                     >
-                      <option>Select a department</option>
-                      <option>Anaethesiology</option>
-                      <option>Cardiology</option>
-                      <option>Cardiothoracic Surgery</option>
-                      <option>Densitry and Oral Surgery</option>
-                      <option>Dermatology Aesthetics and Lasers</option>
-                      <option>ENT</option>
-                      <option>Emergency Care</option>
-                      <option>Gastroenterology</option>
-                      <option>Radiology</option>
-                      <option>General Medicine</option>
-                      <option>General Surgery</option>
-                      <option>Intensive Care Unit</option>
-                      <option>Urology</option>
-                      <option>Orthopaedics</option>
-                      <option>Nephrology</option>
-                      <option>Neurology</option>
-                      <option>Imaging and Diagnostic Services</option>
-                      <option>Obstetrics & Gynaecology</option>
-                      <option>Pulmonology</option>
-                      <option>Paediatrics</option>
-                      <option>Neonatology</option>
-                      <option>Pain Medicine</option>
-                      <option>Plastic Surgery</option>
-                      <option>Oncology</option>
-                      <option>Laryngology</option>
+                      <option value="">Select a department</option>
+                      {Object.keys(doctorsList).map((dept) => (
+                        <option key={dept}>{dept}</option>
+                      ))}
                     </select>
-
-                    {/* Custom Dropdown Icon */}
-                    <svg
-                      className="w-5 h-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 translate-y-[2px] pointer-events-none"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                    </svg>
-
+                    {errors.department && (
+                      <p className="text-red-500 text-xs">
+                        {errors.department}
+                      </p>
+                    )}
                   </div>
 
-
-                  <div className="flex flex-col relative">
-                    <label className="text-sm font-medium mb-1">
-                      Doctor <span className="text-red-500">*</span>
+                  {/* Doctor */}
+                  <div className="flex flex-col">
+                    <label className="text-sm font-semibold mb-1">
+                      Doctor *
                     </label>
-
-                    <select className="border border-gray-300 rounded-lg px-4 py-2 text-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 w-full">
-                      <option>Select a doctor</option>
-                      <option>Dr. Smith</option>
-                      <option>Dr. John</option>
-                    </select>
-
-                    {/* Dropdown icon */}
-                    <svg
-                      className="w-5 h-5 text-gray-500 absolute right-3 top-[70%] transform -translate-y-1/2 pointer-events-none"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
+                    <select
+                      value={formData.doctor}
+                      onChange={(e) =>
+                        setFormData({ ...formData, doctor: e.target.value })
+                      }
+                      disabled={!formData.department}
+                      className="border border-gray-200 rounded-lg px-4 h-11 text-sm"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                    </svg>
+                      <option value="">Select a doctor</option>
+                      {formData.department &&
+                        doctorsList[formData.department]?.map((doc) => (
+                          <option key={doc}>{doc}</option>
+                        ))}
+                    </select>
+                    {errors.doctor && (
+                      <p className="text-red-500 text-xs">{errors.doctor}</p>
+                    )}
                   </div>
-
-
 
                   {/* Remarks */}
                   <div className="md:col-span-2 flex flex-col">
-                    <label className="text-sm font-medium mb-1">
-                      Remarks <span className="text-red-500">*</span>
+                    <label className="text-sm font-semibold mb-1">
+                      Remarks *
                     </label>
                     <textarea
                       rows="3"
-                      placeholder="Enter your remarks..."
-                      className="border border-gray-300 rounded-lg px-4 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    ></textarea>
+                      placeholder="Enter remarks"
+                      value={formData.remarks}
+                      onChange={(e) =>
+                        setFormData({ ...formData, remarks: e.target.value })
+                      }
+                      className="border border-gray-200 rounded-lg px-4 py-2 text-sm"
+                    />
+                    {errors.remarks && (
+                      <p className="text-red-500 text-xs">{errors.remarks}</p>
+                    )}
                   </div>
 
-                  {/* Submit Button */}
+                  {/* Submit */}
                   <div className="md:col-span-1 mt-2">
                     <button
                       type="submit"
-                      className=" btn-diagonal w-full flex items-center justify-center gap-2 bg-[#2B3990] hover:bg-[#2B3990] text-white text-sm lg:text-md font-semibold py-3 rounded-[50px] transition duration-200 hover:-translate-y-[3px] transition-transform duration-200"
+                      className="btn-diagonal flex items-center gap-2"
                     >
                       Book an Appointment <ArrowUpRight className="w-5 h-5" />
                     </button>
                   </div>
-
                 </form>
               </motion.div>
             </div>
@@ -195,25 +318,22 @@ function Bookappointment() {
                 <div className="flex flex-col md:flex-row w-full md:w-[500px] bg-[#fff] rounded-2xl">
                   {/* Medical Emergency */}
                   <div className=" p-4  text-center flex-1">
-                    <h4 className="text-[16px] mb-2">
-                      24/7 Medical Help
-                    </h4>
+                    <h4 className="text-[16px] mb-2">24/7 Medical Help</h4>
                     <p className=" mb-2">
-                      Dial our emergency services for immediate medical assistance.
+                      Dial our emergency services for immediate medical
+                      assistance.
                     </p>
                     <a
                       href="tel:+914242454545"
                       className="text-[#2B3990] font-semibold text-sm"
                     >
-                      042-424-54545
+                      0424-245-4545
                     </a>
                   </div>
 
                   {/* Book an Ambulance */}
                   <div className=" p-4 text-center flex-1">
-                    <h4 className=" text-[16px] mb-2">
-                      Book an Ambulance
-                    </h4>
+                    <h4 className=" text-[16px] mb-2">Book an Ambulance</h4>
                     <p className=" mb-2">
                       24/7 Emergency Ambulance. Trusted Care, Available Always.
                     </p>
@@ -221,7 +341,7 @@ function Bookappointment() {
                       href="tel:+919042065454"
                       className="text-[#2B3990] font-semibold text-sm"
                     >
-                      +91 90420 65454
+                      +91-90-4206-5454
                     </a>
                   </div>
                 </div>

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Banner from "@/assets/facilities/health-packages.webp";
-
+import Accordion from "../../components/Accordion";
 import HandIcon from "@/assets/healthpackage/nephrology.svg";
 import Doctors from "@/assets/healthpackage/doctors.webp";
 import Checking from "@/assets/healthpackage/checking.webp";
@@ -16,7 +16,8 @@ import Bookappointment from "@/components/Bookappointment";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Check from "@/assets/Insurance/check.svg";
+import Check from "@/assets/insurance/check.svg";
+import { ArrowUpRight } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
 
 const breadcrumbItems = [
@@ -24,40 +25,144 @@ const breadcrumbItems = [
 
     { label: "Facilities", href: "" },
 
-    { label: "Master Helath Packages", href: "/health-packages" },
+    { label: "Master Helath Packages", href: "/facilities/health-package" },
 ];
 
 
+const accordionData = [
+    {
+        title: (
+            <>
+                <div className="flex gap-3">
+                    {/* <Image src={one} alt="Cardiothoracic Surgery" />  */}
+                    Which hospital is best for health checkups?
+                </div>
+            </>
+        ),
+        content: (
+            <div className="text-sm  space-y-3">
+                <p>
+                    Sudha Multispeciality Hospital is considered the best hospital for master health checkup in Erode, as it has affordable health packages, advanced diagnostic facilities, and experienced doctors.
+                </p>
 
-const doctors = [
-    {
-        name: "Dr. U. Shyla",
-        qualification: "MBBS., DGO., DNB(OG)., DRM., MNAMS",
-        image: shyla,
+
+            </div>
+        ),
     },
     {
-        name: "Dr. T. Naga Tejaswi",
-        qualification: "MBBS., MS(OBG) FRM",
-        image: shyla,
+        title: (
+            <>
+                <div className="flex gap-3">
+                    {/* <Image src={one} alt="Interventional Cardiology" /> */}
+                    Which test is best for a full body checkup?
+                </div>
+            </>
+        ),
+        content: (
+            <div className="text-sm text-gray-700 space-y-3">
+                <p>
+                    A comprehensive health checkup is regarded as the best test for a full-body evaluation, and Sudha Multispeciality Hospital provides this at an affordable price with all essential tests included.
+                </p>
+
+
+            </div>
+        ),
     },
     {
-        name: "Dr. Aruna Saradha K",
-        qualification: "MBBS, MS(OBG), FRM",
-        image: shyla,
+        title: (
+            <>
+                <div className="flex gap-3">
+                    {/* <Image src={one} alt="Interventional Cardiology" /> */}
+                    Which hospital provides a master health checkup for a low cost?
+                </div>
+            </>
+        ),
+        content: (
+            <div className="text-sm text-gray-700 space-y-3">
+                <p>
+                    Sudha Multispeciality Hospital in Erode provides master health checkup at a low cost through affordable health packages that cover a wide range of tests without compromising quality.
+                </p>
+
+
+            </div>
+        ),
     },
     {
-        name: "Dr. V. Indhumathy",
-        qualification: "MBBS., MS(OBG) FRM",
-        image: shyla,
+        title: (
+            <>
+                <div className="flex gap-3">
+                    {/* <Image src={one} alt="Interventional Cardiology" /> */}
+                    What is the importance of a medical check-up every year?
+                </div>
+            </>
+        ),
+        content: (
+            <div className="text-sm  space-y-3">
+                <p>
+                    An annual medical checkup is important to detect health issues at an early stage and prevent future complications. Sudha Multispeciality Hospital offers different health packages suitable to the patient’s health records.
+                </p>
+
+            </div>
+        ),
     },
     {
-        name: "Dr. Nadiya Hameed",
-        qualification: "MBBS., MS(OBG) FRM",
-        image: shyla,
+        title: (
+            <>
+                <div className="flex gap-3">
+                    {/* <Image src={one} alt="Interventional Cardiology" /> */}
+                    What is the price of a master health checkup in Erode?
+                </div>
+            </>
+        ),
+        content: (
+            <div className="text-sm  space-y-3">
+                <p>
+                    The price of a master health checkup in Erode at Sudha Multispeciality Hospital is affordable, with packages starting from Rs.2000, at a cost-effective range, ensuring complete care within budget.
+                </p>
+
+            </div>
+        ),
     },
-    { name: "Dr. Jane Doe", qualification: "MBBS., MS(OBG) FRM", image: shyla },
-    { name: "Dr. Priya Raj", qualification: "MBBS., MS(OBG) FRM", image: shyla },
+
+    {
+        title: (
+            <>
+                <div className="flex gap-3">
+                    {/* <Image src={one} alt="Interventional Cardiology" /> */}
+                    What tests are recommended for women?
+                </div>
+            </>
+        ),
+        content: (
+            <div className="text-sm  space-y-3">
+                <p>
+                    A comprehensive health checkup for women, including mammogram, Pap smear, blood profile, and essential screenings, is recommended to diagnose underlying medical conditions. Sudha Multispeciality Hospital, the best hospital for master health checkup in Erode, offers these tests as part of its affordable health packages.
+                </p>
+
+            </div>
+        ),
+    },
+    {
+        title: (
+            <>
+                <div className="flex gap-3">
+                    {/* <Image src={one} alt="Interventional Cardiology" /> */}
+                    How many tests are included in a full-body checkup for men?
+                </div>
+            </>
+        ),
+        content: (
+            <div className="text-sm  space-y-3">
+                <p>
+                    A general full-body checkup for men includes 13 to 15 essential tests, with additional investigations recommended based on specific medical conditions. Sudha Multispeciality Hospital in Erode provides these under affordable health packages designed for men’s overall well-being.
+                </p>
+
+            </div>
+        ),
+    },
+
 ];
+
 
 const PrevArrow = ({ onClick }) => (
     <button
@@ -168,21 +273,24 @@ const Healthpackage = () => {
             title: "Comprehensive Health Checkup - Rs. 4000/-",
             testCount: "13",
             leftColumn: [
-                "CBC",
-                "RFT",
+                "CBC ",
+                "RFT ",
                 "LFT",
                 "FBS",
                 "PPBS",
                 "TSH",
                 "Lipid Profile",
+                "Echo ",
+
             ],
             rightColumn: [
+                "TMT ",
                 "PFT",
                 "HbA1C",
                 "USG Abdomen",
                 "Chest X-ray",
                 "Eye Checkup",
-                "Diet COunseling",
+                "Diet Counseling",
                 "Dental Opinion & Specialist Opinion",
             ]
         },
@@ -191,13 +299,13 @@ const Healthpackage = () => {
 
     return (
         <div>
-            <section className="relative -mt-20 lg:-mt-[100px] m-10">
+            <section className="relative px-7 hero-section -mt-28 mb-hero-section">
                 {/* Banner Container */}
                 <div
-                    className="relative top-6 max-w-full mx-auto px-4 py-36 z-10 text-white bg-center bg-no-repeat bg-cover lbg-contain rounded-3xl overflow-hidden banner"
+                    className="relative top-6 max-w-full mx-auto px-4 pt-36 pb-24 z-10 text-white bg-center bg-no-repeat bg-cover rounded-3xl overflow-hidden min-h-400"
                     style={{ backgroundImage: `url(${Banner.src})` }}
                 >
-                    <div className="pl-8 md:pl-20">
+                    <div className="max-w-7xl mx-auto">
                         <motion.div
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -211,40 +319,44 @@ const Healthpackage = () => {
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
-                            className="text-[44px]  font-bold mb-4"
+                            className="text-[40px]  mb-4"
                         >
                             Health Care Packages
                         </motion.h1>
                         <p className='text-white'>Stay Ahead of Health Risks with Regular Checkups</p>
+
                     </div>
 
-                    <div className="absolute bottom-[5px] hidden md:block right-4 sm:right-10 md:-right-[35px] z-30 text-[#2B3990] p-4 rounded-xl w-[220px]">
-                        <div
-                            className="w-12 h-12 mb-2 bg-contain bg-no-repeat"
-                            style={{ backgroundImage: `url(${HandIcon.src})` }}
-                        ></div>
-                        <p className="  text-black font-bold">
-                            Government <br />
-                            Approved <br />
-                            Licence
-                        </p>
+
+                    <div className="absolute bottom-0 right-0  z-30 hidden md:block">
+                        <div className="w-[220px] overflow-hidden rounded-tl-3xl rounded-br-3xl">
+                            <div className="h-[30%] bg-transparent" />
+                            <div className="bg-white p-5">
+                                <p className="text-[16px] text-black font-bold mb-2">
+                                    Quality healthcare   <br />
+                                    backed by superior <br /> facilities
+                                </p>
+                                <h3 className="text-[20px] font-extrabold text-[#2B3990]">Since 1985</h3>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </section>
 
             {/* Intro Content */}
-            <section className="py-10 ml-0.5">
+            <section className="py-16 mt-16">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start  gap-10">
                     {/* Left Text */}
-                    <div className="md:w-7/12 text-[#444] text-[15px] leading-[1.8]">
-                        <h2 className="text-[30px] text-black mb-4">
-                            Executive Health Check–Up at Sudha Multispeciality Hospital
+                    <div className="md:w-7/12  ">
+                        <h2 className="text-[30px]  mb-4">
+                            Executive Health Check-Up at Sudha Multispeciality Hospital
                         </h2>
                         <p className="">
-                            Sudha Hospital offers a range of preventive health checkup packages designed to support early detection, timely intervention, and overall wellness.
-                            From basic screenings to comprehensive evaluations, each package includes essential diagnostic tests, specialist consultations, and personalized counselling.
-                            These health checkups are tailored to meet the needs of individuals across all age groups and health conditions, ensuring a proactive approach to
-                            long-term well-being. With expert medical support and advanced diagnostic tools, Sudha Hospital helps you take charge of your health with confidence.
+                            Sudha Hospital offers a range of preventive and affordable health packages designed to support early detection, timely intervention, and overall wellness. From basic screenings to comprehensive evaluations, each package includes essential diagnostic tests, specialist consultations, and personalised counselling.
+                        </p>
+                        <p className="">
+                            These health checkups are tailored to meet the needs of individuals across all age groups and health conditions, ensuring a proactive approach to long-term well-being. With expert medical support and advanced diagnostic tools, Sudha Multispeciality Hospital, the best hospital for master health checkup in Erode, helps you take charge of your health with confidence.
                         </p>
                     </div>
 
@@ -275,7 +387,7 @@ const Healthpackage = () => {
                                 Benefits of an Executive Health Check–Up
                             </h2>
 
-                            <ul className="text-left mt-5">
+                            <ul className="text-left mt-5 text-[15px]">
                                 {[
                                     "Comprehensive Health Assessment",
                                     "Early Detection of Health Risks",
@@ -303,9 +415,9 @@ const Healthpackage = () => {
 
                     {/* Right Section (Accordion Content) */}
                     <div className="w-full px-4 sm:px-6 md:px-10 lg:w-[70%]">
-                        <h1 className='text-left text-[24px] sm:text-[28px] md:text-[30px] text-black mb-8'>
+                        <h2 className='text-left text-[30px]  text-black mb-8'>
                             Master Health Checkup Packages
-                        </h1>
+                        </h2>
                         <div className="flex flex-col gap-0">
                             {healthPackages.map((pkg, index) => (
                                 <div key={index} className="w-full border-b border-gray-200 last:border-b-0">
@@ -315,7 +427,7 @@ const Healthpackage = () => {
                                         className="w-full py-4 px-2 sm:px-4 text-left flex justify-between items-center bg-white hover:bg-gray-50 transition-colors duration-200"
                                     >
                                         <div className="flex items-center gap-4 pl-4">
-                                            <h3 className=" text-[18px]  text-black">
+                                            <h3 className=" text-[17px]  text-black">
                                                 {pkg.title}
                                             </h3>
                                         </div>
@@ -396,40 +508,48 @@ const Healthpackage = () => {
                                 </div>
                             ))}
                         </div>
+                        <div className="max-w-3xl ml-auto  mt-5">
+                            <section className="w-full sm:w-auto">
+                                <ul className="text-left text-[14px] mt-0 mb-7">
+                                    {[
+                                        "+ Rs. 1000/- Extra (Men - Serum PSA, Carotid Doppler)",
+                                        "+ Rs. 1000/- Extra (Women - Mammogram, PAP Smear)",
+                                    ].map((item, i) => (
+                                        <li
+                                            key={i}
+                                            className="flex items-start font-semibold text-[#5E566A] mb-3"
+                                        >
+                                            <span className="text-blue-600 mr-2 ">
+                                                <Image src={Check} alt="tick" width={18} height={18} />
+                                            </span>
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </section>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <div className="max-w-3xl ml-auto mr-36">
-                <section className="w-full sm:w-auto">
-                    <ul className="text-left mt-0 mb-7">
-                        {[
-                            "+ Rs. 1000/- Extra (Men - Serum PSA, Carotid Doppler)",
-                            "+ Rs. 1000/- Extra (Women - Mammogram, PAP Smear)",
-                        ].map((item, i) => (
-                            <li
-                                key={i}
-                                className="flex items-start font-semibold text-[#5E566A] mb-3"
-                            >
-                                <span className="text-blue-600 mr-2 leading-none">
-                                    <Image src={Check} alt="tick" width={24} height={24} />
-                                </span>
-                                {item}
-                            </li>
-                        ))}
-                    </ul>
-                </section>
-            </div>
+            <section className="max-w-3xl mx-auto py-16" >
+                <div>
+                    <h2 className="text-center text-[30px] mb-8">
+                        Frequently Asked Questions
+                    </h2>
+                    <Accordion accordionData={accordionData} />
+                </div>
+            </section>
 
-            <section className="px-4 sm:px-6 lg:px-8">
+            {/* <section className="px-4 sm:px-6 lg:px-8">
                 <div className="max-w-7xl mx-auto px-4 ourteam pt-16 pb-20">
                     <div className="flex justify-center">
-                        <h2 className="bg-white text-[#2B3990] px-5 py-2 rounded-full text-sm font-semibold">
+                        <h6 className="bg-white text-[#2B3990] px-5 py-2 rounded-full text-sm font-semibold">
                             Our Medical Team
-                        </h2>
+                        </h6>
                     </div>
 
-                    <h2 className="text-center text-[24px] sm:text-[28px] md:text-[30px] text-white mt-4">
+                    <h2 className="text-center text-[30px] text-white mt-4">
                         Our Health Checkup Team
                     </h2>
 
@@ -449,7 +569,7 @@ const Healthpackage = () => {
                                         />
                                     </div>
 
-                                    {/* Arrow Button */}
+                                  
                                     <Link
                                         href=""
                                         className="absolute bottom-28 sm:bottom-32 right-2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center z-30 group"
@@ -484,7 +604,7 @@ const Healthpackage = () => {
                         </Slider>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             <Bookappointment />
         </div>

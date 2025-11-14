@@ -2,10 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export default function Academics({ subLink, index, setHoveredSubLinkImage }) {
+export default function Academics({ subLink, index, setHoveredSubLinkImage,  onCloseDropdown, }) {
+ if (!subLink) return null;
 
-  
-    if (!subLink) return null;
+      const handleClick = () => {
+    if (onCloseDropdown) onCloseDropdown(); // close dropdown after click
+  };
   return (
     <React.Fragment key={index}>
       {subLink?.header && (
@@ -21,7 +23,7 @@ export default function Academics({ subLink, index, setHoveredSubLinkImage }) {
         >
          
           {subLink.hrefs ? (
-            <Link href={subLink?.hrefs}>
+            <Link href={subLink?.hrefs} onClick={handleClick}>
               <div className="bg-white hover:bg-[#EEF8FF] transition duration-200 rounded-md p-3">
                 <div className="text-[#2B3990] font-bold pb-1">
                   {subLink?.header}
@@ -39,7 +41,7 @@ export default function Academics({ subLink, index, setHoveredSubLinkImage }) {
               </div>
             </Link>
           ) : (
-            <div className="bg-white hover:bg-[#EEF8FF] transition duration-200 rounded-md p-3">
+            <div className="bg-white hover:bg-[#EEF8FF] transition duration-200 rounded-md p-3" onClick={handleClick}>
               <div className="text-[#2B3990] font-bold pb-1">
                 {subLink?.header}
               </div>

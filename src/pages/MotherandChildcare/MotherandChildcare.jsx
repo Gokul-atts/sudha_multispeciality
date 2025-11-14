@@ -1,6 +1,11 @@
 "use client";
 import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Bookappointment from "@/components/Bookappointment";
+import BookAppointmentModal from "@/components/bookappointmentmodal";
+
+import DoctorSlider from "../../components/Slicksliderdoctor";
+
 import {
   ArrowUpRight,
   CalendarDays,
@@ -20,7 +25,7 @@ import ServiceCard from "@/components/ServiceCard";
 import Mother from "@/assets/motherandchildcare/mother.png";
 import Arrow from "@/assets/motherandchildcare/arrow.svg";
 import Background from "@/assets/motherandchildcare/bg.png";
-import One from "@/assets/motherandchildcare/one.png";
+import One from "@/assets/motherandchildcare/lactation-maternal.webp";
 import Two from "@/assets/motherandchildcare/paediatrics.webp";
 import Three from "@/assets/motherandchildcare/gynaecology.webp";
 import Four from "@/assets/motherandchildcare/healthpackage.webp";
@@ -28,7 +33,6 @@ import Five from "@/assets/motherandchildcare/dietetics.webp";
 import Six from "@/assets/motherandchildcare/post-partumcare.webp";
 import Seven from "@/assets/motherandchildcare/paediatric-cardiology.webp";
 import Eight from "@/assets/motherandchildcare/painless-delivery.webp";
-
 import IconOne from "@/assets/motherandchildcare/iconh-one.svg";
 import IconTwo from "@/assets/motherandchildcare/white/2.svg";
 import IconThree from "@/assets/motherandchildcare/white/3.svg";
@@ -45,19 +49,19 @@ import IconHoverFive from "@/assets/motherandchildcare/hover/5.svg";
 import IconHoversix from "@/assets/motherandchildcare/hover/6.svg";
 import IconHoverseven from "@/assets/motherandchildcare/hover/7.svg";
 import IconHovereight from "@/assets/motherandchildcare/hover/8.svg";
-import Couple from "@/assets/motherandchildcare/couple.png";
+import Couple from "@/assets/motherandchildcare/couple.webp";
 import Whychoicebg from "@/assets/motherandchildcare/whychoicebg.png";
-import Whychoiceone from "@/assets/motherandchildcare/why1.jpg";
-import Whychoicetwo from "@/assets/motherandchildcare/why2.jpg";
-import Whychoicethree from "@/assets/motherandchildcare/why3.jpg";
+import Whychoiceone from "@/assets/motherandchildcare/year-of-motherly-care.webp";
+import Whychoicetwo from "@/assets/motherandchildcare/savedelivery.webp";
+import Whychoicethree from "@/assets/motherandchildcare/yearofexperience.webp";
 import Whychoiceiconone from "@/assets/motherandchildcare/whyicon1.svg";
 import Whychoiceicontwo from "@/assets/motherandchildcare/whyicon2.svg";
 import Whychoiceiconthree from "@/assets/motherandchildcare/whyicon3.svg";
-import OurAchivementOne from "@/assets/motherandchildcare/our_achivement_one.png";
-import OurAchivementTwo from "@/assets/motherandchildcare/our_achivement_two.png";
-import Contact_us from "@/assets/motherandchildcare/contact_us.png";
-import Sudhacare from "@/assets/motherandchildcare/sudhacare_one.png";
-import Sudhacaretwo from "@/assets/motherandchildcare/sudhacare_two.png";
+import OurAchivementOne from "@/assets/motherandchildcare/our-achiement.webp";
+import OurAchivementTwo from "@/assets/motherandchildcare/our-achiement-1.webp";
+import Contact_us from "@/assets/motherandchildcare/contact_us.webp";
+import Sudhacare from "@/assets/motherandchildcare/maternal-health-care.webp";
+import Sudhacaretwo from "@/assets/motherandchildcare/paediatric-health-care.webp";
 import { AiOutlineClose } from "react-icons/ai";
 import { AiOutlinePlus } from "react-icons/ai";
 import { MdLocationPin } from "react-icons/md";
@@ -71,6 +75,7 @@ import "./motherandchildcare.css";
 import Motherandchild from "@/assets/motherandchildcare/img.png";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Nunito } from 'next/font/google';
+import { Toaster } from "react-hot-toast";
 
 
 const nunito = Nunito({ subsets: ['latin'], weight: ['400', '700', '900'] });
@@ -78,7 +83,7 @@ const nunito = Nunito({ subsets: ['latin'], weight: ['400', '700', '900'] });
 
 const breadcrumbItems = [
   { label: "Home", href: "/" },
-  { label: "Mother & Child Care", href: "/mother-and-childcare" },
+  { label: "Mother & Child Care", href: "/mother-and-child-care" },
 ];
 const cards = [
   {
@@ -89,17 +94,17 @@ const cards = [
         Emergency Care
       </p>
     ),
-    link: "/op-centre",
+    link: "/contact-us",
   },
   {
     icon: cardtwo,
     title: (
       <p className="text-md font-extrabold text-black">
-        <span className="text-[#2b3990] font-extrabold"> Sudha </span> <br />
-        Master Health Check Up
+        Master <span className="text-[#2b3990] font-extrabold">Health  </span> <br />
+        Check Up
       </p>
     ),
-    link: "/maternity",
+    link: "/facilities/health-package",
   },
   {
     icon: cardfour,
@@ -110,7 +115,7 @@ const cards = [
         Find a<span className="text-[#2b3990] font-extrabold "> Doctor</span>
       </p>
     ),
-    link: "/heart-care",
+    link: "/find-a-doctor",
   },
   {
     icon: cardthree,
@@ -121,7 +126,7 @@ const cards = [
         <span className="text-[#2b3990] font-extrabold"> Appointment </span>
       </p>
     ),
-    link: "/heart-care",
+    link: "#contactus",
   },
 ];
 
@@ -140,10 +145,10 @@ const item = {
 };
 
 const features = [
-  "Expert Gynaecologists And Paediatricians Dedicated To Your Care",
+  "Expert gynaecologists and paediatricians dedicated to your care",
   "Personalised treatment plans for every mother and child",
-  "Trusted experience in handling high-risk pregnancies",
-  "Compassionate counselling and emotional support during postpartum recovery",
+  "Trusted experience in handling high-risk pregnancies ",
+  "Compassionate counselling and emotional support during postpartum recovery ",
 ];
 
 const services = [
@@ -152,56 +157,56 @@ const services = [
     image: One,
     icon: IconOne,
     hoverIcon: IconHoverOne,
-    link: "/lactation-and-maternal-health",
+    link: "/resources/allied-health-services/lactation-and-maternal-health",
   },
   {
     title: "Paediatrics",
     image: Two,
     icon: IconHoverTwo,
     hoverIcon: IconTwo,
-    link: "/paediatrics",
+    link: "/specialities/paediatrics",
   },
   {
     title: "Gynaecology",
     image: Three,
     icon: IconHoverThree,
     hoverIcon: IconThree,
-    link: "/obstetrics-and-gynaecology",
+    link: "/specialities/obstetrics-and-gynaecology",
   },
   {
     title: "Health Package",
     image: Four,
     icon: IconHoverFour,
     hoverIcon: IconFour,
-    link: "/health-packages",
+    link: "/facilities/health-package",
   },
   {
     title: "Dietetics",
     image: Five,
     icon: IconHoverFive,
     hoverIcon: IconFive,
-    link: "/dietetics",
+    link: "/resources/allied-health-services/dietetics",
   },
   {
     title: "Post-partum Care",
     image: Six,
     icon: IconHoversix,
     hoverIcon: Iconsix,
-    link: "/post-partum-care",
+    link: "/mother-and-child-care/post-partum-care",
   },
-  {
-    title: "Paediatric Cardiology",
-    image: Seven,
-    icon: IconHoverseven,
-    hoverIcon: Iconseven,
-    link: "/cardiology",
-  },
+  // {
+  //   title: "Paediatric Cardiology",
+  //   image: Seven,
+  //   icon: IconHoverseven,
+  //   hoverIcon: Iconseven,
+  //   link: "/cardiology",
+  // },
   {
     title: "Painless Delivery",
     image: Eight,
     icon: IconHovereight,
     hoverIcon: Iconeight,
-    link: "/pain-less-delivery",
+    link: "/mother-and-child-care/painless-delivery",
   },
 ];
 
@@ -224,7 +229,7 @@ const whychoice = [
     type: "text",
     icon: Whychoiceicontwo,
     title: "Personalised Care",
-    desc: "Comfortable and safe birthing environment designed for a smooth and healthy delivery.",
+    desc: "From treatments to diet, every patient receives personalised care for positive outcomes.",
   },
   {
     type: "image",
@@ -247,68 +252,49 @@ const ourcommitment = [
   {
     title: "Compassionate Support",
     content:
-      "We provide emotional and medical support at every stage, making your journey easier and more joyful.",
+      "We believe care is not complete without compassion. At Sudha, we support you with empathy at every step. ",
   },
   {
     title: "Personalized Care For Every Patient",
     content:
-      "Every parent is unique. We tailor our services to your specific needs with empathy and care.",
+      "At Sudha, we understand your concerns and personalise treatments to suit your healthcare needs. ",
   },
 ];
 
-const PrevArrow = ({ onClick }) => (
-  <button
-    onClick={onClick}
-    className="absolute z-10 
-               right-24 lg:right-[130px]
-               bottom-[-40px] md:bottom-[-10px] text-[#2B3990] 
-               border border-[#2B3990]
-               hover:bg-[#2B3990] hover:text-white 
-               p-2 rounded-full"
-  >
-    <ChevronLeft className="w-4 h-4" />
-  </button>
-);
 
-const NextArrow = ({ onClick }) => (
-  <button
-    onClick={onClick}
-    className="absolute z-10 
-               right-14 lg:right-[40px]
-               bottom-[-40px] md:bottom-[-10px]
-               border border-white bg-[#2B3990] 
-               hover:bg-[#1f2e6e] text-white 
-               p-2 rounded-full"
-  >
-    <ChevronRight className="w-4 h-4" />
-  </button>
-);
 
 const faqData = [
   {
-    question: "What is the eligibility for the course?",
-    answer: "Answer coming soon...",
+    question: "Which is the best Mother and Child Care Hospital in Erode?",
+    answer: "Sudha Multispeciality Hospital is recognised as the best Mother and Child Care Hospital in Erode, offering expert gynaecologists, advanced neonatal care, and dedicated facilities for women and children’s health. ",
   },
   {
-    question: "How do I apply for the course?",
-    answer: "Answer coming soon...",
+    question: "When should I start prenatal care? ",
+    answer: "Prenatal care should ideally begin as soon as pregnancy is confirmed. Early care ensures regular monitoring, nutritional guidance, and the prevention of complications. Sudha Multispeciality Hospital provides trusted prenatal care in Erode with experienced specialists. ",
   },
-  { question: "Is there a registration fee?", answer: "Answer coming soon..." },
+
   {
-    question: "Can I get a refund if I cancel?",
-    answer: "Answer coming soon...",
-  },
-  {
-    question: "Are there any placement opportunities?",
-    answer: "Answer coming soon...",
+    question: "How important are vaccines for children’s health?",
+    answer: "Vaccines are essential to protect children against life-threatening diseases and strengthen immunity. Sudha Multispeciality Hospital, the best baby care hospital in Erode, follows the recommended immunisation schedule to ensure children’s long-term health and safety.",
   },
   {
-    question: "What is the duration of the course?",
-    answer: "Answer coming soon...",
+    question: "What services are offered at a Sudha Mother and Child Care Centre? ",
+    answer: "Comprehensive services include antenatal and postnatal care, high-risk pregnancy management, advanced labour facilities, neonatal intensive care, paediatric care, and emergency childcare. Sudha Multispeciality Hospital is regarded as the best Mother and Child Care Centre in Erode for complete family care. ",
   },
-  { question: "Is attendance mandatory?", answer: "Answer coming soon..." },
-  { question: "Is attendance mandatory?", answer: "Answer coming soon..." },
-  { question: "Is attendance mandatory?", answer: "Answer coming soon..." },
+  {
+    question: "Why should I choose a specialized Mother and Child Care Centre?",
+    answer: "Specialised centres provide focused care with expert obstetricians, neonatologists, and paediatricians. Sudha Multispeciality Hospital, the best women care hospital in Erode, ensures safe deliveries, holistic women’s health services, and dedicated childcare under one roof. ",
+  },
+  {
+    question: "What neonatal services are available for newborn babies at Sudha Hospital? ",
+    answer: "Sudha Multispeciality Hospital, the best Mother and Child Care Centre in Erode, provides advanced NICU facilities, premature baby care, respiratory support, neonatal monitoring, and emergency childcare services for critically ill newborns. ",
+  },
+  {
+    question: "How can I book an appointment at the Sudha Mother and Child Care Centre?  ",
+    answer: "Appointments at Sudha Multispeciality Hospital can be booked through the official website using the Book Appointment option, via the dedicated helpline at 0424 351 4545, or by visiting the hospital directly. The process is designed to be simple and accessible for families.  ",
+  },
+
+
 ];
 
 const textVariants = {
@@ -344,6 +330,121 @@ function MotherandChildcare() {
     offset: ["start end", "end start"], // when element enters and exits viewport
   });
 
+  const [openModal, setOpenModal] = useState(false);
+
+  console.log("openModal", openModal);
+  const [isOpen, setIsOpen] = useState(false);
+
+
+     const [formData, setFormData] = useState({
+    date: "",
+    name: "",
+    mobile: "",
+    email: "",
+    department: "",
+    doctor: "",
+    remarks: "",
+  });
+
+  const [errors, setErrors] = useState({});
+
+  // Department → Doctors mapping
+  const doctorsList = {
+
+    Anaesthesiology: ["Dr.Kumaravel Pandiyan","Dr.P.Nithiyanandhan","Dr.V.Amutha","Dr.Balaji Mani","Dr.Aarthi Sasivarnan","Dr.V.Sountharajan"],
+    BariatricMetabolic: ["Dr.S.Balamurugan"],
+    Cardiology: ["Dr.N.Rajasekar","Dr.D.Kandaswamy","Dr.K.Sudhakar"],
+    CardiothoracicSurgery: ["Dr.Minnathulla"],
+    Dentistry: ["Dr.A.Aafia Parveen","Dr.Sharath Ashokan"],
+    Dermatology: ["Dr.M.Chakravarthi"],
+    DMO: ["Dr.C.Senthur Raj","Dr.K.E.Sakthi Saravanan","Dr.K.V.Lakshmanan","Dr.V.Kamall","Dr.A.Krishna kumar","Dr.D.Thriuvenkata Lakshmanan"],
+    ENT: ["Dr.M.P.Kavin Kumar"],
+    FetalMedicine: ["Dr.Sathiya Lakshmi"],
+    GeneralMedicine: ["Dr.K.Sudhakar","Dr.S.N.Ganesha Moorthy","Dr.G.Sathish Kumar"],
+    Gynecology: ["Dr.P.Vanitha","Dr.Deepika","Dr.S.Pradeepa","Dr.S.Dhanabagyam"],
+    Nephrology: ["Dr.V.Nagendran"],
+    Neurology: ["Dr.G.Vikram Raj","Dr.S.Mohan"],
+    NuclearMedicine: ["Dr.Prathap"],
+    Oncology: ["Dr.J.Sugeshwaran"],
+    Orthopedic : ["Dr.K.Attiyanan","Dr.T.Janarthanan"],
+    Pediatrics: ["Dr.S.Rangesh","Dr.N.Gowrishankar"],
+    Pathology: ["Dr.R.Renuga"],
+    PlasticSurgery: ["Dr.Gnanasekaran"],
+    Psychiatry: ["Dr.S.Anand"],
+    Pulmonology: ["Dr.P.Duraikannan"],
+    Radiology: ["Dr.Subhashree Ramasamy","Dr.M.Thirunavukarasu"],
+    Urology: ["Dr.M.Gopinath"],
+  };
+
+  const validate = () => {
+    let newErrors = {};
+
+    if (!formData.date) newErrors.date = "Preferred date is required";
+    if (!formData.name) newErrors.name = "Name is required";
+
+    if (!formData.mobile) {
+      newErrors.mobile = "Mobile number is required";
+    } else if (!/^[0-9]{10}$/.test(formData.mobile)) {
+      newErrors.mobile = "Enter a valid 10-digit mobile number";
+    }
+
+    if (!formData.email) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Enter a valid email";
+    }
+
+    if (!formData.department) newErrors.department = "Department is required";
+    if (!formData.doctor) newErrors.doctor = "Doctor is required";
+    if (!formData.remarks) newErrors.remarks = "Remarks are required";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!validate()) return;
+
+    try {
+      const form = new FormData();
+      form.append("date", formData.date);
+      form.append("name", formData.name);
+      form.append("mobile", formData.mobile);
+      form.append("email", formData.email);
+      form.append("department", formData.department);
+      form.append("doctor", formData.doctor);
+      form.append("remarks", formData.remarks);
+
+      const res = await fetch(
+        "https://script.google.com/macros/s/AKfycbyfAqPmwT117o8qJ2U_hEaSfh9cBlB6CjHbxtGUq7EnVQM9HzfNCen_d0JWq1Et5rVB/exec",
+        {
+          method: "POST",
+          body: form,
+        }
+      );
+
+      const result = await res.json();
+
+      if (result.result === "success") {
+        toast.success("Appointment booked successfully!");
+        setFormData({
+          date: "",
+          name: "",
+          mobile: "",
+          email: "",
+          department: "",
+          doctor: "",
+          remarks: "",
+        });
+      } else {
+        toast.error("Something went wrong!");
+      }
+    } catch (error) {
+      toast.error("Error connecting to server!");
+    }
+  };
+
   const toggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
@@ -359,33 +460,12 @@ function MotherandChildcare() {
     setShowCount(faqData.length);
   };
 
+
+
   // Parallax movement for cloud background and bubble
   const cloudY = useTransform(scrollYProgress, [0, 1], [0, 100]);
   const bubbleY = useTransform(scrollYProgress, [0, 1], [0, -80]);
 
-  const settings = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 5, // default for desktop
-    slidesToScroll: 1,
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-    ],
-  };
 
   return (
     <div>
@@ -396,19 +476,19 @@ function MotherandChildcare() {
         {/* Parallax Cloud Bottom */}
         <motion.div
           style={{ y: cloudY }}
-          className="absolute bottom-11  lg:-bottom-16 w-full z-30"
+          className="absolute bottom-12  lg:-bottom-24 w-full z-30"
         >
           <Image src={Sky} alt="sky" className="w-full h-auto" />
         </motion.div>
 
         {/* Main Content Grid */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 py-10 mt-10 lg:mt-0 sm:py-28 grid md:grid-cols-2 gap-12">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 md:py-16 pb-0 pt-16 md:mt-10 mt-24  grid md:grid-cols-2 gap-12">
           {/* Left Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="flex flex-col justify-center text-center md:text-left"
+            className="flex flex-col justify-center  md:text-left"
           >
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -419,20 +499,21 @@ function MotherandChildcare() {
               <Breadcrumb items={breadcrumbItems} />
             </motion.div>
             <h1 className=" text-[44px] text-white font-extrabold">
-              Caring for mothers
-              and their little ones, the <br></br>
-              Sudha way.
+              The Best Mother & Child Care
+              Hospital in Erode!
+
             </h1>
             <p className="text-white font-nunito mb-6">
               Motherly Care for Mothers of Sudha
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className=" btn-sidebar inline-flex items-center whitespace-nowrap justify-center w-64 bg-white text-[#2C3790] px-6 py-3 rounded-full font-semibold text-sm transition mx-auto md:mx-0"
-            >
-              Book an Appointment <ArrowUpRight className="ml-2" />
-            </motion.button>
+            <div>
+              <Link
+                href="#contactus"
+                className="btn-outline-white"
+              >
+                Book an Appointment <ArrowUpRight className="w-5 h-5" />
+              </Link>
+            </div>
 
           </motion.div>
 
@@ -443,20 +524,19 @@ function MotherandChildcare() {
             transition={{ duration: 0.7 }}
             className="relative flex justify-center"
           >
-            <div className="relative w-[90%] md:w-full max-w-md">
+            <div className="relative w-full md:max-w-md">
               <Image
                 src={family}
                 alt="Family"
-                width={500}
-                height={500}
-                className="w-full h-auto"
+
+                className="w-full  object-cover"
                 priority
               />
               {/* Parallax Animated Bubble */}
               <motion.div
                 style={{ y: bubbleY }}
                 transition={{ duration: 6, repeat: Infinity }}
-                className="absolute -top-6 -left-6 bg-purple-200 rounded-full w-48 h-48 -z-10 blur-2xl opacity-30"
+                className="absolute -top-10 -left-6 bg-purple-200 rounded-full w-50 h-50 -z-10 blur-2xl opacity-30"
               />
             </div>
           </motion.div>
@@ -485,8 +565,8 @@ function MotherandChildcare() {
         </div>
       </section>
 
-      <section className={`${nunito.className} bg-blue-50 py-12 px-4 sm:px-6 lg:px-16`}>
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+      <section className={`${nunito.className} bg-blue-50 py-12 md:px-0 px-4`}>
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center flex-col-reverse">
           {/* Left Section - Images and Experience */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -495,24 +575,16 @@ function MotherandChildcare() {
             className="relative"
           >
             {/* Main Image */}
-            <div className="rounded-2xl overflow-hidden ">
+            <div className="rounded-3xl overflow-hidden ">
               <Image
                 src={Mother}
                 alt="Doctor and child"
-                className="w-[85%] mx-auto object-cover"
+                className="md:w-[85%] w-full mx-auto object-cover"
               />
             </div>
 
             {/* 40+ Years Box */}
-            <div className="absolute top-52 left-0 bg-white text-blue-700 text-sm font-bold p-6 rounded-2xl ">
-              <p className="text-[30px] text-primary-blue font-extrabold font-nunito">40+</p>
-              <p className=" text-black font-nunito">
-                Years of Trusted
-                <br />
-                Expertise in <br />
-                Healthcare
-              </p>
-            </div>
+
 
             {/* Small thumbnails */}
           </motion.div>
@@ -522,16 +594,16 @@ function MotherandChildcare() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="space-y-6"
+            className="space-y-6 "
           >
             <span className=" bg-white text-[#2B3990] px-5  py-2 rounded-full text-sm font-semibold">
               About US
             </span>
 
             <h2 className=" text-[30px] ">
-              The Best Mother &amp; Child Care
+              Caring for mothers and their
               <br className="hidden sm:block" />
-              Hospital in Erode!
+              little ones, the Sudha way.
             </h2>
 
             <ul className={`${nunito.className} space-y-3 text-gray-700 text-base sm:text-lg`}>
@@ -547,17 +619,16 @@ function MotherandChildcare() {
 
             <div className="bg-white p-6 rounded-3xl ">
               <h3 className=" text-[22px] text-black">
-                Maternity and paediatric emergencies handled with speed, care,
-                and expertise.
+                Maternity and paediatric emergencies handled with speed, care, and expertise.
               </h3>
 
               <div className="flex gap-4 items-center mt-3">
-                <a
-                  href="#"
+                <Link
+                  href="/contact-us"
                   className=" text-primary-blue font-semibold inline-flex items-center gap-2 hover:underline"
                 >
-                  24/7 For Emergencies
-                </a>
+                  24/7 Emergency Care
+                </Link>
 
                 {/* Animated arrow image */}
                 <motion.div
@@ -579,13 +650,13 @@ function MotherandChildcare() {
       </section>
 
       <section
-        className={`${nunito.className} max-w-7xl mx-auto py-16 rounded-3xl  bg-cover bg-no-repeat`}
+        className={`${nunito.className} max-w-7xl mx-auto py-16 rounded-3xl   bg-cover bg-no-repeat`}
         style={{
           backgroundImage: `url(${Background.src})`,
         }}
       >
         {/* Heading */}
-        <div className=" max-w-7xl mx-auto px-8 text-start mb-10">
+        <div className=" max-w-7xl mx-auto md:px-8 px-4 text-start mb-10">
           <span className="bg-white text-[#2B3990] px-5  py-2 rounded-full text-sm font-semibold">
             Our Services
           </span>
@@ -596,7 +667,7 @@ function MotherandChildcare() {
 
         {/* Grid Cards */}
 
-        <div className={`${nunito.className} grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-8`}>
+        <div className={`${nunito.className} grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:px-8 px-4`}>
           {services.map((service, index) => {
             const cardContent = (
               <motion.div
@@ -607,18 +678,18 @@ function MotherandChildcare() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
-                className={`rounded-2xl p-8 text-left transition-all duration-500 relative h-80 flex items-end overflow-hidden cursor-pointer 
-          ${hoverIndex === index && service.image ? "text-white" : "bg-white text-gray-800"}`}
-                style={
-                  hoverIndex === index && service.image
-                    ? {
-                      backgroundImage: `url(${service.image.src})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }
-                    : {}
-                }
+                className="rounded-2xl p-8 text-left transition-all duration-500 relative h-80 flex items-end overflow-hidden cursor-pointer"
+                style={{
+                  backgroundImage: `url(${service.image?.src})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
               >
+                {/* Gradient Overlay */}
+                <div
+                  className="absolute inset-0 rounded-2xl bg-gradient-to-t from-[#2B3990]/90 via-[#2B3990]/60 to-transparent transition-all duration-500"
+                ></div>
+
                 {/* Icon */}
                 {(service.icon || service.hoverIcon) && (
                   <div className="absolute top-4 left-4 z-10">
@@ -631,25 +702,15 @@ function MotherandChildcare() {
                       alt={service.title}
                       width={60}
                       height={60}
-                      className="transition-all duration-300"
+                      className="transition-all duration-300 brightness-0 invert"
                     />
                   </div>
                 )}
 
                 {/* Title */}
-                <p
-                  className={`absolute text-[16px] font-extrabold bottom-6 left-5 z-10 text-start ${hoverIndex === index && service.image
-                    ? "text-white"
-                    : "bg-white text-gray-800"
-                    }`}
-                >
+                <p className="absolute text-[16px] font-extrabold bottom-6 left-5 z-10 text-white">
                   {service.title}
                 </p>
-
-                {/* Gradient Overlay */}
-                {hoverIndex === index && service.image && (
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2B3990]/90 to-transparent rounded-2xl"></div>
-                )}
               </motion.div>
             );
 
@@ -664,25 +725,35 @@ function MotherandChildcare() {
         </div>
 
 
+
+
+
+
         {/* CTA */}
         <motion.div
-          className={`${nunito.className} mt-10 text-center text-sm sm:text-base text-black`}
+          className={`${nunito.className} mt-10 md:px-0 px-4 text-center text-sm sm:text-base text-black`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <span className="bg-blue  px-3 py-1 rounded-full text-xs mr-2">
+          <span className="bg-blue  md:px-3 px-4 py-1 rounded-full text-xs mr-2">
             Free
           </span>
-          <b>Dreaming of motherhood? Get the right support.</b>
-          <a href="#" className="text-primary-blue font-semibold ml-1 underline">
-            Book a Free Consultation
-          </a>
+          <b>Dreaming of motherhood? Get the right support.  </b>
+
+          <button className="text-primary-blue font-semibold ml-1 underline" onClick={() => setOpenModal(true)}>
+            Book your free consultation
+          </button>
+          <BookAppointmentModal
+            open={openModal}
+            onClose={() => setOpenModal(false)}
+          />
+
         </motion.div>
       </section>
 
-      <section className={`${nunito.className} px-4 sm:px-6  bg-[#f3f7fc] mt-7`}>
+      <section className={`${nunito.className} md:px-0 px-4  bg-[#f3f7fc] mt-7`}>
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
           {/* Left content with animation */}
           <motion.div
@@ -696,14 +767,12 @@ function MotherandChildcare() {
               Our Commitment
             </span>
             <h2 className="text-[30px] text-primary-blue  mb-4">
-              Making Parenthood Journey as <br />
+              Making Parenthood Journey as   <br />
               Joyful as It Should Be
             </h2>
             <p className="mb-4">
-              At Sudha, we're committed to turning your hopes into happiness
-              with compassionate, personalised care at every step. From first
-              scan to postnatal support, we walk with you through every stage of
-              your journey, ensuring it’s filled with trust, comfort, and joy.
+             As the best Mother and Child Care Hospital in Erode, we’re committed to turning your hopes into happiness with compassionate, personalised care at every step. From first scan to postnatal support, we walk with you through every stage of your journey, ensuring it’s filled with trust, comfort, and joy. 
+
             </p>
 
             {/* Accordion */}
@@ -722,18 +791,18 @@ function MotherandChildcare() {
                     onClick={() => toggle(index)}
                   >
                     {item.title}
-                    <span className="text-xl">
+                    <h3 className="text-[20px] ">
                       {openIndex === index ? (
                         <AiOutlineClose />
                       ) : (
                         <AiOutlinePlus />
                       )}
-                    </span>
+                    </h3>
                   </button>
                   {openIndex === index && (
-                    <div className=" pb-4 text-[#5E566A] mt-2 text-[15px]">
+                    <p className=" pb-4 text-[#5E566A] mt-2 ">
                       {item.content}
-                    </div>
+                    </p>
                   )}
                 </motion.div>
               ))}
@@ -751,14 +820,14 @@ function MotherandChildcare() {
             <Image
               src={Couple}
               alt="Happy Couple"
-              className="w-full max-w-md object-contain"
+              className="w-full max-w-lg h-auto object-contain"
             />
           </motion.div>
         </div>
       </section>
 
       <section
-        className={`${nunito.className} max-w-7xl mx-auto rounded-3xl relative py-16 px-4 sm:px-6 lg:px-16 text-white`}
+        className={`${nunito.className} max-w-7xl mx-auto rounded-3xl relative py-16 md:px-0 px-4 text-white`}
         style={{
           backgroundImage: `url(${Whychoicebg.src})`,
           backgroundColor: "#2B3990",
@@ -772,19 +841,19 @@ function MotherandChildcare() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="max-w-5xl mb-10 text-start"
+          className="max-w-5xl mb-10 md:px-8 px-4 text-start"
         >
           <div className="inline-block bg-white text-primary-blue px-5  py-2 rounded-full  text-sm font-semibold mb-4">
             Why Choose Us
           </div>
           <h2 className="text-[30px]  text-white ">
-            Trusted by Mothers at Every Stage <br className="hidden sm:block" />
-            of Motherhood
+            Trusted by Mothers at Every Stage   <br className="hidden sm:block" />
+            of Motherhood.
           </h2>
         </motion.div>
 
         {/* Cards Grid */}
-        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto md:px-8 px-4">
           {whychoice.map((item, idx) => (
             <motion.div
               key={idx}
@@ -792,13 +861,13 @@ function MotherandChildcare() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: idx * 0.2 }}
               viewport={{ once: true }}
-              className="rounded-2xl overflow-hidden bg-white text-gray-900 shadow-md h-full flex flex-col"
+              className="rounded-2xl overflow-hidden bg-white text-gray-900 shadow-md h-[220px] flex flex-col"
             >
               {item.type === "image" ? (
                 <Image
                   src={item.src}
                   alt={item.src}
-                  className="w-full h-full object-cover"
+                  className="w-full h-[220px] object-cover"
                 />
               ) : (
                 <div className="p-6 flex flex-col gap-3 h-full justify-center">
@@ -812,9 +881,9 @@ function MotherandChildcare() {
         </div>
       </section>
 
-      <section className={`${nunito.className} mt-16`}>
+      <section className={`${nunito.className} mt-10 sm:mt-16 `}>
         <div
-          className="max-w-7xl rounded-3xl mx-auto py-12 px-4 sm:px-6 lg:px-9 flex flex-col lg:flex-row items-center gap-10 bg-cover bg-no-repeat"
+          className="max-w-7xl rounded-3xl mx-auto py-8 sm:py-12 px-4 sm:px-6 lg:px-9 flex flex-col lg:flex-row items-center gap-8 lg:gap-10 bg-cover bg-no-repeat"
           style={{ backgroundImage: `url(${Background.src})` }}
         >
           {/* Left Side */}
@@ -825,49 +894,52 @@ function MotherandChildcare() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block bg-white text-primary-blue px-5  py-2 rounded-full  text-sm font-semibold mb-4">
+            <span className="inline-block bg-white text-primary-blue px-4 sm:px-5 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold mb-3 sm:mb-4">
               Our Achievements
             </span>
-            <h2 className=" text-[30px]  mb-4">
-              Driven by the trust of Mothers <br className="hidden sm:block" />
+
+            <h2 className="text-[22px] sm:text-[30px]  mb-3 sm:mb-4">
+              Driven by the trust of Mothers
+              <br className="hidden sm:block" />
               Across Generations
             </h2>
-            <p className="  mb-6">
-              With over four decades of dedicated experience in mother and
-              childcare, Sudha has been a part of countless parenthood journeys.
-              Every baby born here reflects our commitment to expert care,
-              compassion, and safety.
+
+            <p className="text-sm sm:text-base mb-5 sm:mb-6">
+              With over four decades of dedicated experience in mother and childcare,
+              Sudha has been a part of countless parenthood journeys. Every baby born
+              here reflects our commitment to expert care, compassion, and safety.
             </p>
-            <div className="rounded-xl overflow-hidden w-full">
+
+            <div className="rounded-2xl sm:rounded-3xl overflow-hidden w-full">
               <Image
                 src={OurAchivementTwo}
                 alt="Expecting Couple"
-                className="w-[100%] mx-auto h-auto object-cover rounded-xl"
+                className="w-full h-[220px] sm:h-[352px] object-cover rounded-2xl sm:rounded-3xl"
               />
             </div>
           </motion.div>
 
           {/* Right Side */}
           <motion.div
-            className="w-full lg:w-1/2 space-y-6"
+            className="w-full lg:w-1/2 space-y-5 sm:space-y-6"
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <div className="rounded-xl overflow-hidden">
+            <div className="rounded-2xl sm:rounded-3xl overflow-hidden">
               <Image
                 src={OurAchivementOne}
                 alt="Happy Family"
-                className="w-[100%] mx-auto h-auto object-cover rounded-xl"
+                className="w-full h-[220px] sm:h-[352px] object-cover rounded-2xl sm:rounded-3xl"
               />
             </div>
 
-            <ul className="space-y-4 text-md">
+            <ul className="space-y-3 sm:space-y-4 text-sm sm:text-md">
               {[
-                "Advanced Treatments For Mother And Childcare",
-                "World-class equipment and infrastructure",
-                "State-of-the-art Operation Theatres and ICUs",
+                "Advanced treatments for mother and childcare ",
+                "World-class equipment and infrastructure ",
+                "State-of-the-art Operation Theatres and ICUs ",
               ].map((text, index) => (
                 <motion.li
                   key={index}
@@ -877,16 +949,16 @@ function MotherandChildcare() {
                   transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="text-primary-blue w-7 h-7 bg-white flex justify-center items-center p-1 rounded-2xl">
-                    <TickCircle className="min-w-5 min-h-5" />
+                  <div className="text-primary-blue w-6 h-6 sm:w-7 sm:h-7 bg-white flex justify-center items-center rounded-xl sm:rounded-2xl">
+                    <TickCircle className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
-                  <p className="">{text}</p>
+                  <p>{text}</p>
                 </motion.li>
               ))}
             </ul>
 
             <motion.div
-              className="grid grid-cols-3 gap-4 pt-4 border-t border-gray-300"
+              className="grid grid-cols-3 gap-3 sm:gap-4 pt-4 border-t border-gray-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
@@ -895,13 +967,15 @@ function MotherandChildcare() {
               {[
                 { number: "40+", label: "Year of Experience" },
                 { number: "98%", label: "Patient satisfaction" },
-                { number: "1K+", label: "Happy families" },
+                { number: "1L+", label: "Happy families" },
               ].map((item, i) => (
                 <div key={i} className="text-start">
-                  <h3 className="text-primary-blue  text-[44px]">
+                  <h3 className="text-primary-blue text-[26px] md:text-[28px] ">
                     {item.number}
                   </h3>
-                  <p className="text-black mt-2">{item.label}</p>
+                  <p className="text-black text-xs sm:text-sm mt-1 sm:mt-2">
+                    {item.label}
+                  </p>
                 </div>
               ))}
             </motion.div>
@@ -909,8 +983,9 @@ function MotherandChildcare() {
         </div>
       </section>
 
+
       <section
-        className={`${nunito.className} max-w-7xl mx-auto relative bg-cover bg-center bg-no-repeat rounded-3xl overflow-hidden mt-10`}
+        className={`${nunito.className} max-w-7xl mx-auto relative bg-cover bg-center bg-no-repeat rounded-3xl overflow-hidden mt-10 `}
         style={{
           backgroundImage: `url(${Contact_us.src})`,
         }}
@@ -918,7 +993,7 @@ function MotherandChildcare() {
         {/* Overlay */}
         {/* <div className="absolute inset-0 bg-indigo-900 bg-opacity-70"></div> */}
 
-        <div className="relative z-10 px-6 py-12 sm:px-10 lg:px-16">
+        <div className="relative z-10  px-6 py-12 sm:px-10 lg:px-16">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -961,10 +1036,14 @@ function MotherandChildcare() {
                   <PhoneIcon className="h-6 w-6 text-white flex-shrink-0" />
                   <h5 className="font-bold">Call Us:</h5>
                 </div>
-                <div className="mt-3">
-                  <p className="text-[#fff]">+91 42–424–54545</p>
-                  <p className="mt-3 text-[#fff]">+91 76–7007–6006</p>
+                <div className="mt-3 ">
+                  <Link href="tel:+914242454545" className="text-[#fff] font-bold">0424-245-4545</Link>
+
                 </div>
+                <div className="mt-3 ">
+                  <Link href="tel:+917670076006" className="mt-3 text-[#fff] font-bold">+91 76–7007–6006</Link>
+                </div>
+
               </motion.div>
 
               {/* Email */}
@@ -979,7 +1058,7 @@ function MotherandChildcare() {
                   <h5 className="font-semibold">E-mail Us:</h5>
                 </div>
                 <div className="mt-2">
-                  <p className="text-[#fff]">care@sudhahospitals.com</p>
+                  <Link href="mailto:care@sudhahospitals.com" className="text-[#fff] font-bold">care@sudhahospitals.com</Link>
                 </div>
               </motion.div>
 
@@ -1010,14 +1089,17 @@ function MotherandChildcare() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="flex gap-10 flex-wrap"
+              className=""
             >
-              <button className="btn-sidebar mt-4 bg-white text-indigo-900 font-semibold w-[200px] h-[44px] px-6 py-2 rounded-full flex items-center justify-center gap-2 hover:bg-gray-100 transition whitespace-nowrap">
-                Start Your Journey
-                <ArrowUpRight />
+              <button className="btn-white  flex items-center gap-2 mx-auto" onClick={() => setOpenModal(true)}>
+                Book an Appointment <ArrowUpRight className="w-5 h-5" />
               </button>
+              <BookAppointmentModal
+                open={openModal}
+                onClose={() => setOpenModal(false)}
+              />
 
-              <motion.div
+              {/* <motion.div
                 animate={{
                   x: [0, 5, 0],
                 }}
@@ -1028,14 +1110,14 @@ function MotherandChildcare() {
                 }}
               >
                 <Image src={Arrow} alt="Arrow" width={90} height={90} />
-              </motion.div>
+              </motion.div> */}
             </motion.div>
           </motion.div>
         </div>
       </section>
 
       <motion.div
-        className={`${nunito.className} py-16 `}
+        className={`${nunito.className} py-16 md:px-0 px-4`}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -1047,35 +1129,57 @@ function MotherandChildcare() {
             <span className="bg-[#fff] text-[#2A3D90] text-sm font-semibold px-3 py-2 rounded-full">
               Sudha Care
             </span>
-            <h2 className="text-[30px]  font-bold text-[#2A3D90] mt-4 mb-6">
+            <h2 className="text-[30px]  text-[#2A3D90] mt-4 mb-6">
               Maternal Health Care
             </h2>
+            <div className="block md:flex md:justify-between">
+              <ul className="space-y-4 text-[14px] font-semibold text-[#5E566A]">
+                {[
+                  "Postpartum Care",
+                  "Preconception Care",
+                  "Gestational Diabetes",
+                  "Pre-eclampsia and Hypertensive Disorders",
+                  "Gestational Hypertension",
+                  "Hyperemesis Gravidarum",
+                  "Placenta Previa and Placental Abruption",
 
-            <ul className="space-y-4 text-[15px] text-[#5E566A]">
-              {[
-                "Postpartum Care",
-                "Preconception Care",
-                "Gestational Diabetes",
-                "Pre-eclampsia and Hypertensive Disorders",
-                "Gestational Hypertension",
-                "Hyperemesis Gravidarum",
-                "Placenta Previa and Placental Abruption",
-                "Ectopic Pregnancy",
-                "Miscarriage",
-                "Preterm Labor and Birth",
-                "Multiple Gestations (Twins, Triplets)",
-                "Maternal Infections (e.g., Group B Streptococcus)",
-                "Maternal Anaemia",
-                "Maternal Diet",
-              ].map((item, index) => (
-                <li key={index} className="flex items-start gap-4">
-                  <div className="text-primary-blue w-7 h-7 bg-white  flex justify-center items-center p-1 rounded-2xl">
-                    <TickCircle className="min-w-5 min-h-5" />
-                  </div>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start gap-4">
+                    <div className="text-primary-blue w-7 h-7 bg-white  flex justify-center items-center p-1 rounded-2xl">
+                      <TickCircle className="min-w-5 min-h-5" />
+                    </div>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <ul className="space-y-4 text-[15px] font-semibold text-[#5E566A]">
+                {[
+                  "Ectopic Pregnancy",
+                  "Miscarriage",
+                  "Preterm Labor and Birth",
+                  "Multiple Gestations (Twins, Triplets)",
+                  "Maternal Infections (e.g., Group B Streptococcus)",
+                  "Maternal Anaemia",
+                  "Maternal Diet",
+
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start gap-4">
+                    <div className="text-primary-blue w-7 h-7 bg-white  flex justify-center items-center p-1 rounded-2xl">
+                      <TickCircle className="min-w-5 min-h-5" />
+                    </div>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+
+            </div>
+
+
+
+
+
           </motion.div>
 
           {/* Right Image Section */}
@@ -1083,14 +1187,14 @@ function MotherandChildcare() {
             <Image
               src={Sudhacare}
               alt="Mother and Baby"
-              className="w-[100%] mx-auto rounded-2xl object-cover"
+              className="w-[100%] mx-auto h-[440px] rounded-3xl object-cover"
             />
           </motion.div>
         </div>
       </motion.div>
 
-      <div className={`${nunito.className} py-16 `}>
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div className={`${nunito.className} md:py-16 pt-0 md:px-0 px-4 `}>
+        <div className="max-w-7xl mx-auto grid  grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <motion.div
             className="relative"
             initial={{ opacity: 0, x: -50 }}
@@ -1101,7 +1205,7 @@ function MotherandChildcare() {
             <Image
               src={Sudhacaretwo}
               alt="Child Care"
-              className="w-[100%] mx-auto rounded-2xl object-cover"
+              className="w-[100%] mx-auto h-[440px] rounded-3xl object-cover"
             />
           </motion.div>
 
@@ -1111,104 +1215,118 @@ function MotherandChildcare() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-[30px]  font-bold text-[#2B3990] mt-4 mb-6">
+            <h2 className="text-[30px]   text-[#2B3990] mt-4 mb-6">
               Paediatric Health Care
             </h2>
-            <ul className="space-y-4 text-[15px] text-[#5E566A]">
-              {[
-                "Seasonal & Tropical Infections (Dengue, Malaria etc.)",
-                "Chronic Infections",
-                "Congenital Infections",
-                "Vaccinations",
-                "Paediatric Neurology",
-                "Paediatric Pulmonology",
-                "Paediatric Cardiology",
-                "Paediatric Surgery",
-                "Paediatric Diet",
-                "Paediatric Diabetes",
-                "Paediatric Thyroid",
-                "Preterm Baby Care",
-                "Jaundice Management in Newborns",
-                "Feeding & Lactation Support for Infants",
-                "Child Psychology",
-              ].map((item, index) => (
-                <li key={index} className="flex items-start gap-4">
-                  <div className="text-primary-blue w-7 h-7 bg-white shadow-sm flex justify-center items-center p-1 rounded-2xl">
-                    <TickCircle className="min-w-5 min-h-5" />
-                  </div>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+
+            <div className="block md:flex md:justify-between">
+              <ul className="space-y-4 text-[15px] font-semibold text-[#5E566A]">
+                {[
+                  "Seasonal & Tropical Infections (Dengue, Malaria etc.)",
+                  "Chronic Infections",
+                  "Congenital Infections",
+                  "Vaccinations",
+                  "Paediatric Neurology",
+                  "Paediatric Pulmonology",
+                  "Paediatric Cardiology",
+
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start gap-4">
+                    <div className="text-primary-blue w-6 h-6 bg-white shadow-sm flex justify-center items-center p-1 rounded-2xl">
+                      <TickCircle className="min-w-4 min-h-4" />
+                    </div>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <ul className="space-y-4 text-[15px] font-semibold text-[#5E566A]">
+                {[
+                  "Paediatric Surgery",
+                  "Paediatric Diet",
+                  "Paediatric Diabetes",
+                  "Paediatric Thyroid",
+                  "Preterm Baby Care",
+                  "Jaundice Management in Newborns",
+                  "Feeding & Lactation Support for Infants",
+                  "Child Psychology",
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start gap-4">
+                    <div className="text-primary-blue w-7 h-7 bg-white shadow-sm flex justify-center items-center p-1 rounded-2xl">
+                      <TickCircle className="min-w-5 min-h-5" />
+                    </div>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
           </motion.div>
         </div>
       </div>
 
       <section className={`${nunito.className}`}>
-        <div className="max-w-7xl mx-auto py-16 ">
+        <div className="max-w-7xl mx-auto py-16 md:px-0 px-4">
+          {/* Heading */}
           <div className="text-center">
-            <div className="px-5   py-2 bg-white text-primary-blue inline-block font-semibold rounded-full ">
-              <p className="text-[#2A3D90]"> Sudha Care</p>
-
+            <div className="px-5 py-2 bg-white text-primary-blue inline-block font-semibold rounded-full ">
+              <p className="text-[#2A3D90]">Our Doctors</p>
             </div>
-            <h2 className="text-[30px] text-center  font-bold text-[#2A3D90] mt-4 mb-6">
-              Dedicated to your fertility <br /> journey success
+            <h2 className="text-[30px] text-center text-[#2A3D90] mt-4 mb-6">
+             Dedicated Doctors To Help You in <br/>Every Healthcare Need. 
             </h2>
           </div>
 
-
-
+          {/* Doctors Slider */}
           <div className="relative mt-10">
-            <Slider {...settings}>
-              {doctorsData.map((doc, index) => (
-                <div
-                  key={index}
-                  className="w-[160px] sm:w-[160px] md:w-[180px] h-[400px]  
-             rounded-xl overflow-hidden text-center relative "
-                >
-                  <div className="ourteamcard_imgmother">
-                    <Image
-                      src={doc.image}
-                      alt={doc.name}
-                      className="mx-auto rounded-xl mb-2 w-[90%] h-auto gap-4 "
-                    />
-                  </div>
-                  {/* Arrow Button */}
-                  <Link
-                    href=""
-                    className="absolute bottom-36 right-2 w-10 h-10 rounded-full bg-white flex items-center justify-center z-30 group "
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-5 h-5 text-black transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 7L7 17M7 7h10v10"
+            <div className="max-w-7xl mx-auto  md:px-0 px-4">
+              <DoctorSlider specialty="Gynecologist"/>
+            </div>
+
+            {/* <Slider {...settings}>
+              {doctorsData.map((doc) => (
+                <div key={doc.id} className="px-3">
+              
+                  <div className="bg-white h-[500px] max-w-[300px] mx-auto rounded-2xl text-start flex flex-col overflow-hidden ">
+                    
+                    <div className="relative w-full h-[300px]">
+                      <Image
+                        src={doc.image}
+                        alt={doc.name}
+                        fill
+                        className="object-cover rounded-t-2xl"
                       />
-                    </svg>
-                  </Link>
-                  <h3 className="text-[16px] text-start sm:text-[16px] mt-5 font-semibold text-[#2B3990]">
-                    {doc.name}
-                  </h3>
-                  <p className="text-[14px] text-start font-semibold text-black mt-2">
-                    {doc.degrees}
-                  </p>
+                    </div>
+
+                    
+                    <div className="p-6 flex flex-col justify-between flex-1">
+                      <div>
+                        <h3 className="text-[16px] text-[#2b3990] font-bold mb-2">
+                          {doc.name}
+                        </h3>
+                        <p className="text-[12px] mt-2">{doc.degrees}</p>
+                        <p className="text-[12px] mt-2">{doc.qualification}</p>
+                      </div>
+
+                      
+                      <Link
+                        href={`/doctor-detail/${doc.id}`}
+                        className="btn-diagonal-outline px-8 w-full mt-6 flex items-center justify-center gap-2"
+                      >
+                        View Profile <ArrowUpRight className="w-5 h-5" />
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               ))}
-            </Slider>
+            </Slider> */}
           </div>
         </div>
       </section>
 
+
       <section className={`${nunito.className}`}>
         <div>
-          <div className="max-w-3xl mx-auto py-16">
+          <div className="max-w-3xl mx-auto py-16 md:px-0 px-4">
             <h2 className="text-center text-[30px] mb-6">
               Frequently Asked Questions
             </h2>
@@ -1217,21 +1335,21 @@ function MotherandChildcare() {
               {faqData.slice(0, showCount).map((item, index) => (
                 <div
                   key={index}
-                  className=" rounded-xl bg-white  transition duration-300"
+                  className=" rounded-2xl bg-white  transition duration-300"
                 >
                   <button
                     onClick={() => handleAccordionToggle(index)}
                     className="w-full text-left px-4 py-3 flex justify-between items-center  font-bold text-[16px]"
                   >
                     {item.question}
-                    <span className="text-xl">
+                    <h4 className="text-[18px]">
                       {activeAccordion === index ? "−" : "+"}
-                    </span>
+                    </h4>
                   </button>
                   {activeAccordion === index && (
-                    <div className="px-4 pb-3 text-gray-600 text-[15px]">
+                    <p className="px-4 pb-3 ">
                       {item.answer}
-                    </div>
+                    </p>
                   )}
                 </div>
               ))}
@@ -1241,7 +1359,7 @@ function MotherandChildcare() {
               <div className="text-center mt-6">
                 <button
                   onClick={handleViewMore}
-                  className="btn-diagonal bg-[#2B3990] hover:bg-[#1f2c6e] text-white font-medium px-6 py-2 rounded-full transition"
+                  className="btn-diagonal "
                 >
                   View More <ArrowUpRight className="w-5 h-5" />
                 </button>
@@ -1251,47 +1369,47 @@ function MotherandChildcare() {
         </div>
       </section>
 
-      <section className={`${nunito.className}`}>
+      <section className={`${nunito.className}`} id="contactus">
         <div
-          className="max-w-7xl mx-auto py-0 px-4 rounded-3xl"
+          className="max-w-7xl mx-auto py-8 rounded-3xl px-8"
           style={{
             backgroundImage: `url(${Background.src})`,
             backgroundSize: "cover",
           }}
         >
-          <div className="flex flex-col md:flex-row  w-full min-h-screen items-center justify-center px-4 py-10">
+          <div className="flex flex-col md:flex-row  w-full md:py-16 py-6   justify-center md:px-0 px-4 ">
             {/* Left Image + Info */}
             <div
-              className="w-full md:w-1/2 h-[500px] md:h-[600px] bg-cover bg-center rounded-2xl overflow-hidden relative mb-8 md:mb-0"
+              className="w-full md:w-1/2 h-[500px] md:h-[600px] bg-cover bg-center rounded-3xl overflow-hidden relative md:mb-0"
               style={{ backgroundImage: `url(${Motherandchild.src})` }}
             >
               <div className="absolute inset-0 bg-[#2B3990]/60 flex flex-col justify-end p-6 text-white space-y-4">
                 <div className="flex gap-2">
                   <div>
-                    <h2 className="text-[22px] font-bold">Medical Emergency</h2>
+                    <h2 className="text-[20px] font-bold">Helpline Number:</h2>
                     <p className="text-sm text-[#fff] mt-3">
-                      If this is an medical emergency, call our emergency
-                      services
+                      For Immediate Medical Assistance, contact our helpline number.
+
                     </p>
-                    <p className="text-[16px] font-bold mt-2 text-[#fff]">
-                      +91 42–424–54545
-                    </p>
+                    <Link href="tel:+914242454545" className="text-[16px] font-bold mt-4 text-[#fff]">
+                      0424-245-4545
+                    </Link>
                   </div>
                   <div className="border-l border-white/30 pl-4">
-                    <h2 className="text-[22px] font-bold">Book an Ambulance</h2>
+                    <h2 className="text-[20px] font-bold">Emergency Ambulance:</h2>
                     <p className="text-sm text-[#fff] mt-3">
-                      24/7 Emergency Ambulance Services — Fast, Safe & Reliable
+                      24/7 Ambulance Services for Medical Emergencies.
                     </p>
-                    <p className="text-[16px] font-bold mt-2 text-[#fff]">
-                      +91 90420 65454
-                    </p>
+                    <Link  href="tel:+919042065454" className="text-[16px] font-bold mt-4 text-[#fff]">
+                      +91 9042-065-454
+                    </Link>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Right Form Section */}
-            <div className="w-full md:w-1/2 md:pl-10">
+            <div className="w-full md:w-1/2 md:pl-10 md:py-0 py-4">
               <h2 className="text-[30px]   mb-2">
                 Book An Appointment
                 <span className="text-[#2B3990]"> Today</span>
@@ -1301,104 +1419,171 @@ function MotherandChildcare() {
                 today and take the first step toward personalized care.
               </p>
 
-              <form className="space-y-4">
-                {/* Row 1 */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="relative">
-                    <label className="text-sm font-medium block mb-1">
-                      Preferred Date*
+               <form
+                  onSubmit={handleSubmit}
+                  className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6"
+                >
+                  <Toaster />
+
+                  {/* Date */}
+                  <div className="flex flex-col">
+                    <label className="text-sm font-semibold mb-1">
+                      Preferred Date *
                     </label>
-                    <div className="relative">
-                      <input
-                        type="text"
-                        placeholder="DD/MM/YYYY"
-                        className="w-full rounded-md  px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      />
-                      <CalendarDays
-                        className="absolute right-3 top-2.5 text-gray-400"
-                        size={20}
-                      />
-                    </div>
+                    <input
+                      type="date"
+                      value={formData.date}
+                      onChange={(e) =>
+                        setFormData({ ...formData, date: e.target.value })
+                      }
+                      className="border border-gray-200 rounded-lg px-4 py-2 h-11 text-sm"
+                    />
+                    {errors.date && (
+                      <p className="text-red-500 text-xs">{errors.date}</p>
+                    )}
                   </div>
-                  <div>
-                    <label className="text-sm font-medium block mb-1">
-                      Name*
-                    </label>
+
+                  {/* Name */}
+                  <div className="flex flex-col">
+                    <label className="text-sm font-semibold mb-1">Name *</label>
                     <input
                       type="text"
                       placeholder="Enter full name"
-                      className="w-full rounded-md  px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      value={formData.name}
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
+                      className="border border-gray-200 rounded-lg px-4 h-11 py-2 text-sm"
                     />
+                    {errors.name && (
+                      <p className="text-red-500 text-xs">{errors.name}</p>
+                    )}
                   </div>
-                </div>
 
-                {/* Row 2 */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-sm font-medium block mb-1">
-                      Mobile Number*
+                  {/* Mobile */}
+                  <div className="flex flex-col">
+                    <label className="text-sm font-semibold mb-1">
+                      Mobile *
                     </label>
                     <input
-                      type="text"
-                      placeholder="Enter your mobile number"
-                      className="w-full rounded-md  px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      type="tel"
+                      placeholder="Enter mobile number"
+                      value={formData.mobile}
+                      onChange={(e) =>
+                        setFormData({ ...formData, mobile: e.target.value })
+                      }
+                      className="border border-gray-200 rounded-lg px-4 h-11 py-2 text-sm"
                     />
+                    {errors.mobile && (
+                      <p className="text-red-500 text-xs">{errors.mobile}</p>
+                    )}
                   </div>
-                  <div>
-                    <label className="text-sm font-medium block mb-1">
-                      E-mail*
+
+                  {/* Email */}
+                  <div className="flex flex-col">
+                    <label className="text-sm font-semibold mb-1">
+                      Email *
                     </label>
                     <input
                       type="email"
-                      placeholder="Enter full name"
-                      className="w-full rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      placeholder="Enter email"
+                      value={formData.email}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
+                      className="border border-gray-200 rounded-lg px-4 h-11 py-2 text-sm"
                     />
+                    {errors.email && (
+                      <p className="text-red-500 text-xs">{errors.email}</p>
+                    )}
                   </div>
-                </div>
 
-                {/* Row 3 */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-sm font-medium block mb-1">
-                      Department*
+                  {/* Department */}
+                  <div className="flex flex-col">
+                    <label className="text-sm font-semibold mb-1">
+                      Department *
                     </label>
-                    <select className="w-full rounded-md  px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                      <option>Select a department</option>
+                    <select
+                      value={formData.department}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          department: e.target.value,
+                          doctor: "",
+                        })
+                      }
+                      className="border border-gray-200 rounded-lg px-4 h-11 text-sm"
+                    >
+                      <option value="">Select a department</option>
+                      {Object.keys(doctorsList).map((dept) => (
+                        <option key={dept}>{dept}</option>
+                      ))}
                     </select>
+                    {errors.department && (
+                      <p className="text-red-500 text-xs">
+                        {errors.department}
+                      </p>
+                    )}
                   </div>
-                  <div>
-                    <label className="text-sm font-medium block mb-1">
-                      Doctor*
+
+                  {/* Doctor */}
+                  <div className="flex flex-col">
+                    <label className="text-sm font-semibold mb-1">
+                      Doctor *
                     </label>
-                    <select className="w-full rounded-md  px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                      <option>Select a doctor</option>
+                    <select
+                      value={formData.doctor}
+                      onChange={(e) =>
+                        setFormData({ ...formData, doctor: e.target.value })
+                      }
+                      disabled={!formData.department}
+                      className="border border-gray-200 rounded-lg px-4 h-11 text-sm"
+                    >
+                      <option value="">Select a doctor</option>
+                      {formData.department &&
+                        doctorsList[formData.department]?.map((doc) => (
+                          <option key={doc}>{doc}</option>
+                        ))}
                     </select>
+                    {errors.doctor && (
+                      <p className="text-red-500 text-xs">{errors.doctor}</p>
+                    )}
                   </div>
-                </div>
 
-                {/* Remarks */}
-                <div>
-                  <label className="text-sm font-medium block mb-1">
-                    Remarks*
-                  </label>
-                  <textarea
-                    rows="3"
-                    placeholder="Enter your remarks..."
-                    className="w-full rounded-md  px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  ></textarea>
-                </div>
+                  {/* Remarks */}
+                  <div className="md:col-span-2 flex flex-col">
+                    <label className="text-sm font-semibold mb-1">
+                      Remarks *
+                    </label>
+                    <textarea
+                      rows="3"
+                      placeholder="Enter remarks"
+                      value={formData.remarks}
+                      onChange={(e) =>
+                        setFormData({ ...formData, remarks: e.target.value })
+                      }
+                      className="border border-gray-200 rounded-lg px-4 py-2 text-sm"
+                    />
+                    {errors.remarks && (
+                      <p className="text-red-500 text-xs">{errors.remarks}</p>
+                    )}
+                  </div>
 
-                <button
-                  type="submit"
-                  className="btn-diagonal bg-[#2B3990] hover:bg-[#1d2971] text-white font-semibold text-sm rounded-full px-6 py-2 mt-2"
-                >
-                  Book an Appointment <ArrowUpRight className="w-5 h-5" />
-                </button>
-              </form>
+                  {/* Submit */}
+                  <div className="md:col-span-1 mt-2">
+                    <button
+                      type="submit"
+                      className="btn-diagonal flex items-center gap-2"
+                    >
+                      Book an Appointment <ArrowUpRight className="w-5 h-5" />
+                    </button>
+                  </div>
+                </form>
             </div>
           </div>
         </div>
       </section>
+
     </div>
   );
 }

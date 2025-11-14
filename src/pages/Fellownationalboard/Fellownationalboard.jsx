@@ -1,22 +1,19 @@
 'use client';
 
 import React, { useState } from 'react';
-import Banner from "@/assets/fellownationalboard/Banner.png";
-import Doctors from "@/assets/fellownationalboard/Doctors.png";
+import Banner from "@/assets/fellownationalboard/banner.png";
+import Doctors from "@/assets/fellownationalboard/fellowboards.jpg";
 import Rectangle from "@/assets/fellownationalboard/Rectangle.png";
 import { motion } from 'framer-motion';
-import HandIcon from "@/assets/healthpackage/nephrology.svg";
-import { ArrowUpRight } from "lucide-react";
-import DocsGroup from "@/assets/fellownationalboard/DocsGroup.png";
-import cardone from "@/assets/home/cards/1.svg";
-import cardtwo from "@/assets/home/cards/2.svg";
-import cardthree from "@/assets/home/cards/3.svg";
-import cardfour from "@/assets/home/cards/4.svg";
-import ServiceCard from "@/components/ServiceCard";
-import Slider from "react-slick";
-import Image from "next/image";
+
+import HospitalCard from "@/components/Hospital";
+import hospitalOne from "@/assets/home/cards/c1.svg";
+import hospitalTwo from "@/assets/home/cards/c2.svg";
+import hospitalThree from "@/assets/home/cards/c3.svg";
+import hospitalFour from "@/assets/home/cards/c4.svg";
+
 import shyla from "@/assets/fellownationalboard/shyla.png";
-import Link from "next/link";
+
 import { doctorsData } from "@/constants/doctorDetails";
 import Bookappointment from "@/components/Bookappointment";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -25,48 +22,42 @@ import "slick-carousel/slick/slick-theme.css";
 import DiplomaDoctor from "@/components/diplomaSlider";
 import Faculties from '@/components/faculties';
 
-const cards = [
+import Breadcrumb from "@/components/Breadcrumb";
+
+const breadcrumbItems = [
+    { label: "Home", href: "/" },
+
+    { label: "Academics", href: "" },
+
+    { label: "Fellow of National Board (FNB)", href: "/academics/fellow-of-national-board" },
+];
+
+const hospitalscards = [
     {
-        icon: cardone,
+        number: <h3 className="text-[48px] text-[#2B3990]">40+</h3>,
         title: (
-            <p className="text-md font-extrabold text-black">
-                <span className="text-[#2b3990] font-extrabold">Sudha </span>Integrated <br />
-                out patient centre
-            </p>
+            <p className="text-md font-bold text-black">Years of Experience</p>
         ),
-        link: "/contact-us",
+        link: "/about-us/our-growth-story",
+        icon: hospitalOne,
     },
     {
-        icon: cardtwo,
-        title: (
-            <p className="text-md font-extrabold text-black">
-                <span className="text-[#2b3990] font-extrabold"> Master </span> Health<br />
-                Check Up
-            </p>
-        ),
-        link: "/maternity",
+        number: <h3 className="text-[48px] text-[#2B3990]">300+</h3>,
+        title: <p className="text-md font-bold text-black">Patient Beds</p>,
+        link: "/facilities/health-package",
+        icon: hospitalTwo,
     },
     {
-        icon: cardfour,
-        title: (
-            <p className="text-md font-extrabold text-black">
-                {" "}
-                <br />
-                Find a<span className="text-[#2b3990] font-extrabold "> Doctor</span>
-            </p>
-        ),
-        link: "/find-doctor",
+        number: <h3 className="text-[48px] text-[#2B3990]">30+</h3>,
+        title: <p className="text-md font-bold text-black">Departments</p>,
+        link: "/specialities",
+        icon: hospitalThree,
     },
     {
-        icon: cardthree,
-        title: (
-            <p className="text-md font-extrabold text-black">
-                <br />
-                Book an
-                <span className="text-[#2b3990] font-extrabold"> Appointment </span>
-            </p>
-        ),
-        link: "/#book-appointment",
+        number: <h3 className="text-[48px] text-[#2B3990]">100+</h3>,
+        title: <p className="text-md font-bold text-black">Doctors</p>,
+        link: "/find-a-doctor",
+        icon: hospitalFour,
     },
 ];
 
@@ -217,29 +208,40 @@ const Fellownationalboard = () => {
     return (
         <div>
             {/* Banner Section */}
-            <section className="relative -mt-12 lg:-mt-24 m-10">
+            <section className="relative px-7 hero-section -mt-28 mb-hero-section">
                 <div
-                    className="max-w-full mx-auto px-4 py-36 relative z-10 text-white bg-center bg-no-repeat bg-cover lg:bg-contain banner min-h-400"
+                    className="relative top-6 max-w-full mx-auto px-4 pt-36 pb-24 z-10 text-white bg-center bg-no-repeat bg-cover rounded-3xl overflow-hidden min-h-400"
                     style={{ backgroundImage: `url(${Banner.src})` }}
                 >
-                    <div className="pl-8 md:pl-20">
-                        <motion.p
+                    <div className="max-w-7xl mx-auto">
+                        <motion.div
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.4 }}
                             className="text-sm mb-2 text-white"
                         >
-                            Home / Academic / Fellow of National Board (FNB)
-                        </motion.p>
+                            <Breadcrumb items={breadcrumbItems} />
+
+
+                        </motion.div>
 
                         <motion.h1
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
-                            className="text-[44px]  mb-2"
+                            className="text-[40px]  mb-2"
                         >
                             Fellow of National Board (FNB)
                         </motion.h1>
+
+                        <motion.p
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            className="mb-6 text-white"
+                        >
+                            Offering the best medical courses in Erode 
+                        </motion.p>
 
                         <motion.div className='mt-12'
                             initial={{ opacity: 0, y: 10 }}
@@ -256,16 +258,16 @@ const Fellownationalboard = () => {
 
                     </div>
 
-                    <div className="absolute bottom-0 right-4 sm:right-10 md:right-[-40px] z-30 hidden md:block mr-10">
-                        <div className="w-[220px] overflow-hidden rounded-tl-xl  rounded-br-xl">
+                    <div className="absolute bottom-0 right-0  z-30 hidden md:block">
+                        <div className="w-[220px] overflow-hidden rounded-tl-3xl rounded-br-3xl">
                             <div className="h-[30%] bg-transparent" />
-                            <div className="bg-white p-4 ">
-                                <h3 className="text-[36px] font-bold text-[#2B3990]">40+</h3>
-                                <p className="text-lg leading-snug text-black font-semibold">
-                                    Years of Trusted <br />
-                                    Expertise in <br />
-                                    Healthcare
+                            <div className="bg-white p-5">
+
+                                <p className="text-[16px] text-black font-bold mb-2">
+                                    Empowering Future <br /> Healthcare
+                                    Professionals  <br />
                                 </p>
+                                <h3 className="text-[20px] font-extrabold text-[#2B3990]">Since 1985</h3>
                             </div>
                         </div>
                     </div>
@@ -273,46 +275,58 @@ const Fellownationalboard = () => {
             </section>
 
 
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-10 sm:py-14 lg:py-20">
-                <motion.div
-                    className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-10"
-                >
-                    {cards.map((card, idx) => (
-                        <motion.div key={idx} variants={item}>
-                            <div className="cursor-pointer  duration-300">
-
-                                <ServiceCard
+            <section>
+                <div className=" max-w-7xl mx-auto  my-20 h-full">
+                    <motion.div
+                        variants={containerVariants}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true, amount: 0.2 }}
+                        className="
+        grid 
+        grid-cols-1        
+        sm:grid-cols-2     
+        md:grid-cols-2     
+        lg:grid-cols-3     
+        xl:grid-cols-4     
+        gap-4 sm:gap-6 lg:gap-8
+      "
+                    >
+                        {hospitalscards.map((card, idx) => (
+                            <motion.div key={idx} variants={cardVariants}>
+                                <HospitalCard
+                                    number={card.number}
                                     icon={card.icon}
                                     title={card.title}
                                     link={card.link}
                                 />
-
-                            </div>
-                        </motion.div>
-                    ))}
-                </motion.div>
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                </div>
             </section>
 
 
             {/* Intro Content */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-10 sm:py-14 lg:py-20">
-                <div className="flex flex-col md:flex-row items-center md:items-start gap-6 sm:gap-8 lg:gap-12">
+            <section className="max-w-7xl mx-auto px-4 md:px-0 py-10 sm:py-14 lg:py-20">
+                <div className="flex flex-col md:flex-row items-center md:items-center gap-6 sm:gap-8 lg:gap-12">
                     {/* Left Content */}
-                    <div className="flex-1">
-                        <div className="inline-block mb-4 px-3 sm:px-4 py-1.5 sm:py-2 font-semibold bg-white text-[#2B3990] rounded-full text-xs sm:text-sm md:text-base">
+                    <div className="flex-1 text-center md:text-left">
+                        <h5 className="inline-block px-4 sm:px-5 py-2 font-semibold bg-white text-[#2B3990] rounded-full text-sm">
                             Fellow of National Board (FNB)
-                        </div>
-                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[30px] font-bold mb-3 leading-snug text-center md:text-left">
-                            Reproductive Medicine
+                        </h5>
+
+                        <h2 className="text-[30px] mt-2 ">
+                           Reproductive Medicine – NBMS Accredited Fellowship Program (2021) 
                         </h2>
-                        <p className="mb-4 text-sm sm:text-base lg:text-lg text-center md:text-left">
-                            The Fellow of National Board (FNB) is a prestigious post-doctoral qualification awarded by the National Board of Examinations in Medical Sciences (NBEMS),
-                            Government of India. It is offered in approved super-specialties and sub-specialties to promote advanced clinical expertise and academic excellence.
+                        <p className="mb-4 mt-4">
+                            Sudha Fertility Centre, a part of the renowned Sudha Hospitals network and a pioneer in fertility and maternal healthcare, offers the prestigious Fellow of National Board (FNB) programme in Reproductive Medicine. This super-specialty fellowship is fully accredited by the National Board of Examination in Medical Specialities (NBEMS) since 2021. 
                         </p>
-                        <p className="mb-3 text-sm sm:text-base text-center md:text-left">
-                            Sudha Multispeciality Hospital, accredited by NBEMS, offers structured training for FNB trainees with expert faculty support and access to advanced
-                            medical facilities. The FNB qualification is recognized by the Government of India, included in the First Schedule of the IMC Act, 1956, and considered
-                            equivalent to DM/MCh degrees—eligible for specialist and faculty roles across hospitals and teaching institutions nationwide.
+                        <p className="mb-4 mt-4">
+                            Our three-year comprehensive training programme is specially designed for NEET PG-qualified doctors, providing advanced clinical exposure, rigorous research opportunities, and extensive hands-on experience. Under the mentorship of highly experienced specialists, fellows gain in-depth knowledge and practical skills essential for excellence in reproductive and maternal medicine. 
+                        </p>
+                        <p className="mb-4 mt-4">
+                           To support our trainees, we offer free accommodation throughout the fellowship duration, ensuring a focused and comfortable learning environment. Sudha Fertility Centre is committed to shaping the next generation of leaders in reproductive healthcare with world-class education and patient care standards. 
                         </p>
                     </div>
 
@@ -321,21 +335,22 @@ const Fellownationalboard = () => {
                         <img
                             src={Doctors.src}
                             alt="Doctors"
-                            className="rounded-2xl object-cover w-full h-[220px] sm:h-[300px] md:h-[400px] lg:h-[500px]"
+                            className="rounded-3xl object-cover w-full h-auto "
                         />
                     </div>
                 </div>
             </section>
 
 
+
             <section className="text-center px-4 sm:px-6 lg:px-10 py-10 sm:py-14 lg:py-20">
-                <div className="inline-block mb-4 px-4 sm:px-5 py-2 font-semibold bg-white text-[#2B3990] rounded-full text-sm sm:text-base">
+                <h5 className="inline-block mb-2 px-4 sm:px-5 py-2 font-semibold bg-white text-[#2B3990] rounded-full text-sm ">
                     Meet Our Expert Faculty
-                </div>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-snug">
-                    Reproductive Medicine with Expertise & Care
+                </h5>
+                <h2 className="text-[30px] mb-4 ">
+                    Reproductive Medicine with <br /> Expertise & Care
                 </h2>
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-8 sm:py-10 relative">
+                <div className="max-w-7xl mx-auto mt-14 relative">
                     <Faculties />
                 </div>
             </section>

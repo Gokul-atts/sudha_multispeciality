@@ -1,13 +1,15 @@
 "use client";
 import React from "react";
-import Banner from "@/assets/alliedhealthservice/Banner.png";
+import Banner from "@/assets/alliedhealthservice/alied-banner.webp";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import SidebarTabs from "@/pages/cardiology/SidebarTabs";
-
+import inter from "@/assets/home/inter.svg";
+import patient from "@/assets/home/patient.svg";
 import Marquee from "react-fast-marquee";
 import Slider from "react-slick";
-import Main from "@/assets/nursingservice/main.jpg";
+import Main from "@/assets/alliedhealthservice/alliedhealth.webp";
+
 import Bookappointment from "@/components/Bookappointment";
 import Image from "next/image";
 import hospitalOne from "@/assets/home/cards/c1.svg";
@@ -17,12 +19,14 @@ import hospitalFour from "@/assets/home/cards/c4.svg";
 import HospitalCard from "@/components/Hospital";
 import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
+
 import Alliedhealthsidebar from "@/components/AlliedhealthSidebar";
 
 
 const breadcrumbItems = [
     { label: "Home", href: "/" },
-    { label: "Allied Health Services", href: "/allied-health-services" },
+    { label: "Resources", href: "" },
+    { label: "Allied Health Services", href: "/resources/allied-health-services" },
 ];
 
 const hospitalscards = [
@@ -31,25 +35,25 @@ const hospitalscards = [
         title: (
             <p className="text-md font-bold text-black">Years of Experience</p>
         ),
-        link: "/op-centre",
+        link: "/about-us/our-growth-story",
         icon: hospitalOne,
     },
     {
         number: <h3 className="text-[44px] text-[#2B3990]">300+</h3>,
         title: <p className="text-md font-bold text-black">Patient Beds</p>,
-        link: "/maternity",
+        link: "/facilities/health-package",
         icon: hospitalTwo,
     },
     {
-        number: <h3 className="text-[44px] text-[#2B3990]">24+</h3>,
+        number: <h3 className="text-[44px] text-[#2B3990]">30+</h3>,
         title: <p className="text-md font-bold text-black">Departments</p>,
-        link: "/heart-care",
+        link: "/specialities",
         icon: hospitalThree,
     },
     {
         number: <h3 className="text-[44px] text-[#2B3990]">100+</h3>,
-        title: <p className="text-md font-bold text-black">Doctor's</p>,
-        link: "/heart-care",
+        title: <p className="text-md font-bold text-black">Doctors</p>,
+        link: "/find-a-doctor",
         icon: hospitalFour,
     },
 ];
@@ -87,73 +91,82 @@ const Alliedhealthservice = () => {
             </div>
         ),
         customPaging: (i) => (
-            <div className="w-3 h-3 mx-1 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300"></div>
+            <div className="w-3 h-3 mx-1 rounded-full bg-white hover:bg-[#2b3990] transition-all duration-300"></div>
         ),
     };
     return (
         <div>
-            <section className="relative -mt-12 lg:-mt-28 m-10">
-                {/* Background Gradient */}
+            <section className="relative px-7 hero-section -mt-28 mb-hero-section">
                 <div
-                    className="max-w-full mx-auto px-4 py-36 relative z-10 text-white bg-center bg-no-repeat bg-cover lg:bg-contain banner"
+                    className="relative top-6 max-w-full mx-auto px-4 pt-36 pb-24 z-10 text-white bg-center bg-no-repeat bg-cover rounded-3xl overflow-hidden min-h-400"
                     style={{ backgroundImage: `url(${Banner.src})` }}
                 >
-                    <div className="pl-8 md:pl-20">
+
+                    <div className="max-w-7xl mx-auto">
+                        {/* Breadcrumb */}
                         <motion.div
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.4 }}
-                            className="text-sm mb-3 text-white"
+                            className="text-sm mb-3"
                         >
                             <Breadcrumb items={breadcrumbItems} />
-
                         </motion.div>
 
+                        {/* Heading */}
                         <motion.h1
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5 }}
-                            className=" text-[44px] mb-3"
+                            className="text-[40px]  mb-3"
                         >
                             Allied Health Service
                         </motion.h1>
 
+                        {/* Subtext */}
                         <motion.p
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
-                            className=" mb-6 text-white"
+                            className="mb-6 text-white"
                         >
                             Comprehensive Support for Complete Recovery
                         </motion.p>
 
+                        {/* Button */}
                         <motion.div
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7 }}
                         >
-                            <button className="btn-white inline-flex items-center gap-2 bg-white text-[#2B3990] text-sm font-semibold px-5 py-4 rounded-full shadow text-[18px]">
+                            <Link
+                                href="#contactus"
+                                className="btn-white"
+                            >
                                 Book an Appointment <ArrowUpRight className="w-5 h-5" />
-                            </button>
+                            </Link>
                         </motion.div>
-                        <div className="absolute bottom-0 right-4 sm:right-8 md:right-0 z-30 hidden md:block mb-9">
-                            <div className="w-[220px] overflow-hidden rounded-tl-xl rounded-br-xl">
-                                <div className="h-[20%] bg-transparent" />
-                                <div className="bg-white p-4">
-                                    <h3 className="text-[36px] font-bold text-[#2B3990]">40+</h3>
-                                    <p className="text-lg leading-snug text-black font-semibold">
-                                        Years of Trusted <br />
-                                        Expertise in <br />
-                                        Healthcare
-                                    </p>
-                                </div>
+                    </div>
+
+                    <div className="absolute bottom-0 right-0  z-30 hidden md:block">
+                        <div className="w-[220px] overflow-hidden rounded-tl-3xl rounded-br-3xl">
+                            <div className="h-[30%] bg-transparent" />
+                            <div className="bg-white p-5">
+
+                                <p className="text-[16px] mb-2 text-black font-bold">
+                                    Modern resources <br /> for advanced <br /> patient care
+                                </p>
+                                <h3 className="text-[20px] font-extrabold text-[#2B3990]">Since 1985</h3>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </section>
+
+
             <section>
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 h-full">
+                <div className="max-w-7xl mx-auto px-4 py-8 sm:py-16">
                     <motion.div
                         variants={containerVariants}
                         initial="hidden"
@@ -189,29 +202,19 @@ const Alliedhealthservice = () => {
                 </Marquee>
             </div>
 
-            <div className="max-w-7xl mx-auto py-16 ">
+            <div className="max-w-7xl mx-auto md:px-0 px-4 py-8 sm:py-16 ">
                 <Alliedhealthsidebar />
             </div>
 
-            <div className="max-w-7xl mx-auto py-20 ">
+            <div className="max-w-7xl mx-auto px-4 md:px-0  py-8 sm:py-16 ">
                 <div className="flex flex-col lg:flex-row gap-10">
                     {/* Slider Section */}
                     <div className="w-full lg:w-1/2">
-                        <div className="w-full">
-                            <Slider {...settings}>
-                                {customerSlides.map((img, idx) => (
-                                    <div key={idx}>
-                                        <div className="doc">
-                                            <Image
-                                                src={Main}
-                                                alt={`Consult ${idx + 1}`}
-                                                className="w-full h-auto rounded-3xl  "
-                                            />
-                                        </div>
-                                    </div>
-                                ))}
-                            </Slider>
-                        </div>
+                        <Image
+                            src={Main}
+                            alt=""
+                            className="w-full h-auto rounded-3xl h-[360px] w-full object-cover  "
+                        />
                     </div>
 
                     {/* Content Section */}
@@ -237,7 +240,7 @@ const Alliedhealthservice = () => {
                         </p>
 
                         {/* Metrics Row */}
-                        <div className="flex flex-col sm:flex-row gap-6 w-full mt-7">
+                        <div className="flex flex-col sm:flex-row gap-6 w-full ">
                             {/* Award */}
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
@@ -247,10 +250,17 @@ const Alliedhealthservice = () => {
                                 className="flex-1"
                             >
                                 <div className="flex items-center gap-3">
-                                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-                                        <p className="text-[#2B3990] text-xl font-extrabold">80+</p>
+                                    <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center">
+                                        <Image
+                                            src={patient}
+                                            alt="icon"
+                                            width={40}
+                                            height={40}
+                                            className="sm:w-[36px] sm:h-[36px]"
+                                        />
                                     </div>
-                                    <p className="text-white font-bold text-md">Winning Awards</p>
+                                    <p className="text-white font-bold text-md">World Class
+                                        Health Care</p>
                                 </div>
                             </motion.div>
 
@@ -263,10 +273,17 @@ const Alliedhealthservice = () => {
                                 className="flex-1"
                             >
                                 <div className="flex items-center gap-3">
-                                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-                                        <p className="text-[#2B3990] text-xl font-extrabold">24m</p>
+                                    <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center">
+                                        <Image
+                                            src={inter}
+                                            alt="icon"
+                                            width={40}
+                                            height={40}
+                                            className="sm:w-[36px] sm:h-[36px]"
+                                        />
                                     </div>
-                                    <p className="text-white font-bold text-md">Happy Clients</p>
+                                    <p className="text-white font-bold text-md">100% Patient
+                                        Satisfaction</p>
                                 </div>
                             </motion.div>
                         </div>
@@ -276,7 +293,7 @@ const Alliedhealthservice = () => {
             </div>
 
 
-            <div>
+            <div id="contactus">
                 <Bookappointment />
             </div>
         </div>

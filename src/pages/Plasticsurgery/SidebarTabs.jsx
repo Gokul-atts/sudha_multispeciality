@@ -11,13 +11,17 @@ import aboutOverview from "@/assets/specialites/plasticsurgery/plasticsurgery.we
 import Accordion from "../../components/Accordion";
 import DoctorSlider from "../../components/Slicksliderdoctor";
 import Faq from "../../components/Faq";
+import Link from "next/link";
+import BookAppointmentModal from "@/components/bookappointmentmodal";
+
+
 import one from "@/assets/about/1.svg";
 const serviceSections = [
   { id: "overview", label: "Overview" },
   { id: "facilities", label: "Facilities" },
   { id: "treatmentsandprocedures", label: "Treatments & Procedures" },
   { id: "doctors", label: "Doctors" },
-  { id: "faqs", label: "FAQs" },
+  // { id: "faqs", label: "FAQs" },
 ];
 
 const faq = [
@@ -170,7 +174,7 @@ const accordionData = [
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Skin grafting for burns and injuries</li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Hand reconstruction</li>
           </ul>
-          
+
         </div>
       </div>
     ),
@@ -200,7 +204,7 @@ const accordionData = [
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Tummy tuck (abdominoplasty)</li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Facelift surgery</li>
           </ul>
-          
+
         </div>
       </div>
     ),
@@ -227,9 +231,9 @@ const accordionData = [
             <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Skin grafting and flap surgery</li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Scar treatment and correction </li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Inhalation injury monitoring</li>
-           
+
           </ul>
-          
+
         </div>
       </div>
     ),
@@ -255,9 +259,9 @@ const accordionData = [
             <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Jaw realignment surgery</li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Cyst and tumour excision </li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> TMJ (temporomandibular joint) surgery</li>
-           
+
           </ul>
-         
+
         </div>
       </div>
     ),
@@ -270,6 +274,10 @@ const accordionData = [
 
 export default function SidebarTabs() {
   const [activeSection, setActiveSection] = useState('');
+  const [openModal, setOpenModal] = useState(false);
+
+  console.log("openModal", openModal);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -297,10 +305,10 @@ export default function SidebarTabs() {
   }, []);
 
   return (
-    <div className="flex flex-col-reverse md:flex-col lg:flex-row gap-8">
+    <div className="flex md:mt-0 mt-4 flex-col lg:flex-row gap-8">
 
       {/* Sidebar */}
-      <aside className="w-full lg:w-1/3 lg:sticky top-24 h-fit space-y-6">
+      <aside className="w-full lg:w-1/4 lg:sticky top-24 h-fit space-y-6">
         {/* Tabs Box */}
         <div className="bg-white  rounded-2xl p-4 sm:p-6">
           <h3 className="text-[16px]  text-center font-bold  mb-5">
@@ -345,6 +353,140 @@ export default function SidebarTabs() {
           </ul>
         </div>
 
+
+        <div className="hidden md:block">
+          {/* Sudha Hospital Box */}
+          <div
+            className="relative rounded-2xl overflow-hidden text-white text-center px-6 py-10"
+            style={{
+              backgroundImage: `linear-gradient(to bottom right, rgba(42, 61, 144, 0.9), rgba(12, 18, 42, 0.9)), url(${Frame.src})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <h3 className="text-[20px] font-bold mb-2">
+              Sudha Multispeciality Hospital
+            </h3>
+            <hr className="border-light" />
+            <ul className="space-y-4 text-start mt-4">
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} /> State-of-the-art facility for cosmetic and corrective surgeries.</li>
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} /> Compassionate care throughout the surgical journey and recovery.</li>
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />Skilled team ensuring safety, precision, and patient satisfaction.</li>
+
+            </ul>
+
+
+
+            <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => setOpenModal(true)}>
+              Book an Appointment <ArrowUpRight className="w-5 h-5" />
+            </button>
+            <BookAppointmentModal
+              open={openModal}
+              onClose={() => setOpenModal(false)}
+            />
+          </div>
+
+          {/* Find a Doctor Box */}
+          <Link href="/find-a-doctor" >
+
+            <div
+              className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
+              style={{
+                background: "radial-gradient(circle, #9EB36A 0%, #333C22 100%)",
+              }}
+            >
+              {/* Text Section */}
+              <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
+                <h3
+
+                  className="text-[24px] sm:text-xl  font-bold leading-snug"
+                >
+                  Find a <br className="hidden sm:block" /> Doctor?
+                </h3>
+              </div>
+
+              {/* Image Section */}
+              <div className="">
+                <Image
+                  src={doctorImg}
+                  alt="Doctor"
+                  className="rounded-lg w-full customposition  h-auto object-cover"
+                />
+              </div>
+            </div>
+          </Link>
+        </div>
+
+      </aside>
+
+      {/* Content Sections */}
+      <div className="flex-1 space-y-0">
+        {serviceSections.map(({ id, label }) => (
+          <section key={id} id={id} className="scroll-mt-32 rounded-xl">
+            {id === "overview" && (
+              <>
+                <Image src={aboutOverview} alt="aboutOverview" className="w-full h-[380px] rounded-2xl object-cover" />
+                <h2 className="text-[24px] mb-2 mt-4">
+                  Plastic and Reconstructive Surgery Services at the Best Hospital for Plastic Surgery
+                </h2>
+                <p className=" mb-3">
+                  The Plastic Surgery Department at Sudha Multispeciality Hospital offers both reconstructive and aesthetic surgical solutions tailored to enhance appearance and restore function. Our team of experienced plastic and cosmetic surgeons uses advanced techniques and precision to treat congenital deformities, trauma-related injuries, burns, and cosmetic concerns. We prioritise safety, comfort, and natural-looking outcomes, helping patients regain their confidence and quality of life through compassionate and expert care.
+                </p>
+
+              </>
+            )}
+
+
+
+            {id === "facilities" && (
+              <>
+                <h2 className="text-[24px] mt-5">Facilities</h2>
+                <ul>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> State-of-the-art operation theatres </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> Advanced tools for microsurgery and reconstruction  </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> Dedicated burn care unit </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> In-patient and post-operative care suites </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> 3D imaging for facial and body contouring planning  </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> Cosmetic consultation and counselling support </li>
+
+                </ul>
+              </>
+            )}
+
+
+
+            {id === "treatmentsandprocedures" && (
+              <div className="space-y-2 ">
+                <h2 className="text-[24px] mt-5">Treatments & Procedures</h2>
+
+                <Accordion accordionData={accordionData} />
+              </div>
+            )}
+
+            {id === "doctors" && (
+              <>
+                <h2 className="text-[24px] mt-5 pb-3">Doctors</h2>
+                <DoctorSlider specialty="Plastic Surgery" counter={2} />
+              </>
+            )}
+
+            {/* {id === "faqs" && (
+              <div className="mt-8">
+                <h2 className="text-[24px]  mt-5 pb-3">Frequently Asked Questions</h2>
+                <Faq faq={faq} />
+              </div>
+            )} */}
+          </section>
+        ))}
+      </div>
+
+      <div className="block md:hidden">
         {/* Sudha Hospital Box */}
         <div
           className="relative rounded-2xl overflow-hidden text-white text-center px-6 py-10"
@@ -367,100 +509,44 @@ export default function SidebarTabs() {
 
 
 
-          <button className="btn-sidebar inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px] hover:-translate-y-[3px] transition-transform duration-200">
+          <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => setOpenModal(true)}>
             Book an Appointment <ArrowUpRight className="w-5 h-5" />
           </button>
+          <BookAppointmentModal
+            open={openModal}
+            onClose={() => setOpenModal(false)}
+          />
         </div>
 
         {/* Find a Doctor Box */}
-        <div
-          className="mt-2 rounded-2xl px-6 py-6 flex flex-col sm:flex-row items-center justify-between text-white"
-          style={{
-            background: "radial-gradient(circle, #9EB36A 0%, #333C22 100%)",
-          }}
-        >
-          <div className="text-left mb-4 sm:mb-0 sm:mr-4">
-            <h3 className="text-[26px]  font-bold">
-              Find a<br />
-              Doctor?
-            </h3>
+        <Link href="/find-a-doctor" >
+
+          <div
+            className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
+            style={{
+              background: "radial-gradient(circle, #9EB36A 0%, #333C22 100%)",
+            }}
+          >
+            {/* Text Section */}
+            <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
+              <h3
+
+                className="text-[24px] sm:text-xl  font-bold leading-snug"
+              >
+                Find a <br className="hidden sm:block" /> Doctor?
+              </h3>
+            </div>
+
+            {/* Image Section */}
+            <div className="">
+              <Image
+                src={doctorImg}
+                alt="Doctor"
+                className="rounded-lg w-full customposition  h-auto object-cover"
+              />
+            </div>
           </div>
-
-          <div className="w-24 sm:w-32 md:w-40">
-            <Image
-              src={doctorImg}
-              alt="Doctor"
-              className="rounded-lg w-full customposition h-auto object-cover"
-            />
-          </div>
-        </div>
-      </aside>
-
-      {/* Content Sections */}
-      <div className="flex-1 space-y-0">
-        {serviceSections.map(({ id, label }) => (
-          <section key={id} id={id} className="scroll-mt-32 rounded-xl">
-            {id === "overview" && (
-              <>
-                <Image src={aboutOverview} alt="aboutOverview" className="w-full h-[400px] rounded-2xl object-cover" />
-                <h2 className="text-[24px] mb-4 mt-4">
-                  Plastic and Reconstructive Surgery Services at <span className="text-[#2B3990]"> Sudha</span>  Multispeciality Hospital
-                </h2>
-                <p className="text-gray-700 mb-3">
-                  The Plastic Surgery Department at Sudha Multispeciality Hospital offers both reconstructive and aesthetic surgical solutions tailored to enhance appearance and restore function. Our team of experienced plastic and cosmetic surgeons uses advanced techniques and precision to treat congenital deformities, trauma-related injuries, burns, and cosmetic concerns. We prioritise safety, comfort, and natural-looking outcomes, helping patients regain their confidence and quality of life through compassionate and expert care.
-                </p>
-
-              </>
-            )}
-
-
-
-            {id === "facilities" && (
-              <>
-                <h2 className="text-[24px] mt-5 mb-3">Facilities</h2>
-                <ul>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> State-of-the-art operation theatres </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> Advanced tools for microsurgery and reconstruction  </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> Dedicated burn care unit </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> In-patient and post-operative care suites </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> 3D imaging for facial and body contouring planning  </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> Cosmetic consultation and counselling support </li>
-
-                </ul>
-              </>
-            )}
-
-
-
-            {id === "treatmentsandprocedures" && (
-              <div className="space-y-2 ">
-                <h2 className="text-[24px] mt-5 mb-3">Treatments & Procedures</h2>
-
-                <Accordion accordionData={accordionData} />
-              </div>
-            )}
-
-            {id === "doctors" && (
-              <>
-                <h2 className="text-[24px]  mt-5 pb-3 pb-3">Doctors</h2>
-                <DoctorSlider />
-              </>
-            )}
-
-            {/* {id === "faqs" && (
-              <div className="mt-8">
-                <h2 className="text-[24px]  mt-5 pb-3 pb-3">FAQ</h2>
-                <Faq faq={faq} />
-              </div>
-            )} */}
-          </section>
-        ))}
+        </Link>
       </div>
     </div>
   );

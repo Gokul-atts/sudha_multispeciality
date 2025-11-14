@@ -3,14 +3,23 @@
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+
+
+// Assets
 import Frame from "@/assets/about/frame.png";
 import doctorImg from "@/assets/about/doctorImg.png";
 import aboutOverview from "@/assets/specialites/dental/dentist-doctor.webp";
+import Checklight from "@/assets/home/check-light.svg";
+
+// Components
 import Accordion from "../../components/Accordion";
 import DoctorSlider from "../../components/Slicksliderdoctor";
 import Faq from "../../components/Faq";
-import Checklight from "@/assets/home/check-light.svg";
-import one from "@/assets/about/1.svg";
+import BookAppointmentModal from "@/components/bookappointmentmodal";
+
+
+// Sections for Sidebar
 const serviceSections = [
   { id: "overview", label: "Overview" },
   { id: "facilities", label: "Facilities" },
@@ -19,223 +28,178 @@ const serviceSections = [
   { id: "faqs", label: "FAQs" },
 ];
 
+// FAQ Data
 const faq = [
   {
-    title: (
-      <>
-        <div className="flex gap-3">What is cardiology? </div>
-      </>
-    ),
+    title: "Which is the Best Dentistry and Oral Surgery Hospital in Erode?",
     content: (
-      <div className="text-sm text-gray-700 space-y-3">
-        <p>
-          A branch of medicine dealing with disorders of heart and blood
-          vessels. The work of our cardiologists for adults includes diagnosis
-          and treatment of adult congenital heart disease, heart failure,
-          coronary artery disease, valvular heart disease and arrhythmias. All
-          the necessary investigations like ECG, Echocardiogram, Treadmill test,
-          Holter monitoring, Ambulatory BP monitoring, tilt table testing,
-          cardiac CT, cardiac MRI, and nuclear heart scanning are available to
-          provide you with the best adult cardiology treatment at our
-          multispeciality hospital in Erode.
-        </p>
-        <h4 className="font-semibold">
-          Diagnostic Tests Available in our Cardiology Hospital:
-        </h4>
-        <h2 className="font-semibold text-[#2B3990]">ECG:</h2>
-        <p>
-          Cardiac problems such as heart attack, heart block, etc. can be
-          detected by measuring the electrical activity of the heart, which is
-          done by electrocardiogram (ECG).
-        </p>
-        <h2 className="font-semibold text-[#2B3990]">ECHOCARDIOGRAM:</h2>
-        <p>
-          The structure and function of the heart can be assessed by moving
-          images produced by sound waves. Various heart diseases can be
-          diagnosed by this readily available investigation.
-        </p>
-        <h2 className="font-semibold text-[#2B3990]">TREADMILL TEST:</h2>
-        <p>
-          Patients will walk on a treadmill at graded levels and their 12- lead
-          ECG will be monitored for heart rate, ST-T segment changes. The
-          presence or absence of changes will be interpreted accordingly to
-          detect heart problems like coronary artery disease, heart block,
-          etc..., that helps in determining the cardiology treatment that is to
-          proceed further accordingly.
-        </p>
-        <h2 className="font-semibold text-[#2B3990]">
-          STRESS ECHOCARDIOGRAPHY:
-        </h2>
-        <p>
-          Heart is exerted by exercise or medicines and its activity is
-          monitored by echocardiography. For those who are not able to walk to
-          perform treadmill test, this is a very useful test to rule out
-          coronary artery disease.
-        </p>
-      </div>
+      <p>
+        The best dental and oral surgery hospital should offer advanced treatments, experienced dentists, and facilities for both routine care and complex surgeries. In Erode, Sudha Multispeciality Hospital is known as one of the best dental hospitals, providing comprehensive dental treatments and oral surgery with expert care from the best dentists in Erode.
+      </p>
     ),
   },
   {
-    title: (
-      <>
-        <div className="flex gap-3">
-
-          What is the main cause of heart problems?
-        </div>
-      </>
+    title: "What does oral surgery mean in dentistry?",
+    content: (
+      <p>
+        Oral surgery refers to surgical procedures performed in the mouth, such as wisdom tooth extraction, dental implants, jaw correction, or treatment of oral infections. At Sudha Multispeciality Hospital, patients receive specialized oral surgery services performed by skilled dental surgeons, ensuring safe and effective outcomes.
+      </p>
     ),
-    content: <p>Details coming soon.</p>,
   },
   {
-    title: (
-      <>
-        <div className="flex gap-3">
-          {" "}
-          What is the main cause of heart problems?
-        </div>
-      </>
+    title: "How do I find the best dentist in Erode?",
+    content: (
+      <p>
+        Finding the best dentist involves looking for qualifications, experience, modern facilities, and patient reviews. A good dentist provides personalized treatment and ensures comfort throughout the procedure. Sudha Multispeciality Hospital houses some of the best dentists in Erode, offering advanced dental care and treatments under one roof.
+      </p>
     ),
-    content: <p>Details coming soon.</p>,
   },
   {
-    title: (
-      <>
-        <div className="flex gap-3">
-          {" "}
-          What is the main cause of heart problems?
-        </div>
-      </>
+    title: "What is the cost of cavity removal?",
+    content: (
+      <p>
+        The cost of cavity removal depends on the size of the cavity, the material used for filling, and the overall treatment required. While prices may vary, at Sudha Multispeciality Hospital, the best dental hospital in Erode, patients receive the best dental treatments at affordable prices with expert guidance.
+      </p>
     ),
-    content: <p>Details coming soon.</p>,
   },
   {
-    title: (
-      <>
-        <div className="flex gap-3">
-          {" "}
-          What is the main cause of heart problems?
-        </div>
-      </>
+    title: "What is root canal treatment?",
+    content: (
+      <p>
+        A root canal treatment is a dental procedure used to treat infection or damage inside the tooth, saving it from extraction. It involves cleaning, disinfecting, and sealing the affected tooth. At Sudha Multispeciality Hospital, one of the best dental hospitals in Erode, root canal treatments are performed using advanced techniques to ensure long-term tooth health.
+      </p>
     ),
-    content: <p>Details coming soon.</p>,
   },
   {
-    title: (
-      <>
-        <div className="flex gap-3">
-          {" "}
-          What is the main cause of heart problems?
-        </div>
-      </>
+    title: "Is root canal treatment a painful procedure?",
+    content: (
+      <p>
+        With modern techniques and anesthesia, root canal treatment is generally not painful. Most patients feel only mild discomfort during or after the procedure. At Sudha Multispeciality Hospital, the best dentists in Erode ensure pain-free dental care, making root canal treatments comfortable and effective.
+      </p>
     ),
-    content: <p>Details coming soon.</p>,
   },
   {
-    title: (
-      <>
-        <div className="flex gap-3">
-          {" "}
-          What is the main cause of heart problems?
-        </div>
-      </>
+    title: "What is the treatment for a tooth gap?",
+    content: (
+      <p>
+        Tooth gaps can be treated with options such as braces, aligners, dental bonding, veneers, or implants, depending on the severity and patient’s preference. At Sudha Multispeciality Hospital, patients receive personalized advice and some of the best dental treatments in Erode for correcting tooth gaps and restoring confident smiles.
+      </p>
     ),
-    content: <p>Details coming soon.</p>,
   },
 ];
 
-
-
+// Accordion Data
 const accordionData = [
   {
-    title: (
-      <>
-        <div className="flex gap-3">
-          {/* <Image src={one} alt="Dentistry and Oral Surgery" />  */}
-          Restorative & Preventive Dentistry
-        </div>
-      </>
-    ),
+    title: "Restorative & Preventive Dentistry",
     content: (
-      <div className="text-sm text-gray-700 space-y-3">
+      <>
         <p>
-          Comprehensive care to preserve natural teeth, restore functionality, and prevent further decay or damage. Every treatment plan is tailored to individual dental needs and comfort. Early intervention and regular check-ups are key to maintaining oral health.
+          Comprehensive care to preserve natural teeth, restore functionality,
+          and prevent further decay or damage. Every treatment plan is tailored
+          to individual dental needs and comfort. Early intervention and regular
+          check-ups are key to maintaining oral health.
         </p>
-
-<div>
-          <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} /> Dental crowns and bridges </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Tooth-colored fillings </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Fluoride treatments and dental sealants </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Routine dental cleanings and oral exams </li>
-            
-          </ul>
-        </div>
-        
-      </div>
+        <ul className="space-y-3 mt-3">
+          {[
+            "Dental crowns and bridges",
+            "Tooth-coloured fillings",
+            "Fluoride treatments and dental sealants",
+            "Routine dental cleanings and oral exams",
+          ].map((item, i) => (
+            <li key={i} className="flex items-center gap-2 text-sm font-semibold">
+              <Image src={Checklight} alt="tick" width={20} height={20} />
+              {item}
+            </li>
+          ))}
+        </ul>
+      </>
     ),
   },
   {
-    title: (
-      <>
-        <div className="flex gap-3">
-          {/* <Image src={one} alt="Dentistry and Oral Surgery" /> */}
-          Cosmetic Dentistry
-        </div>
-      </>
-    ),
+    title: "Cosmetic Dentistry",
     content: (
-      <div className="text-sm text-gray-700 space-y-3">
+      <>
         <p>
-          We offer smile-enhancing procedures designed to improve the appearance, alignment, and brightness of your teeth. Using modern tools and materials, our cosmetic dentistry ensures natural-looking, durable results. These treatments boost self-confidence and improve oral aesthetics without compromising function. Every smile makeover is custom designed for your face and lifestyle.
+          We offer smile-enhancing procedures designed to improve the appearance,
+          alignment, and brightness of your teeth. Using modern tools and
+          materials, our cosmetic dentistry ensures natural-looking, durable
+          results.
         </p>
-        <div>
-          <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} /> Teeth whitening and polishing </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Dental veneers </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Smile correction and alignment </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Cosmetic reshaping and contouring </li>
-            
-          </ul>
-          
-        </div>
-      </div>
+        <ul className="space-y-3 mt-3">
+          {[
+            "Teeth whitening and polishing",
+            "Dental veneers",
+            "Smile correction and alignment",
+            "Cosmetic reshaping and contouring",
+          ].map((item, i) => (
+            <li key={i} className="flex items-center gap-2 text-sm font-semibold">
+              <Image src={Checklight} alt="tick" width={20} height={20} />
+              {item}
+            </li>
+          ))}
+        </ul>
+      </>
     ),
   },
-
   {
-    title: (
+    title: "Oral Surgery & Implants",
+    content: (
       <>
-        <div className="flex gap-3">
-          {/* <Image src={one} alt="Dentistry and Oral Surgery" /> */}
-          Specialised Dental Care
-        </div>
+        <p>
+          Dental implants offer permanent tooth replacement, restoring both appearance and chewing function. We also address facial and jaw corrections. Our oral surgery unit handles everything from simple extractions to complex implant placements with precision and care. With sedation support and sterile surgical protocols, we ensure safety and patient comfort throughout.
+        </p>
+        <ul className="space-y-3 mt-3">
+          {[
+            "Dental implants",
+            "Tooth extractions and minor oral surgeries",
+            "Bone grafting",
+            "Rhinoplasty and maxillofacial procedures",
+          ].map((item, i) => (
+            <li key={i} className="flex items-center gap-2 text-sm font-semibold">
+              <Image src={Checklight} alt="tick" width={20} height={20} />
+              {item}
+            </li>
+          ))}
+        </ul>
       </>
     ),
+  },
+  {
+    title: "Specialised Dental Care",
     content: (
-      <div className="text-sm text-gray-700 space-y-3">
+      <>
         <p>
           We bring together specialists from various dental disciplines to offer targeted and age-appropriate care. Each specialist follows an integrated treatment approach for optimal results and long-term oral health maintenance.
         </p>
-        <div>
-          <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} /> <b>Prosthodontics -</b>Replacing missing teeth with crowns, dentures, and bridges </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> <b>Orthodontics -</b>Braces and aligners for teeth alignment </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> <b>Pedodontics -</b>Paediatric dental care </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> <b>Endodontics -</b>Root canal treatment </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> <b>Periodontics -</b>Gum disease treatment and maintenance </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> <b>Laser Dentistry -</b>Minimally invasive treatments for soft tissue and gum procedures </li>
-            
-          </ul>
-          
-        </div>
-      </div>
+        <ul className="space-y-3 mt-3">
+          {[
+            "Prosthodontics – Replacing missing teeth with crowns, dentures, and bridges",
+            "Orthodontics – Braces and aligners for teeth alignment",
+            "Pedodontics – Paediatric dental care",
+            "Endodontics – Root canal treatment",
+            "Periodontics – Gum disease treatment and maintenance",
+            "Laser Dentistry – Minimally invasive treatments for soft tissue and gum procedures",
+          ].map((item, i) => (
+            <li key={i} className="flex items-center gap-2 text-sm font-semibold">
+              <Image src={Checklight} alt="tick" width={20} height={20} />
+              {item}
+            </li>
+          ))}
+        </ul>
+      </>
     ),
   },
 ];
 
 export default function SidebarTabs() {
-  const [activeSection, setActiveSection] = useState('');
+  const [activeSection, setActiveSection] = useState("");
+  const [openModal, setOpenModal] = useState(false);
 
+  console.log("openModal", openModal);
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Observe active section
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -245,7 +209,7 @@ export default function SidebarTabs() {
           }
         });
       },
-      { rootMargin: '-20% 0px -60% 0px' }
+      { rootMargin: "-20% 0px -60% 0px" }
     );
 
     serviceSections.forEach(({ id }) => {
@@ -256,52 +220,48 @@ export default function SidebarTabs() {
     return () => observer.disconnect();
   }, []);
 
-
+  // Enable smooth scrolling
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
   }, []);
 
-
   return (
-    <div className="flex flex-col-reverse md:flex-col lg:flex-row gap-8">
-
+    <div className="flex md:mt-0 mt-4 flex-col lg:flex-row gap-8">
       {/* Sidebar */}
-      <aside className="w-full lg:w-1/3 lg:sticky top-24 h-fit space-y-6">
-        {/* Tabs Box */}
-        <div className="bg-white  rounded-2xl p-4 sm:p-6">
-          <h3 className="text-[16px]  text-center font-bold  mb-5">
+      <aside className="w-full lg:w-1/4 lg:sticky top-24 h-fit space-y-6">
+        {/* Tabs */}
+        <div className="bg-white rounded-2xl p-4 sm:p-6">
+          <h3 className="text-lg text-center font-bold mb-5">
             Advanced Dentistry Solutions
           </h3>
           <ul className="space-y-3">
             {serviceSections.map((item) => {
               const isActive = activeSection === item.id;
-
               return (
                 <li key={item.id}>
                   <a
                     href={`#${item.id}`}
                     onClick={() => setActiveSection(item.id)}
-                    className="flex justify-between items-center group transition duration-300 ease-in-out"
+                    className="flex justify-between items-center group transition"
                   >
                     <div className="flex items-center gap-4">
                       <span
-                        className={`w-2 h-2 rounded-full transition-colors duration-300 ${isActive ? 'bg-[#2b3990]' : 'bg-gray-300'
+                        className={`w-2 h-2 rounded-full ${isActive ? "bg-[#2B3990]" : "bg-gray-300"
                           }`}
                       />
                       <span
-                        className={`text-[15px]  font-bold transition-colors duration-300 ${isActive ? 'text-[#2b3990]' : 'text-black'
+                        className={`text-sm font-bold ${isActive ? "text-[#2B3990]" : "text-black"
                           } group-hover:text-[#2A3D90]`}
                       >
                         {item.label}
                       </span>
                     </div>
-
                     {isActive ? (
-                      <div className="w-8 h-8 rounded-full bg-[#2A3D90] flex items-center justify-center transition-all duration-300 transform group-hover:scale-110">
-                        <ArrowUpRight className="w-4 h-4 text-white transition" />
+                      <div className="w-8 h-8 rounded-full bg-[#2A3D90] flex items-center justify-center">
+                        <ArrowUpRight className="w-4 h-4 text-white" />
                       </div>
                     ) : (
-                      <ArrowUpRight className="w-4 h-4 text-black group-hover:text-[#2b3990] transition-all duration-300 transform group-hover:scale-110" />
+                      <ArrowUpRight className="w-4 h-4 text-black group-hover:text-[#2B3990]" />
                     )}
                   </a>
                   <hr className="my-3 border-t border-gray-100" />
@@ -311,128 +271,208 @@ export default function SidebarTabs() {
           </ul>
         </div>
 
-        {/* Sudha Hospital Box */}
-        <div
-          className="relative rounded-2xl overflow-hidden text-white text-center px-6 py-10"
-          style={{
-            backgroundImage: `linear-gradient(to bottom right, rgba(42, 61, 144, 0.9), rgba(12, 18, 42, 0.9)), url(${Frame.src})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          <h3 className="text-[20px] font-bold mb-2">
-            Sudha Multispeciality Hospital
-          </h3>
-          <hr className="border-light" />
-
-          <ul className="space-y-4 text-start mt-4">
-            <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />Child-friendly environment with expert paediatric dental care </li>
-            <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />Painless root canal and laser-assisted dental procedures</li>
-            <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />Skilled dental surgeons offering comprehensive treatments under one roof</li>
-          </ul>
-          
-
-
-          <button className="btn-sidebar inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px] hover:-translate-y-[3px] transition-transform duration-200">
-            Book an Appointment <ArrowUpRight className="w-5 h-5" />
-          </button>
-        </div>
-
-        {/* Find a Doctor Box */}
-        <div
-          className="mt-2 rounded-2xl px-6 py-6 flex flex-col sm:flex-row items-center justify-between text-white"
-          style={{
-            background: "radial-gradient(circle, #9EB36A 0%, #333C22 100%)",
-          }}
-        >
-          <div className="text-left mb-4 sm:mb-0 sm:mr-4">
-            <h3 className="text-[26px]  font-bold">
-              Find a<br />
-              Doctor?
+        <div className="hidden md:block">
+          {/* Hospital Info */}
+          <div
+            className="relative rounded-2xl overflow-hidden text-white text-center px-6 py-10"
+            style={{
+              backgroundImage: `linear-gradient(to bottom right, rgba(42,61,144,0.9), rgba(12,18,42,0.9)), url(${Frame.src})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <h3 className="text-xl font-bold mb-2">
+              Sudha Multispeciality Hospital
             </h3>
-          </div>
-
-          <div className="w-24 sm:w-32 md:w-40">
-            <Image
-              src={doctorImg}
-              alt="Doctor"
-              className="rounded-lg w-full customposition h-auto object-cover"
+            <hr />
+            <ul className="space-y-3 text-left mt-4">
+              {[
+                "Child-friendly environment with expert paediatric dental care",
+                "Painless root canal and laser-assisted dental procedures",
+                "Skilled dental surgeons offering comprehensive treatments under one roof",
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-2 text-sm font-semibold">
+                  <Image src={Checklight} alt="tick" width={14} height={14} />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => setOpenModal(true)}>
+              Book an Appointment <ArrowUpRight className="w-5 h-5" />
+            </button>
+            <BookAppointmentModal
+              open={openModal}
+              onClose={() => setOpenModal(false)}
             />
           </div>
+
+          {/* Find a Doctor */}
+          <Link href="/find-a-doctor" >
+
+            <div
+              className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
+              style={{
+                background: "radial-gradient(circle, #9EB36A 0%, #333C22 100%)",
+              }}
+            >
+              {/* Text Section */}
+              <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
+                <h3
+
+                  className="text-[24px] sm:text-xl  font-bold leading-snug"
+                >
+                  Find a <br className="hidden sm:block" /> Doctor?
+                </h3>
+              </div>
+
+              {/* Image Section */}
+              <div className="">
+                <Image
+                  src={doctorImg}
+                  alt="Doctor"
+                  className="rounded-lg w-full customposition  h-auto object-cover"
+                />
+              </div>
+            </div>
+          </Link>
         </div>
+
       </aside>
 
-      {/* Content Sections */}
-      <div className="flex-1 space-y-0">
+      {/* Main Content */}
+      <div className="flex-1 space-y-10">
         {serviceSections.map(({ id, label }) => (
           <section key={id} id={id} className="scroll-mt-32 rounded-xl">
             {id === "overview" && (
               <>
-                <Image src={aboutOverview} alt="aboutOverview" className="w-full h-[400px] rounded-2xl object-cover " />
-                <div className="mt-6 space-y-4">
-
-                
-                <h2 className="text-[24px] mb-3 mt-5">
-                  Comprehensive Dentistry and Oral Surgery in
-                  <span className="text-[#2B3990]"> Erode</span> at Sudha Multispeciality Hospital
-                </h2>
-                <p className="text-gray-700">
-                  The Department of Dentistry and Oral Surgery at Sudha Multispeciality Hospital provides advanced dental care through modern technology and 
-                  a team of skilled dental surgeons. From routine dental check-ups to complex oral surgeries, our services cover preventive, restorative, cosmetic, 
-                  and surgical dental solutions. We ensure a painless and comfortable experience for patients of all ages with strict hygiene protocols and patient-focused care. 
-                  Whether it's cosmetic enhancement, tooth restoration, or oral rehabilitation, we offer tailored treatment plans under one roof.
-                </p>
+                <Image
+                  src={aboutOverview}
+                  alt="Dentistry Overview"
+                  className="w-full h-[380px] rounded-2xl object-cover"
+                />
+                <div className="mt-6 space-y-2">
+                  <h2 className="text-[24px] mb-3">
+                    Best Dental Hospital in Erode Providing{" "}
+                    <span className="text-[#2B3990]">Advanced Care</span> for
+                    Dental Problems
+                  </h2>
+                  <p>
+                    The Department of Dentistry and Oral Surgery at Sudha Multispeciality Hospital provides advanced dental care through modern technology and a team of the best dentists and dental surgeons in Erode. From routine dental check-ups to complex oral surgeries, our services cover preventive, restorative, cosmetic, and surgical dental solutions. We ensure a painless and comfortable experience for patients of all ages with strict hygiene protocols and patient-focused care. Whether it's cosmetic enhancement, tooth restoration, or oral rehabilitation, we offer th best dental treatments in Erode under one roof.
+                  </p>
                 </div>
               </>
             )}
 
-
-
             {id === "facilities" && (
-              <>
-                <h2 className="text-[24px] mt-5 mb-3">Facilities</h2>
-                <ul>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> <b>Advanced Inspection Chair</b>with ergonomic design for comfort and accessibility
-                  </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> <b>OPG (Orthopantomography):</b>Complete digital dental X-ray for panoramic view of teeth and jaw
-                  </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
-                    <b>RVG (Radio Visuographic):</b>High-resolution imaging for root canal therapy, implants, and bone density analysis
-                  </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
-                    <b>Intraoral Camera:</b>Real-time visualisation for precise diagnosis and patient education
-                  </li>
+              <div className="space-y-2">
+                <h2 className="text-[24px] ">Facilities</h2>
+                <ul className="space-y-4">
+                  {[
+                    "Advanced Inspection Chair with ergonomic design for comfort and accessibility",
+                    "OPG (Orthopantomography): Complete digital dental X-ray for panoramic view of teeth and jaw",
+                    "RVG (Radio Visuographic): High-resolution imaging for root canal therapy, implants, and bone density analysis",
+                    "Intraoral Camera: Real-time visualisation for precise diagnosis and patient education",
+                  ].map((item, i) => (
+                    <li
+                      key={i}
+                      className="flex gap-2 md:items-center items-start text-[#5E566A] text-sm font-semibold"
+                    >
+                      <div className="w-2 h-2 rounded-full bg-[#2B3990]" />
+                      {item}
+                    </li>
+                  ))}
                 </ul>
-              </>
+              </div>
             )}
 
             {id === "services" && (
               <div className="space-y-2">
-                <h2 className="text-[24px] mt-5 mb-3">Services</h2>
-
+                <h2 className="text-[24px] mt-5">Services</h2>
                 <Accordion accordionData={accordionData} />
               </div>
             )}
 
             {id === "doctors" && (
-              <>
-                <h2 className="text-[24px]  mt-5 pb-3">Doctors</h2>
-                <DoctorSlider />
-              </>
+              <div className="space-y-2">
+                <h2 className="text-[24px] mt-5">Doctors</h2>
+                <DoctorSlider specialty="Dental" max={2} counter={2} />
+              </div>
             )}
 
-            {/* {id === "faqs" && (
-              <div className="mt-8">
-                <h2 className="text-[30px] font-semibold mt-5 pb-3">FAQ</h2>
+            {id === "faqs" && (
+              <div className="space-y-2">
+                <h2 className="text-[24px] mt-5">Frequently Asked Questions</h2>
                 <Faq faq={faq} />
               </div>
-            )} */}
+            )}
           </section>
         ))}
+      </div>
+
+      <div className="block md:hidden">
+        {/* Hospital Info */}
+        <div
+          className="relative rounded-2xl overflow-hidden text-white text-center px-6 py-10"
+          style={{
+            backgroundImage: `linear-gradient(to bottom right, rgba(42,61,144,0.9), rgba(12,18,42,0.9)), url(${Frame.src})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <h3 className="text-xl font-bold mb-2">
+            Sudha Multispeciality Hospital
+          </h3>
+          <hr />
+          <ul className="space-y-3 text-left mt-4">
+            {[
+              "Child-friendly environment with expert paediatric dental care",
+              "Painless root canal and laser-assisted dental procedures",
+              "Skilled dental surgeons offering comprehensive treatments under one roof",
+            ].map((item, i) => (
+              <li key={i} className="flex items-start gap-2 text-sm font-semibold">
+                <Image src={Checklight} alt="tick" width={14} height={14} />
+                {item}
+              </li>
+            ))}
+          </ul>
+          <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => setOpenModal(true)}>
+            Book an Appointment <ArrowUpRight className="w-5 h-5" />
+          </button>
+          <BookAppointmentModal
+            open={openModal}
+            onClose={() => setOpenModal(false)}
+          />
+        </div>
+
+        {/* Find a Doctor */}
+        <Link href="/find-a-doctor" >
+
+          <div
+            className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
+            style={{
+              background: "radial-gradient(circle, #9EB36A 0%, #333C22 100%)",
+            }}
+          >
+            {/* Text Section */}
+            <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
+              <h3
+
+                className="text-[24px] sm:text-xl  font-bold leading-snug"
+              >
+                Find a <br className="hidden sm:block" /> Doctor?
+              </h3>
+            </div>
+
+            {/* Image Section */}
+            <div className="">
+              <Image
+                src={doctorImg}
+                alt="Doctor"
+                className="rounded-lg w-full customposition  h-auto object-cover"
+              />
+            </div>
+          </div>
+        </Link>
       </div>
     </div>
   );

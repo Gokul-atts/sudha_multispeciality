@@ -7,9 +7,13 @@ import { useEffect, useState } from "react";
 import Checklight from "@/assets/home/check-light.svg";
 import Frame from "@/assets/about/frame.png";
 import doctorImg from "@/assets/about/doctorImg.png";
-import aboutOverview from "@/assets/specialites/neurology/neurology.webp";
+import aboutOverview from "@/assets/specialites/neurology/neurology-overview.webp";
 import Accordion from "../../components/Accordion";
 import DoctorSlider from "../../components/Slicksliderdoctor";
+import Link from "next/link";
+import BookAppointmentModal from "@/components/bookappointmentmodal";
+
+
 import Faq from "../../components/Faq";
 import one from "@/assets/about/1.svg";
 const serviceSections = [
@@ -24,56 +28,14 @@ const faq = [
   {
     title: (
       <>
-        <div className="flex gap-3">What is cardiology? </div>
+        <div className="flex gap-3">Can you recover from neurological issues?  </div>
       </>
     ),
     content: (
-      <div className="text-sm text-gray-700 space-y-3">
-        <p>
-          A branch of medicine dealing with disorders of heart and blood
-          vessels. The work of our cardiologists for adults includes diagnosis
-          and treatment of adult congenital heart disease, heart failure,
-          coronary artery disease, valvular heart disease and arrhythmias. All
-          the necessary investigations like ECG, Echocardiogram, Treadmill test,
-          Holter monitoring, Ambulatory BP monitoring, tilt table testing,
-          cardiac CT, cardiac MRI, and nuclear heart scanning are available to
-          provide you with the best adult cardiology treatment at our
-          multispeciality hospital in Erode.
-        </p>
-        <h4 className="font-semibold">
-          Diagnostic Tests Available in our Cardiology Hospital:
-        </h4>
-        <h2 className="font-semibold text-[#2B3990]">ECG:</h2>
-        <p>
-          Cardiac problems such as heart attack, heart block, etc. can be
-          detected by measuring the electrical activity of the heart, which is
-          done by electrocardiogram (ECG).
-        </p>
-        <h2 className="font-semibold text-[#2B3990]">ECHOCARDIOGRAM:</h2>
-        <p>
-          The structure and function of the heart can be assessed by moving
-          images produced by sound waves. Various heart diseases can be
-          diagnosed by this readily available investigation.
-        </p>
-        <h2 className="font-semibold text-[#2B3990]">TREADMILL TEST:</h2>
-        <p>
-          Patients will walk on a treadmill at graded levels and their 12- lead
-          ECG will be monitored for heart rate, ST-T segment changes. The
-          presence or absence of changes will be interpreted accordingly to
-          detect heart problems like coronary artery disease, heart block,
-          etc..., that helps in determining the cardiology treatment that is to
-          proceed further accordingly.
-        </p>
-        <h2 className="font-semibold text-[#2B3990]">
-          STRESS ECHOCARDIOGRAPHY:
-        </h2>
-        <p>
-          Heart is exerted by exercise or medicines and its activity is
-          monitored by echocardiography. For those who are not able to walk to
-          perform treadmill test, this is a very useful test to rule out
-          coronary artery disease.
-        </p>
-      </div>
+      <p>
+        Recovery from neurological issues depends on the type and severity of the condition. With early diagnosis and appropriate interventions, patients can experience significant improvement. Sudha Multispeciality Hospital, recognised as one of the leading neurology hospitals in Erode, offers personalised treatment plans under the guidance of the best neurologists in Erode.
+      </p>
+
     ),
   },
   {
@@ -81,66 +43,66 @@ const faq = [
       <>
         <div className="flex gap-3">
 
-          What is the main cause of heart problems?
+          What are the serious symptoms of neurological disorders?
         </div>
       </>
     ),
-    content: <p>Details coming soon.</p>,
+    content: <p>Serious neurological symptoms include sudden weakness, numbness, severe headaches, loss of coordination, seizures, or difficulties in speech and vision. Sudha Multispeciality Hospital, the best hospital for brain, spinal cord, and nervous system treatment in Erode, provides comprehensive diagnostics and immediate care for such conditions. </p>,
   },
   {
     title: (
       <>
         <div className="flex gap-3">
           {" "}
-          What is the main cause of heart problems?
+          Are neurological problems treatable?
         </div>
       </>
     ),
-    content: <p>Details coming soon.</p>,
+    content: <p>Many neurological problems are treatable with a combination of medications, therapies, and surgical interventions. Sudha Multispeciality Hospital, offering the best treatment for stroke in Erode and other neurological disorders, ensures advanced care by expert neurologists. </p>,
   },
   {
     title: (
       <>
         <div className="flex gap-3">
           {" "}
-          What is the main cause of heart problems?
+          Which hospital in Erode is best for treating neurological problems?
         </div>
       </>
     ),
-    content: <p>Details coming soon.</p>,
+    content: <p>Sudha Multispeciality Hospital is regarded as one of the top neurology hospitals in Erode, equipped with state-of-the-art facilities and experienced neurologists for treating a wide range of brain, spinal cord, and nervous system disorders. </p>,
   },
   {
     title: (
       <>
         <div className="flex gap-3">
           {" "}
-          What is the main cause of heart problems?
+          Can stress lead to neurological issues?
         </div>
       </>
     ),
-    content: <p>Details coming soon.</p>,
+    content: <p>Prolonged stress can contribute to neurological problems, including headaches, nerve pain, and sleep disturbances. The best neurologists in Erode at Sudha Multispeciality Hospital provide assessment and treatment to manage stress-related neurological conditions.</p>,
   },
   {
     title: (
       <>
         <div className="flex gap-3">
           {" "}
-          What is the main cause of heart problems?
+          How do neurological problems begin?
         </div>
       </>
     ),
-    content: <p>Details coming soon.</p>,
+    content: <p>Neurological problems can begin due to genetic factors, infections, trauma, lifestyle-related issues, or age-related degeneration. Sudha Multispeciality Hospital, recognised as the best hospital for stroke treatment in Erode, offers early detection and intervention to prevent progression. </p>,
   },
   {
     title: (
       <>
         <div className="flex gap-3">
           {" "}
-          What is the main cause of heart problems?
+          Can stress cause nerve pain?
         </div>
       </>
     ),
-    content: <p>Details coming soon.</p>,
+    content: <p>Chronic stress can aggravate nerve pain or trigger neuropathic symptoms. At Sudha Multispeciality Hospital, one of the leading neurology hospitals in Erode, patients receive comprehensive care and personalised treatment from the best neurologists in Erode. </p>,
   },
 ];
 
@@ -159,13 +121,13 @@ const accordionData = [
     content: (
       <div className="text-sm space-y-3">
         <p>
-          Specialised in rapid stroke diagnosis, clot removal, and vascular surgeries to restore blood flow and prevent disability. Our multidisciplinary approach ensures timely intervention during the golden hour for better outcomes. We also provide rehabilitation support for post-stroke recovery. 
+          Specialised in rapid stroke diagnosis, clot removal, and vascular surgeries to restore blood flow and prevent disability. Our multidisciplinary approach ensures timely intervention during the golden hour for better outcomes. We also provide rehabilitation support for post-stroke recovery.
         </p>
         <p className="mt-3 font-bold text-primary-blue">Key Procedures: </p>
 
         <div>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Interventional Neuroradiology for Subarachnoid Haemorrhage & AVM </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Interventional Neuroradiology for Subarachnoid Haemorrhage & AVM  </li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Carotid Angioplasty for Carotid Artery Stenosis </li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Neurovascular Surgery including Aneurysm and AVM clipping </li>
           </ul>
@@ -179,16 +141,16 @@ const accordionData = [
       <>
         <div className="flex gap-3">
           {/* <Image src={one} alt="Neurology" /> */}
-          Movement Disorders & Parkinson’s Care 
+          Movement Disorders & Parkinson’s Care
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p>
-          We offer advanced treatments for Parkinson’s, tremors, and dystonia using non-invasive and surgical options. Treatment plans are tailored based on the stage of the disease and patient needs. Our care focuses on improving motor control and enhancing life quality. 
+          We offer advanced treatments for Parkinson’s, tremors, and dystonia using non-invasive and surgical options. Treatment plans are tailored based on the stage of the disease and patient needs. Our care focuses on improving motor control and enhancing life quality.
         </p>
-        <p className="mt-3 font-bold text-primary-blue">Key Treatments: </p>
+
 
         {/* <div>
           <ul className="space-y-4">
@@ -214,9 +176,9 @@ const accordionData = [
     content: (
       <div className="text-sm  space-y-3">
         <p>
-          Comprehensive epilepsy care for uncontrolled seizures including surgical options for drug-resistant cases. Our diagnostic tools allow for pinpointing seizure origin for effective management. We also support long-term lifestyle and medication guidance for patients. 
+          Comprehensive epilepsy care for uncontrolled seizures including surgical options for drug-resistant cases. Our diagnostic tools allow for pinpointing seizure origin for effective management. We also support long-term lifestyle and medication guidance for patients.
         </p>
-       
+
         {/* <div>
           <ul className="space-y-4">
             <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Video EEG Monitoring</li>
@@ -274,7 +236,8 @@ const accordionData = [
           <ul className="space-y-4">
             <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Surgery for Spinal Cord Tumours</li>
             <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Intraoperative Monitoring for Complex Surgeries</li>
-           
+            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Sphincter EMG for Urinary & Sexual Dysfunction </li>
+
           </ul>
 
 
@@ -318,6 +281,10 @@ const accordionData = [
 
 export default function SidebarTabs() {
   const [activeSection, setActiveSection] = useState('');
+  const [openModal, setOpenModal] = useState(false);
+
+  console.log("openModal", openModal);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -345,10 +312,10 @@ export default function SidebarTabs() {
   }, []);
 
   return (
-    <div className="flex flex-col-reverse md:flex-col lg:flex-row gap-8">
+    <div className="flex md:mt-0 mt-4 flex-col lg:flex-row gap-8">
 
       {/* Sidebar */}
-      <aside className="w-full lg:w-1/3 lg:sticky top-24 h-fit space-y-6">
+      <aside className="w-full lg:w-1/4 lg:sticky top-24 h-fit space-y-6">
         {/* Tabs Box */}
         <div className="bg-white  rounded-2xl p-4 sm:p-6">
           <h3 className="text-[16px]  text-center font-bold  mb-5">
@@ -393,6 +360,158 @@ export default function SidebarTabs() {
           </ul>
         </div>
 
+
+        <div className="hidden md:block">
+          {/* Sudha Hospital Box */}
+          <div
+            className="relative rounded-2xl overflow-hidden text-white text-center px-6 py-10"
+            style={{
+              backgroundImage: `linear-gradient(to bottom right, rgba(42, 61, 144, 0.9), rgba(12, 18, 42, 0.9)), url(${Frame.src})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <h3 className="text-[20px] font-bold mb-2">
+              Sudha Multispeciality Hospital
+            </h3>
+            <hr className="border-light" />
+            <ul className="space-y-4 text-start mt-4">
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />  Neurology care for all ages – from children to seniors</li>
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} /> 24/7 emergency response for stroke and neurotrauma cases</li>
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} /> World-class neurological care under one roof</li>
+
+            </ul>
+
+
+
+            <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => setOpenModal(true)}>
+              Book an Appointment <ArrowUpRight className="w-5 h-5" />
+            </button>
+            <BookAppointmentModal
+              open={openModal}
+              onClose={() => setOpenModal(false)}
+            />
+          </div>
+
+          <Link href="/find-a-doctor" >
+
+            <div
+              className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
+              style={{
+                background: "radial-gradient(circle, #9EB36A 0%, #333C22 100%)",
+              }}
+            >
+              {/* Text Section */}
+              <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
+                <h3
+
+                  className="text-[24px] sm:text-xl  font-bold leading-snug"
+                >
+                  Find a <br className="hidden sm:block" /> Doctor?
+                </h3>
+              </div>
+
+              {/* Image Section */}
+              <div className="">
+                <Image
+                  src={doctorImg}
+                  alt="Doctor"
+                  className="rounded-lg w-full customposition  h-auto object-cover"
+                />
+              </div>
+            </div>
+          </Link>
+        </div>
+
+      </aside>
+
+      {/* Content Sections */}
+      <div className="flex-1 space-y-0">
+        {serviceSections.map(({ id, label }) => (
+          <section key={id} id={id} className="scroll-mt-32 rounded-xl">
+            {id === "overview" && (
+              <>
+                <Image src={aboutOverview} alt="aboutOverview" className="w-full h-[380px] rounded-2xl object-cover" />
+                <h2 className="text-[24px] mb-2 mt-4">
+                  Expert Neurology & Neurosurgery Services at the Best Neurology Hospital in   <span className="text-[#2B3990]"> Erode</span>
+                </h2>
+                <p className=" mb-3">
+                  At Sudha Multispeciality Hospital, one of the leading Neurology hospitals in Erode, our Neurology Department is a centre of excellence offering expert diagnosis, treatment, and surgical care for a wide range of neurological disorders. From acute stroke care to complex brain and spine surgeries, our team of best neurologists, neurosurgeons, and neuro-rehabilitation experts in Erode use the latest technology and research-backed approaches to deliver high-precision care. Whether it’s epilepsy, Parkinson’s, brain tumours, or spine conditions, we as the best hospital for brain. Spinal cord, and nervous system, are equipped to offer comprehensive neuro care under one roof. Recognised as one of the best hospitals for stroke treatment in Erode, we strive to improve outcomes and quality of life for patients with complex neurological conditions.
+                </p>
+
+              </>
+            )}
+
+
+
+            {id === "facilities" && (
+              <div className="space-y-2 ">
+                <h2 className="text-[24px] mt-5 ">Facilities</h2>
+                <ul>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> <b>24 x 7 Emergency Neurology Services
+                    </b></li>
+                  <p className="ml-5"> Immediate care for stroke, seizures, head injuries, and neuro-emergencies. </p>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> <b>General & Special Wards</b></li>
+                  <p className="ml-5"> Dedicated neuro-care units with trained duty doctors and staff nurses for continuous patient monitoring. </p>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> <b>State-of-the-Art Neuro Intensive Care Unit (Neuro-ICU)
+                    </b></li>
+                  <p className="ml-5">Equipped with advanced monitoring systems and ventilator support for critical neurological patients. </p>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> <b>Neurodiagnostic Lab</b></li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3 text-sm">
+                    <div className="w-2 h-2 ml-6 rounded-lg bg-[#bcbfc2]"></div>Electroencephalography (EEG) for seizure disorder diagnosis  </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3 text-sm">
+                    <div className="w-2 h-2 ml-6 rounded-lg bg-[#bcbfc2]"></div>Nerve Conduction Studies (NCS), EMG & Evoked Potential Studies </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3 text-sm">
+                    <div className="w-2 h-2 ml-6 rounded-lg bg-[#bcbfc2]"></div>Transcranial Doppler for stroke evaluation </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3 text-sm">
+                    <div className="w-2 h-2 ml-6 rounded-lg bg-[#bcbfc2]"></div>Sleep Study & Video Telemetry for sleep and epilepsy disorders</li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3 text-sm">
+                    <div className="w-2 h-2 ml-6 rounded-lg bg-[#bcbfc2]"></div>Microelectrode Recording for Deep Brain Stimulation (DBS)</li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> <b>Advanced Surgical Tools </b></li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3 text-sm">
+                    <div className="w-2 h-2 ml-6 rounded-lg bg-[#bcbfc2]"></div>Vario Operative Microscope</li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3 text-sm">
+                    <div className="w-2 h-2 ml-6 rounded-lg bg-[#bcbfc2]"></div>CRW Stereotactic System for pinhole neurosurgeries </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3 text-sm">
+                    <div className="w-2 h-2 ml-6 rounded-lg bg-[#bcbfc2]"></div>Intraoperative Monitoring for high-risk surgeries </li>
+
+                </ul>
+              </div>
+            )}
+
+
+
+            {id === "services" && (
+              <div className="space-y-2 ">
+                <h2 className="text-[24px] mt-5 ">Services</h2>
+
+                <Accordion accordionData={accordionData} />
+              </div>
+            )}
+
+            {id === "doctors" && (
+              <div className="space-y-2 ">
+                <h2 className="text-[24px] mt-5 ">Doctors</h2>
+                <DoctorSlider specialty="Neurology" max={2} counter={2} />
+              </div>
+            )}
+
+            {id === "faqs" && (
+              <div className="space-y-2 ">
+                <h2 className="text-[24px]  mt-5">Frequently Asked Questions</h2>
+                <Faq faq={faq} />
+              </div>
+            )}
+          </section>
+        ))}
+      </div>
+
+      <div className="block md:hidden">
         {/* Sudha Hospital Box */}
         <div
           className="relative rounded-2xl overflow-hidden text-white text-center px-6 py-10"
@@ -415,117 +534,43 @@ export default function SidebarTabs() {
 
 
 
-          <button className="btn-sidebar inline-flex items-center gap-2 bg-white text-[#2B3990] font-semibold px-7 py-3 rounded-full   mt-5 text-[14px] hover:-translate-y-[3px] transition-transform duration-200">
+          <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => setOpenModal(true)}>
             Book an Appointment <ArrowUpRight className="w-5 h-5" />
           </button>
+          <BookAppointmentModal
+            open={openModal}
+            onClose={() => setOpenModal(false)}
+          />
         </div>
 
-        {/* Find a Doctor Box */}
-        <div
-          className="mt-2 rounded-2xl px-6 py-6 flex flex-col sm:flex-row items-center justify-between text-white"
-          style={{
-            background: "radial-gradient(circle, #9EB36A 0%, #333C22 100%)",
-          }}
-        >
-          <div className="text-left mb-4 sm:mb-0 sm:mr-4">
-            <h3 className="text-[26px]  font-bold">
-              Find a<br />
-              Doctor?
-            </h3>
+        <Link href="/find-a-doctor" >
+
+          <div
+            className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
+            style={{
+              background: "radial-gradient(circle, #9EB36A 0%, #333C22 100%)",
+            }}
+          >
+            {/* Text Section */}
+            <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
+              <h3
+
+                className="text-[24px] sm:text-xl  font-bold leading-snug"
+              >
+                Find a <br className="hidden sm:block" /> Doctor?
+              </h3>
+            </div>
+
+            {/* Image Section */}
+            <div className="">
+              <Image
+                src={doctorImg}
+                alt="Doctor"
+                className="rounded-lg w-full customposition  h-auto object-cover"
+              />
+            </div>
           </div>
-
-          <div className="w-24 sm:w-32 md:w-40">
-            <Image
-              src={doctorImg}
-              alt="Doctor"
-              className="rounded-lg w-full customposition h-auto object-cover"
-            />
-          </div>
-        </div>
-      </aside>
-
-      {/* Content Sections */}
-      <div className="flex-1 space-y-0">
-        {serviceSections.map(({ id, label }) => (
-          <section key={id} id={id} className="scroll-mt-32 rounded-xl">
-            {id === "overview" && (
-              <>
-                <Image src={aboutOverview} alt="aboutOverview" className="w-full h-[400px] rounded-2xl object-cover" />
-                <h2 className="text-[24px] mb-4 mt-4">
-                  Expert Neurology & Neurosurgery Services at Sudha Multispeciality Hospital in <span className="text-[#2B3990]"> Erode</span>
-                </h2>
-                <p className=" mb-3">
-                  At Sudha Multispeciality Hospital, our Neurology Department is a centre of excellence offering expert diagnosis, treatment, and surgical care for a wide range of neurological disorders. From acute stroke care to complex brain and spine surgeries, our multidisciplinary team of neurologists, neurosurgeons, and neuro-rehabilitation experts use the latest technology and research-backed approaches to deliver high-precision care. Whether it’s epilepsy, Parkinson’s, brain tumours, or spine conditions, we are equipped to offer comprehensive neuro care under one roof. Recognised as one of the best neurology hospitals, we strive to improve outcomes and quality of life for patients with complex neurological conditions.
-                </p>
-
-              </>
-            )}
-
-
-
-            {id === "facilities" && (
-              <>
-                <h2 className="text-[24px] mt-5 mb-3">Facilities</h2>
-                <ul>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> <b>24 x 7 Emergency Neurology Services</b></li>
-                  <p className="ml-5"> Immediate care for stroke, seizures, head injuries, and neuro-emergencies. </p>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> <b>General & Special Wards</b></li>
-                  <p className="ml-5"> Dedicated neuro-care units with trained duty doctors and staff nurses for continuous patient monitoring.</p>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> <b>State-of-the-Art Neuro Intensive Care Unit (Neuro-ICU)</b></li>
-                  <p className="ml-5">Equipped with advanced monitoring systems and ventilator support for critical neurological patients.</p>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> <b>Neurodiagnostic Lab</b></li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3 text-sm">
-                    <div className="w-2 h-2 ml-6 rounded-lg bg-[#bcbfc2]"></div>Electroencephalography (EEG) for seizure disorder diagnosis </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3 text-sm">
-                    <div className="w-2 h-2 ml-6 rounded-lg bg-[#bcbfc2]"></div>Nerve Conduction Studies (NCS), EMG & Evoked Potential Studies</li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3 text-sm">
-                    <div className="w-2 h-2 ml-6 rounded-lg bg-[#bcbfc2]"></div>Transcranial Doppler for stroke evaluation</li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3 text-sm">
-                    <div className="w-2 h-2 ml-6 rounded-lg bg-[#bcbfc2]"></div>Sleep Study & Video Telemetry for sleep and epilepsy disorders</li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3 text-sm">
-                    <div className="w-2 h-2 ml-6 rounded-lg bg-[#bcbfc2]"></div>Microelectrode Recording for Deep Brain Stimulation (DBS)</li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> <b>Advanced Surgical Tools </b></li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3 text-sm">
-                    <div className="w-2 h-2 ml-6 rounded-lg bg-[#bcbfc2]"></div>Vario Operative Microscope</li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3 text-sm">
-                    <div className="w-2 h-2 ml-6 rounded-lg bg-[#bcbfc2]"></div>CRW Stereotactic System for pinhole neurosurgeries </li>
-                  <li className="flex gap-2 items-center text-[#5E566A] text-[15px] font-semibold mt-3 text-sm">
-                    <div className="w-2 h-2 ml-6 rounded-lg bg-[#bcbfc2]"></div>Intraoperative Monitoring for high-risk surgeries </li>
-
-                </ul>
-              </>
-            )}
-
-
-
-            {id === "services" && (
-              <div className="space-y-2 ">
-                <h2 className="text-[24px] mt-5 mb-3">Services</h2>
-
-                <Accordion accordionData={accordionData} />
-              </div>
-            )}
-
-            {id === "doctors" && (
-              <>
-                <h2 className="text-[24px]  mt-5 pb-3">Doctors</h2>
-                <DoctorSlider />
-              </>
-            )}
-
-            {/* {id === "faqs" && (
-              <div className="mt-8">
-                <h2 className="text-[24px]  mt-5 pb-3">FAQ</h2>
-                <Faq faq={faq} />
-              </div>
-            )} */}
-          </section>
-        ))}
+        </Link>
       </div>
     </div>
   );

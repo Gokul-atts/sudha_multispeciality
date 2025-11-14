@@ -1,0 +1,128 @@
+.slick-dots {
+  position: absolute;
+  bottom: 30px !important;
+  display: block;
+  width: 150px !important;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  /* margin: auto; */
+  right: -20px;
+}
+
+
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: 12px;
+  height: 20px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.doc {
+  position: relative;
+  /* background-color: white; */
+  border-radius: 20px;
+  /* padding: 1.5rem; */
+  /* box-shadow: 0 2px 10px rgba(0,0,0,0.05); */
+}
+
+.doc::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 160px;
+  bottom: 0px;
+  right: -2px;
+  background-color: #f0f7fd;
+  /* mask cave corner shape */
+  -webkit-mask: url("../../assets/home/download.png") no-repeat;
+  mask: url("../../assets/home/download.png") no-repeat;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+
+  z-index: 1;
+}
+
+
+.banner {
+  position: relative;
+  /* background-color: white; */
+  border-radius: 20px;
+  /* padding: 1.5rem; */
+  /* box-shadow: 0 2px 10px rgba(0,0,0,0.05); */
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  width: 208px;
+  height: 177px;
+  bottom: 0px;
+  border-radius: 24px 0px 20px 0px;
+  right: 0px;
+  background-color: #fff;
+  /* mask cave corner shape */
+  -webkit-mask: url("../../assets/ambulanceservice/c1.svg") no-repeat;
+  mask: url("../../assets/ambulanceservice/c1.svg") no-repeat;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+
+  z-index: 1;
+}
+
+@media only screen and (max-width: 800px) {
+  .banner {
+  position: relative;
+  /* background-color: white; */
+  border-radius: 20px;
+  /* padding: 1.5rem; */
+  /* box-shadow: 0 2px 10px rgba(0,0,0,0.05); */
+}
+.banner::before {
+  display: none;
+  content: "";
+  position: absolute;
+  width: 208px;
+  height: 177px;
+  bottom: 44px;
+  border-radius: 24px 0px 20px 0px;
+  right: 0px;
+  background-color: #fff;
+  /* mask cave corner shape */
+  -webkit-mask: url("../../assets/ambulanceservice/c1.svg") no-repeat;
+  mask: url("../../assets/ambulanceservice/c1.svg") no-repeat;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+  z-index: 1;
+}
+}
+
+
+.curve {
+  position: relative;
+  background-color: white;
+  border-radius: 100px;
+  /* padding: 1.5rem; */
+  /* box-shadow: 0 2px 10px rgba(0,0,0,0.05); */
+}
+
+.curve::before {
+  content: "";
+  position: absolute;
+  width: 193px;
+  height: 153px;
+  bottom: 0px;
+  right: -2px;
+  background-color: #f0f7fd;
+  /* mask cave corner shape */
+  -webkit-mask: url("../../assets/home/download.png") no-repeat;
+  mask: url("../../assets/home/download.png") no-repeat;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+
+  z-index: 1;
+}

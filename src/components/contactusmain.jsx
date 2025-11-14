@@ -60,7 +60,7 @@ const Contactusmain = () => {
                   viewport={{ once: false, amount: 0.3 }}
               >
                 <h1 className='text-[#2B3990] font-semibold text-4xl'>
-                    24+
+                    30+
                 </h1>
                 <h1 className='text-[#000000] font-semibold text-xl'>
                  Departments

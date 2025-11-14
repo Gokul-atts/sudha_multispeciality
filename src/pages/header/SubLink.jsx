@@ -2,8 +2,17 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export default function SubLink({ subLink, index, setHoveredSubLinkImage } = {}) {
+export default function SubLink({
+  subLink,
+  index,
+  setHoveredSubLinkImage,
+  onCloseDropdown,
+} = {}) {
   if (!subLink) return null; // 🛡️ Guard against undefined
+
+  const handleClick = () => {
+    if (onCloseDropdown) onCloseDropdown(); // close dropdown after click
+  };
 
   return (
     <React.Fragment key={index}>
@@ -18,9 +27,8 @@ export default function SubLink({ subLink, index, setHoveredSubLinkImage } = {})
             setHoveredSubLinkImage(null);
           }}
         >
-          {console.log("subLink.href",subLink?.hrefs)}
           {subLink?.hrefs ? (
-            <Link href={subLink?.hrefs}>
+            <Link href={subLink?.hrefs} onClick={handleClick}>
               <div className="bg-white hover:bg-[#EEF8FF] transition duration-200 rounded-md p-3">
                 <div className="text-[#2B3990] font-bold pb-1">
                   {subLink.header}
@@ -38,7 +46,10 @@ export default function SubLink({ subLink, index, setHoveredSubLinkImage } = {})
               </div>
             </Link>
           ) : (
-            <div className="bg-white hover:bg-[#EEF8FF] transition duration-200 rounded-md p-3">
+            <div
+              onClick={handleClick}
+              className="bg-white hover:bg-[#EEF8FF] transition duration-200 rounded-md p-3"
+            >
               <div className="text-[#2B3990] font-bold pb-1">
                 {subLink.header}
               </div>
@@ -57,7 +68,7 @@ export default function SubLink({ subLink, index, setHoveredSubLinkImage } = {})
         </div>
       )}
 
-      {/* ✅ Conditionally render subImages if available */}
+      {/* ✅ SubImages loop with correct image source */}
       {subLink?.subImages?.length > 0 && (
         <div className="grid gap-4 mt-4">
           {subLink?.subImages.map((subImage, idx) => (
@@ -66,8 +77,8 @@ export default function SubLink({ subLink, index, setHoveredSubLinkImage } = {})
               className="relative w-[100px] h-[60px] rounded-lg overflow-hidden"
             >
               <Image
-                src={subLink?.image}
-                alt={subLink?.image}
+                src={subImage}
+                alt={`subImage-${idx}`}
                 fill
                 className="object-cover object-center group-hover:scale-105 group-hover:opacity-90 transition duration-300"
               />
