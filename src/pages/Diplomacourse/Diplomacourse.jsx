@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import Banner from "@/assets/fellownationalboard/banner.png";
+import Banner from "@/assets/fellownationalboard/Banner.png";
 import Diploma from "@/assets/fellownationalboard/diplomacourses.webp";
 import { motion } from 'framer-motion';
 import HospitalCard from "@/components/Hospital";

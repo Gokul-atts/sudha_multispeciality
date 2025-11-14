@@ -4,27 +4,27 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import Banner from "@/assets/facilities/insurance-banner.webp";
 import Image from "next/image";
-import Patient from "@/assets/insurance/patient.jpg";
-import Icici from "@/assets/insurance/icici.png";
-import Sbi from "@/assets/insurance/sbi.png";
-import Bajaj from "@/assets/insurance/bajaj.png";
-import Niva from "@/assets/insurance/hdfc.png";
-import Tata from "@/assets/insurance/tata.png";
-import Hdfc from "@/assets/insurance/hdfc.png";
-import Scheme from "@/assets/insurance/ex-serviceman.webp";
-import Emergency from "@/assets/insurance/Scheme.jpg";
-import hospitalize from "@/assets/insurance/hospital.webp";
-import Preauth from "@/assets/insurance/employee-govt.webp";
+import Patient from "@/assets/Insurance/patient.jpg";
+import Icici from "@/assets/Insurance/icici.png";
+import Sbi from "@/assets/Insurance/sbi.png";
+import Bajaj from "@/assets/Insurance/bajaj.png";
+import Niva from "@/assets/Insurance/hdfc.png";
+import Tata from "@/assets/Insurance/tata.png";
+import Hdfc from "@/assets/Insurance/hdfc.png";
+import Scheme from "@/assets/Insurance/ex-serviceman.webp";
+import Emergency from "@/assets/Insurance/Scheme.jpg";
+import hospitalize from "@/assets/Insurance/hospital.webp";
+import Preauth from "@/assets/Insurance/employee-govt.webp";
 
 import { ArrowUpRight } from "lucide-react";
 
-import CMCHIS from "@/assets/insurance/CMCHIS.jpg";
+import CMCHIS from "@/assets/Insurance/CMCHIS.jpg";
 
-import Check from "@/assets/insurance/check.svg";
-import Contact from "@/assets/insurance/appointment.webp";
+import Check from "@/assets/Insurance/check.svg";
+import Contact from "@/assets/Insurance/appointment.webp";
 
-import Phone from "@/assets/insurance/phone.svg";
-import Email from "@/assets/insurance/email.svg";
+import Phone from "@/assets/Insurance/phone.svg";
+import Email from "@/assets/Insurance/email.svg";
 import Marquee from "react-fast-marquee";
 import "../Insurance-hospital/Insurance.css"
 import Breadcrumb from "@/components/Breadcrumb";
