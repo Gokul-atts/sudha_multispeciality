@@ -50,10 +50,10 @@ import Balaji from "@/assets/home/doc/new/balaji-mani.webp";
 import Aarthi from "@/assets/home/doc/new/aarthi.webp";
 import Sountharajan from "@/assets/home/doc/new/sountharajan.webp";
 
-import Doctor2 from "@/assets/ourmanagement/vice-president.webp";
+import Doctor2 from "@/assets/Ourmanagement/vice-president.webp";
 import Kandaswami from "../assets/specialites/cardiology/kandhasami.webp";
 
-import Doctor1 from "@/assets/ourmanagement/president.webp";
+import Doctor1 from "@/assets/Ourmanagement/president.webp";
 //Cardiology
 // import Rajasekar from "../assets/specialites/cardiology/rajasekar.jpg";
 import Aafia from "@/assets/home/doc/new/aafia-parveen.webp";
