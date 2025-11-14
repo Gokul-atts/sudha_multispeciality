@@ -5,7 +5,7 @@ import { courses } from "@/constants/bssCourseDetails";
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-import Banner from "@/assets/fellownationalboard/banner.png";
+import Banner from "@/assets/fellownationalboard/Banner.png";
 import HospitalCard from "@/components/Hospital";
 import hospitalOne from "@/assets/home/cards/c1.svg";
 import hospitalTwo from "@/assets/home/cards/c2.svg";

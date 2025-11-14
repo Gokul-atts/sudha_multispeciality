@@ -2,7 +2,7 @@
 import React, { use } from "react";
 import Banner from "@/assets/ourteam/find-doctor.webp";
 import { motion } from "framer-motion";
-import Doctordeatils from "@/components/doctordeatils";
+import Doctordeatils from "@/components/Doctordeatils";
 import Breadcrumb from "@/components/Breadcrumb";
 
 const breadcrumbItems = [
