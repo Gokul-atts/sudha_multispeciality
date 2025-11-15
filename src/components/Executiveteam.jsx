@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import React from 'react';
-import Doctor1 from "@/assets/ourmanagement/president.webp";
-import Doctor2 from "@/assets/ourmanagement/vice-president.webp";
-import Doctor3 from "@/assets/ourmanagement/doctor3.webp";
+import Doctor1 from "@/assets/Ourmanagement/president.webp";
+import Doctor2 from "@/assets/Ourmanagement/vice-president.webp";
+import Doctor3 from "@/assets/Ourmanagement/doctor3.webp";
 
 const Executiveteam = () => {
   const team = [
