@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Banner from "@/assets/facilities/pharmacy-banner.webp";
 
-import Sudha1 from "../../assets/pharmacyservice/sudhapharmacy.webp";
+import Sudha1 from "@/assets/pharmacyservice/sudhapharmacy.webp";
 import Image from "next/image";
 import "./pharmacy.css";
 import Medicine from "../../assets/pharmacyservice/pharmacyrack.webp";
