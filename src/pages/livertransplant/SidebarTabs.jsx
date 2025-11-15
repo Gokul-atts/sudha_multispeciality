@@ -16,7 +16,7 @@ import DoctorSlider from "../../components/Slicksliderdoctor";
 import Faq from "../../components/Faq";
 import one from "@/assets/about/1.svg";
 import organtransplantone from "@/assets/organtransplant/overview-liver.webp";
-import Check from "@/assets/insurance/check.svg";
+import Check from "@/assets/Insurance/check.svg";
 
 
 const serviceSections = [
