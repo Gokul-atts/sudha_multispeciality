@@ -1,4 +1,4 @@
-import Ourmanagement from '@/pages/ourmanagement/ourmanagement'
+import Ourmanagement from '@/pages/Ourmanagement/Ourmanagement'
 import React from 'react';
 import Script from "next/script";
 import Head from "next/head";
