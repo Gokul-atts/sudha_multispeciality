@@ -1,6 +1,6 @@
 'use client';
 
-import Banner from "@/assets/fellownationalboard/banner.png";
+import Banner from "@/assets/fellownationalboard/Banner.png";
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from "lucide-react";
 import cardone from "@/assets/home/cards/1.svg";

@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import Banner from "@/assets/fellownationalboard/banner.png";
-import Doctors from "@/assets/fellownationalboard/doctors.png";
+import Banner from "@/assets/fellownationalboard/Banner.png";
+import Doctors from "@/assets/fellownationalboard/Doctors.png";
 import { motion } from 'framer-motion';
 
 
