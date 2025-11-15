@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import Banner from "@/assets/fellownationalboard/banner.png";
+import Banner from "@/assets/fellownationalboard/Banner.png";
 import Anaesthesia from '@/assets/fellownationalboard/anaesthesia.png';
 import Radiology from '@/assets/fellownationalboard/radiology.png';
 import { motion } from 'framer-motion';
