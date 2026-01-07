@@ -15,9 +15,6 @@ import Faq from "../../components/Faq";
 import one from "@/assets/about/1.svg";
 import BookAppointmentModal from "@/components/bookappointmentmodal";
 
-
-
-
 const serviceSections = [
   { id: "overview", label: "Overview" },
   { id: "facilities", label: "Team Strength" },
@@ -31,31 +28,44 @@ const accordionData = [
       <>
         <div className="flex gap-3">
           {/* <Image src={one} alt="Adult Cardiology" />  */}
-          Comprehensive Inpatient & Outpatient Nursing Care  
-
+          Comprehensive Inpatient & Outpatient Nursing Care
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p>
-          Our nurses deliver round-the-clock care to both inpatients and outpatients, addressing their medical, hygienic, and emotional needs with empathy and precision.
+          Our nurses deliver round-the-clock care to both inpatients and
+          outpatients, addressing their medical, hygienic, and emotional needs
+          with empathy and precision.
         </p>
         <div>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Round-the-clock bedside support     </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} />Monitoring vitals and reporting observations  </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Medication administration and injection support   </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Round-the-clock bedside support{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Monitoring vitals and reporting observations{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Medication administration and injection support{" "}
+            </li>
 
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Post-operative and wound care </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} />Patient education and discharge assistance    </li>
-
-
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Post-operative and wound care{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Patient education and discharge assistance{" "}
+            </li>
           </ul>
-
         </div>
-
-
       </div>
     ),
   },
@@ -65,29 +75,40 @@ const accordionData = [
         <div className="flex gap-3">
           {/* <Image src={one} alt="Interventional Cardiology" />  */}
           Critical Care & Emergency Nursing
-
-
-
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p>
-          Trained ICU nurses ensure precise monitoring and immediate action for critically ill patients, supporting all emergency and life-saving procedures. 
+          Trained ICU nurses ensure precise monitoring and immediate action for
+          critically ill patients, supporting all emergency and life-saving
+          procedures. 
         </p>
 
         <div>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Support for ventilator and critical equipment    </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Emergency medication management    </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Sepsis and infection control protocols </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Support for ventilator and critical equipment{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Emergency medication management {" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Sepsis and infection control protocols{" "}
+            </li>
 
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Coordination with doctors for timely interventions </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Coordination with doctors for timely interventions{" "}
+            </li>
           </ul>
         </div>
-
-
       </div>
     ),
   },
@@ -98,31 +119,42 @@ const accordionData = [
         <div className="flex gap-3">
           {/* <Image src={one} alt="Interventional Cardiology" />  */}
           Department-Focused Nursing Teams
-
-
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p className="mt-2">
-          Nurses are assigned based on their expertise in departments like surgery, gynaecology, paediatrics, and oncology, ensuring the highest level of specialized care.
+          Nurses are assigned based on their expertise in departments like
+          surgery, gynaecology, paediatrics, and oncology, ensuring the highest
+          level of specialized care.
         </p>
         <div>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Maternity and labour room assistance  </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Surgical recovery and OT prep    </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Paediatric and neonatal support </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Maternity and labour room assistance{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Surgical recovery and OT prep{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Paediatric and neonatal support{" "}
+            </li>
 
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Oncology nursing and chemotherapy aid  </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Oncology nursing and chemotherapy aid{" "}
+            </li>
           </ul>
         </div>
-
-
       </div>
     ),
   },
-
 
   {
     title: (
@@ -130,37 +162,53 @@ const accordionData = [
         <div className="flex gap-3">
           {/* <Image src={one} alt="Interventional Cardiology" />  */}
           Well-Defined Nursing Hierarchy
-
-
-
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p className="mt-2">
-          To ensure smooth coordination, nurses are appointed within a structured hierarchy. This allows for better task delegation and accountability across shifts.
+          To ensure smooth coordination, nurses are appointed within a
+          structured hierarchy. This allows for better task delegation and
+          accountability across shifts.
         </p>
         <div>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Nursing Superintendent    </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} />Deputy Nursing Superintendent      </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Nursing Supervisor  </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Senior Staff Nurse  </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} />Staff Nurse  </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} />Nursing Assistant </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} />Helpers   </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Nursing Superintendent{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Deputy Nursing Superintendent{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Nursing Supervisor{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Senior Staff Nurse{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Staff Nurse{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Nursing Assistant{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Helpers{" "}
+            </li>
           </ul>
         </div>
-
-
       </div>
     ),
   },
-
-
-
-
 ];
 const faq = [
   {
@@ -222,7 +270,6 @@ const faq = [
     title: (
       <>
         <div className="flex gap-3">
-
           What is the main cause of heart problems?
         </div>
       </>
@@ -287,7 +334,7 @@ const faq = [
 ];
 
 export default function SidebarTabs() {
-  const [activeSection, setActiveSection] = useState('');
+  const [activeSection, setActiveSection] = useState("");
   const [openModal, setOpenModal] = useState(false);
 
   console.log("openModal", openModal);
@@ -302,7 +349,7 @@ export default function SidebarTabs() {
           }
         });
       },
-      { rootMargin: '-20% 0px -60% 0px' }
+      { rootMargin: "-20% 0px -60% 0px" }
     );
 
     serviceSections.forEach(({ id }) => {
@@ -313,14 +360,12 @@ export default function SidebarTabs() {
     return () => observer.disconnect();
   }, []);
 
-
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
   }, []);
 
   return (
     <div className="flex md:mt-0 mt-4 flex-col lg:flex-row gap-8">
-
       {/* Sidebar */}
       <aside className="w-full lg:w-1/4 lg:sticky top-24 h-fit space-y-6">
         {/* Tabs Box */}
@@ -341,12 +386,14 @@ export default function SidebarTabs() {
                   >
                     <div className="flex items-center gap-4">
                       <span
-                        className={`w-2 h-2 rounded-full transition-colors duration-300 ${isActive ? 'bg-[#2b3990]' : 'bg-gray-300'
-                          }`}
+                        className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                          isActive ? "bg-[#2b3990]" : "bg-gray-300"
+                        }`}
                       />
                       <span
-                        className={`text-[15px]  font-bold transition-colors duration-300 ${isActive ? 'text-[#2b3990]' : 'text-black'
-                          } group-hover:text-[#2A3D90]`}
+                        className={`text-[15px]  font-bold transition-colors duration-300 ${
+                          isActive ? "text-[#2b3990]" : "text-black"
+                        } group-hover:text-[#2A3D90]`}
                       >
                         {item.label}
                       </span>
@@ -381,13 +428,48 @@ export default function SidebarTabs() {
               Sudha Multispeciality Hospital
             </h3>
             <ul className="space-y-4 text-start mt-4">
-              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />  Highly skilled staff nurses are available for 24/7 support </li>
-              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} /> Continuous learning culture to enhance nursing outcomes    </li>
-              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />Every nurse is trained to deliver patient-centric care with compassion and precision  </li>
-
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">
+                {" "}
+                <Image
+                  className="mt-1"
+                  src={Checklight}
+                  alt="tick"
+                  width={12}
+                  height={10}
+                />{" "}
+                Highly skilled staff nurses are available for 24/7 support{" "}
+              </li>
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">
+                {" "}
+                <Image
+                  className="mt-1"
+                  src={Checklight}
+                  alt="tick"
+                  width={12}
+                  height={10}
+                />{" "}
+                Continuous learning culture to enhance nursing outcomes{" "}
+              </li>
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">
+                {" "}
+                <Image
+                  className="mt-1"
+                  src={Checklight}
+                  alt="tick"
+                  width={12}
+                  height={10}
+                />
+                Every nurse is trained to deliver patient-centric care with
+                compassion and precision{" "}
+              </li>
             </ul>
 
-            <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => setOpenModal(true)}>
+            <button
+              className="btn-white mt-5 flex items-center gap-2 mx-auto"
+              onClick={() => {
+                window.location.href = "tel:+919042065454";
+              }}
+            >
               Book an Appointment <ArrowUpRight className="w-5 h-5" />
             </button>
             <BookAppointmentModal
@@ -397,8 +479,7 @@ export default function SidebarTabs() {
           </div>
 
           {/* Find a Doctor Box */}
-          <Link href="/find-a-doctor" >
-
+          <Link href="/find-a-doctor">
             <div
               className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
               style={{
@@ -407,10 +488,7 @@ export default function SidebarTabs() {
             >
               {/* Text Section */}
               <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
-                <h3
-
-                  className="text-[24px] sm:text-xl  font-bold leading-snug"
-                >
+                <h3 className="text-[24px] sm:text-xl  font-bold leading-snug">
                   Find a <br className="hidden sm:block" /> Doctor?
                 </h3>
               </div>
@@ -426,7 +504,6 @@ export default function SidebarTabs() {
             </div>
           </Link>
         </div>
-
       </aside>
 
       {/* Content Sections */}
@@ -435,18 +512,31 @@ export default function SidebarTabs() {
           <section key={id} id={id} className="scroll-mt-32 rounded-xl">
             {id === "overview" && (
               <>
-                <Image src={aboutOverview} alt="aboutOverview" className="w-full h-[400px] rounded-2xl object-cover" />
+                <Image
+                  src={aboutOverview}
+                  alt="aboutOverview"
+                  className="w-full h-[400px] rounded-2xl object-cover"
+                />
 
                 <div className="mt-6 space-y-4">
                   <h2 className="text-[24px]">
                     Trusted Nursing Excellence at Sudha Multispeciality Hospital
                   </h2>
                   <p className="mb-4">
-                    At Sudha Multispeciality Hospital, Erode, our Nursing Department forms the backbone of patient care, offering professional, compassionate, and consistent support 24/7. With a team of well-qualified and department-trained nursing professionals, we ensure high-quality, personalized care in every unit, ICU, OT, wards, and critical care.
+                    At Sudha Multispeciality Hospital, Erode, our Nursing
+                    Department forms the backbone of patient care, offering
+                    professional, compassionate, and consistent support 24/7.
+                    With a team of well-qualified and department-trained nursing
+                    professionals, we ensure high-quality, personalized care in
+                    every unit, ICU, OT, wards, and critical care.
                   </p>
 
                   <p className="mt-4 mb-4">
-                    Our services follow NABH standards, and our nursing protocols are designed to ensure safety, comfort, and speedy recovery. Continuous training and performance reviews help us uphold excellence in clinical and holistic care across all specialties.
+                    Our services follow NABH standards, and our nursing
+                    protocols are designed to ensure safety, comfort, and speedy
+                    recovery. Continuous training and performance reviews help
+                    us uphold excellence in clinical and holistic care across
+                    all specialties.
                   </p>
                 </div>
               </>
@@ -457,30 +547,33 @@ export default function SidebarTabs() {
                 <h3 className="text-[24px] mt-5">Team Strength </h3>
                 <ul>
                   <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>Qualified and experienced nursing staff across departments
-                  </li>
-                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> Department-specific training for hands-on excellence
-                  </li>
-                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
-                   NABH-compliant nurse-to-patient ratio maintained at all times  
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>
+                    Qualified and experienced nursing staff across departments
                   </li>
                   <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
                     <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
-                    Periodic staff meetings for quality and performance improvement  
+                    Department-specific training for hands-on excellence
                   </li>
                   <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
                     <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
-                    24/7 dedicated presence in ICU, wards, and emergency units
+                    NABH-compliant nurse-to-patient ratio maintained at all
+                    times
+                  </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
+                    Periodic staff meetings for quality and performance
+                    improvement
+                  </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> 24/7
+                    dedicated presence in ICU, wards, and emergency units
                   </li>
 
                   <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
                     <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
-                    Structured team hierarchy for efficient workflow and accountability
+                    Structured team hierarchy for efficient workflow and
+                    accountability
                   </li>
-
-
                 </ul>
               </>
             )}
@@ -524,13 +617,48 @@ export default function SidebarTabs() {
             Sudha Multispeciality Hospital
           </h3>
           <ul className="space-y-4 text-start mt-4">
-            <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />  Highly skilled staff nurses are available for 24/7 support </li>
-            <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} /> Continuous learning culture to enhance nursing outcomes    </li>
-            <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />Every nurse is trained to deliver patient-centric care with compassion and precision  </li>
-
+            <li className="flex items-start  gap-1 text-[14px] font-semibold">
+              {" "}
+              <Image
+                className="mt-1"
+                src={Checklight}
+                alt="tick"
+                width={12}
+                height={10}
+              />{" "}
+              Highly skilled staff nurses are available for 24/7 support{" "}
+            </li>
+            <li className="flex items-start  gap-1 text-[14px] font-semibold">
+              {" "}
+              <Image
+                className="mt-1"
+                src={Checklight}
+                alt="tick"
+                width={12}
+                height={10}
+              />{" "}
+              Continuous learning culture to enhance nursing outcomes{" "}
+            </li>
+            <li className="flex items-start  gap-1 text-[14px] font-semibold">
+              {" "}
+              <Image
+                className="mt-1"
+                src={Checklight}
+                alt="tick"
+                width={12}
+                height={10}
+              />
+              Every nurse is trained to deliver patient-centric care with
+              compassion and precision{" "}
+            </li>
           </ul>
 
-          <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => setOpenModal(true)}>
+          <button
+            className="btn-white mt-5 flex items-center gap-2 mx-auto"
+            onClick={() => {
+              window.location.href = "tel:+919042065454";
+            }}
+          >
             Book an Appointment <ArrowUpRight className="w-5 h-5" />
           </button>
           <BookAppointmentModal
@@ -540,8 +668,7 @@ export default function SidebarTabs() {
         </div>
 
         {/* Find a Doctor Box */}
-        <Link href="/find-a-doctor" >
-
+        <Link href="/find-a-doctor">
           <div
             className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
             style={{
@@ -550,10 +677,7 @@ export default function SidebarTabs() {
           >
             {/* Text Section */}
             <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
-              <h3
-
-                className="text-[24px] sm:text-xl  font-bold leading-snug"
-              >
+              <h3 className="text-[24px] sm:text-xl  font-bold leading-snug">
                 Find a <br className="hidden sm:block" /> Doctor?
               </h3>
             </div>

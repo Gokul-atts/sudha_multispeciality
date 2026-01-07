@@ -87,7 +87,7 @@ function nursingservices() {
               transition={{ duration: 0.7 }}
             >
               <Link
-                href="#contactus"
+                href="tel:+919042065454"
                 className="btn-white"
               >
                 Book an Appointment <ArrowUpRight className="w-5 h-5" />
@@ -117,9 +117,9 @@ function nursingservices() {
 
 
 
-      <section id="contactus">
+      {/* <section id="contactus">
         <Bookappointment />
-      </section>
+      </section> */}
     </div>
   );
 }

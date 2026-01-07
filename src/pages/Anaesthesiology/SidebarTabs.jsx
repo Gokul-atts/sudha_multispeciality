@@ -19,11 +19,16 @@ const accordionData = [
     content: (
       <div className="space-y-4">
         <p>
-          Our general anaesthesia services are designed to ensure complete patient safety, comfort, and optimal surgical conditions across a wide range of specialities. Recognised as one of the best anaesthesiology hospitals, our best anaesthesia doctors' team in Erode team delivers tailored care to patients undergoing complex and routine surgeries alike. 
+          Our general anaesthesia services are designed to ensure complete
+          patient safety, comfort, and optimal surgical conditions across a wide
+          range of specialities. Recognised as one of the best anaesthesiology
+          hospitals, our best anaesthesia doctors' team in Erode team delivers
+          tailored care to patients undergoing complex and routine surgeries
+          alike.
         </p>
 
         <h4 className="font-bold text-[16px] text-[#2B3990]">
-         Our General Anaesthesia services are provided for:  
+          Our General Anaesthesia services are provided for:
         </h4>
         <ul className="space-y-4">
           {[
@@ -46,13 +51,21 @@ const accordionData = [
         </ul>
 
         <p>
-         Each patient receives a comprehensive pre-anaesthetic assessment, where our anaesthetists review medical history, conduct necessary investigations, and plan the safest anaesthetic approach.  
+          Each patient receives a comprehensive pre-anaesthetic assessment,
+          where our anaesthetists review medical history, conduct necessary
+          investigations, and plan the safest anaesthetic approach.
         </p>
         <p>
-          During surgery, patients are continuously monitored using advanced haemodynamic and respiratory monitors, ensuring real-time tracking of vital parameters. Our modern anaesthesia workstations are equipped with precise gas delivery systems, integrated ventilation, and safety mechanisms to maintain a stable and controlled environment.  
+          During surgery, patients are continuously monitored using advanced
+          haemodynamic and respiratory monitors, ensuring real-time tracking of
+          vital parameters. Our modern anaesthesia workstations are equipped
+          with precise gas delivery systems, integrated ventilation, and safety
+          mechanisms to maintain a stable and controlled environment.
         </p>
         <p>
-          Postoperatively, patients are transferred to a well-equipped Post-Anaesthesia Care Unit (PACU), where recovery from anaesthesia is carefully managed by our trained staff.
+          Postoperatively, patients are transferred to a well-equipped
+          Post-Anaesthesia Care Unit (PACU), where recovery from anaesthesia is
+          carefully managed by our trained staff.
         </p>
       </div>
     ),
@@ -62,11 +75,16 @@ const accordionData = [
     content: (
       <div className="space-y-4">
         <p>
-          Sudha Multispeciality Hospital is a trusted name in Cardiac Anaesthesia, with a legacy of over 40 years in delivering safe and advanced anaesthetic care for a wide range of heart procedures. Our dedicated team of cardiac anaesthetists plays a critical role in the success of both adult and paediatric cardiac surgeries, working in close coordination with cardiologists and cardiothoracic surgeons.
+          Sudha Multispeciality Hospital is a trusted name in Cardiac
+          Anaesthesia, with a legacy of over 40 years in delivering safe and
+          advanced anaesthetic care for a wide range of heart procedures. Our
+          dedicated team of cardiac anaesthetists plays a critical role in the
+          success of both adult and paediatric cardiac surgeries, working in
+          close coordination with cardiologists and cardiothoracic surgeons.
         </p>
 
         <h4 className="font-bold text-[16px] text-[#2B3990]">
-          We provide specialised anaesthesia services for:  
+          We provide specialised anaesthesia services for:
         </h4>
         <ul className="space-y-4">
           {[
@@ -89,13 +107,22 @@ const accordionData = [
         </ul>
 
         <p>
-          Our cardiac operating theatres are equipped with advanced anaesthesia workstations, invasive monitoring systems, transoesophageal echocardiography (TOE), and real-time haemodynamic assessment tools to ensure precision and safety during surgery. 
+          Our cardiac operating theatres are equipped with advanced anaesthesia
+          workstations, invasive monitoring systems, transoesophageal
+          echocardiography (TOE), and real-time haemodynamic assessment tools to
+          ensure precision and safety during surgery. 
         </p>
         <p>
-          From pre-operative optimisation and intraoperative management to intensive postoperative care in a specialised cardiac ICU, our team ensures every patient receives personalised and vigilant care throughout their surgical journey.  
+          From pre-operative optimisation and intraoperative management to
+          intensive postoperative care in a specialised cardiac ICU, our team
+          ensures every patient receives personalised and vigilant care
+          throughout their surgical journey.
         </p>
         <p>
-          With decades of experience and a commitment to excellence, Sudha Multispeciality Hospital continues to be recognised among the Best Cardiac Anaesthesia Centres in Erode, upholding the highest standards of clinical expertise and patient outcomes.  
+          With decades of experience and a commitment to excellence, Sudha
+          Multispeciality Hospital continues to be recognised among the Best
+          Cardiac Anaesthesia Centres in Erode, upholding the highest standards
+          of clinical expertise and patient outcomes.
         </p>
       </div>
     ),
@@ -118,8 +145,6 @@ export default function SidebarTabs() {
 
   console.log("openModal", openModal);
   const [isOpen, setIsOpen] = useState(false);
-
-
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -166,12 +191,14 @@ export default function SidebarTabs() {
                   >
                     <div className="flex items-center gap-4">
                       <span
-                        className={`w-2 h-2 rounded-full transition-colors ${isActive ? "bg-[#2b3990]" : "bg-gray-300"
-                          }`}
+                        className={`w-2 h-2 rounded-full transition-colors ${
+                          isActive ? "bg-[#2b3990]" : "bg-gray-300"
+                        }`}
                       />
                       <span
-                        className={`text-[15px] font-bold transition-colors ${isActive ? "text-[#2b3990]" : "text-black"
-                          } group-hover:text-[#2A3D90]`}
+                        className={`text-[15px] font-bold transition-colors ${
+                          isActive ? "text-[#2b3990]" : "text-black"
+                        } group-hover:text-[#2A3D90]`}
                       >
                         {item.label}
                       </span>
@@ -225,7 +252,12 @@ export default function SidebarTabs() {
                 </li>
               ))}
             </ul>
-            <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => setOpenModal(true)}>
+            <button
+              className="btn-white mt-5 flex items-center gap-2 mx-auto"
+               onClick={() => {
+    window.location.href = "tel:+919042065454";
+  }}
+            >
               Book an Appointment <ArrowUpRight className="w-5 h-5" />
             </button>
             <BookAppointmentModal
@@ -235,8 +267,7 @@ export default function SidebarTabs() {
           </div>
 
           {/* Find a Doctor */}
-          <Link href="/find-a-doctor" >
-
+          <Link href="/find-a-doctor">
             <div
               className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
               style={{
@@ -245,10 +276,7 @@ export default function SidebarTabs() {
             >
               {/* Text Section */}
               <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
-                <h3
-
-                  className="text-[24px] sm:text-xl  font-bold leading-snug"
-                >
+                <h3 className="text-[24px] sm:text-xl  font-bold leading-snug">
                   Find a <br className="hidden sm:block" /> Doctor?
                 </h3>
               </div>
@@ -266,7 +294,6 @@ export default function SidebarTabs() {
         </div>
       </aside>
 
-
       {/* Content Sections */}
       <div className="flex-1 space-y-0">
         {serviceSections.map(({ id }) => (
@@ -280,21 +307,37 @@ export default function SidebarTabs() {
                 />
                 <div className="mt-6 space-y-4">
                   <h2 className="text-[24px]">
-                    Best Anaesthesiology Hospital in  
-                    <span className="text-[#2B3990]"> Erode</span> with Four Decades of Experience in Healing
-                    
+                    Best Anaesthesiology Hospital in
+                    <span className="text-[#2B3990]"> Erode</span> with Four
+                    Decades of Experience in Healing
                   </h2>
                   <p>
-                    At Sudha Multispeciality Hospital, our Department of Anaesthesia delivers round-the-clock perioperative care. This includes thorough pre-anaesthetic evaluation, expert intraoperative management, and attentive postoperative monitoring for a wide range of surgical specialities. 
+                    At Sudha Multispeciality Hospital, our Department of
+                    Anaesthesia delivers round-the-clock perioperative care.
+                    This includes thorough pre-anaesthetic evaluation, expert
+                    intraoperative management, and attentive postoperative
+                    monitoring for a wide range of surgical specialities.
                   </p>
                   <p>
-                    Our anaesthesia team extends its expertise beyond the operating theatre, providing safe and efficient anaesthesia treatment for procedures such as interventional pulmonology, radiological interventions, obstetric pain relief, and assisted reproductive techniques. 
+                    Our anaesthesia team extends its expertise beyond the
+                    operating theatre, providing safe and efficient anaesthesia
+                    treatment for procedures such as interventional pulmonology,
+                    radiological interventions, obstetric pain relief, and
+                    assisted reproductive techniques.
                   </p>
                   <p>
-                    The department comprises state-of-the-art operating theatres catering to General Surgery, Paediatrics, Orthopaedics, Urology, Oncology, Obstetrics, and Neurosurgery. Each theatre is equipped with modern anaesthesia workstations, high-end haemodynamic monitoring systems, and ultrasound guidance for vascular access and regional nerve blocks.  
+                    The department comprises state-of-the-art operating theatres
+                    catering to General Surgery, Paediatrics, Orthopaedics,
+                    Urology, Oncology, Obstetrics, and Neurosurgery. Each
+                    theatre is equipped with modern anaesthesia workstations,
+                    high-end haemodynamic monitoring systems, and ultrasound
+                    guidance for vascular access and regional nerve blocks.
                   </p>
                   <p>
-                    With an unwavering commitment to patient safety, surgical excellence, and offering quality anaesthesia treatment in Erode, Sudha Multispeciality Hospital stands as the Best Anesthesiology Hospital in Erode.  
+                    With an unwavering commitment to patient safety, surgical
+                    excellence, and offering quality anaesthesia treatment in
+                    Erode, Sudha Multispeciality Hospital stands as the Best
+                    Anesthesiology Hospital in Erode.
                   </p>
                 </div>
               </>
@@ -377,7 +420,12 @@ export default function SidebarTabs() {
               </li>
             ))}
           </ul>
-          <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => setOpenModal(true)}>
+          <button
+            className="btn-white mt-5 flex items-center gap-2 mx-auto"
+            onClick={() => {
+              window.location.href = "tel:+919042065454";
+            }}
+          >
             Book an Appointment <ArrowUpRight className="w-5 h-5" />
           </button>
           <BookAppointmentModal
@@ -387,8 +435,7 @@ export default function SidebarTabs() {
         </div>
 
         {/* Find a Doctor */}
-        <Link href="/find-a-doctor" >
-
+        <Link href="/find-a-doctor">
           <div
             className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
             style={{
@@ -397,10 +444,7 @@ export default function SidebarTabs() {
           >
             {/* Text Section */}
             <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
-              <h3
-
-                className="text-[24px] sm:text-xl  font-bold leading-snug"
-              >
+              <h3 className="text-[24px] sm:text-xl  font-bold leading-snug">
                 Find a <br className="hidden sm:block" /> Doctor?
               </h3>
             </div>

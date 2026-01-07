@@ -404,9 +404,9 @@ const VocationalDegree = () => {
             </section>
 
 
-            <section>
+            {/* <section>
                 <Bookappointment />
-            </section>
+            </section> */}
         </div>
     );
 };

@@ -206,7 +206,7 @@ export default function Finddoctor() {
               <p className="text-sm mt-1">{doc.degrees}</p>
               <p className="text-sm mt-1 line-clamp-2">{doc.qualification}</p>
               <Link
-                href="/contact-us"
+                href="tel:+919042065454"
                 className="btn-diagonal-outline px-6 w-full mt-4 flex items-center justify-center gap-2"
               >
                 Book an Appointment <ArrowUpRight className="w-4 h-4" />

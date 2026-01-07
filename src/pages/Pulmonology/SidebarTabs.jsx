@@ -328,11 +328,11 @@ export default function SidebarTabs() {
 
             </ul>
 
-
-
+            <Link href= "tel:+919042065454">
             <button className="btn-white mt-5">
               Book an Appointment <ArrowUpRight className="w-4 sm:w-5 h-4 sm:h-5" />
             </button>
+            </Link>
           </div>
 
           {/* Find a Doctor Box */}
@@ -463,7 +463,9 @@ export default function SidebarTabs() {
 
 
 
-         <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => setOpenModal(true)}>
+         <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => {
+    window.location.href = "tel:+919042065454";
+  }}>
             Book an Appointment <ArrowUpRight className="w-5 h-5" />
           </button>
           <BookAppointmentModal

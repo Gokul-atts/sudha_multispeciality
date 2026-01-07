@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 
 
 import Contactusfooter from '@/components/contactusfooter';
-import Bookappointment from '@/components/Bookappointment';
 import Registeration from '@/components/registeration';
 import HospitalCard from "@/components/Hospital";
 import hospitalOne from "@/assets/home/cards/c1.svg";

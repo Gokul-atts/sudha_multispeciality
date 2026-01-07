@@ -15,8 +15,6 @@ import DoctorSlider from "../../components/Slicksliderdoctor";
 import Faq from "../../components/Faq";
 import one from "@/assets/about/1.svg";
 
-
-
 const serviceSections = [
   { id: "overview", label: "Overview" },
   { id: "facilities", label: "Facilities" },
@@ -31,17 +29,18 @@ const accordionData = [
         <div className="flex gap-3">
           {/* <Image src={one} alt="Adult Cardiology" />  */}
           Cognitive Behavioural Therapy (CBT)
-
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p>
-          CBT is a structured, goal-oriented therapy that helps individuals identify and change negative thought patterns and behaviours. It is effective for a wide range of conditions including anxiety, depression, phobias, and OCD. Our trained therapists tailor sessions to each patient’s needs and progress.
+          CBT is a structured, goal-oriented therapy that helps individuals
+          identify and change negative thought patterns and behaviours. It is
+          effective for a wide range of conditions including anxiety,
+          depression, phobias, and OCD. Our trained therapists tailor sessions
+          to each patient’s needs and progress.
         </p>
-
-
       </div>
     ),
   },
@@ -51,20 +50,18 @@ const accordionData = [
         <div className="flex gap-3">
           {/* <Image src={one} alt="Interventional Cardiology" />  */}
           Stress & Anxiety Management
-
-
-
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p>
-          We provide therapeutic support to help patients manage chronic stress, performance anxiety, panic disorders, and everyday emotional challenges. Our stress management approach combines therapy, relaxation techniques, and lifestyle guidance to build mental resilience.
+          We provide therapeutic support to help patients manage chronic stress,
+          performance anxiety, panic disorders, and everyday emotional
+          challenges. Our stress management approach combines therapy,
+          relaxation techniques, and lifestyle guidance to build mental
+          resilience.
         </p>
-
-
-
       </div>
     ),
   },
@@ -75,22 +72,21 @@ const accordionData = [
         <div className="flex gap-3">
           {/* <Image src={one} alt="Interventional Cardiology" />  */}
           Child & Adolescent Therapy
-
-
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p className="mt-2">
-          Children and teens may experience emotional or behavioural difficulties due to family issues, academic pressure, or developmental disorders. Our psychologists use age-appropriate methods such as play therapy, behavioural interventions, and parental counselling to support young minds.
+          Children and teens may experience emotional or behavioural
+          difficulties due to family issues, academic pressure, or developmental
+          disorders. Our psychologists use age-appropriate methods such as play
+          therapy, behavioural interventions, and parental counselling to
+          support young minds.
         </p>
-
-
       </div>
     ),
   },
-
 
   {
     title: (
@@ -98,19 +94,17 @@ const accordionData = [
         <div className="flex gap-3">
           {/* <Image src={one} alt="Interventional Cardiology" />  */}
           Depression Counselling
-
-
-
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p className="mt-2">
-          Depression is more than sadness, it can affect sleep, appetite, and motivation. Our experts offer personalized therapy sessions to help patients understand the roots of depression, cope with triggers, and regain emotional balance.
-
+          Depression is more than sadness, it can affect sleep, appetite, and
+          motivation. Our experts offer personalized therapy sessions to help
+          patients understand the roots of depression, cope with triggers, and
+          regain emotional balance.
         </p>
-
       </div>
     ),
   },
@@ -121,19 +115,17 @@ const accordionData = [
         <div className="flex gap-3">
           {/* <Image src={one} alt="Interventional Cardiology" />  */}
           Grief & Trauma Counselling
-
-
-
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p className="mt-2">
-          We offer specialized care for individuals dealing with grief, loss, or traumatic experiences. These sessions provide a safe space for emotional release, healing, and rebuilding confidence through professional psychological guidance.
+          We offer specialized care for individuals dealing with grief, loss, or
+          traumatic experiences. These sessions provide a safe space for
+          emotional release, healing, and rebuilding confidence through
+          professional psychological guidance.
         </p>
-
-
       </div>
     ),
   },
@@ -144,19 +136,18 @@ const accordionData = [
         <div className="flex gap-3">
           {/* <Image src={one} alt="Interventional Cardiology" />  */}
           Behavioural Therapy
-
-
-
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p className="mt-2">
-          Behavioural therapy focuses on modifying harmful behaviours and reinforcing positive actions. It is particularly useful in treating ADHD, conduct disorders, and behavioural challenges in children. Our team collaborates with families and educators to ensure consistent improvement.
+          Behavioural therapy focuses on modifying harmful behaviours and
+          reinforcing positive actions. It is particularly useful in treating
+          ADHD, conduct disorders, and behavioural challenges in children. Our
+          team collaborates with families and educators to ensure consistent
+          improvement.
         </p>
-
-
       </div>
     ),
   },
@@ -167,23 +158,20 @@ const accordionData = [
         <div className="flex gap-3">
           {/* <Image src={one} alt="Interventional Cardiology" />  */}
           Couple & Family Therapy
-
-
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p className="mt-2">
-          Relationship stress can impact mental health. Our psychologists offer therapy for couples and families to improve communication, resolve conflict, and strengthen emotional bonds. These sessions promote understanding, empathy, and healthy relationship dynamics.
+          Relationship stress can impact mental health. Our psychologists offer
+          therapy for couples and families to improve communication, resolve
+          conflict, and strengthen emotional bonds. These sessions promote
+          understanding, empathy, and healthy relationship dynamics.
         </p>
-
-
       </div>
     ),
   },
-
-
 ];
 const faq = [
   {
@@ -245,7 +233,6 @@ const faq = [
     title: (
       <>
         <div className="flex gap-3">
-
           What is the main cause of heart problems?
         </div>
       </>
@@ -310,7 +297,7 @@ const faq = [
 ];
 
 export default function SidebarTabs() {
-  const [activeSection, setActiveSection] = useState('');
+  const [activeSection, setActiveSection] = useState("");
   const [openModal, setOpenModal] = useState(false);
 
   console.log("openModal", openModal);
@@ -325,7 +312,7 @@ export default function SidebarTabs() {
           }
         });
       },
-      { rootMargin: '-20% 0px -60% 0px' }
+      { rootMargin: "-20% 0px -60% 0px" }
     );
 
     serviceSections.forEach(({ id }) => {
@@ -336,14 +323,12 @@ export default function SidebarTabs() {
     return () => observer.disconnect();
   }, []);
 
-
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
   }, []);
 
   return (
     <div className="flex md:mt-0 mt-4 flex-col lg:flex-row gap-8">
-
       {/* Sidebar */}
       <aside className="w-full lg:w-1/4 lg:sticky top-24 h-fit space-y-6">
         {/* Tabs Box */}
@@ -364,12 +349,14 @@ export default function SidebarTabs() {
                   >
                     <div className="flex items-center gap-4">
                       <span
-                        className={`w-2 h-2 rounded-full transition-colors duration-300 ${isActive ? 'bg-[#2b3990]' : 'bg-gray-300'
-                          }`}
+                        className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                          isActive ? "bg-[#2b3990]" : "bg-gray-300"
+                        }`}
                       />
                       <span
-                        className={`text-[15px]  font-bold transition-colors duration-300 ${isActive ? 'text-[#2b3990]' : 'text-black'
-                          } group-hover:text-[#2A3D90]`}
+                        className={`text-[15px]  font-bold transition-colors duration-300 ${
+                          isActive ? "text-[#2b3990]" : "text-black"
+                        } group-hover:text-[#2A3D90]`}
                       >
                         {item.label}
                       </span>
@@ -404,13 +391,48 @@ export default function SidebarTabs() {
               Sudha Multispeciality Hospital
             </h3>
             <ul className="space-y-4 text-start mt-4">
-              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />  Personalized counselling and therapy sessions for all age groups </li>
-              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} /> Expert care for anxiety, depression, stress, and emotional issues    </li>
-              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />Supportive environment for mental health and emotional healing  </li>
-
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">
+                {" "}
+                <Image
+                  className="mt-1"
+                  src={Checklight}
+                  alt="tick"
+                  width={12}
+                  height={10}
+                />{" "}
+                Personalized counselling and therapy sessions for all age groups{" "}
+              </li>
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">
+                {" "}
+                <Image
+                  className="mt-1"
+                  src={Checklight}
+                  alt="tick"
+                  width={12}
+                  height={10}
+                />{" "}
+                Expert care for anxiety, depression, stress, and emotional
+                issues{" "}
+              </li>
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">
+                {" "}
+                <Image
+                  className="mt-1"
+                  src={Checklight}
+                  alt="tick"
+                  width={12}
+                  height={10}
+                />
+                Supportive environment for mental health and emotional healing
+              </li>
             </ul>
 
-            <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => setOpenModal(true)}>
+            <button
+              className="btn-white mt-5 flex items-center gap-2 mx-auto"
+              onClick={() => {
+                window.location.href = "tel:+919042065454";
+              }}
+            >
               Book an Appointment <ArrowUpRight className="w-5 h-5" />
             </button>
             <BookAppointmentModal
@@ -420,8 +442,7 @@ export default function SidebarTabs() {
           </div>
 
           {/* Find a Doctor Box */}
-          <Link href="/find-a-doctor" >
-
+          <Link href="/find-a-doctor">
             <div
               className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
               style={{
@@ -430,10 +451,7 @@ export default function SidebarTabs() {
             >
               {/* Text Section */}
               <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
-                <h3
-
-                  className="text-[24px] sm:text-xl  font-bold leading-snug"
-                >
+                <h3 className="text-[24px] sm:text-xl  font-bold leading-snug">
                   Find a <br className="hidden sm:block" /> Doctor?
                 </h3>
               </div>
@@ -449,7 +467,6 @@ export default function SidebarTabs() {
             </div>
           </Link>
         </div>
-
       </aside>
 
       {/* Content Sections */}
@@ -458,19 +475,37 @@ export default function SidebarTabs() {
           <section key={id} id={id} className="scroll-mt-32 rounded-xl">
             {id === "overview" && (
               <>
-                <Image src={aboutOverview} alt="aboutOverview" className="w-full h-[400px] rounded-2xl object-cover" />
+                <Image
+                  src={aboutOverview}
+                  alt="aboutOverview"
+                  className="w-full h-[400px] rounded-2xl object-cover"
+                />
 
                 <div className="mt-6 space-y-4">
                   <h2 className="text-[24px]">
-                    Comprehensive Psychological Care and Mental Wellness Services by the Best Psychologists in 
-                      <span className="text-[#2B3990]"> Erode </span>
+                    Comprehensive Psychological Care and Mental Wellness
+                    Services by the Best Psychologists in
+                    <span className="text-[#2B3990]"> Erode </span>
                   </h2>
                   <p className="mb-4">
-                    Mental health plays a crucial role in overall well-being, and our Psychology Department is committed to offering compassionate, confidential, and evidence-based care. As the best multispeciality hospital in Erode for psychology, Sudha Multispeciality hospital is equipped with experienced psychologists and trained therapists, we address a wide range of psychological concerns in both adults and children.
+                    Mental health plays a crucial role in overall well-being,
+                    and our Psychology Department is committed to offering
+                    compassionate, confidential, and evidence-based care. As the
+                    best multispeciality hospital in Erode for psychology, Sudha
+                    Multispeciality hospital is equipped with experienced
+                    psychologists and trained therapists, we address a wide
+                    range of psychological concerns in both adults and children.
                   </p>
 
                   <p className="mt-4 mb-4">
-                   With the best psychologists in Erode, our hospital treats and supports patients who need mental health assistance. Whether it is anxiety, depression, behavioural issues, or stress, the goal is to help patients understand and manage their emotions for a healthier, more balanced life. Our services are designed to integrate psychological support within a broader healthcare framework, ensuring holistic care.
+                    With the best psychologists in Erode, our hospital treats
+                    and supports patients who need mental health assistance.
+                    Whether it is anxiety, depression, behavioural issues, or
+                    stress, the goal is to help patients understand and manage
+                    their emotions for a healthier, more balanced life. Our
+                    services are designed to integrate psychological support
+                    within a broader healthcare framework, ensuring holistic
+                    care.
                   </p>
                 </div>
               </>
@@ -481,10 +516,12 @@ export default function SidebarTabs() {
                 <h3 className="text-[24px] mt-5">Facilities</h3>
                 <ul>
                   <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>Private counselling rooms for confidentiality
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>
+                    Private counselling rooms for confidentiality
                   </li>
                   <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> Child and adolescent therapy environment
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
+                    Child and adolescent therapy environment
                   </li>
                   <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
                     <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
@@ -498,8 +535,6 @@ export default function SidebarTabs() {
                     <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
                     Support groups and workshops
                   </li>
-
-
                 </ul>
               </>
             )}
@@ -543,13 +578,47 @@ export default function SidebarTabs() {
             Sudha Multispeciality Hospital
           </h3>
           <ul className="space-y-4 text-start mt-4">
-            <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />  Personalized counselling and therapy sessions for all age groups </li>
-            <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} /> Expert care for anxiety, depression, stress, and emotional issues    </li>
-            <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />Supportive environment for mental health and emotional healing  </li>
-
+            <li className="flex items-start  gap-1 text-[14px] font-semibold">
+              {" "}
+              <Image
+                className="mt-1"
+                src={Checklight}
+                alt="tick"
+                width={12}
+                height={10}
+              />{" "}
+              Personalized counselling and therapy sessions for all age groups{" "}
+            </li>
+            <li className="flex items-start  gap-1 text-[14px] font-semibold">
+              {" "}
+              <Image
+                className="mt-1"
+                src={Checklight}
+                alt="tick"
+                width={12}
+                height={10}
+              />{" "}
+              Expert care for anxiety, depression, stress, and emotional issues{" "}
+            </li>
+            <li className="flex items-start  gap-1 text-[14px] font-semibold">
+              {" "}
+              <Image
+                className="mt-1"
+                src={Checklight}
+                alt="tick"
+                width={12}
+                height={10}
+              />
+              Supportive environment for mental health and emotional healing{" "}
+            </li>
           </ul>
 
-          <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => setOpenModal(true)}>
+          <button
+            className="btn-white mt-5 flex items-center gap-2 mx-auto"
+            onClick={() => {
+              window.location.href = "tel:+919042065454";
+            }}
+          >
             Book an Appointment <ArrowUpRight className="w-5 h-5" />
           </button>
           <BookAppointmentModal
@@ -559,8 +628,7 @@ export default function SidebarTabs() {
         </div>
 
         {/* Find a Doctor Box */}
-        <Link href="/find-a-doctor" >
-
+        <Link href="/find-a-doctor">
           <div
             className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
             style={{
@@ -569,10 +637,7 @@ export default function SidebarTabs() {
           >
             {/* Text Section */}
             <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
-              <h3
-
-                className="text-[24px] sm:text-xl  font-bold leading-snug"
-              >
+              <h3 className="text-[24px] sm:text-xl  font-bold leading-snug">
                 Find a <br className="hidden sm:block" /> Doctor?
               </h3>
             </div>

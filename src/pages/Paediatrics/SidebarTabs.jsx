@@ -74,7 +74,6 @@ const faq = [
     title: (
       <>
         <div className="flex gap-3">
-          {" "}
           How can health problems be prevented in children?
         </div>
       </>

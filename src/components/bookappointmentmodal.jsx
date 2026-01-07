@@ -12,10 +12,10 @@ const BookAppointmentModal = ({ open, onClose }) => {
   const [loading, setLoading] = useState(false);
 
   // ensure we're on client before touching document / createPortal
-  useEffect(() => {
-    setIsMounted(true);
-    return () => setIsMounted(false);
-  }, []);
+  // useEffect(() => {
+  //   setIsMounted(true);
+  //   return () => setIsMounted(false);
+  // }, []);
 
   // Lock body scroll when modal is open
   useEffect(() => {

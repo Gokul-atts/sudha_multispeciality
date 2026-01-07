@@ -326,9 +326,9 @@ const Diplomacourse = () => {
                 </div>
             </section>
 
-            <section className="px-4 sm:px-6 lg:px-10 py-10 sm:py-14 lg:py-20">
+            {/* <section className="px-4 sm:px-6 lg:px-10 py-10 sm:py-14 lg:py-20">
                 <Bookappointment />
-            </section>
+            </section> */}
 
 
         </div>

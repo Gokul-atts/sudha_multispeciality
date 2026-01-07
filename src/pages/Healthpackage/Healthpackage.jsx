@@ -606,7 +606,7 @@ const Healthpackage = () => {
                 </div>
             </section> */}
 
-            <Bookappointment />
+            {/* <Bookappointment /> */}
         </div>
     )
 }

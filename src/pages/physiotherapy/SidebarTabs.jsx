@@ -8,7 +8,6 @@ import Frame from "@/assets/about/frame.png";
 import Link from "next/link";
 import BookAppointmentModal from "@/components/bookappointmentmodal";
 
-
 import doctorImg from "@/assets/about/doctorImg.png";
 
 import Accordion from "../../components/Accordion";
@@ -16,8 +15,6 @@ import aboutOverview from "@/assets/alliedhealthservice/physio/physiotherapy.web
 import DoctorSlider from "../../components/Slicksliderdoctor";
 import Faq from "../../components/Faq";
 import one from "@/assets/about/1.svg";
-
-
 
 const serviceSections = [
   { id: "overview", label: "Overview" },
@@ -33,30 +30,55 @@ const accordionData = [
         <div className="flex gap-3">
           {/* <Image src={one} alt="Adult Cardiology" />  */}
           Electrotherapy Modalities
-
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p>
-          We use advanced electrotherapy techniques to reduce pain, improve muscle stimulation, and accelerate tissue healing. These methods are non-invasive and essential for both acute and chronic rehabilitation.
+          We use advanced electrotherapy techniques to reduce pain, improve
+          muscle stimulation, and accelerate tissue healing. These methods are
+          non-invasive and essential for both acute and chronic rehabilitation.
         </p>
 
         <div>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Ultrasound </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Interferential Therapy (IFT)  </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Transcutaneous Electrical Nerve Stimulation (TENS) </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Ultrasound{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Interferential Therapy (IFT){" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Transcutaneous Electrical Nerve Stimulation (TENS){" "}
+            </li>
 
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Muscle Stimulation  </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Wax Therapy  </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Traction  </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Shortwave Diathermy (SWD)  </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Continuous Passive Motion (CPM) Machines  </li>
-
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Muscle Stimulation{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} /> Wax
+              Therapy{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Traction{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Shortwave Diathermy (SWD){" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Continuous Passive Motion (CPM) Machines{" "}
+            </li>
           </ul>
-
         </div>
       </div>
     ),
@@ -67,31 +89,52 @@ const accordionData = [
         <div className="flex gap-3">
           {/* <Image src={one} alt="Interventional Cardiology" />  */}
           Exercise Therapy & Functional Training
-
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p>
-          Exercise therapy is a cornerstone of physical rehabilitation that improves strength, balance, flexibility, and endurance. Our unit is equipped with specialized tools to assist patients in regaining functional independence.
+          Exercise therapy is a cornerstone of physical rehabilitation that
+          improves strength, balance, flexibility, and endurance. Our unit is
+          equipped with specialized tools to assist patients in regaining
+          functional independence.
         </p>
         <div>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Suspension Therapy  </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Tilting Table  </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Quadriceps Table  </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Suspension Therapy{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Tilting Table{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Quadriceps Table{" "}
+            </li>
 
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} />  Parallel Bars  </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Hand Exercise Equipment </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Overhead Pulley (OHP)   </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Ladder Exercise   </li>
-
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Parallel Bars{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} /> Hand
+              Exercise Equipment{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Overhead Pulley (OHP){" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Ladder Exercise{" "}
+            </li>
           </ul>
-
         </div>
-
-
       </div>
     ),
   },
@@ -108,29 +151,44 @@ const accordionData = [
     content: (
       <div className="text-sm  space-y-3">
         <p className="mt-2">
-          We offer targeted rehabilitation plans based on individual patient conditions to improve outcomes in specific areas of health and recovery.
+          We offer targeted rehabilitation plans based on individual patient
+          conditions to improve outcomes in specific areas of health and
+          recovery.
         </p>
         <div>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Neurological Rehabilitation  </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} />Orthopaedic Rehabilitation</li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Cardiac & Respiratory Rehabilitation   </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Neurological Rehabilitation{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Orthopaedic Rehabilitation
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Cardiac & Respiratory Rehabilitation{" "}
+            </li>
 
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Post-General Surgery Rehabilitation  </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Paediatric Rehabilitation  </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Women’s Health Rehabilitation (Gynaecology and Obstetrics)    </li>
-
-
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Post-General Surgery Rehabilitation{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Paediatric Rehabilitation{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Women’s Health Rehabilitation (Gynaecology and Obstetrics){" "}
+            </li>
           </ul>
-
         </div>
-
       </div>
     ),
   },
-
-
-
 ];
 const faq = [
   {
@@ -192,7 +250,6 @@ const faq = [
     title: (
       <>
         <div className="flex gap-3">
-
           What is the main cause of heart problems?
         </div>
       </>
@@ -257,7 +314,7 @@ const faq = [
 ];
 
 export default function SidebarTabs() {
-  const [activeSection, setActiveSection] = useState('');
+  const [activeSection, setActiveSection] = useState("");
   const [openModal, setOpenModal] = useState(false);
 
   console.log("openModal", openModal);
@@ -272,7 +329,7 @@ export default function SidebarTabs() {
           }
         });
       },
-      { rootMargin: '-20% 0px -60% 0px' }
+      { rootMargin: "-20% 0px -60% 0px" }
     );
 
     serviceSections.forEach(({ id }) => {
@@ -283,14 +340,12 @@ export default function SidebarTabs() {
     return () => observer.disconnect();
   }, []);
 
-
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
   }, []);
 
   return (
     <div className="flex md:mt-0 mt-4 flex-col lg:flex-row gap-8">
-
       {/* Sidebar */}
       <aside className="w-full lg:w-1/4 lg:sticky top-24 h-fit space-y-6">
         {/* Tabs Box */}
@@ -311,12 +366,14 @@ export default function SidebarTabs() {
                   >
                     <div className="flex items-center gap-4">
                       <span
-                        className={`w-2 h-2 rounded-full transition-colors duration-300 ${isActive ? 'bg-[#2b3990]' : 'bg-gray-300'
-                          }`}
+                        className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                          isActive ? "bg-[#2b3990]" : "bg-gray-300"
+                        }`}
                       />
                       <span
-                        className={`text-[15px]  font-bold transition-colors duration-300 ${isActive ? 'text-[#2b3990]' : 'text-black'
-                          } group-hover:text-[#2A3D90]`}
+                        className={`text-[15px]  font-bold transition-colors duration-300 ${
+                          isActive ? "text-[#2b3990]" : "text-black"
+                        } group-hover:text-[#2A3D90]`}
                       >
                         {item.label}
                       </span>
@@ -351,13 +408,49 @@ export default function SidebarTabs() {
               Sudha Multispeciality Hospital
             </h3>
             <ul className="space-y-4 text-start mt-4">
-              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />  Personalized rehabilitation plans for pain relief and mobility enhancement </li>
-              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} /> Advanced electrotherapy and exercise therapy techniques  </li>
-              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />Specialized care for neuro, ortho, cardiac, and paediatric rehabilitation </li>
-
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">
+                {" "}
+                <Image
+                  className="mt-1"
+                  src={Checklight}
+                  alt="tick"
+                  width={12}
+                  height={10}
+                />{" "}
+                Personalized rehabilitation plans for pain relief and mobility
+                enhancement{" "}
+              </li>
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">
+                {" "}
+                <Image
+                  className="mt-1"
+                  src={Checklight}
+                  alt="tick"
+                  width={12}
+                  height={10}
+                />{" "}
+                Advanced electrotherapy and exercise therapy techniques{" "}
+              </li>
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">
+                {" "}
+                <Image
+                  className="mt-1"
+                  src={Checklight}
+                  alt="tick"
+                  width={12}
+                  height={10}
+                />
+                Specialized care for neuro, ortho, cardiac, and paediatric
+                rehabilitation{" "}
+              </li>
             </ul>
 
-            <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => setOpenModal(true)}>
+            <button
+              className="btn-white mt-5 flex items-center gap-2 mx-auto"
+              onClick={() => {
+                window.location.href = "tel:+919042065454";
+              }}
+            >
               Book an Appointment <ArrowUpRight className="w-5 h-5" />
             </button>
             <BookAppointmentModal
@@ -366,8 +459,7 @@ export default function SidebarTabs() {
             />
           </div>
 
-          <Link href="/find-a-doctor" >
-
+          <Link href="/find-a-doctor">
             <div
               className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
               style={{
@@ -376,10 +468,7 @@ export default function SidebarTabs() {
             >
               {/* Text Section */}
               <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
-                <h3
-
-                  className="text-[24px] sm:text-xl  font-bold leading-snug"
-                >
+                <h3 className="text-[24px] sm:text-xl  font-bold leading-snug">
                   Find a <br className="hidden sm:block" /> Doctor?
                 </h3>
               </div>
@@ -395,7 +484,6 @@ export default function SidebarTabs() {
             </div>
           </Link>
         </div>
-
       </aside>
 
       {/* Content Sections */}
@@ -404,20 +492,37 @@ export default function SidebarTabs() {
           <section key={id} id={id} className="scroll-mt-32 rounded-xl">
             {id === "overview" && (
               <>
-                <Image src={aboutOverview} alt="aboutOverview" className="w-full h-[400px] rounded-2xl object-cover" />
+                <Image
+                  src={aboutOverview}
+                  alt="aboutOverview"
+                  className="w-full h-[400px] rounded-2xl object-cover"
+                />
 
                 <div className="mt-6 space-y-4">
                   <h2 className="text-[24px]">
-                   Advanced Physiotherapy Services at the Best Physiotherapy Hospital in  
-
+                    Advanced Physiotherapy Services at the Best Physiotherapy
+                    Hospital in
                     <span className="text-[#2B3990]"> Erode </span>
                   </h2>
                   <p className="mb-4">
-                    Sudha Multispeciality Hospital in Erode, the best multispeciality hospital for Physiotherapy treatment, offers expert care in rehabilitation therapy, pain management, and mobility restoration for patients of all ages. Recognized for providing advanced physiotherapy in Erode, we treat a wide range of conditions including neurological disorders, orthopaedic injuries, post-surgical recovery, and chronic pain.
+                    Sudha Multispeciality Hospital in Erode, the best
+                    multispeciality hospital for Physiotherapy treatment, offers
+                    expert care in rehabilitation therapy, pain management, and
+                    mobility restoration for patients of all ages. Recognized
+                    for providing advanced physiotherapy in Erode, we treat a
+                    wide range of conditions including neurological disorders,
+                    orthopaedic injuries, post-surgical recovery, and chronic
+                    pain.
                   </p>
 
                   <p className="mt-4 mb-4">
-                    With the best physiotherapists in Erode, Sudha Multispeciality Hospitals offers personalized physiotherapy treatment plans using modern techniques and technology, ensuring better outcomes and faster healing. Whether it's muscle stimulation, trauma rehabilitation, or post-operative therapy, we’re committed to delivering compassionate and evidence-based care for your complete recovery. 
+                    With the best physiotherapists in Erode, Sudha
+                    Multispeciality Hospitals offers personalized physiotherapy
+                    treatment plans using modern techniques and technology,
+                    ensuring better outcomes and faster healing. Whether it's
+                    muscle stimulation, trauma rehabilitation, or post-operative
+                    therapy, we’re committed to delivering compassionate and
+                    evidence-based care for your complete recovery.
                   </p>
                 </div>
               </>
@@ -428,18 +533,22 @@ export default function SidebarTabs() {
                 <h3 className="text-[24px] mt-5">Facilities</h3>
                 <ul>
                   <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>State-of-the-art Electrotherapy and Exercise Therapy Units
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>
+                    State-of-the-art Electrotherapy and Exercise Therapy Units
                   </li>
                   <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> 24 x 7 support from trained physiotherapists and medical staff
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> 24 x
+                    7 support from trained physiotherapists and medical staff
                   </li>
                   <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
                     <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
-                    Advanced Rehabilitation for Neurological, Orthopaedic, Cardiac, and Post-Surgical Cases
+                    Advanced Rehabilitation for Neurological, Orthopaedic,
+                    Cardiac, and Post-Surgical Cases
                   </li>
                   <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
                     <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
-                    Dedicated Paediatric, Gynaecologic, and Obstetric Rehabilitation Support
+                    Dedicated Paediatric, Gynaecologic, and Obstetric
+                    Rehabilitation Support
                   </li>
                   <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
                     <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
@@ -493,13 +602,49 @@ export default function SidebarTabs() {
             Sudha Multispeciality Hospital
           </h3>
           <ul className="space-y-4 text-start mt-4">
-            <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />  Personalized rehabilitation plans for pain relief and mobility enhancement </li>
-            <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} /> Advanced electrotherapy and exercise therapy techniques  </li>
-            <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />Specialized care for neuro, ortho, cardiac, and paediatric rehabilitation </li>
-
+            <li className="flex items-start  gap-1 text-[14px] font-semibold">
+              {" "}
+              <Image
+                className="mt-1"
+                src={Checklight}
+                alt="tick"
+                width={12}
+                height={10}
+              />{" "}
+              Personalized rehabilitation plans for pain relief and mobility
+              enhancement{" "}
+            </li>
+            <li className="flex items-start  gap-1 text-[14px] font-semibold">
+              {" "}
+              <Image
+                className="mt-1"
+                src={Checklight}
+                alt="tick"
+                width={12}
+                height={10}
+              />{" "}
+              Advanced electrotherapy and exercise therapy techniques{" "}
+            </li>
+            <li className="flex items-start  gap-1 text-[14px] font-semibold">
+              {" "}
+              <Image
+                className="mt-1"
+                src={Checklight}
+                alt="tick"
+                width={12}
+                height={10}
+              />
+              Specialized care for neuro, ortho, cardiac, and paediatric
+              rehabilitation{" "}
+            </li>
           </ul>
 
-          <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => setOpenModal(true)}>
+          <button
+            className="btn-white mt-5 flex items-center gap-2 mx-auto"
+            onClick={() => {
+              window.location.href = "tel:+919042065454";
+            }}
+          >
             Book an Appointment <ArrowUpRight className="w-5 h-5" />
           </button>
           <BookAppointmentModal
@@ -508,8 +653,7 @@ export default function SidebarTabs() {
           />
         </div>
 
-        <Link href="/find-a-doctor" >
-
+        <Link href="/find-a-doctor">
           <div
             className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
             style={{
@@ -518,10 +662,7 @@ export default function SidebarTabs() {
           >
             {/* Text Section */}
             <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
-              <h3
-
-                className="text-[24px] sm:text-xl  font-bold leading-snug"
-              >
+              <h3 className="text-[24px] sm:text-xl  font-bold leading-snug">
                 Find a <br className="hidden sm:block" /> Doctor?
               </h3>
             </div>

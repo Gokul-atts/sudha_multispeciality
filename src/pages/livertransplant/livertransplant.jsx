@@ -34,6 +34,7 @@ import DonorDataTable from '@/components/donordatatable';
 import { ArrowUpRight } from "lucide-react";
 
 import Breadcrumb from "@/components/Breadcrumb";
+import LiverTransplantDonar from "@/components/LiverTransplant";
 
 const breadcrumbItems = [
   { label: "Home", href: "/" },
@@ -178,7 +179,7 @@ function LiverTransplant() {
               transition={{ duration: 0.7 }}
             >
               <Link
-                href="#contactus"
+                href="tel:+919042065454"
                 className="btn-white"
               >
                 Book an Appointment <ArrowUpRight className="w-5 h-5" />
@@ -286,11 +287,14 @@ function LiverTransplant() {
 
         <Faculties />
       </section >
-      {/* <section>
+
+
+
+            <section className="max-w-7xl mx-auto  pb-2 py-8">
         <div>
-          <DonorDataTable />
+          <LiverTransplantDonar />
         </div>
-      </section> */}
+      </section>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6  py-16">
         {/* Left - Contact Info */}

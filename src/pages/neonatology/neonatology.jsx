@@ -89,7 +89,7 @@ function Neonatology() {
               transition={{ duration: 0.7 }}
             >
               <Link
-                href="#contactus"
+                href="tel:+919042065454"
                 className="btn-white"
               >
                 Book an Appointment <ArrowUpRight className="w-5 h-5" />
@@ -132,7 +132,7 @@ function Neonatology() {
               <p className="mb-4 text-center ">
                 Get all your personalised healthcare services under one roof from experienced and trusted doctors.
               </p>
-             <Link href="#contactus" className="btn-diagonal mt-2">
+             <Link href="tel:+919042065454" className="btn-diagonal mt-2">
                 Book Your Appointment Today <ArrowUpRight className="w-5 h-5" />
               </Link>
             </div>
@@ -174,9 +174,9 @@ function Neonatology() {
         </div>
       </section>
 
-      <section id="contactus">
+      {/* <section id="contactus">
         <Bookappointment />
-      </section>
+      </section> */}
     </div>
   );
 }

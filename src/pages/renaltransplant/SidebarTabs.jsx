@@ -310,7 +310,9 @@ export default function SidebarTabs() {
               <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} /> Experienced multidisciplinary team with advanced facilities</li>
               <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} /> Holistic support through counselling, nutrition, and long-term follow-up</li>
             </ul>
-            <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => setOpenModal(true)}>
+            <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => {
+    window.location.href = "tel:+919042065454";
+  }}>
               Book an Appointment <ArrowUpRight className="w-5 h-5" />
             </button>
             <BookAppointmentModal
@@ -884,7 +886,9 @@ export default function SidebarTabs() {
             <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} /> Experienced multidisciplinary team with advanced facilities</li>
             <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} /> Holistic support through counselling, nutrition, and long-term follow-up</li>
           </ul>
-          <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => setOpenModal(true)}>
+          <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => {
+    window.location.href = "tel:+919042065454";
+  }}>
             Book an Appointment <ArrowUpRight className="w-5 h-5" />
           </button>
           <BookAppointmentModal

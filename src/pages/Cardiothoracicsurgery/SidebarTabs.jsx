@@ -37,9 +37,9 @@ const faq = [
           A branch of medicine dealing with disorders of the heart and blood
           vessels. The work of our cardiologists for adults includes diagnosis
           and treatment of adult congenital heart disease, heart failure,
-          coronary artery disease, valvular heart disease and arrhythmias.
-          All the necessary investigations like ECG, Echocardiogram, Treadmill
-          test, Holter monitoring, Ambulatory BP monitoring, tilt table testing,
+          coronary artery disease, valvular heart disease and arrhythmias. All
+          the necessary investigations like ECG, Echocardiogram, Treadmill test,
+          Holter monitoring, Ambulatory BP monitoring, tilt table testing,
           cardiac CT, cardiac MRI, and nuclear heart scanning are available to
           provide you with the best adult cardiology treatment at our
           multispeciality hospital in Erode.
@@ -81,7 +81,11 @@ const faq = [
     ),
   },
   {
-    title: <div className="flex gap-3">What is the main cause of heart problems?</div>,
+    title: (
+      <div className="flex gap-3">
+        What is the main cause of heart problems?
+      </div>
+    ),
     content: <p>Details coming soon.</p>,
   },
 ];
@@ -101,10 +105,10 @@ const accordionData = [
         </p>
         <p>
           Our cardiac department is recognized for its consistent outcomes and
-          commitment to clinical excellence. With a strong foundation in research
-          and active involvement in national and international studies, we
-          continuously strive to set high standards in heart care and surgical
-          innovation.
+          commitment to clinical excellence. With a strong foundation in
+          research and active involvement in national and international studies,
+          we continuously strive to set high standards in heart care and
+          surgical innovation.
         </p>
       </div>
     ),
@@ -114,17 +118,17 @@ const accordionData = [
     content: (
       <div className="text-sm text-gray-700 space-y-3">
         <p>
-          Our cardiac care team offers specialized surgical services for children
-          and young adults, addressing a wide range of heart conditions from
-          infancy through adolescence. With a focus on timely intervention and
-          compassionate care, we are equipped to handle even the most delicate
-          and urgent procedures in young patients.
+          Our cardiac care team offers specialized surgical services for
+          children and young adults, addressing a wide range of heart conditions
+          from infancy through adolescence. With a focus on timely intervention
+          and compassionate care, we are equipped to handle even the most
+          delicate and urgent procedures in young patients.
         </p>
         <p>
           The paediatric cardiac unit is known for its commitment to quality,
           safety, and positive outcomes. Our approach is guided by international
-          standards and best practices, ensuring every child receives expert care
-          in a supportive environment tailored to their unique needs.
+          standards and best practices, ensuring every child receives expert
+          care in a supportive environment tailored to their unique needs.
         </p>
       </div>
     ),
@@ -142,10 +146,10 @@ const accordionData = [
           precise and timely interventions.
         </p>
         <p>
-          Aortic emergencies such as dissections require immediate attention, and
-          our centre is well-prepared to manage these critical cases with
-          expertise. With a focus on safety, innovation, and patient outcomes, we
-          are recognized for delivering high-quality care in complex aortic
+          Aortic emergencies such as dissections require immediate attention,
+          and our centre is well-prepared to manage these critical cases with
+          expertise. With a focus on safety, innovation, and patient outcomes,
+          we are recognized for delivering high-quality care in complex aortic
           surgeries.
         </p>
       </div>
@@ -229,12 +233,14 @@ export default function SidebarTabs() {
                   >
                     <div className="flex items-center gap-4">
                       <span
-                        className={`w-2 h-2 rounded-full transition-colors duration-300 ${isActive ? "bg-[#2b3990]" : "bg-gray-300"
-                          }`}
+                        className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                          isActive ? "bg-[#2b3990]" : "bg-gray-300"
+                        }`}
                       />
                       <span
-                        className={`text-[15px] font-bold transition-colors duration-300 ${isActive ? "text-[#2b3990]" : "text-black"
-                          } group-hover:text-[#2A3D90]`}
+                        className={`text-[15px] font-bold transition-colors duration-300 ${
+                          isActive ? "text-[#2b3990]" : "text-black"
+                        } group-hover:text-[#2A3D90]`}
                       >
                         {item.label}
                       </span>
@@ -271,20 +277,43 @@ export default function SidebarTabs() {
             <hr className="border-light" />
             <ul className="space-y-4 text-start mt-4">
               <li className="flex items-start gap-1 text-[14px] font-semibold">
-                <Image src={Checklight} alt="tick" width={12} height={10} className="mt-1" />
+                <Image
+                  src={Checklight}
+                  alt="tick"
+                  width={12}
+                  height={10}
+                  className="mt-1"
+                />
                 24/7 cardiac intensive care and monitoring specialties
               </li>
               <li className="flex items-start gap-1 text-[14px] font-semibold">
-                <Image src={Checklight} alt="tick" width={12} height={10} className="mt-1" />
+                <Image
+                  src={Checklight}
+                  alt="tick"
+                  width={12}
+                  height={10}
+                  className="mt-1"
+                />
                 Expert team for adult and paediatric cardiac care
               </li>
               <li className="flex items-start gap-1 text-[14px] font-semibold">
-                <Image src={Checklight} alt="tick" width={12} height={10} className="mt-1" />
+                <Image
+                  src={Checklight}
+                  alt="tick"
+                  width={12}
+                  height={10}
+                  className="mt-1"
+                />
                 Comprehensive facilities ensuring the best outcomes
               </li>
             </ul>
 
-            <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => setOpenModal(true)}>
+            <button
+              className="btn-white mt-5 flex items-center gap-2 mx-auto"
+              onClick={() => {
+                window.location.href = "tel:+919042065454";
+              }}
+            >
               Book an Appointment <ArrowUpRight className="w-5 h-5" />
             </button>
             <BookAppointmentModal
@@ -294,8 +323,7 @@ export default function SidebarTabs() {
           </div>
 
           {/* Find a Doctor Box */}
-          <Link href="/find-a-doctor" >
-
+          <Link href="/find-a-doctor">
             <div
               className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
               style={{
@@ -304,10 +332,7 @@ export default function SidebarTabs() {
             >
               {/* Text Section */}
               <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
-                <h3
-
-                  className="text-[24px] sm:text-xl  font-bold leading-snug"
-                >
+                <h3 className="text-[24px] sm:text-xl  font-bold leading-snug">
                   Find a <br className="hidden sm:block" /> Doctor?
                 </h3>
               </div>
@@ -323,7 +348,6 @@ export default function SidebarTabs() {
             </div>
           </Link>
         </div>
-
       </aside>
 
       {/* Main Content Sections */}
@@ -347,22 +371,22 @@ export default function SidebarTabs() {
                     The Cardiothoracic Surgery Department at Sudha
                     Multispeciality Hospital provides the best cardiothoracic
                     treatments in Erode and has an impressive track record with
-                    high success rate surgeries performed by the most experienced
-                    cardiothoracic surgeons in the region. The department is
-                    well-prepared to manage a full range of cardiac and thoracic
-                    conditions, from intricate neonatal surgeries to advanced
-                    treatments for heart failure, including heart
-                    transplantation.
+                    high success rate surgeries performed by the most
+                    experienced cardiothoracic surgeons in the region. The
+                    department is well-prepared to manage a full range of
+                    cardiac and thoracic conditions, from intricate neonatal
+                    surgeries to advanced treatments for heart failure,
+                    including heart transplantation.
                   </p>
                   <p className="mb-4">
                     With cutting-edge infrastructure and modern surgical
                     technology, the centre is committed to delivering
                     high-quality cardiac care, including bypass surgeries, at
-                    cost-effective rates. Sudha Multispeciality Hospital is known
-                    as the best cardiology hospital in Erode, for its expertise
-                    in valve repair, aortic surgeries, complex paediatric heart
-                    procedures, and surgical management of heart failure,
-                    including transplantation.
+                    cost-effective rates. Sudha Multispeciality Hospital is
+                    known as the best cardiology hospital in Erode, for its
+                    expertise in valve repair, aortic surgeries, complex
+                    paediatric heart procedures, and surgical management of
+                    heart failure, including transplantation.
                   </p>
                   <p className="mb-4">
                     In addition to its cardiac services, this comprehensive unit
@@ -381,13 +405,13 @@ export default function SidebarTabs() {
                 <p className="mt-3">
                   The department performs a full range of cardiac surgeries for
                   patients of all ages, from newborns to the elderly. The
-                  paediatric unit handles complex procedures like arterial switch
-                  operations, while the adult unit specialises in coronary artery
-                  bypass grafting, including beating heart surgery, arterial
-                  grafts, and minimally invasive harvesting. Known for excellence
-                  in valve repair and aortic surgery, the centre is equipped with
-                  advanced facilities to manage both simple and complex heart
-                  conditions.
+                  paediatric unit handles complex procedures like arterial
+                  switch operations, while the adult unit specialises in
+                  coronary artery bypass grafting, including beating heart
+                  surgery, arterial grafts, and minimally invasive harvesting.
+                  Known for excellence in valve repair and aortic surgery, the
+                  centre is equipped with advanced facilities to manage both
+                  simple and complex heart conditions.
                 </p>
               </>
             )}
@@ -458,20 +482,43 @@ export default function SidebarTabs() {
           <hr className="border-light" />
           <ul className="space-y-4 text-start mt-4">
             <li className="flex items-start gap-1 text-[14px] font-semibold">
-              <Image src={Checklight} alt="tick" width={12} height={10} className="mt-1" />
+              <Image
+                src={Checklight}
+                alt="tick"
+                width={12}
+                height={10}
+                className="mt-1"
+              />
               24/7 cardiac intensive care and monitoring specialties
             </li>
             <li className="flex items-start gap-1 text-[14px] font-semibold">
-              <Image src={Checklight} alt="tick" width={12} height={10} className="mt-1" />
+              <Image
+                src={Checklight}
+                alt="tick"
+                width={12}
+                height={10}
+                className="mt-1"
+              />
               Expert team for adult and paediatric cardiac care
             </li>
             <li className="flex items-start gap-1 text-[14px] font-semibold">
-              <Image src={Checklight} alt="tick" width={12} height={10} className="mt-1" />
+              <Image
+                src={Checklight}
+                alt="tick"
+                width={12}
+                height={10}
+                className="mt-1"
+              />
               Comprehensive facilities ensuring the best outcomes
             </li>
           </ul>
 
-          <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => setOpenModal(true)}>
+          <button
+            className="btn-white mt-5 flex items-center gap-2 mx-auto"
+            onClick={() => {
+              window.location.href = "tel:+919042065454";
+            }}
+          >
             Book an Appointment <ArrowUpRight className="w-5 h-5" />
           </button>
           <BookAppointmentModal
@@ -481,8 +528,7 @@ export default function SidebarTabs() {
         </div>
 
         {/* Find a Doctor Box */}
-        <Link href="/find-a-doctor" >
-
+        <Link href="/find-a-doctor">
           <div
             className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
             style={{
@@ -491,10 +537,7 @@ export default function SidebarTabs() {
           >
             {/* Text Section */}
             <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
-              <h3
-
-                className="text-[24px] sm:text-xl  font-bold leading-snug"
-              >
+              <h3 className="text-[24px] sm:text-xl  font-bold leading-snug">
                 Find a <br className="hidden sm:block" /> Doctor?
               </h3>
             </div>

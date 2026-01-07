@@ -398,9 +398,9 @@ const EthicsCommitte = () => {
                 </div>
             </section>
 
-            <section>
+            {/* <section>
                 <Bookappointment />
-            </section>
+            </section> */}
 
         </div>
     );

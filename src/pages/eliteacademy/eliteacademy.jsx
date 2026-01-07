@@ -59,7 +59,7 @@ const cards = [
                 <span className="text-[#2b3990] font-extrabold"> Appointment </span>
             </p>
         ),
-        link: "/#book-appointment",
+        link: "tel:+919042065454",
     },
 ];
 
@@ -286,9 +286,9 @@ const EliteAcademy = () => {
             </section>
 
 
-            <section>
+            {/* <section>
                 <Bookappointment />
-            </section>
+            </section> */}
 
         </div>
     );

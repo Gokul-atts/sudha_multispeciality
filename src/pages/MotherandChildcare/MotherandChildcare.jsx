@@ -508,7 +508,7 @@ function MotherandChildcare() {
             </p>
             <div>
               <Link
-                href="#contactus"
+               href="tel:+919042065454"
                 className="btn-outline-white"
               >
                 Book an Appointment <ArrowUpRight className="w-5 h-5" />
@@ -742,7 +742,9 @@ function MotherandChildcare() {
           </span>
           <b>Dreaming of motherhood? Get the right support.  </b>
 
-          <button className="text-primary-blue font-semibold ml-1 underline" onClick={() => setOpenModal(true)}>
+          <button className="text-primary-blue font-semibold ml-1 underline" onClick={() => {
+    window.location.href = "tel:+919042065454";
+  }}>
             Book your free consultation
           </button>
           <BookAppointmentModal
@@ -1091,7 +1093,9 @@ function MotherandChildcare() {
               transition={{ duration: 0.5, delay: 0.6 }}
               className=""
             >
-              <button className="btn-white  flex items-center gap-2 mx-auto" onClick={() => setOpenModal(true)}>
+              <button className="btn-white  flex items-center gap-2 mx-auto" onClick={() => {
+    window.location.href = "tel:+919042065454";
+  }}>
                 Book an Appointment <ArrowUpRight className="w-5 h-5" />
               </button>
               <BookAppointmentModal

@@ -95,7 +95,7 @@ const maxClass = {
 
                 {/* View Profile Button */}
                 <Link
-                  href="/contact-us"
+                   href="tel:+919876543210"
                   className="btn-diagonal-outline px-8 w-full mt-6 flex items-center justify-center gap-2"
                 >
                   Book an Appointment <ArrowUpRight className="w-5 h-5" />

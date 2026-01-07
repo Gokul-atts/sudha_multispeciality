@@ -293,9 +293,9 @@ const Alliedhealthservice = () => {
             </div>
 
 
-            <div id="contactus">
+            {/* <div id="contactus">
                 <Bookappointment />
-            </div>
+            </div> */}
         </div>
     );
 };

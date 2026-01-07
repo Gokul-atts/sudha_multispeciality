@@ -14,8 +14,6 @@ import DoctorSlider from "../../components/Slicksliderdoctor";
 import Faq from "../../components/Faq";
 import one from "@/assets/about/1.svg";
 
-
-
 const serviceSections = [
   { id: "overview", label: "Overview" },
   { id: "facilities", label: "Facilities" },
@@ -30,26 +28,35 @@ const accordionData = [
         <div className="flex gap-3">
           {/* <Image src={one} alt="Adult Cardiology" />  */}
           Clinical Nutrition for Outpatients & Inpatients
-
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p>
-          We provide dietary counselling for outpatients and customized diet planning for inpatients. Each plan is designed after evaluating medical records, lab results, and lifestyle habits. The goal is to support faster recovery and reduce the risk of complications.
+          We provide dietary counselling for outpatients and customized diet
+          planning for inpatients. Each plan is designed after evaluating
+          medical records, lab results, and lifestyle habits. The goal is to
+          support faster recovery and reduce the risk of complications.
         </p>
 
         <div>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />One-on-one nutrition counselling  </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Medical nutrition therapy based on diagnosis   </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Daily monitoring and support for admitted patients  </li>
-
-
-
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              One-on-one nutrition counselling{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Medical nutrition therapy based on diagnosis{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} /> Daily
+              monitoring and support for admitted patients{" "}
+            </li>
           </ul>
-
         </div>
       </div>
     ),
@@ -60,29 +67,34 @@ const accordionData = [
         <div className="flex gap-3">
           {/* <Image src={one} alt="Interventional Cardiology" />  */}
           Critical Care Nutrition Management
-
-
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p>
-          Patients in ICUs or undergoing complex treatments receive continuous nutrition monitoring. Diets are adjusted based on clinical progress and metabolic needs.
+          Patients in ICUs or undergoing complex treatments receive continuous
+          nutrition monitoring. Diets are adjusted based on clinical progress
+          and metabolic needs.
         </p>
         <div>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />ICU-specific nutritional assessments   </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Regular diet modification as per treatment response  </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} />Calorie- and protein-dense feeding plans when needed  </li>
-
-
-
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              ICU-specific nutritional assessments{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Regular diet modification as per treatment response{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Calorie- and protein-dense feeding plans when needed{" "}
+            </li>
           </ul>
-
         </div>
-
-
       </div>
     ),
   },
@@ -93,33 +105,42 @@ const accordionData = [
         <div className="flex gap-3">
           {/* <Image src={one} alt="Interventional Cardiology" />  */}
           Condition-Specific Diet Therapy
-
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p className="mt-2">
-          We design detailed diet charts that help manage various health conditions effectively. These include therapeutic diets for diabetes, heart disease, gastrointestinal disorders, and metabolic imbalances.
+          We design detailed diet charts that help manage various health
+          conditions effectively. These include therapeutic diets for diabetes,
+          heart disease, gastrointestinal disorders, and metabolic imbalances.
         </p>
         <div>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Diabetes and gestational diabetes management  </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} />Renal and liver disorder diets</li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Low-purine, low-sodium, low-fat, and high-protein options  </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Diabetes and gestational diabetes management{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Renal and liver disorder diets
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Low-purine, low-sodium, low-fat, and high-protein options{" "}
+            </li>
 
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Cancer-specific nutritional support   </li>
-
-
-
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Cancer-specific nutritional support{" "}
+            </li>
           </ul>
-
         </div>
-
       </div>
     ),
   },
-
 
   {
     title: (
@@ -127,30 +148,39 @@ const accordionData = [
         <div className="flex gap-3">
           {/* <Image src={one} alt="Interventional Cardiology" />  */}
           Maternal & Paediatric Nutrition
-
-
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p className="mt-2">
-          Specialized diets for expectant mothers and growing children ensure nutritional adequacy, optimal fetal development, and healthy growth in children.
+          Specialized diets for expectant mothers and growing children ensure
+          nutritional adequacy, optimal fetal development, and healthy growth in
+          children.
         </p>
         <div>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />ANC (Antenatal Care) diet plans   </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} />Paediatric diet charts for balanced growth </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Child and infant food charts  </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              ANC (Antenatal Care) diet plans{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Paediatric diet charts for balanced growth{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} /> Child
+              and infant food charts{" "}
+            </li>
 
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} />Multicolour food chart guidance for easy meal planning    </li>
-
-
-
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Multicolour food chart guidance for easy meal planning{" "}
+            </li>
           </ul>
-
         </div>
-
       </div>
     ),
   },
@@ -161,35 +191,42 @@ const accordionData = [
         <div className="flex gap-3">
           {/* <Image src={one} alt="Interventional Cardiology" />  */}
           Weight & Lifestyle Management
-
-
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p className="mt-2">
-          We offer customized diet programs to support weight loss, bariatric surgery preparation, or long-term lifestyle changes for overall health improvement.
+          We offer customized diet programs to support weight loss, bariatric
+          surgery preparation, or long-term lifestyle changes for overall health
+          improvement.
         </p>
         <div>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Obesity and metabolic syndrome diets   </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} />Gall bladder stone-specific plans </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Low cholesterol and low oxalate diets  </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Obesity and metabolic syndrome diets{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Gall bladder stone-specific plans{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} /> Low
+              cholesterol and low oxalate diets{" "}
+            </li>
 
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} />Lifestyle-focused nutrition for preventive care    </li>
-
-
-
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Lifestyle-focused nutrition for preventive care{" "}
+            </li>
           </ul>
-
         </div>
-
       </div>
     ),
   },
-
-
 ];
 const faq = [
   {
@@ -251,7 +288,6 @@ const faq = [
     title: (
       <>
         <div className="flex gap-3">
-
           What is the main cause of heart problems?
         </div>
       </>
@@ -316,7 +352,7 @@ const faq = [
 ];
 
 export default function SidebarTabs() {
-  const [activeSection, setActiveSection] = useState('');
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -327,7 +363,7 @@ export default function SidebarTabs() {
           }
         });
       },
-      { rootMargin: '-20% 0px -60% 0px' }
+      { rootMargin: "-20% 0px -60% 0px" }
     );
 
     serviceSections.forEach(({ id }) => {
@@ -338,14 +374,12 @@ export default function SidebarTabs() {
     return () => observer.disconnect();
   }, []);
 
-
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
   }, []);
 
   return (
     <div className="flex md:mt-0 mt-4 flex-col lg:flex-row gap-8">
-
       {/* Sidebar */}
       <aside className="w-full lg:w-1/4 lg:sticky top-24 h-fit space-y-6">
         {/* Tabs Box */}
@@ -366,12 +400,14 @@ export default function SidebarTabs() {
                   >
                     <div className="flex items-center gap-4">
                       <span
-                        className={`w-2 h-2 rounded-full transition-colors duration-300 ${isActive ? 'bg-[#2b3990]' : 'bg-gray-300'
-                          }`}
+                        className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                          isActive ? "bg-[#2b3990]" : "bg-gray-300"
+                        }`}
                       />
                       <span
-                        className={`text-[15px]  font-bold transition-colors duration-300 ${isActive ? 'text-[#2b3990]' : 'text-black'
-                          } group-hover:text-[#2A3D90]`}
+                        className={`text-[15px]  font-bold transition-colors duration-300 ${
+                          isActive ? "text-[#2b3990]" : "text-black"
+                        } group-hover:text-[#2A3D90]`}
                       >
                         {item.label}
                       </span>
@@ -406,19 +442,51 @@ export default function SidebarTabs() {
               Sudha Multispeciality Hospital
             </h3>
             <ul className="space-y-4 text-start mt-4">
-              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />  Specialized maternal and paediatric nutrition guidance. </li>
-              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} /> Expert nutrition care for all age groups and conditions.   </li>
-              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />Condition-specific diets for diabetes, heart, kidney, and cancer care. </li>
-
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">
+                {" "}
+                <Image
+                  className="mt-1"
+                  src={Checklight}
+                  alt="tick"
+                  width={12}
+                  height={10}
+                />{" "}
+                Specialized maternal and paediatric nutrition guidance.{" "}
+              </li>
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">
+                {" "}
+                <Image
+                  className="mt-1"
+                  src={Checklight}
+                  alt="tick"
+                  width={12}
+                  height={10}
+                />{" "}
+                Expert nutrition care for all age groups and conditions.{" "}
+              </li>
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">
+                {" "}
+                <Image
+                  className="mt-1"
+                  src={Checklight}
+                  alt="tick"
+                  width={12}
+                  height={10}
+                />
+                Condition-specific diets for diabetes, heart, kidney, and cancer
+                care.{" "}
+              </li>
             </ul>
 
-            <button className="btn-white mt-5">
-              Book an Appointment <ArrowUpRight className="w-4 sm:w-5 h-4 sm:h-5" />
-            </button>
+            <Link href="tel:+919042065454">
+              <button className="btn-white mt-5">
+                Book an Appointment{" "}
+                <ArrowUpRight className="w-4 sm:w-5 h-4 sm:h-5" />
+              </button>
+            </Link>
           </div>
 
-          <Link href="/find-a-doctor" >
-
+          <Link href="/find-a-doctor">
             <div
               className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
               style={{
@@ -427,10 +495,7 @@ export default function SidebarTabs() {
             >
               {/* Text Section */}
               <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
-                <h3
-
-                  className="text-[24px] sm:text-xl  font-bold leading-snug"
-                >
+                <h3 className="text-[24px] sm:text-xl  font-bold leading-snug">
                   Find a <br className="hidden sm:block" /> Doctor?
                 </h3>
               </div>
@@ -446,9 +511,6 @@ export default function SidebarTabs() {
             </div>
           </Link>
         </div>
-
-
-
       </aside>
 
       {/* Content Sections */}
@@ -457,7 +519,11 @@ export default function SidebarTabs() {
           <section key={id} id={id} className="scroll-mt-32 rounded-xl">
             {id === "overview" && (
               <>
-                <Image src={aboutOverview} alt="aboutOverview" className="w-full h-[380px] rounded-2xl object-cover" />
+                <Image
+                  src={aboutOverview}
+                  alt="aboutOverview"
+                  className="w-full h-[380px] rounded-2xl object-cover"
+                />
 
                 <div className="mt-6 space-y-4">
                   {/* <h2 className="text-[24px]">
@@ -466,7 +532,14 @@ export default function SidebarTabs() {
                     at Sudha Multispeciality Hospital
                   </h2> */}
                   <p className="mb-4">
-                    At Sudha Multispeciality Hospital in Erode, we provide comprehensive postpartum care to support new mothers through their recovery and adjustment period after childbirth. Our experienced team offers personalised medical, emotional, and nutritional support to ensure a smooth and healthy transition for mother and baby. We focus on holistic care that promotes physical healing, mental well-being, and breastfeeding success during this critical phase.
+                    At Sudha Multispeciality Hospital in Erode, we provide
+                    comprehensive postpartum care to support new mothers through
+                    their recovery and adjustment period after childbirth. Our
+                    experienced team offers personalised medical, emotional, and
+                    nutritional support to ensure a smooth and healthy
+                    transition for mother and baby. We focus on holistic care
+                    that promotes physical healing, mental well-being, and
+                    breastfeeding success during this critical phase.
                   </p>
                   {/* <p className="mt-4 mb-4">
                     Whether it's for managing diabetes, cardiovascular conditions, kidney disorders, cancer recovery, or nutritional needs during pregnancy, we provide evidence-based diet plans to suit every individual. The department ensures holistic dietary care for preventive health, disease management, and long-term wellness.
@@ -480,22 +553,29 @@ export default function SidebarTabs() {
                 <h3 className="text-[24px] mt-5">Facilities</h3>
                 <ul>
                   <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>Comfortable, private rooms with amenities to support rest and recovery.
-                  </li>
-                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> Lactation consultant services to assist with breastfeeding techniques and challenges
-                  </li>
-                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
-                    Postnatal physiotherapy facilities to aid pelvic floor and abdominal muscle rehabilitation
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>
+                    Comfortable, private rooms with amenities to support rest
+                    and recovery.
                   </li>
                   <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
                     <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
-                    Nutritional counselling to support healing and healthy lactation.
+                    Lactation consultant services to assist with breastfeeding
+                    techniques and challenges
                   </li>
                   <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
                     <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
-                    Psychological support and counselling services for postpartum mental health
+                    Postnatal physiotherapy facilities to aid pelvic floor and
+                    abdominal muscle rehabilitation
+                  </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
+                    Nutritional counselling to support healing and healthy
+                    lactation.
+                  </li>
+                  <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
+                    Psychological support and counselling services for
+                    postpartum mental health
                   </li>
                 </ul>
               </>
@@ -540,19 +620,51 @@ export default function SidebarTabs() {
             Sudha Multispeciality Hospital
           </h3>
           <ul className="space-y-4 text-start mt-4">
-            <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />  Specialized maternal and paediatric nutrition guidance. </li>
-            <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} /> Expert nutrition care for all age groups and conditions.   </li>
-            <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />Condition-specific diets for diabetes, heart, kidney, and cancer care. </li>
-
+            <li className="flex items-start  gap-1 text-[14px] font-semibold">
+              {" "}
+              <Image
+                className="mt-1"
+                src={Checklight}
+                alt="tick"
+                width={12}
+                height={10}
+              />{" "}
+              Specialized maternal and paediatric nutrition guidance.{" "}
+            </li>
+            <li className="flex items-start  gap-1 text-[14px] font-semibold">
+              {" "}
+              <Image
+                className="mt-1"
+                src={Checklight}
+                alt="tick"
+                width={12}
+                height={10}
+              />{" "}
+              Expert nutrition care for all age groups and conditions.{" "}
+            </li>
+            <li className="flex items-start  gap-1 text-[14px] font-semibold">
+              {" "}
+              <Image
+                className="mt-1"
+                src={Checklight}
+                alt="tick"
+                width={12}
+                height={10}
+              />
+              Condition-specific diets for diabetes, heart, kidney, and cancer
+              care.{" "}
+            </li>
           </ul>
 
-          <button className="btn-white mt-5">
-            Book an Appointment <ArrowUpRight className="w-4 sm:w-5 h-4 sm:h-5" />
-          </button>
+          <Link href="tel:+919042065454">
+            <button className="btn-white mt-5">
+              Book an Appointment{" "}
+              <ArrowUpRight className="w-4 sm:w-5 h-4 sm:h-5" />
+            </button>
+          </Link>
         </div>
 
-        <Link href="/find-a-doctor" >
-
+        <Link href="/find-a-doctor">
           <div
             className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
             style={{
@@ -561,10 +673,7 @@ export default function SidebarTabs() {
           >
             {/* Text Section */}
             <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
-              <h3
-
-                className="text-[24px] sm:text-xl  font-bold leading-snug"
-              >
+              <h3 className="text-[24px] sm:text-xl  font-bold leading-snug">
                 Find a <br className="hidden sm:block" /> Doctor?
               </h3>
             </div>

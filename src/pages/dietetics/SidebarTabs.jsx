@@ -14,8 +14,6 @@ import DoctorSlider from "../../components/Slicksliderdoctor";
 import Faq from "../../components/Faq";
 import one from "@/assets/about/1.svg";
 
-
-
 const serviceSections = [
   { id: "overview", label: "Overview" },
   { id: "facilities", label: "Facilities" },
@@ -24,7 +22,6 @@ const serviceSections = [
   { id: "faqs", label: "FAQs" },
 ];
 
-
 const accordionData = [
   {
     title: (
@@ -32,26 +29,35 @@ const accordionData = [
         <div className="flex gap-3">
           {/* <Image src={one} alt="Adult Cardiology" />  */}
           Clinical Nutrition for Outpatients & Inpatients
-
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p>
-          We provide dietary counselling for outpatients and customized diet planning for inpatients. Each plan is designed after evaluating medical records, lab results, and lifestyle habits. The goal is to support faster recovery and reduce the risk of complications.
+          We provide dietary counselling for outpatients and customized diet
+          planning for inpatients. Each plan is designed after evaluating
+          medical records, lab results, and lifestyle habits. The goal is to
+          support faster recovery and reduce the risk of complications.
         </p>
 
         <div>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />One-on-one nutrition counselling  </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Medical nutrition therapy based on diagnosis   </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Daily monitoring and support for admitted patients  </li>
-
-
-
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              One-on-one nutrition counselling{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Medical nutrition therapy based on diagnosis{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} /> Daily
+              monitoring and support for admitted patients{" "}
+            </li>
           </ul>
-
         </div>
       </div>
     ),
@@ -62,29 +68,34 @@ const accordionData = [
         <div className="flex gap-3">
           {/* <Image src={one} alt="Interventional Cardiology" />  */}
           Critical Care Nutrition Management
-
-
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p>
-          Patients in ICUs or undergoing complex treatments receive continuous nutrition monitoring. Diets are adjusted based on clinical progress and metabolic needs.
+          Patients in ICUs or undergoing complex treatments receive continuous
+          nutrition monitoring. Diets are adjusted based on clinical progress
+          and metabolic needs.
         </p>
         <div>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />ICU-specific nutritional assessments   </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} /> Regular diet modification as per treatment response  </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} />Calorie- and protein-dense feeding plans when needed  </li>
-
-
-
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              ICU-specific nutritional assessments{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Regular diet modification as per treatment response{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Calorie- and protein-dense feeding plans when needed{" "}
+            </li>
           </ul>
-
         </div>
-
-
       </div>
     ),
   },
@@ -95,33 +106,42 @@ const accordionData = [
         <div className="flex gap-3">
           {/* <Image src={one} alt="Interventional Cardiology" />  */}
           Condition-Specific Diet Therapy
-
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p className="mt-2">
-          We design detailed diet charts that help manage various health conditions effectively. These include therapeutic diets for diabetes, heart disease, gastrointestinal disorders, and metabolic imbalances.
+          We design detailed diet charts that help manage various health
+          conditions effectively. These include therapeutic diets for diabetes,
+          heart disease, gastrointestinal disorders, and metabolic imbalances.
         </p>
         <div>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Diabetes and gestational diabetes management  </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} />Renal and liver disorder diets</li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Low-purine, low-sodium, low-fat, and high-protein options  </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Diabetes and gestational diabetes management{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Renal and liver disorder diets
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Low-purine, low-sodium, low-fat, and high-protein options{" "}
+            </li>
 
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Cancer-specific nutritional support   </li>
-
-
-
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />{" "}
+              Cancer-specific nutritional support{" "}
+            </li>
           </ul>
-
         </div>
-
       </div>
     ),
   },
-
 
   {
     title: (
@@ -129,30 +149,39 @@ const accordionData = [
         <div className="flex gap-3">
           {/* <Image src={one} alt="Interventional Cardiology" />  */}
           Maternal & Paediatric Nutrition
-
-
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p className="mt-2">
-          Specialized diets for expectant mothers and growing children ensure nutritional adequacy, optimal fetal development, and healthy growth in children.
+          Specialized diets for expectant mothers and growing children ensure
+          nutritional adequacy, optimal fetal development, and healthy growth in
+          children.
         </p>
         <div>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />ANC (Antenatal Care) diet plans   </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} />Paediatric diet charts for balanced growth </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Child and infant food charts  </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              ANC (Antenatal Care) diet plans{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Paediatric diet charts for balanced growth{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} /> Child
+              and infant food charts{" "}
+            </li>
 
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} />Multicolour food chart guidance for easy meal planning    </li>
-
-
-
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Multicolour food chart guidance for easy meal planning{" "}
+            </li>
           </ul>
-
         </div>
-
       </div>
     ),
   },
@@ -163,35 +192,42 @@ const accordionData = [
         <div className="flex gap-3">
           {/* <Image src={one} alt="Interventional Cardiology" />  */}
           Weight & Lifestyle Management
-
-
         </div>
       </>
     ),
     content: (
       <div className="text-sm  space-y-3">
         <p className="mt-2">
-          We offer customized diet programs to support weight loss, bariatric surgery preparation, or long-term lifestyle changes for overall health improvement.
+          We offer customized diet programs to support weight loss, bariatric
+          surgery preparation, or long-term lifestyle changes for overall health
+          improvement.
         </p>
         <div>
           <ul className="space-y-4">
-            <li className="flex items-center gap-2 text-[14px] font-semibold">  <Image src={Checklight} alt="tick" width={24} height={24} />Obesity and metabolic syndrome diets   </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"> <Image src={Checklight} alt="tick" width={24} height={24} />Gall bladder stone-specific plans </li>
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} /> Low cholesterol and low oxalate diets  </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Obesity and metabolic syndrome diets{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              {" "}
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Gall bladder stone-specific plans{" "}
+            </li>
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} /> Low
+              cholesterol and low oxalate diets{" "}
+            </li>
 
-            <li className="flex items-center gap-2 text-[14px] font-semibold"><Image src={Checklight} alt="tick" width={24} height={24} />Lifestyle-focused nutrition for preventive care    </li>
-
-
-
+            <li className="flex items-center gap-2 text-[14px] font-semibold">
+              <Image src={Checklight} alt="tick" width={24} height={24} />
+              Lifestyle-focused nutrition for preventive care{" "}
+            </li>
           </ul>
-
         </div>
-
       </div>
     ),
   },
-
-
 ];
 const faq = [
   {
@@ -202,7 +238,11 @@ const faq = [
     ),
     content: (
       <p>
-        Signs of poor nutrition may include fatigue, weakness, hair loss, brittle nails, frequent illnesses, digestive issues, and delayed wound healing. The best dietitians in Erode at Sudha Multispeciality Hospital provide assessments and personalised plans to address nutritional deficiencies.
+        Signs of poor nutrition may include fatigue, weakness, hair loss,
+        brittle nails, frequent illnesses, digestive issues, and delayed wound
+        healing. The best dietitians in Erode at Sudha Multispeciality Hospital
+        provide assessments and personalised plans to address nutritional
+        deficiencies.
       </p>
     ),
   },
@@ -210,23 +250,34 @@ const faq = [
     title: (
       <>
         <div className="flex gap-3">
-
           Which vitamin deficiencies are most harmful to health?
         </div>
       </>
     ),
-    content: <p>Deficiencies in vitamins such as A, D, B12, and C can lead to vision problems, weakened immunity, anaemia, and bone disorders. At Sudha Multispeciality Hospital, recognised as the best dietetics hospital in Erode, these deficiencies are detected early and managed with expert guidance. </p>,
+    content: (
+      <p>
+        Deficiencies in vitamins such as A, D, B12, and C can lead to vision
+        problems, weakened immunity, anaemia, and bone disorders. At Sudha
+        Multispeciality Hospital, recognised as the best dietetics hospital in
+        Erode, these deficiencies are detected early and managed with expert
+        guidance.{" "}
+      </p>
+    ),
   },
   {
     title: (
       <>
-        <div className="flex gap-3">
-          {" "}
-          What are the signs of good nutrition?
-        </div>
+        <div className="flex gap-3"> What are the signs of good nutrition?</div>
       </>
     ),
-    content: <p>Signs of good nutrition include healthy skin and hair, proper weight, strong immunity, high energy levels, and good mental focus. The best dietitians in Erode at Sudha Multispeciality Hospital design personalised diets to help achieve and maintain these health indicators.  </p>,
+    content: (
+      <p>
+        Signs of good nutrition include healthy skin and hair, proper weight,
+        strong immunity, high energy levels, and good mental focus. The best
+        dietitians in Erode at Sudha Multispeciality Hospital design
+        personalised diets to help achieve and maintain these health indicators.{" "}
+      </p>
+    ),
   },
   {
     title: (
@@ -237,7 +288,14 @@ const faq = [
         </div>
       </>
     ),
-    content: <p>Poor dietary habits can contribute to obesity, diabetes, heart disease, hypertension, digestive disorders, and nutrient deficiencies. Sudha Multispeciality Hospital, the best dietetics hospital in Erode, offers dietary counselling to prevent and manage these conditions effectively. </p>,
+    content: (
+      <p>
+        Poor dietary habits can contribute to obesity, diabetes, heart disease,
+        hypertension, digestive disorders, and nutrient deficiencies. Sudha
+        Multispeciality Hospital, the best dietetics hospital in Erode, offers
+        dietary counselling to prevent and manage these conditions effectively.{" "}
+      </p>
+    ),
   },
   {
     title: (
@@ -248,18 +306,31 @@ const faq = [
         </div>
       </>
     ),
-    content: <p>A healthy diet includes balanced portions of proteins, carbohydrates, healthy fats, vitamins, and minerals. Fresh fruits, vegetables, whole grains, lean proteins, and hydration are essential. Expert dietitians at Sudha Multispeciality Hospital provide customized meal plans for optimal health. </p>,
+    content: (
+      <p>
+        A healthy diet includes balanced portions of proteins, carbohydrates,
+        healthy fats, vitamins, and minerals. Fresh fruits, vegetables, whole
+        grains, lean proteins, and hydration are essential. Expert dietitians at
+        Sudha Multispeciality Hospital provide customized meal plans for optimal
+        health.{" "}
+      </p>
+    ),
   },
   {
     title: (
       <>
-        <div className="flex gap-3">
-          {" "}
-          How to start eating healthy?
-        </div>
+        <div className="flex gap-3"> How to start eating healthy?</div>
       </>
     ),
-    content: <p>Starting a healthy diet involves gradual changes such as incorporating more whole foods, reducing processed foods, controlling portion sizes, and maintaining regular meal timings. Sudha Multispeciality Hospital, recognised as the best dietetics hospital in Erode, offers guidance and follow-up support for a sustainable healthy lifestyle. </p>,
+    content: (
+      <p>
+        Starting a healthy diet involves gradual changes such as incorporating
+        more whole foods, reducing processed foods, controlling portion sizes,
+        and maintaining regular meal timings. Sudha Multispeciality Hospital,
+        recognised as the best dietetics hospital in Erode, offers guidance and
+        follow-up support for a sustainable healthy lifestyle.{" "}
+      </p>
+    ),
   },
   {
     title: (
@@ -270,12 +341,19 @@ const faq = [
         </div>
       </>
     ),
-    content: <p>Highly processed foods, excessive sugar, trans fats, and deep-fried items should be limited. The best dietitians in Erode at Sudha Multispeciality Hospital provide practical advice on food choices to support long-term health and prevent lifestyle diseases. </p>,
+    content: (
+      <p>
+        Highly processed foods, excessive sugar, trans fats, and deep-fried
+        items should be limited. The best dietitians in Erode at Sudha
+        Multispeciality Hospital provide practical advice on food choices to
+        support long-term health and prevent lifestyle diseases.{" "}
+      </p>
+    ),
   },
 ];
 
 export default function SidebarTabs() {
-  const [activeSection, setActiveSection] = useState('');
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -286,7 +364,7 @@ export default function SidebarTabs() {
           }
         });
       },
-      { rootMargin: '-20% 0px -60% 0px' }
+      { rootMargin: "-20% 0px -60% 0px" }
     );
 
     serviceSections.forEach(({ id }) => {
@@ -297,14 +375,12 @@ export default function SidebarTabs() {
     return () => observer.disconnect();
   }, []);
 
-
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
   }, []);
 
   return (
     <div className="flex md:mt-0 mt-4 flex-col lg:flex-row gap-8">
-
       {/* Sidebar */}
       <aside className="w-full lg:w-1/4 lg:sticky top-24 h-fit space-y-6">
         {/* Tabs Box */}
@@ -325,12 +401,14 @@ export default function SidebarTabs() {
                   >
                     <div className="flex items-center gap-4">
                       <span
-                        className={`w-2 h-2 rounded-full transition-colors duration-300 ${isActive ? 'bg-[#2b3990]' : 'bg-gray-300'
-                          }`}
+                        className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                          isActive ? "bg-[#2b3990]" : "bg-gray-300"
+                        }`}
                       />
                       <span
-                        className={`text-[15px]  font-bold transition-colors duration-300 ${isActive ? 'text-[#2b3990]' : 'text-black'
-                          } group-hover:text-[#2A3D90]`}
+                        className={`text-[15px]  font-bold transition-colors duration-300 ${
+                          isActive ? "text-[#2b3990]" : "text-black"
+                        } group-hover:text-[#2A3D90]`}
                       >
                         {item.label}
                       </span>
@@ -351,7 +429,6 @@ export default function SidebarTabs() {
           </ul>
         </div>
 
-
         <div className="hidden md:block">
           {/* Sudha Hospital Box */}
           <div
@@ -366,19 +443,51 @@ export default function SidebarTabs() {
               Sudha Multispeciality Hospital
             </h3>
             <ul className="space-y-4 text-start mt-4">
-              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />  Specialized maternal and paediatric nutrition guidance. </li>
-              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} /> Expert nutrition care for all age groups and conditions.   </li>
-              <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />Condition-specific diets for diabetes, heart, kidney, and cancer care. </li>
-
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">
+                {" "}
+                <Image
+                  className="mt-1"
+                  src={Checklight}
+                  alt="tick"
+                  width={12}
+                  height={10}
+                />{" "}
+                Specialized maternal and paediatric nutrition guidance.{" "}
+              </li>
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">
+                {" "}
+                <Image
+                  className="mt-1"
+                  src={Checklight}
+                  alt="tick"
+                  width={12}
+                  height={10}
+                />{" "}
+                Expert nutrition care for all age groups and conditions.{" "}
+              </li>
+              <li className="flex items-start  gap-1 text-[14px] font-semibold">
+                {" "}
+                <Image
+                  className="mt-1"
+                  src={Checklight}
+                  alt="tick"
+                  width={12}
+                  height={10}
+                />
+                Condition-specific diets for diabetes, heart, kidney, and cancer
+                care.{" "}
+              </li>
             </ul>
 
-            <button className="btn-white mt-5">
-              Book an Appointment <ArrowUpRight className="w-4 sm:w-5 h-4 sm:h-5" />
-            </button>
+            <Link href="tel:+919042065454">
+              <button className="btn-white mt-5">
+                Book an Appointment{" "}
+                <ArrowUpRight className="w-4 sm:w-5 h-4 sm:h-5" />
+              </button>
+            </Link>
           </div>
 
-          <Link href="/find-a-doctor" >
-
+          <Link href="/find-a-doctor">
             <div
               className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
               style={{
@@ -387,10 +496,7 @@ export default function SidebarTabs() {
             >
               {/* Text Section */}
               <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
-                <h3
-
-                  className="text-[24px] sm:text-xl  font-bold leading-snug"
-                >
+                <h3 className="text-[24px] sm:text-xl  font-bold leading-snug">
                   Find a <br className="hidden sm:block" /> Doctor?
                 </h3>
               </div>
@@ -406,7 +512,6 @@ export default function SidebarTabs() {
             </div>
           </Link>
         </div>
-
       </aside>
 
       {/* Content Sections */}
@@ -415,20 +520,36 @@ export default function SidebarTabs() {
           <section key={id} id={id} className="scroll-mt-32 rounded-xl">
             {id === "overview" && (
               <>
-                <Image src={aboutOverview} alt="aboutOverview" className="w-full h-[400px] rounded-2xl object-cover" />
+                <Image
+                  src={aboutOverview}
+                  alt="aboutOverview"
+                  className="w-full h-[400px] rounded-2xl object-cover"
+                />
 
                 <div className="mt-6 space-y-4">
                   <h2 className="text-[24px]">
-                    Advanced Nutrition & Dietetics Support with the Best Dietitians in
+                    Advanced Nutrition & Dietetics Support with the Best
+                    Dietitians in
                     <span className="text-[#2B3990]"> Erode </span>
-
                   </h2>
                   <p className="mb-4">
-                    At Sudha Multispeciality Hospital, Erode, our Dietetics Department plays a vital role in promoting healing, managing chronic diseases, and enhancing overall well-being through personalized medical nutrition therapy. Our experienced dietitians work closely with patients across departments, offering tailored dietary guidance for outpatient care, inpatient recovery, and critical care cases.
+                    At Sudha Multispeciality Hospital, Erode, our Dietetics
+                    Department plays a vital role in promoting healing, managing
+                    chronic diseases, and enhancing overall well-being through
+                    personalized medical nutrition therapy. Our experienced
+                    dietitians work closely with patients across departments,
+                    offering tailored dietary guidance for outpatient care,
+                    inpatient recovery, and critical care cases.
                   </p>
 
                   <p className="mt-4 mb-4">
-                    As the best dietetics hospital in Erode, Sudha Multispeciality Hospital offers evidence-based diet plans tailored to individual needs, whether for managing diabetes, cardiovascular conditions, kidney disorders, cancer recovery, or nutritional care during pregnancy. The department ensures holistic dietary support for preventive health, disease management, and long-term wellness.
+                    As the best dietetics hospital in Erode, Sudha
+                    Multispeciality Hospital offers evidence-based diet plans
+                    tailored to individual needs, whether for managing diabetes,
+                    cardiovascular conditions, kidney disorders, cancer
+                    recovery, or nutritional care during pregnancy. The
+                    department ensures holistic dietary support for preventive
+                    health, disease management, and long-term wellness.
                   </p>
                 </div>
               </>
@@ -439,10 +560,14 @@ export default function SidebarTabs() {
                 <h3 className="text-[24px] mt-5">Facilities</h3>
                 <ul>
                   <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>Experienced, qualified team of dieticians trained in clinical and therapeutic nutrition
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>
+                    Experienced, qualified team of dieticians trained in
+                    clinical and therapeutic nutrition
                   </li>
                   <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> Personalized dietary counselling for OPD, IPD, and ICU patients
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
+                    Personalized dietary counselling for OPD, IPD, and ICU
+                    patients
                   </li>
                   <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
                     <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
@@ -454,16 +579,19 @@ export default function SidebarTabs() {
                   </li>
                   <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
                     <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
-                    Integration with other departments like General Medicine, Oncology, Cardiology, Nephrology, and Obstetrics
+                    Integration with other departments like General Medicine,
+                    Oncology, Cardiology, Nephrology, and Obstetrics
                   </li>
 
                   <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
-                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
-                    Use of medical history, biochemical data, and lifestyle factors in planning diets
+                    <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div> Use
+                    of medical history, biochemical data, and lifestyle factors
+                    in planning diets
                   </li>
                   <li className="flex gap-2 md:items-center items-start text-[#5E566A] text-[15px] font-semibold mt-3">
                     <div className="w-2 h-2 rounded-lg bg-[#2B3990]"></div>{" "}
-                    Specialized diet charts for children, adults, pregnant women, and the elderly
+                    Specialized diet charts for children, adults, pregnant
+                    women, and the elderly
                   </li>
                 </ul>
               </>
@@ -486,7 +614,9 @@ export default function SidebarTabs() {
 
             {id === "faqs" && (
               <div className="mt-8">
-                <h2 className="text-[24px]  mt-5 pb-3">Frequently Asked Questions</h2>
+                <h2 className="text-[24px]  mt-5 pb-3">
+                  Frequently Asked Questions
+                </h2>
                 <Faq faq={faq} />
               </div>
             )}
@@ -508,19 +638,50 @@ export default function SidebarTabs() {
             Sudha Multispeciality Hospital
           </h3>
           <ul className="space-y-4 text-start mt-4">
-            <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />  Specialized maternal and paediatric nutrition guidance. </li>
-            <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} /> Expert nutrition care for all age groups and conditions.   </li>
-            <li className="flex items-start  gap-1 text-[14px] font-semibold">  <Image className="mt-1" src={Checklight} alt="tick" width={12} height={10} />Condition-specific diets for diabetes, heart, kidney, and cancer care. </li>
-
+            <li className="flex items-start  gap-1 text-[14px] font-semibold">
+              {" "}
+              <Image
+                className="mt-1"
+                src={Checklight}
+                alt="tick"
+                width={12}
+                height={10}
+              />{" "}
+              Specialized maternal and paediatric nutrition guidance.{" "}
+            </li>
+            <li className="flex items-start  gap-1 text-[14px] font-semibold">
+              {" "}
+              <Image
+                className="mt-1"
+                src={Checklight}
+                alt="tick"
+                width={12}
+                height={10}
+              />{" "}
+              Expert nutrition care for all age groups and conditions.{" "}
+            </li>
+            <li className="flex items-start  gap-1 text-[14px] font-semibold">
+              {" "}
+              <Image
+                className="mt-1"
+                src={Checklight}
+                alt="tick"
+                width={12}
+                height={10}
+              />
+              Condition-specific diets for diabetes, heart, kidney, and cancer
+              care.{" "}
+            </li>
           </ul>
-
-          <button className="btn-white mt-5">
-            Book an Appointment <ArrowUpRight className="w-4 sm:w-5 h-4 sm:h-5" />
-          </button>
+          <Link href="tel:+919042065454">
+            <button className="btn-white mt-5">
+              Book an Appointment{" "}
+              <ArrowUpRight className="w-4 sm:w-5 h-4 sm:h-5" />
+            </button>
+          </Link>
         </div>
 
-        <Link href="/find-a-doctor" >
-
+        <Link href="/find-a-doctor">
           <div
             className="mt-2 rounded-2xl md:px-6 px-6 md:py-6 py-6  flex flex-col md:flex-row flex-row items-center justify-between text-white"
             style={{
@@ -529,10 +690,7 @@ export default function SidebarTabs() {
           >
             {/* Text Section */}
             <div className="text-center sm:text-left mb-4 sm:mb-0 sm:mr-4">
-              <h3
-
-                className="text-[24px] sm:text-xl  font-bold leading-snug"
-              >
+              <h3 className="text-[24px] sm:text-xl  font-bold leading-snug">
                 Find a <br className="hidden sm:block" /> Doctor?
               </h3>
             </div>
