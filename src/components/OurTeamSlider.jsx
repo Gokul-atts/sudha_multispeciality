@@ -108,8 +108,7 @@ export default function OurTeamSlider() {
                       className="btn-diagonal-outline px-8 w-full mt-6 flex items-center justify-center gap-2"
                     >
                       View Profile <ArrowUpRight className="w-5 h-5" />
-                      591683699759
-                      357997
+                      
                       
                     </Link> */}
                   </div>

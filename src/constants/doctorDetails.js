@@ -77,6 +77,166 @@ import Janarthanan from "@/assets/home/doc/new/janarthanan.webp";
 
 
 export const doctorsData = [
+
+    // Cardiology
+    {
+    id: 8,
+    name: "Dr.D.Kandaswami",
+    speciality: "Cardiology",
+    qualification: "Preventive Cardiologist, Chairman",
+    degrees: "MD, DTCD",
+    image: Kandaswami,
+    doctordetail: [
+      {
+        name: "Dr.D.Kandaswami",
+        specialist: "Cardiology",
+        image: Kandaswami,
+        menulabel: "MD, DTCD",
+        role: "Preventive Cardiologist, Chairman",
+        experience: "33",
+        newopdays: "Tuesday 8am-5pm",
+        reviewopdays: "Mon & Thu 8am-5pm",
+        personalDetails: {
+          title: "Personal Details",
+          description:
+            "Here’s a situation that comes up for many people: you move in later life. For most older adults, establishing a good working relationship with a new doctor is a challenge. If nothing else, it can take some time to feel that each party knows and understands the other. And they leave it to the new doctors to request health information from the previous doctors, which often arrives well after that first new patient visit. In this post, I’ll share my list of the most useful health information",
+        },
+        clinicalExpertise: {
+          title: "Clinical Expertise",
+          list: [
+            "Interventional Cardiology",
+            "Brought in the first over the wire Balloon Mitral Valvuloplas prowith the help of Dr George Joseph.",
+            "Started the first peripheral thrombolysis program.",
+            "One of the co course directors for the Radial Live program.",
+          ],
+        },
+        researchandpublications: {
+          title: "Research And Publications",
+          list: [
+            "Direct communication between left pulmonary artery and left atrium- indian heart journal, jan.-feb. 1995, 40-41",
+            "Beneficial effect of balloon mitral valvotomy in reducing severity of associated tricuspid regurgitation.Indian heart journal, may-june1997, 271-273",
+            "Single coronary artery with atherosclerosis,indian heart journal, may-june 1997,49: 309-310",
+          ],
+        },
+        awards: {
+          title: "Awards & Achievements",
+          list: [
+            "Recipient of 'Distinguished Service to Community Award' by IMA Erode chapter and Indian Association of Clinical Cardiology, Tamilnadu Chapter-2014",
+            "Recipient of 'Distinguished Service Award' by Sudha  Hospital-2017",
+          ],
+        },
+      },
+
+    ],
+  },
+  {
+    id: 9,
+    name: "Dr.K.Sudhakar",
+    speciality: "Cardiology",
+    qualification: "Preventive Cardiologist, MD",
+    degrees: "MD, DNB",
+    image: Sudhakar,
+    doctordetail: [
+      {
+        name: "Dr.K.Sudhakar",
+        specialist: "Cardiology",
+        image: Sudhakar,
+        menulabel: "MD, DNB",
+        role: "Cardiology",
+        experience: "33",
+        newopdays: "Tuesday 8am-5pm",
+        reviewopdays: "Mon & Thu 8am-5pm",
+        personalDetails: {
+          title: "Personal Details",
+          description:
+            "Here’s a situation that comes up for many people: you move in later life. For most older adults, establishing a good working relationship with a new doctor is a challenge. If nothing else, it can take some time to feel that each party knows and understands the other. And they leave it to the new doctors to request health information from the previous doctors, which often arrives well after that first new patient visit. In this post, I’ll share my list of the most useful health information",
+        },
+        clinicalExpertise: {
+          title: "Clinical Expertise",
+          list: [
+            "Interventional Cardiology",
+            "Brought in the first over the wire Balloon Mitral Valvuloplas prowith the help of Dr George Joseph.",
+            "Started the first peripheral thrombolysis program.",
+            "One of the co course directors for the Radial Live program.",
+          ],
+        },
+        researchandpublications: {
+          title: "Research And Publications",
+          list: [
+            "Direct communication between left pulmonary artery and left atrium- indian heart journal, jan.-feb. 1995, 40-41",
+            "Beneficial effect of balloon mitral valvotomy in reducing severity of associated tricuspid regurgitation.Indian heart journal, may-june1997, 271-273",
+            "Single coronary artery with atherosclerosis,indian heart journal, may-june 1997,49: 309-310",
+          ],
+        },
+        awards: {
+          title: "Awards & Achievements",
+          list: [
+            "Recipient of 'Distinguished Service to Community Award' by IMA Erode chapter and Indian Association of Clinical Cardiology, Tamilnadu Chapter-2014",
+            "Recipient of 'Distinguished Service Award' by Sudha  Hospital-2017",
+          ],
+        },
+      },
+
+    ],
+  },
+  {
+    id: 10,
+    name: "Dr.N.Rajasekar",
+    speciality: "Cardiology",
+    qualification: "Cardiology",
+    degrees: "MD (Cardiologist)",
+    image: Rajasekar,
+    doctordetail: [
+      {
+        name: "Dr.N.Rajasekar",
+        specialist: "Cardiology",
+        image: Rajasekar,
+        menulabel: "MD (Cardiologist)",
+        role: "Cardiology",
+        experience: "17",
+        newopdays: "Tuesday 8am-5pm",
+        reviewopdays: "Mon & Thu 8am-5pm",
+        personalDetails: {
+          title: "Personal Details",
+          description:
+            "Dr. N. Rajasekar is a highly accomplished interventional cardiologist with over 17 years of medical experience, including more than a decade of specialization in cardiology. He has performed 2000+ angioplasty procedures and 5000+ coronary angiograms, establishing himself as a leading heart specialist in the region.",
+        },
+        clinicalExpertise: {
+          title: "Clinical Expertise",
+          list: [
+            "Coronary artery disease management – angioplasty, stent placement, complex and left main blockages ",
+            "Heart failure care – advanced treatment, lifestyle guidance, and modern therapies",
+            "Pacemaker & device therapy – pacemakers, ICDs, CRT for advanced heart failure ",
+            "Valvular heart disease – diagnosis, treatment guidance, and follow-up care ",
+            "Congenital heart disease – evaluation, treatment advice, and long-term management ",
+            "Pre- and post-bypass surgery counseling and follow-up care ",
+          ],
+        },
+        researchandpublications: {
+          title: "Research and Publications:",
+          list: [
+            "Principal Investigator in genetic and genomic studies on heart disease ",
+            "Research on heart failure in the Indian population ",
+            "Clinical evaluation of AI-based diagnostic tools for early heart disease detection ",
+          ],
+        },
+        awards: {
+          title: "Professional Milestones:",
+          list: [
+            "API Gold Medal in MD General Medicine ",
+            "All India Rank 3 in NEET Super Specialty Examination",
+            "DNB Cardiology from Sri Sathya Sai Institute of Higher Medical Sciences, Bangalore",
+            "MRCP (UK) – Membership of the Royal College of Physicians, United Kingdom",
+            "FSCAI (USA) – Fellow of the Society for Cardiovascular Angiography and Interventions ",
+            "Regular presenter at national and international cardiology conferences ",
+            "Actively engaged in teaching and mentoring young doctors ",
+          ],
+        },
+      },
+
+    ],
+  },
+
   {
     id: 1,
     name: "Dr.Kumaravel Pandiyan",
@@ -490,164 +650,7 @@ export const doctorsData = [
   },
 
 
-  // Cardiology
-  {
-    id: 8,
-    name: "Dr.N.Rajasekar",
-    speciality: "Cardiology",
-    qualification: "Cardiology",
-    degrees: "MD (Cardiologist)",
-    image: Rajasekar,
-    doctordetail: [
-      {
-        name: "Dr.N.Rajasekar",
-        specialist: "Cardiology",
-        image: Rajasekar,
-        menulabel: "MD (Cardiologist)",
-        role: "Cardiology",
-        experience: "17",
-        newopdays: "Tuesday 8am-5pm",
-        reviewopdays: "Mon & Thu 8am-5pm",
-        personalDetails: {
-          title: "Personal Details",
-          description:
-            "Dr. N. Rajasekar is a highly accomplished interventional cardiologist with over 17 years of medical experience, including more than a decade of specialization in cardiology. He has performed 2000+ angioplasty procedures and 5000+ coronary angiograms, establishing himself as a leading heart specialist in the region.",
-        },
-        clinicalExpertise: {
-          title: "Clinical Expertise",
-          list: [
-            "Coronary artery disease management – angioplasty, stent placement, complex and left main blockages ",
-            "Heart failure care – advanced treatment, lifestyle guidance, and modern therapies",
-            "Pacemaker & device therapy – pacemakers, ICDs, CRT for advanced heart failure ",
-            "Valvular heart disease – diagnosis, treatment guidance, and follow-up care ",
-            "Congenital heart disease – evaluation, treatment advice, and long-term management ",
-            "Pre- and post-bypass surgery counseling and follow-up care ",
-          ],
-        },
-        researchandpublications: {
-          title: "Research and Publications:",
-          list: [
-            "Principal Investigator in genetic and genomic studies on heart disease ",
-            "Research on heart failure in the Indian population ",
-            "Clinical evaluation of AI-based diagnostic tools for early heart disease detection ",
-          ],
-        },
-        awards: {
-          title: "Professional Milestones:",
-          list: [
-            "API Gold Medal in MD General Medicine ",
-            "All India Rank 3 in NEET Super Specialty Examination",
-            "DNB Cardiology from Sri Sathya Sai Institute of Higher Medical Sciences, Bangalore",
-            "MRCP (UK) – Membership of the Royal College of Physicians, United Kingdom",
-            "FSCAI (USA) – Fellow of the Society for Cardiovascular Angiography and Interventions ",
-            "Regular presenter at national and international cardiology conferences ",
-            "Actively engaged in teaching and mentoring young doctors ",
-          ],
-        },
-      },
 
-    ],
-  },
-  {
-    id: 9,
-    name: "Dr.D.Kandaswami",
-    speciality: "Cardiology",
-    qualification: "Preventive Cardiologist, Chairman",
-    degrees: "MD, DTCD",
-    image: Kandaswami,
-    doctordetail: [
-      {
-        name: "Dr.D.Kandaswami",
-        specialist: "Cardiology",
-        image: Kandaswami,
-        menulabel: "MD, DTCD",
-        role: "Preventive Cardiologist, Chairman",
-        experience: "33",
-        newopdays: "Tuesday 8am-5pm",
-        reviewopdays: "Mon & Thu 8am-5pm",
-        personalDetails: {
-          title: "Personal Details",
-          description:
-            "Here’s a situation that comes up for many people: you move in later life. For most older adults, establishing a good working relationship with a new doctor is a challenge. If nothing else, it can take some time to feel that each party knows and understands the other. And they leave it to the new doctors to request health information from the previous doctors, which often arrives well after that first new patient visit. In this post, I’ll share my list of the most useful health information",
-        },
-        clinicalExpertise: {
-          title: "Clinical Expertise",
-          list: [
-            "Interventional Cardiology",
-            "Brought in the first over the wire Balloon Mitral Valvuloplas prowith the help of Dr George Joseph.",
-            "Started the first peripheral thrombolysis program.",
-            "One of the co course directors for the Radial Live program.",
-          ],
-        },
-        researchandpublications: {
-          title: "Research And Publications",
-          list: [
-            "Direct communication between left pulmonary artery and left atrium- indian heart journal, jan.-feb. 1995, 40-41",
-            "Beneficial effect of balloon mitral valvotomy in reducing severity of associated tricuspid regurgitation.Indian heart journal, may-june1997, 271-273",
-            "Single coronary artery with atherosclerosis,indian heart journal, may-june 1997,49: 309-310",
-          ],
-        },
-        awards: {
-          title: "Awards & Achievements",
-          list: [
-            "Recipient of 'Distinguished Service to Community Award' by IMA Erode chapter and Indian Association of Clinical Cardiology, Tamilnadu Chapter-2014",
-            "Recipient of 'Distinguished Service Award' by Sudha  Hospital-2017",
-          ],
-        },
-      },
-
-    ],
-  },
-  {
-    id: 10,
-    name: "Dr.K.Sudhakar",
-    speciality: "Cardiology",
-    qualification: "Preventive Cardiologist, MD",
-    degrees: "MD, DNB",
-    image: Sudhakar,
-    doctordetail: [
-      {
-        name: "Dr.K.Sudhakar",
-        specialist: "Cardiology",
-        image: Sudhakar,
-        menulabel: "MD, DNB",
-        role: "Cardiology",
-        experience: "33",
-        newopdays: "Tuesday 8am-5pm",
-        reviewopdays: "Mon & Thu 8am-5pm",
-        personalDetails: {
-          title: "Personal Details",
-          description:
-            "Here’s a situation that comes up for many people: you move in later life. For most older adults, establishing a good working relationship with a new doctor is a challenge. If nothing else, it can take some time to feel that each party knows and understands the other. And they leave it to the new doctors to request health information from the previous doctors, which often arrives well after that first new patient visit. In this post, I’ll share my list of the most useful health information",
-        },
-        clinicalExpertise: {
-          title: "Clinical Expertise",
-          list: [
-            "Interventional Cardiology",
-            "Brought in the first over the wire Balloon Mitral Valvuloplas prowith the help of Dr George Joseph.",
-            "Started the first peripheral thrombolysis program.",
-            "One of the co course directors for the Radial Live program.",
-          ],
-        },
-        researchandpublications: {
-          title: "Research And Publications",
-          list: [
-            "Direct communication between left pulmonary artery and left atrium- indian heart journal, jan.-feb. 1995, 40-41",
-            "Beneficial effect of balloon mitral valvotomy in reducing severity of associated tricuspid regurgitation.Indian heart journal, may-june1997, 271-273",
-            "Single coronary artery with atherosclerosis,indian heart journal, may-june 1997,49: 309-310",
-          ],
-        },
-        awards: {
-          title: "Awards & Achievements",
-          list: [
-            "Recipient of 'Distinguished Service to Community Award' by IMA Erode chapter and Indian Association of Clinical Cardiology, Tamilnadu Chapter-2014",
-            "Recipient of 'Distinguished Service Award' by Sudha  Hospital-2017",
-          ],
-        },
-      },
-
-    ],
-  },
 
   // Cardiothoracic
 
