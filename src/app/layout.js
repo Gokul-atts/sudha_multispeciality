@@ -11,11 +11,11 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-const nunito = Nunito({
-  subsets: ['latin'],
-  weight: ['200','300','400','500','600','700','800','900','1000'],
-  variable: '--font-nunito',
-});
+// const nunito = Nunito({
+//   subsets: ['latin'],
+//   weight: ['200','300','400','500','600','700','800','900','1000'],
+//   variable: '--font-nunito',
+// });
 
 
 
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${plusJakartaSans.variable} antialiased`}
+        className={`${plusJakartaSans.variable} antialiased` } 
       >
         <Navbar/>
         {children}
