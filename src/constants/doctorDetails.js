@@ -133,7 +133,7 @@ export const doctorsData = [
     id: 9,
     name: "Dr.K.Sudhakar",
     speciality: "Cardiology",
-    qualification: "Preventive Cardiologist, MD",
+    qualification: "Cardiologist, MD",
     degrees: "MD, DNB",
     image: Sudhakar,
     doctordetail: [
