@@ -2721,7 +2721,7 @@ export const doctorsDatarenal = [
           ],
         },
         researchandpublications: {
-          title: "Research And Publications",
+          title: "Research",
           list: [
             "Direct communication between left pulmonary artery and left atrium- indian heart journal, jan.-feb. 1995, 40-41",
             "Beneficial effect of balloon mitral valvotomy in reducing severity of associated tricuspid regurgitation.Indian heart journal, may-june1997, 271-273",
