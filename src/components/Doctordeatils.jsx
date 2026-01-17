@@ -51,13 +51,13 @@ const Doctordeatils = ({ doctor }) => {
       transition={{ duration: 0.7 }}
       viewport={{ once: true }}
     >
-      <p className=" text-white">New OP Days</p>
-      <h2 className="text-[20px] text-white mt-1">{doctor.newopdays}</h2>
+      <p className=" text-white">Qualifications</p>
+      <h2 className="text-[20px] text-white mt-1">{doctor.role}</h2>
       <hr className="mt-4 border-t border-white opacity-30" />
     </motion.div>
 
     {/* Review OP Days */}
-    <motion.div
+    {/* <motion.div
       className="pb-6"
       initial={{ opacity: 0, x: 50 }}
       whileInView={{ opacity: 1, x: 0 }}
@@ -67,7 +67,7 @@ const Doctordeatils = ({ doctor }) => {
       <p className="text-sm text-white">Review OP Days</p>
       <h2 className="text-[20px]  text-white mt-1">{doctor.reviewopdays}</h2>
       <hr className="mt-4 border-t border-white opacity-30" />
-    </motion.div>
+    </motion.div> */}
 
     {/* Experience */}
     <motion.div

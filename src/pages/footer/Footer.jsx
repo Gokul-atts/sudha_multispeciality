@@ -104,7 +104,7 @@ const Footer = () => {
 
     {
       name: "Fellow of National Board (FNB)",
-      link: "fellow-national-board",
+      link: "fellow-of-national-board",
     },
     {
       name: "Post MBBS Diploma Courses (DNB)",
@@ -169,7 +169,7 @@ const Footer = () => {
   const mediaLinks = [
     { name: "Blogs", link: "" },
 
-    { name: "News & Events", link: "/news-and-events" },
+    // { name: "News & Events", link: "/news-and-events" },
   ];
 
   const importantLinks = [
@@ -252,11 +252,11 @@ const Footer = () => {
               className="order-2 flex flex-col items-center lg:items-start text-center lg:text-left"
             >
               <h4 className=" text-white text-lg mb-4">Accredited By</h4>
-              <div className="">
+              <div className="rounded-md">
                 <Image
                   src={branchLogo1}
                   alt="NABH Accreditation"
-                  className="h-[100px] w-auto object-cover"
+                  className="h-[80px] w-auto object-cover rounded-xl"
                 />
 
               </div>
@@ -274,7 +274,7 @@ const Footer = () => {
 
               <p className="text-[#FFF] flex items-start gap-3 mt-4 max-w-xs">
                 <MdOutlineLocationOn className="size-6 flex-shrink-0" />
-                No. 162, 1B1, Perundurai Rd, Edayankattuvalsu, Erode, Tamil Nadu 638011
+                No. 162, 181, Perundurai Rd, Edayankattuvalsu, Erode, Tamil Nadu 638011
               </p>
 
               <p className="text-[#FFF] mt-4 flex items-center gap-3">
@@ -286,7 +286,7 @@ const Footer = () => {
                 <IoCall className="size-6 flex-shrink-0" />
                 <div>
                   <Link href="tel:04242454545" className="text-white font-semibold text-sm block">
-                    0424-245-4545
+                    042-424-54545
                   </Link>
                   <Link href="tel:+9042065454" className="text-white font-semibold text-sm block mt-2">
                     +91-90-4206-5454
@@ -501,7 +501,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-300 text-xs text-center text-gray-500 py-4">
           <div className="max-w-7xl mx-auto  flex flex-col md:flex-row justify-between items-center gap-2">
-            <p className="text-black text-[14px]">© Copyright 2025 Sudha Hospital. All rights reserved.</p>
+            <p className="text-black text-[14px]">© Copyright 2026 Sudha Hospital. All rights reserved.</p>
             <p className="text-black text-[14px]">
               Designed & Developed by {" "}
               <Link
@@ -525,7 +525,7 @@ const Footer = () => {
         <div className=" fixed bottom-0  right-0   flex justify-around items-center py-2 bg-white shadow-md border-t sm:bg-transparent sm:shadow-none sm:border-0 z-40 sm:bottom-3 mb-footer sm:right-2 sm:w-auto sm:flex-col sm:items-end sm:space-y-2 sm:py-0  ">
 
           {/* Emergency Button */}
-          <Link href="tel:+919042065454">
+          <Link href="tel:04242454545">
             <button
               onMouseEnter={() => setShowEmergencyText(true)}
               onMouseLeave={() => setShowEmergencyText(false)}

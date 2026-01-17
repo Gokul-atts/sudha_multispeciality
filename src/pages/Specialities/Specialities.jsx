@@ -95,7 +95,7 @@ const cards = [
         Book an <span className="text-[#2b3990] font-extrabold">Appointment</span>
       </p>
     ),
-    link:"tel:+919042065454",
+    link:"tel:04242454545",
   },
 ];
 

@@ -298,7 +298,7 @@ export default function SidebarTabs() {
               ))}
             </ul>
             <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => {
-    window.location.href = "tel:+919042065454";
+    window.location.href = "tel:04242454545";
   }}>
               Book an Appointment <ArrowUpRight className="w-5 h-5" />
             </button>
@@ -438,7 +438,7 @@ export default function SidebarTabs() {
             ))}
           </ul>
           <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => {
-    window.location.href = "tel:+919042065454";
+    window.location.href = "tel:04242454545";
   }}>
             Book an Appointment <ArrowUpRight className="w-5 h-5" />
           </button>

@@ -167,7 +167,7 @@ const VocationalEducation = () => {
         "However, the examinations are not conducted by the government. ",
         "The certificate awarded upon course completion is not valid for government job eligibility. ",
         "Certificate holders are eligible to work only as support staff under experienced technicians or healthcare professionals. ",
-        "For detailed information about the training hospital, please visit  www.sudhahospitals.com",
+        "For detailed information about the training hospital, Contact Us 042-424-54545",
         "Prospective students are advised to fully understand the curriculum and course details before enrolling. ",
         "Only students who have paid the full course fee will be permitted to appear for the examination. ",
         "Fees paid are non-refundable under any circumstances. "

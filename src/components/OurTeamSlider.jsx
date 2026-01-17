@@ -98,7 +98,7 @@ export default function OurTeamSlider() {
                     {/* Button */}
 
                     <Link
-                      href="tel:+919042065454 "
+                      href="tel:04242454545 "
                       className="btn-diagonal-outline px-8 w-full mt-6 flex items-center justify-center gap-2"
                     >
                       Book an Appointment <ArrowUpRight className="w-5 h-5" />

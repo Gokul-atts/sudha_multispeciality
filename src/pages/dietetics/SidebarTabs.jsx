@@ -479,7 +479,7 @@ export default function SidebarTabs() {
               </li>
             </ul>
 
-            <Link href="tel:+919042065454">
+            <Link href="tel:04242454545">
               <button className="btn-white mt-5">
                 Book an Appointment{" "}
                 <ArrowUpRight className="w-4 sm:w-5 h-4 sm:h-5" />
@@ -673,7 +673,7 @@ export default function SidebarTabs() {
               care.{" "}
             </li>
           </ul>
-          <Link href="tel:+919042065454">
+          <Link href="tel:04242454545">
             <button className="btn-white mt-5">
               Book an Appointment{" "}
               <ArrowUpRight className="w-4 sm:w-5 h-4 sm:h-5" />

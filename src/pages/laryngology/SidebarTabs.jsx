@@ -470,7 +470,7 @@ export default function SidebarTabs() {
 
 
             <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => {
-    window.location.href = "tel:+919042065454";
+    window.location.href = "tel:04242454545";
   }}>
               Book an Appointment <ArrowUpRight className="w-5 h-5" />
             </button>
@@ -569,7 +569,12 @@ export default function SidebarTabs() {
             {id === "doctors" && (
               <div className="space-y-2">
                 <h2 className="text-[24px] mt-5 ">Doctors</h2>
+                <div>
+
                 <DoctorSlider specialty="Laryngology" max={2} counter={1} />
+                
+                </div>
+
               </div>
             )}
 
@@ -607,7 +612,7 @@ export default function SidebarTabs() {
 
 
           <button className="btn-white mt-5 flex items-center gap-2 mx-auto" onClick={() => {
-    window.location.href = "tel:+919042065454";
+    window.location.href = "tel:04242454545";
   }}>
             Book an Appointment <ArrowUpRight className="w-5 h-5" />
           </button>

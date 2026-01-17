@@ -327,7 +327,7 @@ function Bookappointment() {
                       href="tel:+914242454545"
                       className="text-[#2B3990] font-semibold text-sm"
                     >
-                      0424-245-4545
+                      042-424-54545
                     </a>
                   </div>
 
@@ -338,7 +338,7 @@ function Bookappointment() {
                       24/7 Emergency Ambulance. Trusted Care, Available Always.
                     </p>
                     <a
-                      href="tel:+919042065454"
+                      href="tel:04242454545"
                       className="text-[#2B3990] font-semibold text-sm"
                     >
                       +91-90-4206-5454

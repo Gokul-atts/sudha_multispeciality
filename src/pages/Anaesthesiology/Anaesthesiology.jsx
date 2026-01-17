@@ -88,7 +88,7 @@ function Anaesthesiology() {
               className="flex justify-start"
             >
               <Link
-                href="tel:+919876543210"
+                href="tel:04242454545"
                 className="btn-white ">
                 Book an Appointment <ArrowUpRight className="w-5 h-5" />
               </Link>
@@ -132,7 +132,7 @@ function Anaesthesiology() {
               <p className="mb-4 text-center ">
                 Get all your personalised healthcare services under one roof from experienced and trusted doctors.
               </p>
-              <Link  href="tel:+919042065454" className="btn-diagonal mt-2">
+              <Link  href="tel:04242454545" className="btn-diagonal mt-2">
                 Book Your Appointment Today <ArrowUpRight className="w-5 h-5" />
               </Link>
             </div>

@@ -168,7 +168,7 @@ function Gallery() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
             >
-              <Link href="tel:+919042065454" className="btn-white inline-flex items-center">
+              <Link href="tel:04242454545" className="btn-white inline-flex items-center">
                 Book an Appointment <ArrowUpRight className="w-5 h-5 ml-2" />
               </Link>
             </motion.div>

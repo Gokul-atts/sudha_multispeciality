@@ -86,7 +86,7 @@ function PostPartumCare() {
               transition={{ duration: 0.7 }}
             >
               <Link
-                href = "tel:+919042065454"
+                href = "tel:04242454545"
                 className="btn-white"
               >
                 Book an Appointment <ArrowUpRight className="w-5 h-5" />

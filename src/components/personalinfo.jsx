@@ -81,9 +81,9 @@ const Personalinfo = ({ doctor }) => {
       )}
 
       {/* Appointment Form */}
-      <div>
+      {/* <div>
         <RegistrationForm />
-      </div>
+      </div> */}
     </div>
   );
 };

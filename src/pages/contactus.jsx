@@ -159,13 +159,13 @@ const Contactus = () => {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto py-10 relative">
+      {/* <div className="max-w-7xl mx-auto py-10 relative">
         <Registeration />
-      </div>
+      </div> */}
 
-      <div className="max-w-7xl mx-auto px-4 py-10 relative">
+      {/* <div className="max-w-7xl mx-auto px-4 py-10 relative">
         <Contactusfooter />
-      </div>
+      </div> */}
     </div>
   )
 }

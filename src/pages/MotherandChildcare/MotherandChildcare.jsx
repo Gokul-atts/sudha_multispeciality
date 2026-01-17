@@ -508,7 +508,7 @@ function MotherandChildcare() {
             </p>
             <div>
               <Link
-               href="tel:+919042065454"
+               href="tel:04242454545"
                 className="btn-outline-white"
               >
                 Book an Appointment <ArrowUpRight className="w-5 h-5" />
@@ -743,7 +743,7 @@ function MotherandChildcare() {
           <b>Dreaming of motherhood? Get the right support.  </b>
 
           <button className="text-primary-blue font-semibold ml-1 underline" onClick={() => {
-    window.location.href = "tel:+919042065454";
+    window.location.href = "tel:04242454545";
   }}>
             Book your free consultation
           </button>
@@ -1039,7 +1039,7 @@ function MotherandChildcare() {
                   <h5 className="font-bold">Call Us:</h5>
                 </div>
                 <div className="mt-3 ">
-                  <Link href="tel:+914242454545" className="text-[#fff] font-bold">0424-245-4545</Link>
+                  <Link href="tel:+914242454545" className="text-[#fff] font-bold">042-424-54545</Link>
 
                 </div>
                 <div className="mt-3 ">
@@ -1094,7 +1094,7 @@ function MotherandChildcare() {
               className=""
             >
               <button className="btn-white  flex items-center gap-2 mx-auto" onClick={() => {
-    window.location.href = "tel:+919042065454";
+    window.location.href = "tel:04242454545";
   }}>
                 Book an Appointment <ArrowUpRight className="w-5 h-5" />
               </button>
@@ -1396,7 +1396,7 @@ function MotherandChildcare() {
 
                     </p>
                     <Link href="tel:+914242454545" className="text-[16px] font-bold mt-4 text-[#fff]">
-                      0424-245-4545
+                      042-424-54545
                     </Link>
                   </div>
                   <div className="border-l border-white/30 pl-4">
@@ -1404,7 +1404,7 @@ function MotherandChildcare() {
                     <p className="text-sm text-[#fff] mt-3">
                       24/7 Ambulance Services for Medical Emergencies.
                     </p>
-                    <Link  href="tel:+919042065454" className="text-[16px] font-bold mt-4 text-[#fff]">
+                    <Link  href="tel:04242454545" className="text-[16px] font-bold mt-4 text-[#fff]">
                       +91 9042-065-454
                     </Link>
                   </div>

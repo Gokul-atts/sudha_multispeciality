@@ -462,7 +462,7 @@ const Insurance = () => {
             <p className="mt-2 mb-2">(Mon - Sat) 8:30 am - 6:00 pm</p>
             <div className="flex items-center gap-2 text-[14px] font-bold  text-[#2B3990] mt-4">
               <Image src={Phone} alt="Phone" width={32} height={32} />
-              <span>0424-245-4545</span>
+              <span>042-424-54545</span>
             </div>
           </div>
         </div>

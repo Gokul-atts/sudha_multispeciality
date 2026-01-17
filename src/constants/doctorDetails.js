@@ -1159,7 +1159,7 @@ export const doctorsData = [
         specialist: "ENT Surgeon",
         image: Kavin,
         menulabel: "MBBS, MD, DVL ",
-        role: "Consultant ENT Surgeon / Voice Specialist",
+        role: "MBBS, ECFMG Certified, MS (ENT)",
         experience: "33",
         newopdays: "Tuesday 8am-5pm",
         reviewopdays: "Mon & Thu 8am-5pm",
@@ -4402,3 +4402,7 @@ export const doctorsDatarenal = [
     ],
   },
 ];
+
+
+
+

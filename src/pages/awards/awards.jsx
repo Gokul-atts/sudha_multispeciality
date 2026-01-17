@@ -212,7 +212,7 @@ const Awards = () => {
               <p className="mb-4 text-center ">
                 Get all your personalised healthcare services under one roof from experienced and trusted doctors.
               </p>
-              <Link href="tel:+919042065454">
+              <Link href="tel:04242454545">
               
               <button className="btn-diagonal mt-2">
                 Book Your Appointment Today <ArrowUpRight className="w-5 h-5" />

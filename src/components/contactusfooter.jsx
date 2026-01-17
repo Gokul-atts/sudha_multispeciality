@@ -25,7 +25,7 @@ const Contactusfooter = () => {
             24*7 healthcare support for your needs.  
           </p>
           <div className="absolute bottom-3 font-semibold flex items-center gap-2 z-30">
-            <Link href="tel:+914242454545" className="text-[16px] text-[#2B3990] font-bold">0424-245-4545</Link>
+            <Link href="tel:+914242454545" className="text-[16px] text-[#2B3990] font-bold">042-424-54545</Link>
           </div>
           <Image
             src={achivement}
@@ -47,7 +47,7 @@ const Contactusfooter = () => {
            Emergency ambulance service, always ready to respond. 
           </p>
           <div className="absolute bottom-3 font-semibold flex items-center gap-2 z-30">
-            <Link href="tel:+919042065454" className="text-[16px] text-[#2B3990] font-bold">+91 90420 65454</Link>
+            <Link href="tel:04242454545" className="text-[16px] text-[#2B3990] font-bold">+91 90420 65454</Link>
           </div>
           <Image
             src={hospitalbed}

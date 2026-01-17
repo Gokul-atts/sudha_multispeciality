@@ -21,7 +21,7 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 
-import play from "../assets/home/play.jpg";
+import play from "../assets/home/play.png";
 import HospitalCard from "../components/Hospital";
 import inter from "../assets/home/inter.svg";
 import patient from "../assets/home/patient.svg";
@@ -235,7 +235,7 @@ const cards = [
         <span className="text-[#2b3990] font-extrabold"> Appointment </span>
       </p>
     ),
-    link: "tel:+919042065454",
+    link: "tel:04242454545",
   },
 ];
 
@@ -801,7 +801,7 @@ function Home() {
                   <button
                     className="btn-diagonal mt-5"
                     onClick={() => {
-                      window.location.href = "tel:+919042065454";
+                      window.location.href = "tel: 04242454545";
                     }}
                   >
                     Book your Appointment <ArrowUpRight />

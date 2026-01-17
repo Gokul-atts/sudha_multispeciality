@@ -95,7 +95,7 @@ export default function Navbar() {
                 href="tel:+914242454545"
                 className="text-[#2B3990] font-semibold text-sm"
               >
-                0424-245-4545
+                042-424-54545
               </Link>
             </div>
             <div className="flex items-center gap-2">

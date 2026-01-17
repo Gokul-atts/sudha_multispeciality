@@ -36,7 +36,7 @@ export default function Page() {
             image: "https://sudhahospitals.com/_next/static/media/whiteLogo.40698793.svg",
             description:
               "Sudha Multispeciality Hospital, the best multispecialty hospital in Erode, offers expert doctors, advanced treatments, and compassionate patient care across all specialties.",
-            telephone: "+0424-245-4545",
+            telephone: "+042-424-54545",
             address: {
               "@type": "PostalAddress",
               streetAddress:
