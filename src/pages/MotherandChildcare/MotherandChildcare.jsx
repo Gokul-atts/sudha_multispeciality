@@ -1373,7 +1373,7 @@ function MotherandChildcare() {
         </div>
       </section>
 
-      <section className={`${nunito.className}`} id="contactus">
+      {/* <section className={`${nunito.className}`} id="contactus">
         <div
           className="max-w-7xl mx-auto py-8 rounded-3xl px-8"
           style={{
@@ -1382,7 +1382,7 @@ function MotherandChildcare() {
           }}
         >
           <div className="flex flex-col md:flex-row  w-full md:py-16 py-6   justify-center md:px-0 px-4 ">
-            {/* Left Image + Info */}
+           
             <div
               className="w-full md:w-1/2 h-[500px] md:h-[600px] bg-cover bg-center rounded-3xl overflow-hidden relative md:mb-0"
               style={{ backgroundImage: `url(${Motherandchild.src})` }}
@@ -1412,7 +1412,7 @@ function MotherandChildcare() {
               </div>
             </div>
 
-            {/* Right Form Section */}
+           
             <div className="w-full md:w-1/2 md:pl-10 md:py-0 py-4">
               <h2 className="text-[30px]   mb-2">
                 Book An Appointment
@@ -1429,7 +1429,7 @@ function MotherandChildcare() {
                 >
                   <Toaster />
 
-                  {/* Date */}
+                 
                   <div className="flex flex-col">
                     <label className="text-sm font-semibold mb-1">
                       Preferred Date *
@@ -1447,7 +1447,7 @@ function MotherandChildcare() {
                     )}
                   </div>
 
-                  {/* Name */}
+                
                   <div className="flex flex-col">
                     <label className="text-sm font-semibold mb-1">Name *</label>
                     <input
@@ -1464,7 +1464,7 @@ function MotherandChildcare() {
                     )}
                   </div>
 
-                  {/* Mobile */}
+                 
                   <div className="flex flex-col">
                     <label className="text-sm font-semibold mb-1">
                       Mobile *
@@ -1483,7 +1483,7 @@ function MotherandChildcare() {
                     )}
                   </div>
 
-                  {/* Email */}
+                 
                   <div className="flex flex-col">
                     <label className="text-sm font-semibold mb-1">
                       Email *
@@ -1502,7 +1502,7 @@ function MotherandChildcare() {
                     )}
                   </div>
 
-                  {/* Department */}
+        
                   <div className="flex flex-col">
                     <label className="text-sm font-semibold mb-1">
                       Department *
@@ -1530,7 +1530,7 @@ function MotherandChildcare() {
                     )}
                   </div>
 
-                  {/* Doctor */}
+               
                   <div className="flex flex-col">
                     <label className="text-sm font-semibold mb-1">
                       Doctor *
@@ -1554,7 +1554,7 @@ function MotherandChildcare() {
                     )}
                   </div>
 
-                  {/* Remarks */}
+                
                   <div className="md:col-span-2 flex flex-col">
                     <label className="text-sm font-semibold mb-1">
                       Remarks *
@@ -1573,7 +1573,7 @@ function MotherandChildcare() {
                     )}
                   </div>
 
-                  {/* Submit */}
+               
                   <div className="md:col-span-1 mt-2">
                     <button
                       type="submit"
@@ -1586,7 +1586,7 @@ function MotherandChildcare() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
     </div>
   );

@@ -16,7 +16,7 @@ import BookAppointmentModal from "@/components/bookappointmentmodal";
 import FindDoc from "@/assets/footer/socialIcons/doctor.svg";
 import Emergency from "@/assets/footer/socialIcons/emergency.svg";
 import branchLogo1 from "@/assets/home/footer-nabh.webp";
-
+import { FaAmbulance } from "react-icons/fa";
 
 
 
@@ -288,10 +288,14 @@ const Footer = () => {
                   <Link href="tel:04242454545" className="text-white font-semibold text-sm block">
                     042-424-54545
                   </Link>
+                  
+                </div>
+              </div>
+              <div className="text-[#FFF] flex gap-3 mt-4">
+                <FaAmbulance className="size-6 flex-shrink-0" />
                   <Link href="tel:+9042065454" className="text-white font-semibold text-sm block mt-2">
                     +91-90-4206-5454
                   </Link>
-                </div>
               </div>
             </motion.div>
           </div>
