@@ -777,9 +777,9 @@ function Home() {
         </div>
       </section>
 
-      <section id="upcoming" className="py-16 pt-0">
+      {/* <section id="upcoming" className="py-16 pt-0">
         <NewsEvents />
-      </section>
+      </section> */}
 
       <section className="mb-m ">
         <div className="max-w-7xl mx-auto px-4 py-16 mb-p-5 sm:px-6 lg:px-8 h-full bg-[#fff] rounded-[30px]">

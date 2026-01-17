@@ -79,9 +79,9 @@ export default function DoctorSlider({ specialty, counter, max }) {
               <Image
                 src={doc.image}
                 alt={doc.name}
-                width={300}
-                height={300}
-                className="w-[300px] h-[300px] object-cover rounded-t-2xl"
+                width={310}
+                height={310}
+                className="w-[310px] h-[310px] object-cover rounded-t-2xl"
               />
 
               {/* Doctor Info */}
@@ -90,8 +90,8 @@ export default function DoctorSlider({ specialty, counter, max }) {
                   <h3 className="text-md font-bold text-[#2B3990]">
                     {doc.name}
                   </h3>
-                  <p className="text-sm mt-2">{doc.degrees}</p>
-                  <p className="text-sm mt-2">{doc.qualification}</p>
+                  <p className="text-[13px] mt-2">{doc.degrees}</p>
+                  <p className="text-[13px] mt-2">{doc.qualification}</p>
                 </div>
 
                 {/* View Profile Button */}
